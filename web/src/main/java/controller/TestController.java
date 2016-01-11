@@ -1,5 +1,6 @@
 package controller;
 
+import com.sun.org.apache.xpath.internal.SourceTree;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -10,8 +11,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class TestController {
 
-    @RequestMapping("test")
+    @RequestMapping("testException")
     public String exceptionTest() throws Exception {
         throw new Exception("test exception to error page");
+    }
+
+    @RequestMapping("login")
+    public String loginTest() throws Exception {
+        System.out.println("login success");
+        return "sueccess";
     }
 }

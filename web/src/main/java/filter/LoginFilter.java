@@ -19,7 +19,7 @@ public class LoginFilter implements Filter {
         cookies[0].setHttpOnly(true);
         HttpSession session =  ((HttpServletRequest) req).getSession();
 
-
+        System.out.println("filter");
         chain.doFilter(req, resp);
     }
 

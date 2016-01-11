@@ -12,6 +12,6 @@
 </head>
 <body>
 <%--todo  jsp 拿到response --%>
-hello exception
+exception 啦
 </body>
 </html>

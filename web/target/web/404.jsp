@@ -11,6 +11,6 @@
     <title></title>
 </head>
 <body>
-fuck you and your mother
+404 啦
 </body>
 </html>

@@ -27,7 +27,7 @@
     <!--url-pattern　和　servlet-name二选一-->
     <filter-mapping>
         <filter-name>login</filter-name>
-        <url-pattern>/</url-pattern>
+        <url-pattern>/login</url-pattern>
         <!--<servlet-name>web</servlet-name>-->
     </filter-mapping>
 

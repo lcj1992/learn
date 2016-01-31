@@ -15,8 +15,6 @@ public class Test {
 
         String[] strings = { "aa", "zz", "cc", "yy", "ee", "xx" };
         Multimap<Integer, String> multimap = ArrayListMultimap.create();
-        int i = 0;
-        String dtText = "";
         for (String a : strings) {
             multimap.put(1, a);
 

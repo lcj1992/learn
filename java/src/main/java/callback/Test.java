@@ -1,13 +1,15 @@
 package callback;
 
+import callback.asyn.Li;
+import callback.asyn.Wang;
+import callback.syn.Sun;
+import callback.syn.Zhao;
+
 /**
  * Created by lcj on 15-5-9. http://blog.csdn.net/xiaanming/article/details/8703708
  */
 
-import learn.java.callback.asyn.Li;
-import learn.java.callback.asyn.Wang;
-import learn.java.callback.syn.Sun;
-import learn.java.callback.syn.Zhao;
+
 
 
 public class Test {

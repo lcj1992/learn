@@ -1,5 +1,6 @@
 package proxy.staticProxy;
 
+
 /**
  * Created by lcj on 15-9-13.
  */
@@ -15,3 +16,4 @@ public class TestProxy {
         proxy.code();
     }
 }
+

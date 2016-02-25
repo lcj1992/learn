@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="58a45f5c-98c1-420b-9724-a229da4a9fbb" name="Default" comment="delete some code">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/mdc/AppContext.java" afterPath="$PROJECT_DIR$/java/src/main/java/mdc/AppContext.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/proxy/staticProxy/TestProxy.java" afterPath="$PROJECT_DIR$/java/src/main/java/proxy/staticProxy/TestProxy.java" />
     </list>
     <ignored path="learn.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,7 +36,53 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="76" column="44" selection-start-line="76" selection-start-column="44" selection-end-line="76" selection-end-column="44" />
-              <folding />
+              <folding>
+                <element signature="e#0#19216#0" expanded="false" />
+                <element signature="e#3948#3949#0" expanded="false" />
+                <element signature="e#3974#3975#0" expanded="false" />
+                <element signature="e#4697#4698#0" expanded="false" />
+                <element signature="e#4742#4743#0" expanded="false" />
+                <element signature="e#5525#5526#0" expanded="false" />
+                <element signature="e#5572#5573#0" expanded="false" />
+                <element signature="e#7027#7028#0" expanded="false" />
+                <element signature="e#7080#7081#0" expanded="false" />
+                <element signature="e#7323#7324#0" expanded="false" />
+                <element signature="e#7377#7378#0" expanded="false" />
+                <element signature="e#7457#7458#0" expanded="false" />
+                <element signature="e#7512#7513#0" expanded="false" />
+                <element signature="e#7697#7698#0" expanded="false" />
+                <element signature="e#7728#7729#0" expanded="false" />
+                <element signature="e#7906#7907#0" expanded="false" />
+                <element signature="e#7940#7941#0" expanded="false" />
+                <element signature="e#8711#8712#0" expanded="false" />
+                <element signature="e#8750#8751#0" expanded="false" />
+                <element signature="e#9664#9665#0" expanded="false" />
+                <element signature="e#9710#9711#0" expanded="false" />
+                <element signature="e#10673#10674#0" expanded="false" />
+                <element signature="e#10716#10717#0" expanded="false" />
+                <element signature="e#10863#10864#0" expanded="false" />
+                <element signature="e#10888#10889#0" expanded="false" />
+                <element signature="e#14081#14082#0" expanded="false" />
+                <element signature="e#14147#14148#0" expanded="false" />
+                <element signature="e#14492#14493#0" expanded="false" />
+                <element signature="e#14540#14541#0" expanded="false" />
+                <element signature="e#14889#14890#0" expanded="false" />
+                <element signature="e#14938#14939#0" expanded="false" />
+                <element signature="e#14987#14988#0" expanded="false" />
+                <element signature="e#15024#15025#0" expanded="false" />
+                <element signature="e#15116#15117#0" expanded="false" />
+                <element signature="e#15151#15152#0" expanded="false" />
+                <element signature="e#15242#15243#0" expanded="false" />
+                <element signature="e#15276#15277#0" expanded="false" />
+                <element signature="e#15601#15602#0" expanded="false" />
+                <element signature="e#15637#15638#0" expanded="false" />
+                <element signature="e#15929#15930#0" expanded="false" />
+                <element signature="e#15965#15966#0" expanded="false" />
+                <element signature="e#16259#16260#0" expanded="false" />
+                <element signature="e#16297#16298#0" expanded="false" />
+                <element signature="e#16590#16591#0" expanded="false" />
+                <element signature="e#16627#16628#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -42,9 +90,23 @@
       <file leaf-file-name="TestProxy.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/java/src/main/java/proxy/staticProxy/TestProxy.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.49586776">
-              <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+            <state vertical-scroll-proportion="0.5371901">
+              <caret line="13" column="22" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AppContext.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/java/src/main/java/mdc/AppContext.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+              <folding>
+                <element signature="e#162#170#0" expanded="true" />
+                <element signature="e#290#291#0" expanded="true" />
+                <element signature="e#321#322#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -88,6 +150,7 @@
         <option value="$PROJECT_DIR$/java/src/main/java/deepInJvm/byteDecode/constant/ConstantFloatInfo.java" />
         <option value="$PROJECT_DIR$/java/src/main/java/deepInJvm/byteDecode/constant/ConstantStringInfo.java" />
         <option value="$PROJECT_DIR$/java/src/main/java/annotation/fruit/Apple.java" />
+        <option value="$PROJECT_DIR$/java/src/main/java/mdc/AppContext.java" />
         <option value="$PROJECT_DIR$/java/src/main/java/proxy/staticProxy/TestProxy.java" />
       </list>
     </option>
@@ -152,6 +215,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -378,9 +443,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -398,8 +461,6 @@
     <property name="SearchEverywhereHistoryKey" value="DispatcherServlet&#9;FILE&#9;jar:///home/lcj/.m2/repository/org/springframework/spring-webmvc/3.2.8.RELEASE/spring-webmvc-3.2.8.RELEASE.jar!/org/springframework/web/servlet/DispatcherServlet.class" />
     <property name="recentsLimit" value="5" />
     <property name="restartRequiresConfirmation" value="true" />
-    <property name="OverrideImplement.combined" value="true" />
-    <property name="OverrideImplement.overriding.sorted" value="false" />
     <property name="options.lastSelected" value="settings.github" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
@@ -850,6 +911,11 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
@@ -977,7 +1043,8 @@
       <workItem from="1454743208292" duration="1905000" />
       <workItem from="1454934036207" duration="2587000" />
       <workItem from="1455614163531" duration="8943000" />
-      <workItem from="1456112374306" duration="2015000" />
+      <workItem from="1456112374306" duration="2039000" />
+      <workItem from="1456319864782" duration="3859000" />
     </task>
     <task id="LOCAL-00001" summary="git">
       <created>1453538553180</created>
@@ -1015,11 +1082,17 @@
       <option name="project" value="LOCAL" />
       <updated>1454743685691</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="delete some code">
+      <created>1456124506131</created>
+      <option name="number" value="00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1456124506131</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43450000" />
+    <option name="totallyTimeSpent" value="47333000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="58" y="23" width="1222" height="777" extended-state="6" />
@@ -1027,17 +1100,17 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850242" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6312595" sideWeight="0.49661016" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6312595" sideWeight="0.49322033" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.40667677" sideWeight="0.50338984" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40667677" sideWeight="0.5067797" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18258664" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22829582" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.40667677" sideWeight="0.49661016" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.40667677" sideWeight="0.49322033" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19575115" sideWeight="0.5601695" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32288137" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24745762" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977587" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25773746" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1327,7 +1400,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1335,13 +1407,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="22" column="31" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/java/src/main/java/mdc/AppContext.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1670,14 +1735,72 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="76" column="44" selection-start-line="76" selection-start-column="44" selection-end-line="76" selection-end-column="44" />
-          <folding />
+          <folding>
+            <element signature="e#0#19216#0" expanded="false" />
+            <element signature="e#3948#3949#0" expanded="false" />
+            <element signature="e#3974#3975#0" expanded="false" />
+            <element signature="e#4697#4698#0" expanded="false" />
+            <element signature="e#4742#4743#0" expanded="false" />
+            <element signature="e#5525#5526#0" expanded="false" />
+            <element signature="e#5572#5573#0" expanded="false" />
+            <element signature="e#7027#7028#0" expanded="false" />
+            <element signature="e#7080#7081#0" expanded="false" />
+            <element signature="e#7323#7324#0" expanded="false" />
+            <element signature="e#7377#7378#0" expanded="false" />
+            <element signature="e#7457#7458#0" expanded="false" />
+            <element signature="e#7512#7513#0" expanded="false" />
+            <element signature="e#7697#7698#0" expanded="false" />
+            <element signature="e#7728#7729#0" expanded="false" />
+            <element signature="e#7906#7907#0" expanded="false" />
+            <element signature="e#7940#7941#0" expanded="false" />
+            <element signature="e#8711#8712#0" expanded="false" />
+            <element signature="e#8750#8751#0" expanded="false" />
+            <element signature="e#9664#9665#0" expanded="false" />
+            <element signature="e#9710#9711#0" expanded="false" />
+            <element signature="e#10673#10674#0" expanded="false" />
+            <element signature="e#10716#10717#0" expanded="false" />
+            <element signature="e#10863#10864#0" expanded="false" />
+            <element signature="e#10888#10889#0" expanded="false" />
+            <element signature="e#14081#14082#0" expanded="false" />
+            <element signature="e#14147#14148#0" expanded="false" />
+            <element signature="e#14492#14493#0" expanded="false" />
+            <element signature="e#14540#14541#0" expanded="false" />
+            <element signature="e#14889#14890#0" expanded="false" />
+            <element signature="e#14938#14939#0" expanded="false" />
+            <element signature="e#14987#14988#0" expanded="false" />
+            <element signature="e#15024#15025#0" expanded="false" />
+            <element signature="e#15116#15117#0" expanded="false" />
+            <element signature="e#15151#15152#0" expanded="false" />
+            <element signature="e#15242#15243#0" expanded="false" />
+            <element signature="e#15276#15277#0" expanded="false" />
+            <element signature="e#15601#15602#0" expanded="false" />
+            <element signature="e#15637#15638#0" expanded="false" />
+            <element signature="e#15929#15930#0" expanded="false" />
+            <element signature="e#15965#15966#0" expanded="false" />
+            <element signature="e#16259#16260#0" expanded="false" />
+            <element signature="e#16297#16298#0" expanded="false" />
+            <element signature="e#16590#16591#0" expanded="false" />
+            <element signature="e#16627#16628#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/java/src/main/java/mdc/AppContext.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+          <folding>
+            <element signature="e#162#170#0" expanded="true" />
+            <element signature="e#290#291#0" expanded="true" />
+            <element signature="e#321#322#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/java/src/main/java/proxy/staticProxy/TestProxy.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.49586776">
-          <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+        <state vertical-scroll-proportion="0.5371901">
+          <caret line="13" column="22" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
           <folding />
         </state>
       </provider>

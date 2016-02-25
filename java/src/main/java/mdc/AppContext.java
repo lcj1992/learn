@@ -8,11 +8,11 @@ public class AppContext {
     private static InheritableThreadLocal<String> site = new InheritableThreadLocal<String>();
 
 
-    public String getSite(){
+    public static String getSite(){
         return site.get();
     }
 
-    public void setSite(String site){
-        this.site.set(site);
+    public static void setSite(String site1){
+        site.set(site1);
     }
 }

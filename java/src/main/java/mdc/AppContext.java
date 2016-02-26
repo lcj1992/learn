@@ -5,7 +5,7 @@ package mdc;
  */
 public class AppContext {
 
-    private static InheritableThreadLocal<String> site = new InheritableThreadLocal<String>();
+    private static ThreadLocal<String> site = new ThreadLocal<String>();
 
 
     public static String getSite(){
@@ -14,5 +14,13 @@ public class AppContext {
 
     public static void setSite(String site1){
         site.set(site1);
+    }
+}
+
+
+class newThread extends  Thread{
+    @Override
+    public void run() {
+        System.out.println(AppContext.getSite());
     }
 }

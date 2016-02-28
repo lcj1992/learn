@@ -3,88 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="58a45f5c-98c1-420b-9724-a229da4a9fbb" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/net/jcip/annotations/GuardedBy.java" afterPath="$PROJECT_DIR$/java/src/main/java/net/jcip/annotations/GuardedBy.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/net/jcip/annotations/Immutable.java" afterPath="$PROJECT_DIR$/java/src/main/java/net/jcip/annotations/Immutable.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/net/jcip/annotations/NotThreadSafe.java" afterPath="$PROJECT_DIR$/java/src/main/java/net/jcip/annotations/NotThreadSafe.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/net/jcip/annotations/ThreadSafe.java" afterPath="$PROJECT_DIR$/java/src/main/java/net/jcip/annotations/ThreadSafe.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/net/jcip/annotations/package.html" afterPath="$PROJECT_DIR$/java/src/main/java/net/jcip/annotations/package.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/AttributeStore.java" afterPath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/AttributeStore.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/BackgroundTask.java" afterPath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/BackgroundTask.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/BaseBoundedBuffer.java" afterPath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/BaseBoundedBuffer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/BetterAttributeStore.java" afterPath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/BetterAttributeStore.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/BetterVector.java" afterPath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/BetterVector.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/BoundedBuffer.java" afterPath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/BoundedBuffer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/BoundedHashSet.java" afterPath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/BoundedHashSet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/CachedFactorizer.java" afterPath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/CachedFactorizer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/CasNumberRange.java" afterPath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/CasNumberRange.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/CellularAutomata.java" afterPath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/CellularAutomata.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/ConcurrentPuzzleSolver.java" afterPath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/ConcurrentPuzzleSolver.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/ConcurrentStack.java" afterPath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/ConcurrentStack.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/ConditionBoundedBuffer.java" afterPath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/ConditionBoundedBuffer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/ConnectionDispenser.java" afterPath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/ConnectionDispenser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/CooperatingDeadlock.java" afterPath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/CooperatingDeadlock.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/CooperatingNoDeadlock.java" afterPath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/CooperatingNoDeadlock.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/Counter.java" afterPath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/Counter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/CountingFactorizer.java" afterPath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/CountingFactorizer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/DeadlockAvoidance.java" afterPath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/DeadlockAvoidance.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/EagerInitialization.java" afterPath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/EagerInitialization.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/FutureRenderer.java" afterPath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/FutureRenderer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/GrumpyBoundedBuffer.java" afterPath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/GrumpyBoundedBuffer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/HiddenIterator.java" afterPath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/HiddenIterator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/ImprovedList.java" afterPath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/ImprovedList.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/IndexingService.java" afterPath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/IndexingService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/InduceLockOrder.java" afterPath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/InduceLockOrder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/LazyInitRace.java" afterPath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/LazyInitRace.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/LeftRightDeadlock.java" afterPath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/LeftRightDeadlock.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/LinkedQueue.java" afterPath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/LinkedQueue.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/ListHelpers.java" afterPath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/ListHelpers.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/ListenerExamples.java" afterPath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/ListenerExamples.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/LogService.java" afterPath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/LogService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/Memoizer.java" afterPath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/Memoizer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/Memoizer1.java" afterPath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/Memoizer1.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/Memoizer2.java" afterPath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/Memoizer2.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/Memoizer3.java" afterPath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/Memoizer3.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/MonitorVehicleTracker.java" afterPath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/MonitorVehicleTracker.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/OutOfTime.java" afterPath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/OutOfTime.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/PersonSet.java" afterPath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/PersonSet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/Preloader.java" afterPath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/Preloader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/PrimeGenerator.java" afterPath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/PrimeGenerator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/PrivateLock.java" afterPath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/PrivateLock.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/ProducerConsumer.java" afterPath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/ProducerConsumer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/Puzzle.java" afterPath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/Puzzle.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/PuzzleNode.java" afterPath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/PuzzleNode.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/PuzzleSolver.java" afterPath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/PuzzleSolver.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/ReadWriteMap.java" afterPath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/ReadWriteMap.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/RenderWithTimeBudget.java" afterPath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/RenderWithTimeBudget.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/Renderer.java" afterPath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/Renderer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/SafePoint.java" afterPath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/SafePoint.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/Secrets.java" afterPath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/Secrets.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/SemaphoreBoundedBuffer.java" afterPath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/SemaphoreBoundedBuffer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/SemaphoreOnLock.java" afterPath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/SemaphoreOnLock.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/Sequence.java" afterPath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/Sequence.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/SequentialPuzzleSolver.java" afterPath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/SequentialPuzzleSolver.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/ServerStatusAfterSplit.java" afterPath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/ServerStatusAfterSplit.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/ServerStatusBeforeSplit.java" afterPath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/ServerStatusBeforeSplit.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/SimulatedCAS.java" afterPath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/SimulatedCAS.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/SingleThreadRenderer.java" afterPath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/SingleThreadRenderer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/SleepyBoundedBuffer.java" afterPath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/SleepyBoundedBuffer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/SocketUsingTask.java" afterPath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/SocketUsingTask.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/StatelessFactorizer.java" afterPath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/StatelessFactorizer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/SynchronizedFactorizer.java" afterPath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/SynchronizedFactorizer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/SynchronizedInteger.java" afterPath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/SynchronizedInteger.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/ThreadGate.java" afterPath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/ThreadGate.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/ThreadPerTaskExecutor.java" afterPath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/ThreadPerTaskExecutor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/ThreeStooges.java" afterPath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/ThreeStooges.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/TimedLocking.java" afterPath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/TimedLocking.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/TimedRun.java" afterPath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/TimedRun.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/TimedRun2.java" afterPath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/TimedRun2.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/TransformingSequential.java" afterPath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/TransformingSequential.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/UnsafeCachingFactorizer.java" afterPath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/UnsafeCachingFactorizer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/UnsafeCountingFactorizer.java" afterPath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/UnsafeCountingFactorizer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/UnsafeStates.java" afterPath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/UnsafeStates.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/ValueLatch.java" afterPath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/ValueLatch.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/WebCrawler.java" afterPath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/WebCrawler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/WithinThreadExecutor.java" afterPath="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/WithinThreadExecutor.java" />
     </list>
     <ignored path="learn.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -265,6 +184,7 @@
         <option value="$PROJECT_DIR$/java/src/main/java/mdc/AppContext.java" />
         <option value="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/AtomicPseudoRandom.java" />
         <option value="$PROJECT_DIR$/java/src/main/java/net/jcip/examples/AttributeStore.java" />
+        <option value="$PROJECT_DIR$/java/src/main/java/net/jcip/annotations/Immutable.java" />
       </list>
     </option>
   </component>
@@ -1379,7 +1299,7 @@
       <workItem from="1456449048202" duration="6300000" />
       <workItem from="1456466645436" duration="653000" />
       <workItem from="1456495939538" duration="2377000" />
-      <workItem from="1456536085785" duration="15404000" />
+      <workItem from="1456536085785" duration="15451000" />
     </task>
     <task id="LOCAL-00001" summary="git">
       <created>1453538553180</created>
@@ -1453,15 +1373,21 @@
       <option name="project" value="LOCAL" />
       <updated>1456641792561</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="格式化java 并发编程代码">
+      <created>1456641956489</created>
+      <option name="number" value="00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1456641956489</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="85376000" />
+    <option name="totallyTimeSpent" value="85423000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="47" y="23" width="1233" height="777" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850242" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
@@ -1475,7 +1401,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4059406" sideWeight="0.49322033" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19575115" sideWeight="0.5601695" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30310664" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30310664" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977587" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.42185128" sideWeight="0.5202775" order="8" side_tool="false" content_ui="tabs" />
@@ -1554,7 +1480,8 @@
     <MESSAGE value="test" />
     <MESSAGE value="uml" />
     <MESSAGE value="java concurrency code" />
-    <option name="LAST_COMMIT_MESSAGE" value="java concurrency code" />
+    <MESSAGE value="格式化java 并发编程代码" />
+    <option name="LAST_COMMIT_MESSAGE" value="格式化java 并发编程代码" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1627,8 +1554,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="604" column="17" selection-start-line="604" selection-start-column="17" selection-end-line="604" selection-end-column="17" />
           <folding>
-            <element signature="e#20479#20480#0" expanded="true" />
-            <element signature="e#20513#20514#0" expanded="true" />
+            <element signature="e#20479#20480#0" expanded="false" />
+            <element signature="e#20513#20514#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2005,8 +1932,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="565" column="53" selection-start-line="565" selection-start-column="53" selection-end-line="565" selection-end-column="53" />
           <folding>
-            <element signature="e#22611#22612#0" expanded="true" />
-            <element signature="e#22639#22640#0" expanded="true" />
+            <element signature="e#22611#22612#0" expanded="false" />
+            <element signature="e#22639#22640#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2026,8 +1953,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="72" column="18" selection-start-line="72" selection-start-column="18" selection-end-line="72" selection-end-column="18" />
           <folding>
-            <element signature="e#1623#1624#0" expanded="true" />
-            <element signature="e#1663#1664#0" expanded="true" />
+            <element signature="e#1623#1624#0" expanded="false" />
+            <element signature="e#1663#1664#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2037,8 +1964,8 @@
         <state vertical-scroll-proportion="0.33144477">
           <caret line="132" column="22" selection-start-line="132" selection-start-column="22" selection-end-line="132" selection-end-column="22" />
           <folding>
-            <element signature="e#12262#12263#0" expanded="true" />
-            <element signature="e#12310#12311#0" expanded="true" />
+            <element signature="e#12262#12263#0" expanded="false" />
+            <element signature="e#12310#12311#0" expanded="false" />
           </folding>
         </state>
       </provider>

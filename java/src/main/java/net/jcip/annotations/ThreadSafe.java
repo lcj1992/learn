@@ -1,4 +1,5 @@
 package net.jcip.annotations;
+
 import java.lang.annotation.*;
 
 /*
@@ -10,7 +11,6 @@ import java.lang.annotation.*;
  * Any republication or derived work distributed in source code form
  * must include this copyright and license notice.
  */
-
 
 
 /**

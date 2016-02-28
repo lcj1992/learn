@@ -14,10 +14,14 @@ import net.jcip.annotations.*;
  */
 @ThreadSafe
 public class CachedFactorizer extends GenericServlet implements Servlet {
-    @GuardedBy("this") private BigInteger lastNumber;
-    @GuardedBy("this") private BigInteger[] lastFactors;
-    @GuardedBy("this") private long hits;
-    @GuardedBy("this") private long cacheHits;
+    @GuardedBy("this")
+    private BigInteger lastNumber;
+    @GuardedBy("this")
+    private BigInteger[] lastFactors;
+    @GuardedBy("this")
+    private long hits;
+    @GuardedBy("this")
+    private long cacheHits;
 
     public synchronized long getHits() {
         return hits;

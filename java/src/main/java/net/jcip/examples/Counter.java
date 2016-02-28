@@ -11,7 +11,8 @@ import net.jcip.annotations.*;
  */
 @ThreadSafe
 public final class Counter {
-    @GuardedBy("this") private long value = 0;
+    @GuardedBy("this")
+    private long value = 0;
 
     public synchronized long getValue() {
         return value;

@@ -4,7 +4,7 @@ import java.util.concurrent.*;
 
 /**
  * CellularAutomata
- *
+ * <p/>
  * Coordinating computation in a cellular automaton with CyclicBarrier
  *
  * @author Brian Goetz and Tim Peierls
@@ -21,7 +21,8 @@ public class CellularAutomata {
                 new Runnable() {
                     public void run() {
                         mainBoard.commitNewValues();
-                    }});
+                    }
+                });
         this.workers = new Worker[count];
         for (int i = 0; i < count; i++)
             workers[i] = new Worker(mainBoard.getSubBoard(count, i));
@@ -30,7 +31,10 @@ public class CellularAutomata {
     private class Worker implements Runnable {
         private final Board board;
 
-        public Worker(Board board) { this.board = board; }
+        public Worker(Board board) {
+            this.board = board;
+        }
+
         public void run() {
             while (!board.hasConverged()) {
                 for (int x = 0; x < board.getMaxX(); x++)
@@ -60,12 +64,19 @@ public class CellularAutomata {
 
     interface Board {
         int getMaxX();
+
         int getMaxY();
+
         int getValue(int x, int y);
+
         int setNewValue(int x, int y, int value);
+
         void commitNewValues();
+
         boolean hasConverged();
+
         void waitForConvergence();
+
         Board getSubBoard(int numPartitions, int index);
     }
 }

@@ -18,7 +18,7 @@ public class BookFacadeProxy implements InvocationHandler {
         //要绑定接口，java动态代理的缺陷
     }
 
-    @Override
+
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         Object  result = null;
         System.out.println("事务开始");

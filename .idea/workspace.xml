@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="58a45f5c-98c1-420b-9724-a229da4a9fbb" name="Default" comment="concurrentHashMap uml">
+    <list default="true" id="58a45f5c-98c1-420b-9724-a229da4a9fbb" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/designPattern/src/main/java/structural/proxy/ProxyTest.java" afterPath="$PROJECT_DIR$/designPattern/src/main/java/structural/proxy/ProxyTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/java.iml" afterPath="$PROJECT_DIR$/java/java.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/pom.xml" afterPath="$PROJECT_DIR$/java/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/annotation/user/Test.java" afterPath="$PROJECT_DIR$/java/src/main/java/annotation/user/Test.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/proxy/dynamicProxy/BookFacadeImpl.java" afterPath="$PROJECT_DIR$/java/src/main/java/proxy/dynamicProxy/BookFacadeImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/proxy/staticProxy/DailyProxy.java" afterPath="$PROJECT_DIR$/java/src/main/java/proxy/staticProxy/DailyProxy.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/src/main/java/proxy/dynamicProxy/BookFacadeProxy.java" afterPath="$PROJECT_DIR$/java/src/main/java/proxy/dynamicProxy/BookFacadeProxy.java" />
     </list>
     <ignored path="learn.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -95,11 +90,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProxyTest.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ProxyTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/designPattern/src/main/java/structural/proxy/ProxyTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.9385246">
-              <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="53" column="24" selection-start-line="53" selection-start-column="24" selection-end-line="53" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BookFacadeProxy.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/java/src/main/java/proxy/dynamicProxy/BookFacadeProxy.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.5532787">
+              <caret line="20" column="4" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -130,16 +135,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Reflection.class" pinned="false" current-in-tab="false">
-        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.7.0_79.jdk/Contents/Home/jre/lib/rt.jar!/sun/reflect/Reflection.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="25" column="31" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -203,6 +198,7 @@
         <option value="$PROJECT_DIR$/java/src/main/java/proxy/dynamicProxy/BookFacadeImpl.java" />
         <option value="$PROJECT_DIR$/java/src/main/java/proxy/staticProxy/DailyProxy.java" />
         <option value="$PROJECT_DIR$/designPattern/src/main/java/structural/proxy/ProxyTest.java" />
+        <option value="$PROJECT_DIR$/java/src/main/java/proxy/dynamicProxy/BookFacadeProxy.java" />
       </list>
     </option>
   </component>
@@ -1537,7 +1533,7 @@
       <workItem from="1456495939538" duration="2377000" />
       <workItem from="1456536085785" duration="22376000" />
       <workItem from="1456671925327" duration="599000" />
-      <workItem from="1457018564197" duration="114000" />
+      <workItem from="1457018564197" duration="145000" />
     </task>
     <task id="LOCAL-00001" summary="git">
       <created>1453538553180</created>
@@ -1629,11 +1625,17 @@
       <option name="project" value="LOCAL" />
       <updated>1456642010865</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="proxy">
+      <created>1457018690062</created>
+      <option name="number" value="00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1457018690062</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="93061000" />
+    <option name="totallyTimeSpent" value="93092000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="58" y="23" width="1222" height="777" extended-state="6" />
@@ -1641,6 +1643,7 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850242" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6312595" sideWeight="0.49322033" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40667677" sideWeight="0.5067797" order="7" side_tool="true" content_ui="tabs" />
@@ -1665,7 +1668,6 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20917822" sideWeight="0.5" order="7" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.491654" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29796356" sideWeight="0.4994664" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6312595" sideWeight="0.49322033" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" x="1466" y="96" width="1720" height="884" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40515932" sideWeight="0.49322033" order="9" side_tool="false" content_ui="tabs" />
@@ -1732,7 +1734,8 @@
     <MESSAGE value="java concurrency code" />
     <MESSAGE value="格式化java 并发编程代码" />
     <MESSAGE value="concurrentHashMap uml" />
-    <option name="LAST_COMMIT_MESSAGE" value="concurrentHashMap uml" />
+    <MESSAGE value="proxy" />
+    <option name="LAST_COMMIT_MESSAGE" value="proxy" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1775,13 +1778,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.7.0_79.jdk/Contents/Home/src.zip!/java/util/concurrent/locks/Lock.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="165" column="17" selection-start-line="165" selection-start-column="17" selection-end-line="165" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.7.0_79.jdk/Contents/Home/src.zip!/java/lang/CharSequence.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2344,8 +2340,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/designPattern/src/main/java/structural/proxy/ProxyTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9385246">
-          <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="53" column="24" selection-start-line="53" selection-start-column="24" selection-end-line="53" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/java/src/main/java/proxy/dynamicProxy/BookFacadeProxy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5532787">
+          <caret line="20" column="4" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
           <folding />
         </state>
       </provider>

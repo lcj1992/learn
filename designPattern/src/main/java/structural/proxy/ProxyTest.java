@@ -10,7 +10,7 @@ interface ICar{
 
 class Car implements ICar{
 
-    @Override
+
     public void driveCar() {
         System.out.println("car has been driven!");
     }
@@ -25,7 +25,7 @@ class ProxyCar implements ICar{
         realCar = new Car();
     }
 
-    @Override
+
     public void driveCar() {
         if(driver.getAge() <= 16){
             System.out.println("sorry, the driver is too young to drive");

@@ -1,14 +1,19 @@
 package annotation.user;
 
 import java.lang.reflect.Field;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Created by lcj on 15-4-19.
  */
 public class Test {
     public static void main(String[] args) {
-        System.out.println("我们");
-        System.out.println(getUserAnnotation());
+        String s = new String();
+    }
+
+    public static void changeStr(String people) {
+        people = "sunhao";
     }
 
     public static User getUserAnnotation() {
@@ -30,5 +35,18 @@ public class Test {
             }
         }
         return user;
+    }
+}
+
+class People {
+    private String name;
+
+    public People(){}
+
+    public String getName(){
+        return name;
+    }
+    public void setName(String name){
+        this.name = name;
     }
 }

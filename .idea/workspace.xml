@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="58a45f5c-98c1-420b-9724-a229da4a9fbb" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java/src/main/java/test/HashMapLoopTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="learn.iws" />
@@ -83,8 +82,8 @@
       <file leaf-file-name="HashMapLoopTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/java/src/main/java/test/HashMapLoopTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6">
-              <caret line="23" column="40" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
+            <state vertical-scroll-proportion="0.53333336">
+              <caret line="21" column="31" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
               <folding>
                 <element signature="e#182#200#0" expanded="true" />
               </folding>
@@ -1352,7 +1351,7 @@
       <workItem from="1456671925327" duration="599000" />
       <workItem from="1457018564197" duration="1416000" />
       <workItem from="1457053656459" duration="3095000" />
-      <workItem from="1457399899684" duration="1811000" />
+      <workItem from="1457399899684" duration="2036000" />
     </task>
     <task id="LOCAL-00001" summary="git">
       <created>1453538553180</created>
@@ -1462,11 +1461,17 @@
       <option name="project" value="LOCAL" />
       <updated>1457019051642</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="hash loop test">
+      <created>1457401978983</created>
+      <option name="number" value="00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1457401978983</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="99269000" />
+    <option name="totallyTimeSpent" value="99494000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1280" y="23" width="1920" height="1057" extended-state="6" />
@@ -1566,7 +1571,8 @@
     <MESSAGE value="格式化java 并发编程代码" />
     <MESSAGE value="concurrentHashMap uml" />
     <MESSAGE value="proxy" />
-    <option name="LAST_COMMIT_MESSAGE" value="proxy" />
+    <MESSAGE value="hash loop test" />
+    <option name="LAST_COMMIT_MESSAGE" value="hash loop test" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2232,8 +2238,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/java/src/main/java/test/HashMapLoopTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6">
-          <caret line="23" column="40" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
+        <state vertical-scroll-proportion="0.53333336">
+          <caret line="21" column="31" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
           <folding>
             <element signature="e#182#200#0" expanded="true" />
           </folding>

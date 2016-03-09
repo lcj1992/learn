@@ -16,13 +16,13 @@ public class HashMapLoopTest {
             public void run() {
                 map.put(7, 77);
                 System.out.println(map);
-            };
+            }
         }.start();
         new Thread("Thread2") {
             public void run() {
                 map.put(3, 33);
                 System.out.println(map);
-            };
+            }
         }.start();
 
     }

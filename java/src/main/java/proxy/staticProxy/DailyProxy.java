@@ -7,7 +7,7 @@ public class DailyProxy implements Daily {
     private DailyImpl dailyImpl;
 
 
-    public DailyProxy(DailyImpl dailyImpl){
+    public DailyProxy(DailyImpl dailyImpl) {
         this.dailyImpl = dailyImpl;
     }
 

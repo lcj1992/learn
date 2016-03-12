@@ -11,6 +11,7 @@ public class Fruit {
 
     /**
      * Using a private constructor to force the use of the staticfactory method.
+     *
      * @param type
      */
     private Fruit(FruitType type) {
@@ -19,6 +20,7 @@ public class Fruit {
     /**
      * Lazy Factory method, gets the Fruit instance associated with a certain
      * type. Instantiates new ones as needed.
+     *
      * @param type Any allowed fruit type, e.g. APPLE
      * @return The Fruit instance associated with that type.
      */
@@ -43,6 +45,7 @@ public class Fruit {
      * Lazy Factory method, gets the Fruit instance associated with a certain
      * type. Instantiates new ones as needed. Uses double-checked locking
      * pattern for using in highly concurrent environments.
+     *
      * @param type Any allowed fruit type, e.g. APPLE
      * @return The Fruit instance associated with that type.
      */

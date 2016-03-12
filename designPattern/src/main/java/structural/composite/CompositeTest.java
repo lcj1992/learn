@@ -7,14 +7,18 @@ package structural.composite;
 import java.util.ArrayList;
 import java.util.List;
 
-/** "Component" */
+/**
+ * "Component"
+ */
 interface Graphic {
 
     //Prints the graphic.
     public void print();
 }
 
-/** "Composite" */
+/**
+ * "Composite"
+ */
 class CompositeGraphic implements Graphic {
 
     //Collection of child graphics.
@@ -38,7 +42,9 @@ class CompositeGraphic implements Graphic {
     }
 }
 
-/** "Leaf" */
+/**
+ * "Leaf"
+ */
 class Ellipse implements Graphic {
 
     //Prints the graphic.
@@ -47,7 +53,9 @@ class Ellipse implements Graphic {
     }
 }
 
-/** Client */
+/**
+ * Client
+ */
 public class CompositeTest {
 
     public static void main(String[] args) {

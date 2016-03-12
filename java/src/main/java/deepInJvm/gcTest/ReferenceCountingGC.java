@@ -10,7 +10,7 @@ public class ReferenceCountingGC {
 
     private byte[] bigSize = new byte[2 * _1MB];
 
-    public static void testGC(){
+    public static void testGC() {
         ReferenceCountingGC objA = new ReferenceCountingGC();
         ReferenceCountingGC objB = new ReferenceCountingGC();
         objA.instance = objB;

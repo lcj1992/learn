@@ -12,7 +12,7 @@ import java.lang.reflect.Method;
 public class BookFacadeCglib implements MethodInterceptor {
     private Object target;
 
-    public Object getInstance(Object target){
+    public Object getInstance(Object target) {
         this.target = target;
         Enhancer enhancer = new Enhancer();
         enhancer.setSuperclass(this.target.getClass());
@@ -20,7 +20,6 @@ public class BookFacadeCglib implements MethodInterceptor {
         return enhancer.create();
     }
 
-    @Override
     public Object intercept(Object obj, Method method, Object[] objects, MethodProxy methodProxy) throws Throwable {
         System.out.println("事务开始");
         methodProxy.invokeSuper(obj, objects);

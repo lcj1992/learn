@@ -3,6 +3,7 @@ package rmi;
 /**
  * Created by lcj on 15-5-4.
  */
+
 import java.rmi.Naming;
 import java.rmi.registry.LocateRegistry;
 

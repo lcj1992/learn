@@ -1,6 +1,5 @@
 package controller;
 
-import com.sun.org.apache.xpath.internal.SourceTree;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -19,6 +18,6 @@ public class TestController {
     @RequestMapping("login")
     public String loginTest() throws Exception {
         System.out.println("login success");
-        return "sueccess";
+        return "success";
     }
 }

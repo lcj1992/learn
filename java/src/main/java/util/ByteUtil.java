@@ -6,7 +6,6 @@ import java.io.UnsupportedEncodingException;
 
 /**
  * Created by lcj on 15-6-12.
- *
  */
 public class ByteUtil {
 
@@ -40,7 +39,7 @@ public class ByteUtil {
         int exponent = (bytes[0] & 0x7f) * 16 + ((bytes[1] >> 4) & 0x0f) - 1023;
         double fraction = 1
                 + ((((bytes[1] << 16) & 0x000f0000) + (bytes[2] << 8) + (bytes[3])) * 4294967296L + (bytes[4] << 24)
-                        + (bytes[5] << 16) + (bytes[6] << 8) + bytes[7]) * Math.pow(2, -52);
+                + (bytes[5] << 16) + (bytes[6] << 8) + bytes[7]) * Math.pow(2, -52);
         return sign * fraction * Math.pow(2, exponent);
     }
 

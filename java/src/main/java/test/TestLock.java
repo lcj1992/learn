@@ -13,7 +13,7 @@ public class TestLock {
     public TestLock() {
         Thread t1 = new Thread() {
             public void run() {
-                for(int i=0; i<50000; i++) {
+                for (int i = 0; i < 50000; i++) {
                     map.put(new Integer(i), i);
                 }
                 System.out.println("t1 over");
@@ -22,7 +22,7 @@ public class TestLock {
 
         Thread t2 = new Thread() {
             public void run() {
-                for(int i=0; i<50000; i++) {
+                for (int i = 0; i < 50000; i++) {
                     map.put(new Integer(i), i);
                 }
 

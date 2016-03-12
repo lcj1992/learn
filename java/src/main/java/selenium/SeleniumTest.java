@@ -28,8 +28,8 @@ public class SeleniumTest {
         List<WebElement> errorMsg = driver.findElements(By.xpath("//*[@class=\"ui-field-error-message\"]"));
 
         for (WebElement webElement : errorMsg) {
-        System.out.println(webElement.isDisplayed() + webElement.getText());
-        System.out.println(Strings.isNullOrEmpty(webElement.getText()));
+            System.out.println(webElement.isDisplayed() + webElement.getText());
+            System.out.println(Strings.isNullOrEmpty(webElement.getText()));
         }
 
         driver.get(url);
@@ -49,12 +49,12 @@ public class SeleniumTest {
 
         Set<String> tabTitle = driver.getWindowHandles();
         for (String s : tabTitle) {
-        driver.switchTo().window(s);
-        System.out.println(driver.getTitle());
-        if (driver.getTitle().contains("词语概念")) {
-        System.out.println(driver.getTitle());
-        break;
-        }
+            driver.switchTo().window(s);
+            System.out.println(driver.getTitle());
+            if (driver.getTitle().contains("词语概念")) {
+                System.out.println(driver.getTitle());
+                break;
+            }
         }
         Thread.sleep(10000L);
         System.out.println(driver.getCurrentUrl());
@@ -64,7 +64,7 @@ public class SeleniumTest {
         driver.get("www.airchina.com.cn");
 
         long start = System.currentTimeMillis();
-        waitForPageLoaded(driver,10);
+        waitForPageLoaded(driver, 10);
 
 
         System.out.println(System.currentTimeMillis() - start);

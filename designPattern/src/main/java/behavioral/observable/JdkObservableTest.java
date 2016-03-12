@@ -18,7 +18,7 @@ class EventSource extends Observable implements Runnable {
     }
 }
 
-class Watcher implements Observer{
+class Watcher implements Observer {
 
     @Override
     public void update(Observable o, Object arg) {

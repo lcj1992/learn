@@ -8,17 +8,17 @@ public class AppContext {
     private static ThreadLocal<String> site = new ThreadLocal<String>();
 
 
-    public static String getSite(){
+    public static String getSite() {
         return site.get();
     }
 
-    public static void setSite(String site1){
+    public static void setSite(String site1) {
         site.set(site1);
     }
 }
 
 
-class newThread extends  Thread{
+class newThread extends Thread {
     @Override
     public void run() {
         System.out.println(AppContext.getSite());

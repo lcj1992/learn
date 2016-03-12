@@ -7,19 +7,19 @@ public class MonitorThreadLiveLockTest {
     /**
      * 线程锁等待演示
      */
-    public static void createLockThread(final Object lock){
+    public static void createLockThread(final Object lock) {
         Thread thread = new Thread(new Runnable() {
 
             public void run() {
-                synchronized (lock){
-                    try{
+                synchronized (lock) {
+                    try {
                         lock.wait();
-                    }catch (InterruptedException e){
+                    } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
                 }
             }
-        },"testLockThread");
+        }, "testLockThread");
         thread.start();
     }
 

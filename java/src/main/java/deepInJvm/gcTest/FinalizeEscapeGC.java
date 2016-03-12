@@ -7,7 +7,7 @@ public class FinalizeEscapeGC {
 
     public static FinalizeEscapeGC SAVE_HOOK = null;
 
-    public void isAlive(){
+    public void isAlive() {
         System.out.println("yes,i am still alive :)");
     }
 
@@ -24,18 +24,18 @@ public class FinalizeEscapeGC {
         SAVE_HOOK = null;
         System.gc();
         Thread.sleep(500);
-        if(SAVE_HOOK != null){
+        if (SAVE_HOOK != null) {
             SAVE_HOOK.isAlive();
-        } else{
+        } else {
             System.out.println("no,i am dead :)");
         }
 
         SAVE_HOOK = null;
         System.gc();
         Thread.sleep(500);
-        if(SAVE_HOOK != null){
+        if (SAVE_HOOK != null) {
             SAVE_HOOK.isAlive();
-        } else{
+        } else {
             System.out.println("no,i am dead :)");
         }
     }

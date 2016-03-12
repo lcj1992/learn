@@ -15,9 +15,9 @@ public class LoginFilter implements Filter {
     }
 
     public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain) throws ServletException, IOException {
-        Cookie[] cookies = ((HttpServletRequest)req).getCookies();
+        Cookie[] cookies = ((HttpServletRequest) req).getCookies();
         cookies[0].setHttpOnly(true);
-        HttpSession session =  ((HttpServletRequest) req).getSession();
+        HttpSession session = ((HttpServletRequest) req).getSession();
 
         System.out.println("filter");
         chain.doFilter(req, resp);

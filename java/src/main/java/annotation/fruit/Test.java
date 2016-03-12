@@ -13,7 +13,7 @@ public class Test {
         Apple apple = new Apple();
         FruitInfoUtil.getFruitInfo(apple.getClass());
 
-        String[] strings = { "aa", "zz", "cc", "yy", "ee", "xx" };
+        String[] strings = {"aa", "zz", "cc", "yy", "ee", "xx"};
         Multimap<Integer, String> multimap = ArrayListMultimap.create();
         for (String a : strings) {
             multimap.put(1, a);

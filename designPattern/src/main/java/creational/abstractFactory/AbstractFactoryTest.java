@@ -81,9 +81,9 @@ public class AbstractFactoryTest {
         String osName = "win";
 
         GUIFactory factory;
-        if(osName.contains("win")){
+        if (osName.contains("win")) {
             factory = new WinFactory();
-        } else{
+        } else {
             factory = new OSXFactory();
         }
         Button button = factory.createButton();

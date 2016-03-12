@@ -30,6 +30,6 @@ public class JedisTest {
         System.out.println(set);
         jedis.del("CA");
         boolean aa = jedis.exists("CA") && Long.valueOf(jedis.get("CA")) > 0;
-        System.out.println( aa);
+        System.out.println(aa);
     }
 }

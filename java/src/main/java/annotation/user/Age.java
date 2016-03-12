@@ -8,7 +8,7 @@ import java.lang.annotation.Target;
 /**
  * Created by lcj on 15-4-19.
  */
-@Target({ ElementType.METHOD, ElementType.FIELD })
+@Target({ElementType.METHOD, ElementType.FIELD})
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Age {
     public int value() default 0;

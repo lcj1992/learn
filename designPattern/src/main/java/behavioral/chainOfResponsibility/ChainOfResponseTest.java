@@ -29,7 +29,7 @@ class ManagerPPower extends PurchasePower {
     }
 }
 
-class  DirectorPPower extends PurchasePower {
+class DirectorPPower extends PurchasePower {
     private final double ALLOWABLE = 20 * BASE;
 
     public void processRequest(PurchaseRequest request) {

@@ -7,9 +7,13 @@ package behavioral.templateMethod;
 abstract class Game {
     /* Hook methods. Concrete implementation may differ in each subclass*/
     protected int playersCount;
+
     abstract void initializeGame();
+
     abstract void makePlay(int player);
+
     abstract boolean endOfGame();
+
     abstract void printWinner();
 
     /* A template method : */
@@ -35,14 +39,17 @@ class Monopoly extends Game {
         // Initialize players
         // Initialize money
     }
+
     void makePlay(int player) {
         // Process one turn of player
     }
+
     boolean endOfGame() {
         // Return true if game is over
         // according to Monopoly rules
         return true;
     }
+
     void printWinner() {
         // Display who won
     }
@@ -58,14 +65,17 @@ class Chess extends Game {
         // Initialize players
         // Put the pieces on the board
     }
+
     void makePlay(int player) {
         // Process a turn for the player
     }
+
     boolean endOfGame() {
         // Return true if in Checkmate or
         // Stalemate has been reached
         return true;
     }
+
     void printWinner() {
         // Display the winning player
     }

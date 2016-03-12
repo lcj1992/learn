@@ -4,11 +4,11 @@ package structural.proxy;
  * Created by lcj on 15-10-31.
  */
 
-interface ICar{
+interface ICar {
     void driveCar();
 }
 
-class Car implements ICar{
+class Car implements ICar {
 
 
     public void driveCar() {
@@ -16,29 +16,29 @@ class Car implements ICar{
     }
 }
 
-class ProxyCar implements ICar{
+class ProxyCar implements ICar {
     private Driver driver;
     private ICar realCar;
 
-    public ProxyCar(Driver driver){
+    public ProxyCar(Driver driver) {
         this.driver = driver;
         realCar = new Car();
     }
 
 
     public void driveCar() {
-        if(driver.getAge() <= 16){
+        if (driver.getAge() <= 16) {
             System.out.println("sorry, the driver is too young to drive");
-        }else{
+        } else {
             realCar.driveCar();
         }
     }
 }
 
-class Driver{
+class Driver {
     private int age;
 
-    public Driver(int age){
+    public Driver(int age) {
         this.age = age;
     }
 

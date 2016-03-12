@@ -9,7 +9,7 @@ public class MonitorThreadLiveLockTest {
      */
     public static void createLockThread(final Object lock){
         Thread thread = new Thread(new Runnable() {
-            @Override
+
             public void run() {
                 synchronized (lock){
                     try{

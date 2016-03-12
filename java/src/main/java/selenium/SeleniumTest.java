@@ -73,7 +73,7 @@ public class SeleniumTest {
     public static void waitForPageLoaded(WebDriver driver, int seconds) {
         WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(new Predicate<WebDriver>() {
-            @Override
+
             public boolean apply(WebDriver input) {
                 return ((JavascriptExecutor) input).executeScript("return document.readyState").equals("complete");
             }

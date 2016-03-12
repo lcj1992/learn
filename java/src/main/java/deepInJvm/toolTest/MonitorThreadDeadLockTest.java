@@ -11,7 +11,6 @@ public class MonitorThreadDeadLockTest {
             this.b = b;
         }
 
-        @Override
         public void run() {
             synchronized (Integer.valueOf(a)){
                 synchronized (Integer.valueOf(b)){

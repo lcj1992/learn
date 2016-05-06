@@ -14,5 +14,8 @@ public class Test {
 //        System.out.println(clazz.getClassLoader());
 
         System.out.println(new Date(1252639886000L));
+
+        String a = "abcdedfg";
+        System.out.println(a.substring(0,5));
     }
 }

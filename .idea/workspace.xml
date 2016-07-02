@@ -5,306 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="58a45f5c-98c1-420b-9724-a229da4a9fbb" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__xml_resolver_xml_resolver_1_2.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ConcurrentHashMap.uml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/basic.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/pom.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/deepInJvm/ManyInstancesTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/deepInJvm/StringHolder.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/deepInJvm/gcTest/AllocationBigObject.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/deepInJvm/gcTest/AllocationDynamic.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/deepInJvm/gcTest/AllocationEdenFirst.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/deepInJvm/gcTest/AllocationLongAlive.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/deepInJvm/gcTest/AllocationSpacePromotion.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/deepInJvm/gcTest/FinalizeEscapeGC.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/deepInJvm/gcTest/ReferenceCountingGC.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/deepInJvm/memTest/DirectMemoryOOM.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/deepInJvm/memTest/HeapOom.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/deepInJvm/memTest/JavaMethodAreaOOM.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/deepInJvm/memTest/JavaVMStackOOM.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/deepInJvm/memTest/JavaVMStacksOF.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/deepInJvm/memTest/RuntimeConstPoolOOM.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/deepInJvm/toolTest/MonitorMemoryTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/deepInJvm/toolTest/MonitorThreadBusyTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/deepInJvm/toolTest/MonitorThreadDeadLockTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/deepInJvm/toolTest/MonitorThreadLiveLockTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/jdk/ConcurrentHashMapTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/jdk/DbTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/jdk/UnSafeTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/jdk/annotation/fruit/Apple.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/jdk/annotation/fruit/FruitColor.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/jdk/annotation/fruit/FruitInfoUtil.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/jdk/annotation/fruit/FruitName.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/jdk/annotation/fruit/FruitProvider.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/jdk/annotation/fruit/Test.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/jdk/annotation/user/Age.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/jdk/annotation/user/Hometown.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/jdk/annotation/user/Name.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/jdk/annotation/user/Test.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/jdk/annotation/user/User.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/jdk/classLoader/AbstractUserDefinedClassLoader.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/jdk/classLoader/FileClassLoader.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/jdk/classLoader/NetWorkClassLoader.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/jdk/classLoader/Test.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/jdk/equal_hashcode/People.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/jdk/equal_hashcode/Unit.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/jdk/proxy/cglibProxy/BookFacadeCglib.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/jdk/proxy/cglibProxy/BookFacadeImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/jdk/proxy/cglibProxy/TestProxy.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/jdk/proxy/dynamicProxy/BookFacade.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/jdk/proxy/dynamicProxy/BookFacadeImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/jdk/proxy/dynamicProxy/BookFacadeProxy.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/jdk/proxy/dynamicProxy/TestProxy.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/jdk/proxy/staticProxy/Daily.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/jdk/proxy/staticProxy/DailyImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/jdk/proxy/staticProxy/DailyProxy.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/jdk/proxy/staticProxy/TestProxy.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/annotations/GuardedBy.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/annotations/Immutable.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/annotations/NotThreadSafe.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/annotations/ThreadSafe.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/annotations/package.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/Animals.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/AtomicPseudoRandom.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/AttributeStore.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/BackgroundTask.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/BarrierTimer.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/BaseBoundedBuffer.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/BetterAttributeStore.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/BetterVector.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/BoundedBuffer.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/BoundedExecutor.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/BoundedHashSet.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/BrokenPrimeProducer.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/CachedFactorizer.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/CasCounter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/CasNumberRange.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/CellularAutomata.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/CheckForMail.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/ConcurrentPuzzleSolver.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/ConcurrentStack.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/ConditionBoundedBuffer.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/ConnectionDispenser.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/CooperatingDeadlock.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/CooperatingNoDeadlock.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/Counter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/CountingFactorizer.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/CountingSheep.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/DeadlockAvoidance.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/DelegatingVehicleTracker.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/DemonstrateDeadlock.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/DoubleCheckedLocking.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/DynamicOrderDeadlock.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/EagerInitialization.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/Factorizer.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/FutureRenderer.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/GrumpyBoundedBuffer.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/GuiExecutor.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/HiddenIterator.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/Holder.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/ImprovedList.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/IndexingService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/InduceLockOrder.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/InterruptibleLocking.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/LaunderThrowable.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/LazyInitRace.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/LeftRightDeadlock.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/LifecycleWebServer.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/LinkedQueue.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/ListHelpers.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/ListenerExamples.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/LogService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/LogWriter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/Memoizer.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/Memoizer1.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/Memoizer2.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/Memoizer3.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/MonitorVehicleTracker.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/MutableInteger.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/MutablePoint.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/MyAppThread.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/MyThreadFactory.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/NoVisibility.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/NoncancelableTask.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/NonreentrantDeadlock.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/NumberRange.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/OneShotLatch.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/OneValueCache.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/OutOfTime.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/PersonSet.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/Point.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/PossibleReordering.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/Preloader.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/PrimeGenerator.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/PrimeProducer.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/PrivateLock.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/ProducerConsumer.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/PseudoRandom.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/PublishingVehicleTracker.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/PutTakeTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/Puzzle.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/PuzzleNode.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/PuzzleSolver.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/ReadWriteMap.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/ReaderThread.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/ReentrantLockPseudoRandom.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/RenderWithTimeBudget.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/Renderer.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/ResourceFactory.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/SafeLazyInitialization.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/SafeListener.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/SafePoint.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/SafeStates.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/SafeVectorHelpers.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/Secrets.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/SemaphoreBoundedBuffer.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/SemaphoreOnLock.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/Sequence.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/SequentialPuzzleSolver.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/ServerStatusAfterSplit.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/ServerStatusBeforeSplit.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/SimulatedCAS.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/SingleThreadRenderer.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/SingleThreadWebServer.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/SleepyBoundedBuffer.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/SocketUsingTask.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/StatelessFactorizer.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/StripedMap.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/StuffIntoPublic.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/SwingUtilities.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/SynchronizedFactorizer.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/SynchronizedInteger.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/TaskExecutionWebServer.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/TaskRunnable.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/TestBoundedBuffer.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/TestHarness.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/TestThreadPool.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/ThisEscape.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/ThreadDeadlock.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/ThreadGate.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/ThreadPerTaskExecutor.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/ThreadPerTaskWebServer.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/ThreeStooges.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/TimeBudget.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/TimedLocking.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/TimedPutTakeTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/TimedRun.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/TimedRun1.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/TimedRun2.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/TimingThreadPool.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/TrackingExecutor.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/TransformingSequential.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/UEHLogger.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/UnsafeCachingFactorizer.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/UnsafeCountingFactorizer.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/UnsafeLazyInitialization.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/UnsafeSequence.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/UnsafeStates.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/UnsafeVectorHelpers.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/ValueLatch.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/VisualComponent.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/VolatileCachedFactorizer.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/WebCrawler.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/WithinThreadExecutor.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/WorkerThread.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/net/jcip/examples/XorShift.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/rmi/PersonEntity.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/rmi/PersonService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/rmi/PersonServiceImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/rmi/ProgramClient.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/rmi/ProgramServer.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/selenium/SeleniumTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/test/JustTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/test/TestCountDownLatch.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/test/TestLock.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/test/WaitSleepTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/util/ByteUtil.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/basic/src/main/java/util/JsonUtil.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/designPattern/designPattern.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/designPattern/pom.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/designPattern/src/main/java/behavioral/chainOfResponsibility/ChainOfResponseTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/designPattern/src/main/java/behavioral/command/CommandTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/designPattern/src/main/java/behavioral/intercepter/InterpreterTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/designPattern/src/main/java/behavioral/iterator/IteratorTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/designPattern/src/main/java/behavioral/mediator/MediatorTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/designPattern/src/main/java/behavioral/memento/MementoTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/designPattern/src/main/java/behavioral/observable/JdkObservableTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/designPattern/src/main/java/behavioral/observable/ObservableTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/designPattern/src/main/java/behavioral/state/StateTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/designPattern/src/main/java/behavioral/strategy/StrategyTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/designPattern/src/main/java/behavioral/templateMethod/TemplateMethodTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/designPattern/src/main/java/behavioral/vistor/VisitorTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/designPattern/src/main/java/creational/abstractFactory/AbstractFactoryTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/designPattern/src/main/java/creational/builder/BuilderTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/designPattern/src/main/java/creational/builder/StreetMap.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/designPattern/src/main/java/creational/facotry/FactoryTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/designPattern/src/main/java/creational/lazyInit/Fruit.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/designPattern/src/main/java/creational/lazyInit/FruitType.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/designPattern/src/main/java/creational/lazyInit/LazyInitTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/designPattern/src/main/java/creational/prototype/ConcretePrototype.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/designPattern/src/main/java/creational/prototype/Prototype.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/designPattern/src/main/java/creational/prototype/PrototypeTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/designPattern/src/main/java/creational/singleton/EagerVersion.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/designPattern/src/main/java/creational/singleton/EnumVersion.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/designPattern/src/main/java/creational/singleton/InitOnDemandHolderVersion.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/designPattern/src/main/java/creational/singleton/StaticBlockVersion.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/designPattern/src/main/java/creational/singleton/lazyInit/DoubleCheckVersion.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/designPattern/src/main/java/creational/singleton/lazyInit/SimpleVersion.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/designPattern/src/main/java/creational/staticfactory/StaticFactoryTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/designPattern/src/main/java/structural/adapter/ObjectAdapterTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/designPattern/src/main/java/structural/bridge/BridgeTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/designPattern/src/main/java/structural/composite/CompositeTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/designPattern/src/main/java/structural/decorator/DecoratorTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/designPattern/src/main/java/structural/facade/FacadeTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/designPattern/src/main/java/structural/flyweight/FlyweightTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/designPattern/src/main/java/structural/proxy/ProxyTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/java.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/java/src/main/java/build.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/java/src/main/java/cxf/Add.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/java/src/main/java/cxf/AddResponse.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/java/src/main/java/cxf/CxfClientUtil.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/java/src/main/java/cxf/IMyService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/java/src/main/java/cxf/IMyService_MyServicePort_Client.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/java/src/main/java/cxf/IMyService_MyServicePort_Server.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/java/src/main/java/cxf/Minus.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/java/src/main/java/cxf/MinusResponse.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/java/src/main/java/cxf/MyServicePortImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/java/src/main/java/cxf/MyServiceService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/java/src/main/java/cxf/ObjectFactory.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/java/src/main/java/cxf/package-info.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/java/src/main/java/mdc/AppContext.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/java/src/main/java/mdc/MdcTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/java/src/main/java/protobuf/AddPerson.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/java/src/main/java/protobuf/ListPeople.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/java/src/main/java/protobuf/addressbook.proto" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/java/src/main/java/redisTest/JedisTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/java/src/main/java/webservice/IMyservice.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/java/src/main/java/webservice/MyClient.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/java/src/main/java/webservice/MyServer.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/java/src/main/java/webservice/Myservice.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/leetcode/leetcode.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/list_set.uml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/map.uml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pom.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/pom.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/java/controller/TestController.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/java/filter/LoginFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/java/interceptor/LoginInterceptor.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/resources/config.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/404.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/web-servlet.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/web.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/exception.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/index.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/target/classes/config.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/target/classes/controller/TestController.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/target/classes/filter/LoginFilter.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/target/classes/interceptor/LoginInterceptor.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/web.iml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java/.idea/uiDesigner.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/.idea/workspace.xml" afterPath="$PROJECT_DIR$/java/.idea/workspace.xml" />
     </list>
     <ignored path="learn.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -441,8 +144,8 @@
     <treeState />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="48" />
-    <option name="y" value="23" />
+    <option name="x" value="359" />
+    <option name="y" value="25" />
     <option name="width" value="1232" />
     <option name="height" value="777" />
   </component>
@@ -1388,7 +1091,7 @@
       <workItem from="1462555274227" duration="1722000" />
       <workItem from="1466417349697" duration="4290000" />
       <workItem from="1466498618585" duration="6472000" />
-      <workItem from="1467440834860" duration="688000" />
+      <workItem from="1467440834860" duration="1057000" />
     </task>
     <task id="LOCAL-00001" summary="git">
       <created>1453538553180</created>
@@ -1603,11 +1306,11 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="220719000" />
+    <option name="totallyTimeSpent" value="221088000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="48" y="23" width="1232" height="777" extended-state="6" />
-    <editor active="true" />
+    <frame x="359" y="25" width="1232" height="777" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850242" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />

@@ -7,10 +7,10 @@ import java.io.InputStreamReader;
  * Created by lcj on 15-10-31.
  */
 abstract class PurchasePower {
-    protected static final double BASE = 500;
-    protected PurchasePower successor;
+    static final double BASE = 500;
+    PurchasePower successor;
 
-    public void setSuccessor(PurchasePower successor) {
+    void setSuccessor(PurchasePower successor) {
         this.successor = successor;
     }
 

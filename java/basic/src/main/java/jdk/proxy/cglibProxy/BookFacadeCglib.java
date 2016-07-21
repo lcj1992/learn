@@ -8,6 +8,7 @@ import java.lang.reflect.Method;
 
 /**
  * Created by lcj on 15-9-13.
+ *
  */
 public class BookFacadeCglib implements MethodInterceptor {
     private Object target;

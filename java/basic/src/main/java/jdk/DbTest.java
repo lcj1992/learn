@@ -17,7 +17,6 @@ public class DbTest {
         Connection con = null;
         ResultSet rs = null;
         try {
-            //实例化这么一个对象
 
             Class.forName("com.mysql.jdbc.Driver");
             con = DriverManager.getConnection(
@@ -29,14 +28,14 @@ public class DbTest {
 //            // 推荐使用PreparedStatement,防sql注入,使用mybatis和hibernate等orm框架,天然防sql注入
 //            rs = statement.executeQuery(sql);
 //
-            String sql = "select * from user where id= ? and name= ?";
+            con.setTransactionIsolation(Connection.TRANSACTION_REPEATABLE_READ);
+            con.setAutoCommit(false);
+            String sql = "insert into  name values(?,?)";
             PreparedStatement preparedStatement = con.prepareStatement(sql);
             preparedStatement.setInt(1,1);
             preparedStatement.setString(2,"lcj");
-            rs = preparedStatement.executeQuery();
-            while (rs.next()) {
-                LOGGER.info("query id = {},name = {}", rs.getInt("id"), rs.getString("name"));
-            }
+            preparedStatement.execute();
+            con.rollback();
         } catch (Exception e) {
             LOGGER.error("sql exception", e);
 

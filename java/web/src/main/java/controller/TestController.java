@@ -1,5 +1,6 @@
 package controller;
 
+import lombok.Builder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -8,7 +9,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @date 16-1-9
  */
 @Controller
+@Builder
 public class TestController {
+
+    private int age;
+
+    private String name;
 
     @RequestMapping("testException")
     public String exceptionTest() throws Exception {
@@ -19,5 +25,9 @@ public class TestController {
     public String loginTest() throws Exception {
         System.out.println("login success");
         return "success";
+    }
+
+    public static void main(String[] args) {
+        TestController testController = TestController.builder().age(10).name("lcj").build();
     }
 }

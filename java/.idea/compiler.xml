@@ -26,6 +26,7 @@
         <module name="designPattern" />
         <module name="thrift_demo" />
         <module name="web" />
+        <module name="zookeeper_demo" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -34,6 +35,7 @@
       <module name="java" target="1.5" />
       <module name="thrift_demo" target="1.7" />
       <module name="web" target="1.5" />
+      <module name="zookeeper_demo" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>

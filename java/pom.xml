@@ -10,12 +10,13 @@
         <module>web</module>
         <module>designPattern</module>
         <module>thrift_demo</module>
+        <module>zookeeper_demo</module>
     </modules>
     <packaging>pom</packaging>
 
     <name>learn</name>
     <url>http://maven.apache.org</url>
-
+w
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
@@ -41,6 +42,11 @@
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-core</artifactId>
             <version>1.0.13</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.16.10</version>
         </dependency>
     </dependencies>
 </project>

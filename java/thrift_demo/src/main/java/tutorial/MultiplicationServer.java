@@ -8,14 +8,14 @@ import org.apache.thrift.transport.TServerTransport;
 
 public class MultiplicationServer {
 
-    public static MultiplicationHandler handler;
+    public static MultiplicationServiceImpl service;
 
     public static MultiplicationService.Processor processor;
 
     public static void main(String [] args) {
         try {
-            handler = new MultiplicationHandler();
-            processor = new MultiplicationService.Processor(handler);
+            service = new MultiplicationServiceImpl();
+            processor = new MultiplicationService.Processor(service);
 
             Runnable simple = new Runnable() {
                 public void run() {

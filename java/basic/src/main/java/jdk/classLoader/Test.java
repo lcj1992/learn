@@ -7,7 +7,7 @@ import java.util.Date;
  */
 public class Test {
 
-    public static void main(String[] args) throws ClassNotFoundException {
+    public static void main(String[] args) throws ClassNotFoundException, InterruptedException {
 //        FileClassLoader fileClassLoader = new FileClassLoader("/home/lcj/work/simple/lcj-java/target/classes");
 //        String className = "Apple";
 //        Class clazz = fileClassLoader.loadClass(className);
@@ -17,5 +17,11 @@ public class Test {
 
         String a = "abcdedfg";
         System.out.println(a.substring(0,5));
+
+        System.out.println(Runtime.getRuntime().maxMemory());
+
+        Thread.sleep(10000000L);
     }
+
+
 }

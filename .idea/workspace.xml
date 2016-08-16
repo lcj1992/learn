@@ -3,9 +3,41 @@
   <component name="ChangeListManager">
     <list default="true" id="58a45f5c-98c1-420b-9724-a229da4a9fbb" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/.idea/compiler.xml" afterPath="$PROJECT_DIR$/java/.idea/compiler.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/java/.idea/inspectionProfiles/Project_Default.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/.idea/workspace.xml" afterPath="$PROJECT_DIR$/java/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/basic/src/main/java/jdk/DbTest.java" afterPath="$PROJECT_DIR$/java/basic/src/main/java/jdk/DbTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/basic/src/main/java/jdk/proxy/cglibProxy/BookFacadeCglib.java" afterPath="$PROJECT_DIR$/java/basic/src/main/java/jdk/proxy/cglibProxy/BookFacadeCglib.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/basic/basic.iml" afterPath="$PROJECT_DIR$/java/basic/basic.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/basic/pom.xml" afterPath="$PROJECT_DIR$/java/basic/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/basic/src/main/java/deepInJvm/memTest/DirectMemoryOOM.java" afterPath="$PROJECT_DIR$/java/basic/src/main/java/deepInJvm/memTest/DirectMemoryOOM.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/basic/src/main/java/jdk/classLoader/Test.java" afterPath="$PROJECT_DIR$/java/basic/src/main/java/jdk/classLoader/Test.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/basic/src/main/java/net/jcip/examples/AtomicPseudoRandom.java" afterPath="$PROJECT_DIR$/java/basic/src/main/java/net/jcip/examples/AtomicPseudoRandom.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/basic/src/main/java/net/jcip/examples/VolatileCachedFactorizer.java" afterPath="$PROJECT_DIR$/java/basic/src/main/java/net/jcip/examples/VolatileCachedFactorizer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/designPattern/designPattern.iml" afterPath="$PROJECT_DIR$/java/designPattern/designPattern.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/designPattern/pom.xml" afterPath="$PROJECT_DIR$/java/designPattern/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/designPattern/src/main/java/behavioral/chainOfResponsibility/ChainOfResponseTest.java" afterPath="$PROJECT_DIR$/java/designPattern/src/main/java/behavioral/chainOfResponsibility/ChainOfResponseTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/designPattern/src/main/java/behavioral/command/CommandTest.java" afterPath="$PROJECT_DIR$/java/designPattern/src/main/java/behavioral/command/CommandTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/designPattern/src/main/java/creational/facotry/FactoryTest.java" afterPath="$PROJECT_DIR$/java/designPattern/src/main/java/creational/facotry/FactoryTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/designPattern/src/main/java/creational/singleton/EagerVersion.java" afterPath="$PROJECT_DIR$/java/designPattern/src/main/java/creational/singleton/EagerVersion.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/designPattern/src/main/java/creational/singleton/InitOnDemandHolderVersion.java" afterPath="$PROJECT_DIR$/java/designPattern/src/main/java/creational/singleton/InitOnDemandHolderVersion.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/designPattern/src/main/java/creational/singleton/StaticBlockVersion.java" afterPath="$PROJECT_DIR$/java/designPattern/src/main/java/creational/singleton/StaticBlockVersion.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/designPattern/src/main/java/creational/singleton/lazyInit/DoubleCheckVersion.java" afterPath="$PROJECT_DIR$/java/designPattern/src/main/java/creational/singleton/lazyInit/DoubleCheckVersion.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/designPattern/src/main/java/creational/singleton/lazyInit/SimpleVersion.java" afterPath="$PROJECT_DIR$/java/designPattern/src/main/java/creational/singleton/lazyInit/SimpleVersion.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/designPattern/src/main/java/structural/proxy/ProxyTest.java" afterPath="$PROJECT_DIR$/java/designPattern/src/main/java/structural/proxy/ProxyTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/pom.xml" afterPath="$PROJECT_DIR$/java/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/thrift_demo/src/main/java/tutorial/MultiplicationClient.java" afterPath="$PROJECT_DIR$/java/thrift_demo/src/main/java/tutorial/MultiplicationClient.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/thrift_demo/src/main/java/tutorial/MultiplicationServer.java" afterPath="$PROJECT_DIR$/java/thrift_demo/src/main/java/tutorial/MultiplicationServer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/thrift_demo/src/main/java/tutorial/MultiplicationServiceImpl.java" afterPath="$PROJECT_DIR$/java/thrift_demo/src/main/java/tutorial/MultiplicationServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/thrift_demo/thrift_demo.iml" afterPath="$PROJECT_DIR$/java/thrift_demo/thrift_demo.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/web/src/main/java/controller/TestController.java" afterPath="$PROJECT_DIR$/java/web/src/main/java/controller/TestController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/web/src/main/java/dao/TestDao.java" afterPath="$PROJECT_DIR$/java/web/src/main/java/dao/TestDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/web/src/main/java/service/InnerService.java" afterPath="$PROJECT_DIR$/java/web/src/main/java/service/InnerService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/web/src/main/java/service/OuterService.java" afterPath="$PROJECT_DIR$/java/web/src/main/java/service/OuterService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/web/src/main/resources/mapper/testMapper.xml" afterPath="$PROJECT_DIR$/java/web/src/main/resources/mapper/testMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/web/src/test/java/dao/TestDaoTest.java" afterPath="$PROJECT_DIR$/java/web/src/test/java/dao/TestDaoTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/web/target/classes/mapper/testMapper.xml" afterPath="$PROJECT_DIR$/java/web/target/classes/mapper/testMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/zookeeper_demo/pom.xml" afterPath="$PROJECT_DIR$/java/zookeeper_demo/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/zookeeper_demo/src/main/java/ZookeeperClient.java" afterPath="$PROJECT_DIR$/java/zookeeper_demo/src/main/java/ZookeeperClient.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/zookeeper_demo/zookeeper_demo.iml" afterPath="$PROJECT_DIR$/java/zookeeper_demo/zookeeper_demo.iml" />
     </list>
     <ignored path="learn.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -175,9 +207,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -188,6 +218,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -907,6 +939,8 @@
       <workItem from="1468552962834" duration="418000" />
       <workItem from="1468920336292" duration="170000" />
       <workItem from="1469066436360" duration="3000" />
+      <workItem from="1470628304832" duration="9000" />
+      <workItem from="1471009858523" duration="7000" />
     </task>
     <task id="LOCAL-00001" summary="git">
       <created>1453538553180</created>
@@ -1155,7 +1189,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="222066000" />
+    <option name="totallyTimeSpent" value="222082000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="53" y="23" width="1387" height="877" extended-state="6" />
@@ -1167,7 +1201,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40667677" sideWeight="0.5067797" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32776934" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2680566" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2755026" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17051706" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21618743" sideWeight="0.5601695" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />

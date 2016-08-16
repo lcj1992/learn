@@ -28,11 +28,11 @@ class Switch {
  */
 class Light {
 
-    public void turnOn() {
+    void turnOn() {
         System.out.println("The light is on");
     }
 
-    public void turnOff() {
+    void turnOff() {
         System.out.println("The light is off");
     }
 }
@@ -43,7 +43,7 @@ class Light {
 class FlipUpCommand implements Command {
     private Light theLight;
 
-    public FlipUpCommand(Light light) {
+    FlipUpCommand(Light light) {
         this.theLight = light;
     }
 
@@ -59,7 +59,7 @@ class FlipUpCommand implements Command {
 class FlipDownCommand implements Command {
     private Light theLight;
 
-    public FlipDownCommand(Light light) {
+    FlipDownCommand(Light light) {
         this.theLight = light;
     }
 
@@ -69,28 +69,24 @@ class FlipDownCommand implements Command {
     }
 }
 
-/* The test class or client */
+// invoker  command  receiver
 public class CommandTest {
 
     public static void main(String[] args) {
 
+        // receiver 这里其实也可以抽象一层,不同的receiver 除了灯,还可以有电扇,空调等都能接受开和关的命令。
         Light lamp = new Light();
+        // Command 抽象的command
         Command switchUp = new FlipUpCommand(lamp);
+
+        // FlipUpCommand 具体的command ,持有receiver的引用
         Command switchDown = new FlipDownCommand(lamp);
+
+        /// switch invoker
         Switch mySwitch = new Switch();
 
-        int command = 1;
-
-        switch (command) {
-            case 0:
-                mySwitch.storeAndExecute(switchUp);
-                break;
-            case 1:
-                mySwitch.storeAndExecute(switchDown);
-                break;
-            default:
-                System.err.println("Argument \"ON\" or \"OFF\" is required.");
-                System.exit(-1);
-        }
+        // invoker invoke时实际调用的是command的执行方法,command的执行方法又调用了receiver的执行方法
+        mySwitch.storeAndExecute(switchUp);
+        mySwitch.storeAndExecute(switchDown);
     }
 }

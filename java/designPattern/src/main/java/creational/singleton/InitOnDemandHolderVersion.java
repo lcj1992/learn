@@ -2,6 +2,7 @@ package creational.singleton;
 
 /**
  * Created by lcj on 15-10-31.
+ *
  */
 public class InitOnDemandHolderVersion {
     private InitOnDemandHolderVersion() {

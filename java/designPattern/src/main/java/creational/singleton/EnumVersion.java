@@ -6,7 +6,4 @@ package creational.singleton;
 public enum EnumVersion {
     INSTANCE;
 
-    public void execute(String arg) {
-        // Perform operation here
-    }
 }

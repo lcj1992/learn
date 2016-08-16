@@ -27,10 +27,10 @@ public class TestDaoTest {
 
     @Before
     public void setUp(){
-        testDao.deleteTestById(100);
-        testDao.deleteTestById(101);
-        testDao.deleteTestById(102);
-        testDao.deleteTestById(103);
+//        testDao.updateNameById(100,"a");
+//        testDao.updateNameById(101,"b");
+//        testDao.deleteTestById(102);
+//        testDao.deleteTestById(103);
     }
 
     @Test
@@ -45,8 +45,6 @@ public class TestDaoTest {
 
     @Test
     public void propagationTest() throws Exception {
-        // inner正常 outer正常
-        //
         outerService.outerTest();
     }
 }

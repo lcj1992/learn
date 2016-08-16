@@ -5,6 +5,7 @@ import java.io.InputStreamReader;
 
 /**
  * Created by lcj on 15-10-31.
+ *
  */
 abstract class PurchasePower {
     static final double BASE = 500;
@@ -98,6 +99,7 @@ public class ChainOfResponseTest {
         DirectorPPower director = new DirectorPPower();
         VicePresidentPPower vp = new VicePresidentPPower();
         PresidentPPower president = new PresidentPPower();
+
         manager.setSuccessor(director);
         director.setSuccessor(vp);
         vp.setSuccessor(president);

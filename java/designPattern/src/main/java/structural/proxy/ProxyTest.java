@@ -2,6 +2,7 @@ package structural.proxy;
 
 /**
  * Created by lcj on 15-10-31.
+ *
  */
 
 interface ICar {
@@ -20,7 +21,7 @@ class ProxyCar implements ICar {
     private Driver driver;
     private ICar realCar;
 
-    public ProxyCar(Driver driver) {
+    ProxyCar(Driver driver) {
         this.driver = driver;
         realCar = new Car();
     }

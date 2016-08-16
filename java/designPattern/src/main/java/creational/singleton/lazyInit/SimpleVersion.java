@@ -3,6 +3,7 @@ package creational.singleton.lazyInit;
 
 /**
  * Created by lcj on 15-10-31.
+ *
  */
 public class SimpleVersion {
     private static volatile SimpleVersion instance = null;

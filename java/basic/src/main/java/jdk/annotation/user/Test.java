@@ -1,6 +1,10 @@
 package jdk.annotation.user;
 
+import com.google.common.collect.Lists;
+import com.google.common.collect.Sets;
+
 import java.lang.reflect.Field;
+import java.util.*;
 
 /**
  * Created by lcj on 15-4-19.
@@ -8,6 +12,15 @@ import java.lang.reflect.Field;
 public class Test {
     public static void main(String[] args) {
         String s = new String();
+
+        List list = Lists.newArrayList();
+        Iterator listIterator = list.iterator();
+
+        System.out.println(listIterator.getClass());
+
+        Set set = Sets.newHashSet();
+        Iterator setIterator = set.iterator();
+        System.out.println(setIterator.getClass());
     }
 
     public static void changeStr(String people) {

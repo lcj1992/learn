@@ -78,16 +78,13 @@ class WinLabel implements Label {
 public class AbstractFactoryTest {
 
     public static void main(String[] args) {
-        String osName = "win";
 
-        GUIFactory factory;
-        if (osName.contains("win")) {
-            factory = new WinFactory();
-        } else {
-            factory = new OSXFactory();
-        }
+        GUIFactory factory = new WinFactory();
+
+        // 产品族  button和label
         Button button = factory.createButton();
         Label label = factory.createLabel();
+
         button.paint();
         label.paint();
 

@@ -30,10 +30,10 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="basic" target="1.5" />
-      <module name="designPattern" target="1.5" />
+      <module name="basic" target="1.6" />
+      <module name="designPattern" target="1.6" />
       <module name="java" target="1.5" />
-      <module name="thrift_demo" target="1.7" />
+      <module name="thrift_demo" target="1.8" />
       <module name="web" target="1.5" />
       <module name="zookeeper_demo" target="1.5" />
     </bytecodeTargetLevel>

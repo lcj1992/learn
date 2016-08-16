@@ -6,7 +6,7 @@ import java.lang.reflect.Field;
 
 /**
  * Created by lcj on 15-6-6.
- * -Xmx20M -XX:MaxDirectoryMemorySize=10M
+ * -Xmx20M -XX:MaxDirectMemorySize=10M
  */
 public class DirectMemoryOOM {
     private static final int _1MB = 1024 * 1024;

@@ -6,7 +6,7 @@ package behavioral.mediator;
 
 abstract class Mediator {
     //申明一个联络方法
-    public abstract void constact(String message, Person person);
+    public abstract void contact(String message, Person person);
 }
 
 abstract class Person {
@@ -30,8 +30,8 @@ class HouseOwner extends Person {
      * @return void
      * @desc 与中介者联系
      */
-    public void constact(String message) {
-        mediator.constact(message, this);
+    public void contact(String message) {
+        mediator.contact(message, this);
     }
 
     /**
@@ -55,8 +55,8 @@ class Tenant extends Person {
      * @return void
      * @desc 与中介者联系
      */
-    public void constact(String message) {
-        mediator.constact(message, this);
+    public void contact(String message) {
+        mediator.contact(message, this);
     }
 
     /**
@@ -90,7 +90,7 @@ class MediatorStructure extends Mediator {
         this.tenant = tenant;
     }
 
-    public void constact(String message, Person person) {
+    public void contact(String message, Person person) {
         if (person == houseOwner) {          //如果是房主，则租房者获得信息
             tenant.getMessage(message);
         } else {       //反正则是房主获得信息
@@ -113,7 +113,7 @@ public class MediatorTest {
         mediator.setHouseOwner(houseOwner);
         mediator.setTenant(tenant);
 
-        tenant.constact("听说你那里有三室的房主出租.....");
-        houseOwner.constact("是的!请问你需要租吗?");
+        tenant.contact("听说你那里有三室的房主出租.....");
+        houseOwner.contact("是的!请问你需要租吗?");
     }
 }

@@ -1,10 +1,12 @@
 package java8;
 
 import com.google.common.base.Strings;
+import com.google.common.collect.Lists;
 import junit.framework.Assert;
 import org.junit.Test;
 
 import java.util.Comparator;
+import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
 import java.util.function.Consumer;
@@ -167,12 +169,12 @@ public class Java8Test {
 
         Optional empty = Optional.ofNullable(null);
         if (name.isPresent()) {
-            System.out.println(name.get());
+            Assert.assertEquals("Sanaulla", name.get());
         }
         try {
             System.out.println(empty.get());
         } catch (NoSuchElementException ex) {
-            System.out.println(ex.getMessage());
+
         }
 
         name.ifPresent((value) -> System.out.println("The length of the value is:" + value.length()));
@@ -201,10 +203,34 @@ public class Java8Test {
         System.out.println(shortName.orElse("the name is less than 6 characters"));
 
     }
+
+    @Test
+    public void streamTest() {
+        List<String> strings = Lists.newArrayList();
+        strings.add("ddd2");
+        strings.add("aaa2");
+        strings.add("bbb1");
+        strings.add("aaa1");
+        strings.add("bbb3");
+        strings.add("ccc");
+        strings.add("bbb2");
+        strings.add("ddd1");
+
+        strings.stream().filter(s -> s.startsWith("a")).forEach(System.out::println);
+
+        Assert.assertEquals(true, strings.stream().anyMatch(s -> s.startsWith("a")));
+
+        Assert.assertEquals(2, strings.stream().filter(s -> s.startsWith("a")).count());
+
+        Optional<String> reduced = strings.stream().sorted().reduce((s1, s2) -> s1 + "#" + s2);
+        reduced.ifPresent(System.out::println);
+    }
 }
 
 class ValueAbsentException extends Throwable {
-    public ValueAbsentException() {
+    private static final long serialVersionUID = -8688007958197656491L;
+
+    ValueAbsentException() {
         super();
     }
 

@@ -1,12 +1,12 @@
 package dao;
 
-import model.TestModel;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
+import service.BeanPostTest;
 import service.OuterService;
 
 import javax.annotation.Resource;
@@ -25,26 +25,30 @@ public class TestDaoTest {
     @Resource
     private OuterService outerService;
 
+    @Resource
+    private BeanPostTest test;
+
     @Before
     public void setUp(){
-//        testDao.updateNameById(100,"a");
-//        testDao.updateNameById(101,"b");
-//        testDao.deleteTestById(102);
-//        testDao.deleteTestById(103);
+        testDao.deleteTestById(101);
+        testDao.deleteTestById(102);
+        testDao.deleteTestById(103);
     }
 
     @Test
     @Transactional
     public void saveTest() throws Exception {
-        TestModel test  = new TestModel();
-        test.setId(12);
-        test.setName("fuck");
-        testDao.saveTest(test);
-        throw new RuntimeException("test transaction");
+//        TestModel test  = new TestModel();
+//        test.setId(12);
+//        test.setName("fuck");
+//        testDao.saveTest(test);
+//        throw new RuntimeException("test transaction");
+        test.test();
     }
 
     @Test
     public void propagationTest() throws Exception {
         outerService.outerTest();
+
     }
 }

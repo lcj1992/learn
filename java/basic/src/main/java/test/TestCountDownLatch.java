@@ -20,9 +20,13 @@ public class TestCountDownLatch {
         List<Callable<String>> callables = Lists.newArrayList();
         callables.add(t1);
         callables.add(t2);
-        List<Future<String>> futures = service.invokeAll(callables);
-        countDownLatch.await(1,TimeUnit.SECONDS);
-        service.shutdown();
+//        List<Future<String>> futures = service.invokeAll(callables);
+////        countDownLatch.await(1,TimeUnit.SECONDS);
+//        service.shutdown();
+
+        Thread  myThread = new MyThread();
+        myThread.start();
+        myThread.interrupt();
     }
 
 
@@ -30,17 +34,32 @@ public class TestCountDownLatch {
 
         private CountDownLatch countDownLatch;
 
-        MyCallable(CountDownLatch countDownLatch){
+        MyCallable(CountDownLatch countDownLatch) {
             this.countDownLatch = countDownLatch;
         }
 
         public String call() throws Exception {
-            try{
-                Thread.sleep(4000);
+            try {
+                Thread.sleep(10000);
                 System.out.println("hehe");
-                return "hehe";
-            }finally {
+                throw new Exception("fuck");
+//                return "hehe";
+            } finally {
                 countDownLatch.countDown();
+            }
+        }
+    }
+
+
+    static class MyThread extends Thread{
+        @Override
+        public void run() {
+            try {
+                System.out.println("start");
+                currentThread().sleep(10000);
+                System.out.println("end");
+            } catch (InterruptedException e) {
+                System.out.println("我被别的线程中断了");
             }
         }
     }

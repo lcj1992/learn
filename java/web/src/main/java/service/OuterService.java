@@ -23,14 +23,9 @@ public class OuterService {
     @Transactional
     public void outerTest() throws Exception {
         TestModel test = new TestModel();
-        test.setId(102);
+        test.setId(103);
         test.setName("c");
         testDao.saveTest(test);
-//        innerService.innerTest();
-        TestModel test1 = new TestModel();
-        test1.setId(103);
-        test1.setName("d");
-        testDao.saveTest(test1);
-        throw new RuntimeException("xx");
+        innerService.innerTest();
     }
 }

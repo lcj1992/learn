@@ -1,15 +1,34 @@
-package jdk;
+package concurrent.unsafe;
+
+import org.junit.Test;
+import sun.misc.Unsafe;
 
 import java.lang.reflect.Field;
-
-import sun.misc.Unsafe;
 
 /**
  * Created by chuangjian.li
  * 16/3/22
  */
+class Player {
+    private int age = 12;
+
+    private Player() {
+        this.age = 50;
+    }
+
+    int getAge() {
+        return this.age;
+    }
+
+    void setAge(int age) {
+        this.age = age;
+    }
+}
+
 public class UnSafeTest {
-    public static void main(String[] args) throws NoSuchFieldException, IllegalAccessException, InstantiationException {
+
+    @Test
+    public void unSafeTest() throws NoSuchFieldException, IllegalAccessException, InstantiationException {
         Field f = Unsafe.class.getDeclaredField("theUnsafe");
         f.setAccessible(true);
         Unsafe unsafe = (Unsafe) f.get(null);
@@ -20,23 +39,6 @@ public class UnSafeTest {
 
         p.setAge(45);
         System.out.println(p.getAge());
-    }
-
-
-    class Player {
-        private int age = 12;
-
-        private Player() {
-            this.age = 50;
-        }
-
-        public int getAge() {
-            return this.age;
-        }
-
-        public void setAge(int age) {
-            this.age = age;
-        }
     }
 
 }

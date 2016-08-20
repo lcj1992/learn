@@ -1,4 +1,4 @@
-package java8;
+package lamda;
 
 import com.google.common.base.Strings;
 import com.google.common.collect.Lists;

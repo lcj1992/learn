@@ -1,4 +1,4 @@
-package jdk.classLoader;
+package classLoader;
 
 import com.google.common.io.Resources;
 

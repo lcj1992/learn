@@ -1,4 +1,4 @@
-package jdk.equal_hashcode;
+package equal_hashcode;
 
 
 import java.util.HashMap;

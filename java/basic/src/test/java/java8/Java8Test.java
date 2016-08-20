@@ -32,7 +32,7 @@ interface Converter<F, T> {
         return 0;
     }
 
-    //         静态方法中不能有范型,你能在编译期就确定类型么？
+//         静态方法中不能有范型,你能在编译期就确定类型么？
 //         static String haha(F f){
 //           return "";
 //         }
@@ -232,10 +232,6 @@ class ValueAbsentException extends Throwable {
 
     ValueAbsentException() {
         super();
-    }
-
-    public ValueAbsentException(String msg) {
-        super(msg);
     }
 
     @Override

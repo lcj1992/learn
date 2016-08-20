@@ -20,7 +20,7 @@ public @interface FruitColor {
      *
      * @author peida
      */
-    public enum Color {
+    enum Color {
         BULE, RED, GREEN
     }
 

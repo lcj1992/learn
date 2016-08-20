@@ -1,8 +1,9 @@
 package net.jcip.examples;
 
-import java.util.*;
+import net.jcip.annotations.ThreadSafe;
 
-import net.jcip.annotations.*;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * SafeStates
@@ -16,10 +17,9 @@ public class SafeStates {
     private final Map<String, String> states;
 
     public SafeStates() {
-        states = new HashMap<String, String>();
+        states = new HashMap<>();
         states.put("alaska", "AK");
         states.put("alabama", "AL");
-        /*...*/
         states.put("wyoming", "WY");
     }
 

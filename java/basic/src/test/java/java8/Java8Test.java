@@ -158,6 +158,7 @@ public class Java8Test {
     }
 
     // http://www.importnew.com/6675.html
+    // 可选。
     @Test
     public void optionalTest() {
         Optional<String> name = Optional.of("Sanaulla");
@@ -204,6 +205,7 @@ public class Java8Test {
 
     }
 
+    // 流
     @Test
     public void streamTest() {
         List<String> strings = Lists.newArrayList();

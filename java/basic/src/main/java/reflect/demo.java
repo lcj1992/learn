@@ -111,11 +111,7 @@ public class demo {
         try {
             cls4NewInstance = Class.forName("reflect.Person");
             person = (Person) cls4NewInstance.newInstance();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException e) {
             e.printStackTrace();
         }
         person.setAge(10);

@@ -9,21 +9,7 @@ import java.lang.reflect.Field;
  * Created by chuangjian.li
  * 16/3/22
  */
-class Player {
-    private int age = 12;
 
-    private Player() {
-        this.age = 50;
-    }
-
-    int getAge() {
-        return this.age;
-    }
-
-    void setAge(int age) {
-        this.age = age;
-    }
-}
 
 public class UnSafeTest {
 
@@ -39,6 +25,22 @@ public class UnSafeTest {
 
         p.setAge(45);
         System.out.println(p.getAge());
+    }
+
+    private class Player {
+        private int age = 12;
+
+        private Player() {
+            this.age = 50;
+        }
+
+        int getAge() {
+            return this.age;
+        }
+
+        void setAge(int age) {
+            this.age = age;
+        }
     }
 
 }

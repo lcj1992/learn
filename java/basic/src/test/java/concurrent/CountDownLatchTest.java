@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.concurrent.*;
 
 /**
+ * desp:  CountDownLatch 必须发生指定数量的事件后才可以继续运行
  * Created by chuangjian.li
  * 16/3/18
  */
@@ -30,8 +31,10 @@ public class CountDownLatchTest {
 
         long start = System.currentTimeMillis();
         List<Future<String>> futures = service.invokeAll(callableList);
+        System.out.println(System.currentTimeMillis() - start);
         boolean result = countDownLatch.await(1, TimeUnit.SECONDS);
         // todo? 为什么这里结果为false,并且中间间隔是3s而不是1s
+        // answer: invokeAll会阻塞当前线程。所以这里单独执行await肯定不够1s。
         System.out.println(result);
         System.out.println(System.currentTimeMillis() - start);
         futures.stream().forEach(s -> {
@@ -61,4 +64,5 @@ public class CountDownLatchTest {
             }
         }
     }
+
 }

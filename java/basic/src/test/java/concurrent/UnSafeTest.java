@@ -1,4 +1,4 @@
-package concurrent.unsafe;
+package concurrent;
 
 import org.junit.Test;
 import sun.misc.Unsafe;

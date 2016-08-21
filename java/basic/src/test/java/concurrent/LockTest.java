@@ -1,4 +1,4 @@
-package concurrent.lock;
+package concurrent;
 
 import org.junit.Test;
 

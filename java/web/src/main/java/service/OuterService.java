@@ -1,7 +1,6 @@
 package service;
 
 import dao.TestDao;
-import model.TestModel;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -22,10 +21,7 @@ public class OuterService {
 
     @Transactional
     public void outerTest() throws Exception {
-        TestModel test = new TestModel();
-        test.setId(103);
-        test.setName("c");
-        testDao.saveTest(test);
+        testDao.updateNameById(101,"a");
         innerService.innerTest();
     }
 }

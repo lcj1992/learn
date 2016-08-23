@@ -30,9 +30,9 @@ public class TestDaoTest {
 
     @Before
     public void setUp(){
-        testDao.deleteTestById(101);
-        testDao.deleteTestById(102);
-        testDao.deleteTestById(103);
+//        testDao.deleteTestById(101);
+//        testDao.deleteTestById(102);
+//        testDao.deleteTestById(103);
     }
 
     @Test

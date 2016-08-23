@@ -16,7 +16,7 @@
         select * from name where id = #{id};
     </select>
 
-    <update id="updateNameById" >
+    <update id="updateNameById">
         update name set name= #{name} where id = #{id};
     </update>
 

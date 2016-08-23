@@ -22,11 +22,9 @@ public class CyclicBarrierTest {
     @Test
     public void test() {
         CyclicBarrier cyclicBarrier = new CyclicBarrier(3, () -> System.out.println("Game start"));
-
         new Player("A", cyclicBarrier).start();
         new Player("B", cyclicBarrier).start();
         new Player("C", cyclicBarrier).start();
-
     }
 
 

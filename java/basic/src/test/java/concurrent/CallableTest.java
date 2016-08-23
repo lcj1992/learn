@@ -27,7 +27,7 @@ public class CallableTest {
         ExecutorService executorService = Executors.newSingleThreadExecutor();
         // callable
         List<Future<String>> resultList = executorService.invokeAll(Lists.newArrayList(() -> "callable"));
-        resultList.stream().forEach((result) -> {
+        resultList.forEach((result) -> {
             try {
                 System.out.println(result.get());
             } catch (InterruptedException | ExecutionException e) {

@@ -1,12 +1,14 @@
 package concurrent;
 
+
 import org.junit.Test;
 
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.*;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * Desc:
+ * 1. lock.lock()、lock.tryLock()、lock.lockInterruptibly()的区别
  * ------------------------------------
  * Author:lichuangjian@meituan.com
  * Date: 16/8/20
@@ -152,5 +154,8 @@ public class LockTest {
         threadB.interrupt();
         Thread.sleep(5000);
     }
+
+
+
 
 }

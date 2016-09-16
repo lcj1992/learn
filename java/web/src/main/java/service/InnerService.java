@@ -21,8 +21,7 @@ public class InnerService {
     private TestDao testDao;
 
 
-    @Transactional
-    public void innerTest() throws Exception {
-        testDao.updateNameById(101,"c");
+    public void innerTest(int id,String name) throws Exception {
+        testDao.updateNameById(id,"c");
     }
 }

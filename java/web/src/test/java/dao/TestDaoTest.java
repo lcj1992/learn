@@ -1,15 +1,20 @@
 package dao;
 
+import model.TestModel;
+import org.apache.ibatis.javassist.runtime.Inner;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
-import service.BeanPostTest;
+import org.springframework.util.ReflectionUtils;
+import org.springframework.web.bind.annotation.RequestParam;
+import service.InnerService;
 import service.OuterService;
 
 import javax.annotation.Resource;
+import java.lang.reflect.Field;
 
 /**
  * Created by lichuangjian on 16/7/21.
@@ -26,7 +31,7 @@ public class TestDaoTest {
     private OuterService outerService;
 
     @Resource
-    private BeanPostTest test;
+    private InnerService innerService;
 
     @Before
     public void setUp(){
@@ -38,17 +43,20 @@ public class TestDaoTest {
     @Test
     @Transactional
     public void saveTest() throws Exception {
-//        TestModel test  = new TestModel();
-//        test.setId(12);
-//        test.setName("fuck");
-//        testDao.saveTest(test);
+        TestModel test  = new TestModel();
+        test.setId(2);
+        test.setName("lcj");
+        testDao.saveTest(test);
 //        throw new RuntimeException("test transaction");
-        test.test();
     }
 
     @Test
     public void propagationTest() throws Exception {
         outerService.outerTest();
+    }
 
+    @Test
+    public void test() throws Exception {
+        innerService.innerTest(100,"lcj");
     }
 }

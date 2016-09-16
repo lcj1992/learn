@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>java.util.concurrent.Executors</OriginalElement>
+  <nodes>
+    <node x="1831.25" y="190.0">java.util.concurrent.Executors.RunnableAdapter</node>
+    <node x="81.5" y="190.0">java.util.concurrent.locks.AbstractQueuedSynchronizer</node>
+    <node x="1077.5898809523808" y="80.0">java.util.concurrent.AbstractExecutorService</node>
+    <node x="738.4999999999999" y="310.0">java.util.concurrent.ThreadPoolExecutor.DiscardOldestPolicy</node>
+    <node x="1630.25" y="190.0">java.util.concurrent.Executors.DefaultThreadFactory</node>
+    <node x="523.7499999999999" y="190.0">java.util.concurrent.ThreadPoolExecutor</node>
+    <node x="342.4999999999999" y="310.0">java.util.concurrent.ThreadPoolExecutor.Worker</node>
+    <node x="1173.5898809523808" y="190.0">java.util.concurrent.Executors.DelegatedExecutorService</node>
+    <node x="2206.5" y="80.0">java.util.concurrent.Callable</node>
+    <node x="2003.25" y="190.0">java.util.concurrent.Executors.PrivilegedCallableUsingCurrentClassLoader</node>
+    <node x="334.4999999999999" y="190.0">java.lang.Runnable</node>
+    <node x="443.4999999999999" y="310.0">java.util.concurrent.ThreadPoolExecutor.AbortPolicy</node>
+    <node x="1720.5" y="80.0">java.util.concurrent.Executors</node>
+    <node x="0.0" y="310.0">java.util.concurrent.locks.AbstractQueuedSynchronizer.ConditionObject</node>
+    <node x="730.4999999999999" y="190.0">java.util.concurrent.RejectedExecutionHandler</node>
+    <node x="163.9999999999999" y="310.0">java.util.concurrent.locks.AbstractQueuedSynchronizer.Node</node>
+    <node x="1367.5" y="310.0">java.util.concurrent.Executors.FinalizableDelegatedExecutorService</node>
+    <node x="2352.25" y="190.0">java.util.concurrent.Executors.PrivilegedCallable</node>
+    <node x="1671.5" y="310.0">java.util.concurrent.Executors.PrivilegedThreadFactory</node>
+    <node x="573.4999999999999" y="310.0">java.util.concurrent.ThreadPoolExecutor.CallerRunsPolicy</node>
+    <node x="924.4999999999999" y="310.0">java.util.concurrent.ThreadPoolExecutor.DiscardPolicy</node>
+    <node x="1010.6020833333332" y="0.0">java.util.concurrent.ExecutorService</node>
+    <node x="1066.5" y="310.0">java.util.concurrent.Executors.DelegatedScheduledExecutorService</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="java.util.concurrent.Executors.DefaultThreadFactory" target="java.util.concurrent.Executors">
+      <point x="0.0" y="-15.0" />
+      <point x="1720.25" y="170.0" />
+      <point x="1764.25" y="170.0" />
+      <point x="-6.25" y="15.0" />
+    </edge>
+    <edge source="java.util.concurrent.AbstractExecutorService" target="java.util.concurrent.ExecutorService">
+      <point x="0.0" y="-15.0" />
+      <point x="1176.5898809523808" y="55.0" />
+      <point x="1116.3520833333332" y="55.0" />
+      <point x="35.25" y="15.0" />
+    </edge>
+    <edge source="java.util.concurrent.Executors.DelegatedScheduledExecutorService" target="java.util.concurrent.Executors.DelegatedExecutorService">
+      <point x="0.0" y="-15.0" />
+      <point x="1207.0" y="290.0" />
+      <point x="1226.0898809523808" y="290.0" />
+      <point x="-52.5" y="15.0" />
+    </edge>
+    <edge source="java.util.concurrent.Executors.PrivilegedCallableUsingCurrentClassLoader" target="java.util.concurrent.Callable">
+      <point x="82.25" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="java.util.concurrent.Executors.FinalizableDelegatedExecutorService" target="java.util.concurrent.Executors.DelegatedExecutorService">
+      <point x="-71.0" y="-15.0" />
+      <point x="1438.5" y="280.0" />
+      <point x="1331.0898809523808" y="280.0" />
+      <point x="52.5" y="15.0" />
+    </edge>
+    <edge source="java.util.concurrent.Executors.PrivilegedThreadFactory" target="java.util.concurrent.Executors">
+      <point x="49.5" y="-15.0" />
+      <point x="1820.75" y="170.0" />
+      <point x="1776.75" y="170.0" />
+      <point x="6.25" y="15.0" />
+    </edge>
+    <edge source="java.util.concurrent.ThreadPoolExecutor.Worker" target="java.util.concurrent.ThreadPoolExecutor">
+      <point x="27.0" y="-15.0" />
+      <point x="409.9999999999999" y="260.0" />
+      <point x="540.9499999999999" y="260.0" />
+      <point x="-68.79999999999995" y="15.0" />
+    </edge>
+    <edge source="java.util.concurrent.Executors.DelegatedExecutorService" target="java.util.concurrent.Executors">
+      <point x="52.5" y="-15.0" />
+      <point x="1331.0898809523808" y="140.0" />
+      <point x="1726.75" y="140.0" />
+      <point x="-43.75" y="15.0" />
+    </edge>
+    <edge source="java.util.concurrent.Executors.FinalizableDelegatedExecutorService" target="java.util.concurrent.Executors">
+      <point x="71.0" y="-15.0" />
+      <point x="1580.5" y="290.0" />
+      <point x="1576.5187499999997" y="290.0" />
+      <point x="1576.5187499999997" y="160.0" />
+      <point x="1751.75" y="160.0" />
+      <point x="-18.75" y="15.0" />
+    </edge>
+    <edge source="java.util.concurrent.Executors.PrivilegedCallable" target="java.util.concurrent.Callable">
+      <point x="38.5" y="-15.0" />
+      <point x="2467.75" y="130.0" />
+      <point x="2279.0" y="130.0" />
+      <point x="29.0" y="15.0" />
+    </edge>
+    <edge source="java.util.concurrent.locks.AbstractQueuedSynchronizer.Node" target="java.util.concurrent.locks.AbstractQueuedSynchronizer">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="java.util.concurrent.ThreadPoolExecutor.CallerRunsPolicy" target="java.util.concurrent.RejectedExecutionHandler">
+      <point x="36.25" y="-15.0" />
+      <point x="682.2499999999999" y="290.0" />
+      <point x="809.9999999999999" y="290.0" />
+      <point x="-26.5" y="15.0" />
+    </edge>
+    <edge source="java.util.concurrent.ThreadPoolExecutor.Worker" target="java.util.concurrent.locks.AbstractQueuedSynchronizer">
+      <point x="-27.0" y="-15.0" />
+      <point x="355.9999999999999" y="290.0" />
+      <point x="275.66666666666674" y="290.0" />
+      <point x="77.66666666666669" y="15.0" />
+    </edge>
+    <edge source="java.util.concurrent.ThreadPoolExecutor" target="java.util.concurrent.AbstractExecutorService">
+      <point x="0.0" y="-15.0" />
+      <point x="609.7499999999999" y="170.0" />
+      <point x="1127.0898809523808" y="170.0" />
+      <point x="-49.5" y="15.0" />
+    </edge>
+    <edge source="java.util.concurrent.ThreadPoolExecutor.Worker" target="java.lang.Runnable">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="java.util.concurrent.ThreadPoolExecutor.DiscardOldestPolicy" target="java.util.concurrent.RejectedExecutionHandler">
+      <point x="41.5" y="-15.0" />
+      <point x="26.5" y="15.0" />
+    </edge>
+    <edge source="java.util.concurrent.Executors.RunnableAdapter" target="java.util.concurrent.Callable">
+      <point x="38.0" y="-15.0" />
+      <point x="1945.25" y="170.0" />
+      <point x="2221.0" y="170.0" />
+      <point x="-29.0" y="15.0" />
+    </edge>
+    <edge source="java.util.concurrent.Executors.PrivilegedCallableUsingCurrentClassLoader" target="java.util.concurrent.Executors">
+      <point x="-82.25" y="-15.0" />
+      <point x="2085.5" y="150.0" />
+      <point x="1801.75" y="150.0" />
+      <point x="31.25" y="15.0" />
+    </edge>
+    <edge source="java.util.concurrent.ThreadPoolExecutor.DiscardPolicy" target="java.util.concurrent.RejectedExecutionHandler">
+      <point x="30.500000000000114" y="-15.0" />
+      <point x="1016.0" y="250.0" />
+      <point x="915.9999999999999" y="250.0" />
+      <point x="79.5" y="15.0" />
+    </edge>
+    <edge source="java.util.concurrent.ThreadPoolExecutor.DiscardPolicy" target="java.util.concurrent.ThreadPoolExecutor">
+      <point x="-30.499999999999886" y="-15.0" />
+      <point x="955.0" y="260.0" />
+      <point x="678.55" y="260.0" />
+      <point x="68.80000000000007" y="15.0" />
+    </edge>
+    <edge source="java.util.concurrent.ThreadPoolExecutor.DiscardOldestPolicy" target="java.util.concurrent.ThreadPoolExecutor">
+      <point x="-41.5" y="-15.0" />
+      <point x="779.9999999999999" y="270.0" />
+      <point x="644.1499999999999" y="270.0" />
+      <point x="34.39999999999998" y="15.0" />
+    </edge>
+    <edge source="java.util.concurrent.Executors.DelegatedScheduledExecutorService" target="java.util.concurrent.Executors">
+      <point x="93.66666666666674" y="-15.0" />
+      <point x="1300.6666666666665" y="290.0" />
+      <point x="1461.3211309523808" y="290.0" />
+      <point x="1461.3211309523808" y="150.0" />
+      <point x="1739.25" y="150.0" />
+      <point x="-31.25" y="15.0" />
+    </edge>
+    <edge source="java.util.concurrent.ThreadPoolExecutor.CallerRunsPolicy" target="java.util.concurrent.ThreadPoolExecutor">
+      <point x="-36.25" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="java.util.concurrent.Executors.PrivilegedCallable" target="java.util.concurrent.Executors">
+      <point x="-38.5" y="-15.0" />
+      <point x="2390.75" y="140.0" />
+      <point x="1814.25" y="140.0" />
+      <point x="43.75" y="15.0" />
+    </edge>
+    <edge source="java.util.concurrent.ThreadPoolExecutor.AbortPolicy" target="java.util.concurrent.ThreadPoolExecutor">
+      <point x="-27.5" y="-15.0" />
+      <point x="470.9999999999999" y="270.0" />
+      <point x="575.3499999999999" y="270.0" />
+      <point x="-34.39999999999998" y="15.0" />
+    </edge>
+    <edge source="java.util.concurrent.Executors.DelegatedExecutorService" target="java.util.concurrent.AbstractExecutorService">
+      <point x="-52.5" y="-15.0" />
+      <point x="49.5" y="15.0" />
+    </edge>
+    <edge source="java.util.concurrent.Executors.RunnableAdapter" target="java.util.concurrent.Executors">
+      <point x="-38.0" y="-15.0" />
+      <point x="1869.25" y="160.0" />
+      <point x="1789.25" y="160.0" />
+      <point x="18.75" y="15.0" />
+    </edge>
+    <edge source="java.util.concurrent.locks.AbstractQueuedSynchronizer.ConditionObject" target="java.util.concurrent.locks.AbstractQueuedSynchronizer">
+      <point x="0.0" y="-15.0" />
+      <point x="72.0" y="290.0" />
+      <point x="120.33333333333326" y="290.0" />
+      <point x="-77.66666666666667" y="15.0" />
+    </edge>
+    <edge source="java.util.concurrent.ThreadPoolExecutor.AbortPolicy" target="java.util.concurrent.RejectedExecutionHandler">
+      <point x="27.5" y="-15.0" />
+      <point x="525.9999999999999" y="280.0" />
+      <point x="756.9999999999999" y="280.0" />
+      <point x="-79.5" y="15.0" />
+    </edge>
+    <edge source="java.util.concurrent.Executors.PrivilegedThreadFactory" target="java.util.concurrent.Executors.DefaultThreadFactory">
+      <point x="-49.5" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="java.util.concurrent.Executors.DelegatedScheduledExecutorService" target="java.util.concurrent.ExecutorService">
+      <point x="-93.66666666666674" y="-15.0" />
+      <point x="1113.333333333333" y="240.0" />
+      <point x="1006.8520833333332" y="240.0" />
+      <point x="1006.8520833333332" y="55.0" />
+      <point x="1045.8520833333332" y="55.0" />
+      <point x="-35.25" y="15.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.5310645033636724" x="1253.4999999999998" y="170.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

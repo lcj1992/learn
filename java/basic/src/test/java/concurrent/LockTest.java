@@ -9,6 +9,7 @@ import java.util.concurrent.locks.ReentrantLock;
 /**
  * Desc:
  * 1. lock.lock()、lock.tryLock()、lock.lockInterruptibly()的区别
+ * http://blog.csdn.net/wojiushiwo945you/article/details/42387091
  * ------------------------------------
  * Author:lichuangjian@meituan.com
  * Date: 16/8/20

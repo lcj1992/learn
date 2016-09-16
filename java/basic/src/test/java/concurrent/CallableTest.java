@@ -38,4 +38,25 @@ public class CallableTest {
         executorService.submit(() -> System.out.println("runnable"));
     }
 
+    class XX{
+        Integer aa;
+
+        public Integer getAa() {
+            return aa;
+        }
+
+        public void setAa(Integer aa) {
+            this.aa = aa;
+        }
+    }
+
+    @Test
+
+    public void test(){
+        XX xx = new XX();
+        if(xx.getAa() == 0){
+            System.out.println("xx");
+        }
+    }
+
 }

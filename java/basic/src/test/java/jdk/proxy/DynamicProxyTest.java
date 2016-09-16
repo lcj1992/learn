@@ -5,6 +5,8 @@ import org.junit.Test;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
+import java.util.concurrent.Executors;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * Desc:
@@ -14,15 +16,23 @@ import java.lang.reflect.Proxy;
  * Time: 下午3:02
  */
 interface Booker {
-
     void book();
-
 }
 
 class BookerImpl implements Booker {
+
+    private static int counter = 0;
+
     @Override
     public void book() {
-        System.out.println("go to bookStore to buy a book");
+        try {
+            Thread.sleep(10);
+            System.out.println("go to bookStore to buy a book, counter: " + (counter++));
+            Thread.sleep(10);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
     }
 }
 
@@ -48,9 +58,10 @@ class BookerProxy implements InvocationHandler {
 public class DynamicProxyTest {
 
     @Test
-    public void dynamicProxyTest() {
+    public void dynamicProxyTest() throws InterruptedException {
         BookerProxy proxy = new BookerProxy();
         Booker booker = (Booker) proxy.bind(new BookerImpl());
-        booker.book();
+        for (int i = 0; i < 1000; i++) Executors.newSingleThreadExecutor().execute(() -> booker.book());
+        Thread.sleep(100000);
     }
 }

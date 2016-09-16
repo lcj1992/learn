@@ -33,11 +33,11 @@ class BookProxyCglib implements MethodInterceptor {
 }
 
 class BookProxyImpl {
-    void addBook() {
+    synchronized void  addBook() {
         System.out.println("增加图书的普通方法...");
     }
 
-    void borrow(){
+    synchronized void borrow(){
         System.out.println("借阅一本书...");
     }
 }

@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AjcSettings">
+    <option name="ajcPath" value="$MAVEN_REPOSITORY$/org/aspectj/aspectjtools/1.8.7/aspectjtools-1.8.7.jar" />
+    <option name="delegateToJavac" value="true" />
+  </component>
   <component name="CompilerConfiguration">
+    <option name="DEFAULT_COMPILER" value="ajc" />
     <resourceExtensions />
     <wildcardResourcePatterns>
       <entry name="!?*.java" />
@@ -24,6 +29,7 @@
         <processorPath useClasspath="true" />
         <module name="basic" />
         <module name="designPattern" />
+        <module name="log" />
         <module name="thrift_demo" />
         <module name="web" />
         <module name="zookeeper_demo" />
@@ -33,6 +39,7 @@
       <module name="basic" target="1.8" />
       <module name="designPattern" target="1.8" />
       <module name="java" target="1.8" />
+      <module name="log" target="1.8" />
       <module name="thrift_demo" target="1.8" />
       <module name="web" target="1.8" />
       <module name="zookeeper_demo" target="1.8" />

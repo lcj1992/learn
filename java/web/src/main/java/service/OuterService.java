@@ -19,9 +19,14 @@ public class OuterService {
     @Resource
     private InnerService innerService;
 
-    @Transactional
     public void outerTest() throws Exception {
-        testDao.updateNameById(101,"a");
-        innerService.innerTest();
+        outerTest0();
+    }
+
+    @Transactional
+    public void outerTest0(){
+        testDao.updateNameById(101,"why");
+        throw new RuntimeException();
+//        testDao.updateNameById(102,"b");
     }
 }

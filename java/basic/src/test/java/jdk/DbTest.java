@@ -1,7 +1,5 @@
 package jdk;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.sql.*;
 
@@ -9,8 +7,6 @@ import java.sql.*;
  * Created by lcj on 15-8-16.
  */
 public class DbTest {
-
-    private static final Logger LOGGER = LoggerFactory.getLogger(DbTest.class);
 
     public static void main(String[] args) throws SQLException {
 
@@ -29,15 +25,13 @@ public class DbTest {
 //            rs = statement.executeQuery(sql);
 //
             con.setTransactionIsolation(Connection.TRANSACTION_REPEATABLE_READ);
-            con.setAutoCommit(false);
             String sql = "insert into  name values(?,?)";
             PreparedStatement preparedStatement = con.prepareStatement(sql);
             preparedStatement.setInt(1,1);
             preparedStatement.setString(2,"lcj");
             preparedStatement.execute();
-            con.rollback();
         } catch (Exception e) {
-            LOGGER.error("sql exception", e);
+            e.printStackTrace();
 
         } finally {
             if (rs != null) {

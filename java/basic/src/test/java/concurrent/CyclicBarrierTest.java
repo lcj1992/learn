@@ -12,8 +12,6 @@ import java.util.concurrent.CyclicBarrier;
  * Date: 16/8/21
  * Time: 下午12:56
  */
-
-
 public class CyclicBarrierTest {
 
     //  CyclicBarrier(int num):等待线程的数量

@@ -16,12 +16,17 @@ public class ReentrantLockTest {
     // ReentrantLock如何加锁
     // 1.volatile保证state的可见性
     // 2.CAS保证state的操作的原子性
+    // 3.CLH队列
+
+
     @Test
     public void howToLockTest() throws InterruptedException {
         ReentrantLock lock = new ReentrantLock();
         new Thread(new MyRunnable(lock), "thread1").start();
-        Thread.sleep(30000);
         new Thread(new MyRunnable(lock), "thread2").start();
+        new Thread(new MyRunnable(lock), "thread3").start();
+        new Thread(new MyRunnable(lock), "thread4").start();
+
         Thread.sleep(1000000000);
     }
 
@@ -36,11 +41,11 @@ public class ReentrantLockTest {
         public void run() {
             lock.lock();
             try {
-                Thread.sleep(10000);
+                Thread.sleep(1000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             } finally {
-//                lock.unlock();
+                lock.unlock();
             }
         }
     }

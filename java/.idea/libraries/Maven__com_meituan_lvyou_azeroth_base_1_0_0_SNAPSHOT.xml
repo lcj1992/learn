@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.meituan.lvyou:azeroth-base:1.0.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/meituan/lvyou/azeroth-base/1.0.0-SNAPSHOT/azeroth-base-1.0.0-20160704.033613-145.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/meituan/lvyou/azeroth-base/1.0.0-SNAPSHOT/azeroth-base-1.0.0-20160704.033613-145-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/meituan/lvyou/azeroth-base/1.0.0-SNAPSHOT/azeroth-base-1.0.0-20160704.033613-145-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

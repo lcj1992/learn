@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.meituan.lvyou:meilv-common:1.2.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/meituan/lvyou/meilv-common/1.2.0-SNAPSHOT/meilv-common-1.2.0-20161017.073625-52.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/meituan/lvyou/meilv-common/1.2.0-SNAPSHOT/meilv-common-1.2.0-20161017.073625-52-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/meituan/lvyou/meilv-common/1.2.0-SNAPSHOT/meilv-common-1.2.0-20161017.073625-52-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

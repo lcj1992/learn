@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.meituan.lvyou:azeroth-message:1.0.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/meituan/lvyou/azeroth-message/1.0.0-SNAPSHOT/azeroth-message-1.0.0-20160405.035457-12.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/meituan/lvyou/azeroth-message/1.0.0-SNAPSHOT/azeroth-message-1.0.0-20160405.035457-12-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/meituan/lvyou/azeroth-message/1.0.0-SNAPSHOT/azeroth-message-1.0.0-20160405.035457-12-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

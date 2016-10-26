@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: net.sf.ehcache:ehcache-debugger:remote:1.3.0-beta2">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/net/sf/ehcache/ehcache-debugger/1.3.0-beta2/ehcache-debugger-1.3.0-beta2-remote.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/net/sf/ehcache/ehcache-debugger/1.3.0-beta2/ehcache-debugger-1.3.0-beta2-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/net/sf/ehcache/ehcache-debugger/1.3.0-beta2/ehcache-debugger-1.3.0-beta2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

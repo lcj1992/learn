@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+
+    <display-name>web study</display-name>
+    <!--加载顺序　context-param > listener > filter > servlet-->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:config.xml</param-value>
+    </context-param>
+
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+
+    <filter>
+        <filter-name>login</filter-name>
+        <filter-class>filter.LoginFilter</filter-class>
+        <init-param>
+            <!--部分uri不走filter-->
+            <description>health check不走login</description>
+            <param-name>ignores</param-name>
+            <param-value>/healthCheck.html</param-value>
+        </init-param>
+    </filter>
+    <!--url-pattern　和　servlet-name二选一-->
+    <filter-mapping>
+        <filter-name>login</filter-name>
+        <url-pattern>/login</url-pattern>
+        <!--<servlet-name>web</servlet-name>-->
+    </filter-mapping>
+
+    <servlet>
+        <servlet-name>web</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    </servlet>
+
+    <!--servlet匹配顺序 http://lcj1992.github.io/2015/12/27/url_pattern/-->
+    <servlet-mapping>
+        <servlet-name>web</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+
+    <!--设置session 超时时间　0 永不超时　分钟-->
+    <session-config>
+        <session-timeout>200</session-timeout>
+    </session-config>
+
+    <!--配置异常的页面-->
+    <!--todo　它和spring的异常页面谁先谁后-->
+    <!--error-code和exception-type二选一-->
+    <error-page>
+        <error-code>404</error-code>
+        <location>/404.jsp</location>
+    </error-page>
+
+    <error-page>
+        <exception-type>java.lang.Exception</exception-type>
+        <location>/exception.jsp</location>
+    </error-page>
+</web-app>

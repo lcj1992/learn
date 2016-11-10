@@ -1,4 +1,3 @@
-import com.foo.Bar;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -14,12 +13,7 @@ public class MyApp {
 
         // Set up a simple configuration that logs on the console.
 
-        logger.trace("Entering application.");
+        logger.info("Entering application.");
         System.out.println(logger.getClass());
-        Bar bar = new Bar();
-        if (!bar.doIt()) {
-            logger.error("Didn't do it.");
-        }
-        logger.trace("Exiting application.");
     }
 }

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
  * desprition:
  */
 @Repository
+
 public interface TestDao {
 
     int saveTest(TestModel testModel);

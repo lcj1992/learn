@@ -1,7 +1,8 @@
+aop/AopForTest.class
 interceptor/LoginInterceptor.class
-model/TestModel.class
 dao/TestDao.class
 service/OuterService.class
+model/TestModel.class
 service/InnerService.class
 controller/TestController.class
 aop/ExceptionControllerAdvice.class

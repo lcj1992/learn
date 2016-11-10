@@ -25,8 +25,8 @@ public class OuterService {
 
     @Transactional
     public void outerTest0(){
-        testDao.updateNameById(101,"why");
-        throw new RuntimeException();
+        int i = testDao.updateNameById(101,"why");
+        System.out.println("countcount" +i);
 //        testDao.updateNameById(102,"b");
     }
 }

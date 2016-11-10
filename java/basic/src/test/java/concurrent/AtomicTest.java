@@ -37,4 +37,13 @@ public class AtomicTest {
         executorService.invokeAll(callableList);
         System.out.println(atomicInteger.get());
     }
+
+    @Test
+    public void test() {
+        List<String> list = Lists.newArrayList();
+        list.add("a");
+        list.add("ab");
+        boolean ok = list.stream().filter(s -> s.length() > 1).count() > 0;
+        System.out.println(ok);
+    }
 }

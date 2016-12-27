@@ -9,7 +9,6 @@ import org.springframework.stereotype.Repository;
  * desprition:
  */
 @Repository
-
 public interface TestDao {
 
     int saveTest(TestModel testModel);
@@ -18,6 +17,6 @@ public interface TestDao {
 
     int updateNameById(@Param("id") int id, @Param("name") String name);
 
-    int loadTestById(@Param("id") int id);
+    TestModel loadTestById(@Param("id") int id);
 }
 

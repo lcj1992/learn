@@ -11,6 +11,7 @@
         <module>designPattern</module>
         <module>thrift_demo</module>
         <module>log</module>
+        <module>spring-test</module>
     </modules>
     <packaging>pom</packaging>
 

@@ -39,7 +39,7 @@ class Apple {
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-@interface FruitName {
+@interface FruitName{
     String value() default "";
 }
 

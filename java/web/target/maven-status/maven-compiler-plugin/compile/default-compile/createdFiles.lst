@@ -1,9 +1,6 @@
-aop/AopForTest.class
-interceptor/LoginInterceptor.class
+service/CommonService.class
+model/TestModel.class
 dao/TestDao.class
 service/OuterService.class
-model/TestModel.class
-service/InnerService.class
+service/TestService.class
 controller/TestController.class
-aop/ExceptionControllerAdvice.class
-filter/LoginFilter.class

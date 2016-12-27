@@ -13,6 +13,9 @@ import java.util.concurrent.*;
  */
 public class CountDownLatchTest {
 
+    // 任务执行线程中countdown
+    // 父线程中await
+
     // await():
     // 1.线程会被挂起，它会等待直到count值为0才继续执行
     // 2.无返回值
@@ -41,9 +44,7 @@ public class CountDownLatchTest {
         runnableList.forEach(executorService::execute);
         // await()
         // 线程会被挂起，它会等待直到count值为0才继续执行,无返回值
-        new Thread( new AwaitRunnable(countDownLatch)).start();
-        new Thread( new AwaitRunnable(countDownLatch)).start();
-        countDownLatch.await();
+//        countDownLatch.await();
         // await(x,TimeUnits.xx):
         // 1.跟await()类似,不过是带超时时间的和返回值
         // 2.boolean返回值, 如果超时时间之内,countDownLatch将为0,返回true,否则返回false;
@@ -73,25 +74,9 @@ public class CountDownLatchTest {
         }
 
         private void dealTask() throws InterruptedException {
-            Thread.sleep(30000L);
+            Thread.sleep(5000L);
             System.out.println(Thread.currentThread().getName() + " deal task");
         }
     }
 
-    private static class AwaitRunnable implements Runnable {
-        private CountDownLatch countDownLatch;
-
-        public AwaitRunnable(CountDownLatch countDownLatch) {
-            this.countDownLatch = countDownLatch;
-        }
-
-        @Override
-        public void run() {
-            try {
-                countDownLatch.await();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
-    }
 }

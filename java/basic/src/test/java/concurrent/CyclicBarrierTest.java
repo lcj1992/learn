@@ -18,11 +18,12 @@ public class CyclicBarrierTest {
     //  CyclicBarrier(int num,Runnable action):等待线程的数量以及所有 线程到达后的操作
     //  await()：到达临界点后暂停线程
     @Test
-    public void test() {
+    public void test() throws InterruptedException {
         CyclicBarrier cyclicBarrier = new CyclicBarrier(3, () -> System.out.println("Game start"));
         new Player("A", cyclicBarrier).start();
         new Player("B", cyclicBarrier).start();
         new Player("C", cyclicBarrier).start();
+        Thread.sleep(1000000);
     }
 
 

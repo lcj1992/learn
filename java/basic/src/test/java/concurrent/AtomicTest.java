@@ -27,7 +27,7 @@ public class AtomicTest {
     }
 
     @Test
-    public void AtomicIntegerTest() throws InterruptedException {
+    public void atomicIntegerTest() throws InterruptedException {
         AtomicInteger atomicInteger = new AtomicInteger();
         ExecutorService executorService = Executors.newFixedThreadPool(30);
         List<Callable<Integer>> callableList = Lists.newArrayList();
@@ -36,6 +36,20 @@ public class AtomicTest {
         }
         executorService.invokeAll(callableList);
         System.out.println(atomicInteger.get());
+    }
+
+
+    volatile Integer atomicInteger = 0;
+    @Test
+    public void volatileIntegerTest() throws InterruptedException {
+
+        ExecutorService executorService = Executors.newFixedThreadPool(30);
+        List<Callable<Integer>> callableList = Lists.newArrayList();
+        for (int i = 0; i < 10000000; i++) {
+            callableList.add(()-> atomicInteger++);
+        }
+        executorService.invokeAll(callableList);
+        System.out.println(atomicInteger);
     }
 
     @Test

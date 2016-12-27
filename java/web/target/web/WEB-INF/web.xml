@@ -13,50 +13,20 @@
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
-
-    <filter>
-        <filter-name>login</filter-name>
-        <filter-class>filter.LoginFilter</filter-class>
-        <init-param>
-            <!--部分uri不走filter-->
-            <description>health check不走login</description>
-            <param-name>ignores</param-name>
-            <param-value>/healthCheck.html</param-value>
-        </init-param>
-    </filter>
     <!--url-pattern　和　servlet-name二选一-->
-    <filter-mapping>
-        <filter-name>login</filter-name>
-        <url-pattern>/login</url-pattern>
-        <!--<servlet-name>web</servlet-name>-->
-    </filter-mapping>
-
     <servlet>
         <servlet-name>web</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
     </servlet>
-
-    <!--servlet匹配顺序 http://lcj1992.github.io/2015/12/27/url_pattern/-->
     <servlet-mapping>
         <servlet-name>web</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
+
 
     <!--设置session 超时时间　0 永不超时　分钟-->
     <session-config>
         <session-timeout>200</session-timeout>
     </session-config>
 
-    <!--配置异常的页面-->
-    <!--todo　它和spring的异常页面谁先谁后-->
-    <!--error-code和exception-type二选一-->
-    <error-page>
-        <error-code>404</error-code>
-        <location>/404.jsp</location>
-    </error-page>
-
-    <error-page>
-        <exception-type>java.lang.Exception</exception-type>
-        <location>/exception.jsp</location>
-    </error-page>
 </web-app>

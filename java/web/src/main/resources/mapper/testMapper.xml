@@ -12,7 +12,7 @@
         delete from name where id = #{id};
     </delete>
 
-    <select id="loadTestById">
+    <select id="loadTestById" resultType="model.TestModel">
         select * from name where id = #{id};
     </select>
 

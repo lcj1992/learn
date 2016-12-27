@@ -25,6 +25,7 @@
         <module name="basic" />
         <module name="designPattern" />
         <module name="log" />
+        <module name="spring-test" />
         <module name="thrift_demo" />
         <module name="web" />
       </profile>
@@ -34,6 +35,7 @@
       <module name="designPattern" target="1.8" />
       <module name="java" target="1.8" />
       <module name="log" target="1.8" />
+      <module name="spring-test" target="1.8" />
       <module name="thrift_demo" target="1.8" />
       <module name="web" target="1.8" />
     </bytecodeTargetLevel>

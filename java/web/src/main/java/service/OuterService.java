@@ -16,17 +16,13 @@ public class OuterService {
     @Resource
     private TestDao testDao;
 
-    @Resource
-    private InnerService innerService;
-
     public void outerTest() throws Exception {
         outerTest0();
     }
 
     @Transactional
-    public void outerTest0(){
-        int i = testDao.updateNameById(101,"why");
-        System.out.println("countcount" +i);
-//        testDao.updateNameById(102,"b");
+    public void outerTest0() {
+        int i = testDao.updateNameById(101, "why");
+        System.out.println("countcount" + i);
     }
 }

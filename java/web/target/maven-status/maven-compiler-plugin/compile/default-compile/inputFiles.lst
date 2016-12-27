@@ -1,9 +1,6 @@
 /Users/lichuangjian/work/learn/java/web/src/main/java/dao/TestDao.java
-/Users/lichuangjian/work/learn/java/web/src/main/java/interceptor/LoginInterceptor.java
-/Users/lichuangjian/work/learn/java/web/src/main/java/aop/AopForTest.java
+/Users/lichuangjian/work/learn/java/web/src/main/java/service/CommonService.java
 /Users/lichuangjian/work/learn/java/web/src/main/java/controller/TestController.java
-/Users/lichuangjian/work/learn/java/web/src/main/java/filter/LoginFilter.java
+/Users/lichuangjian/work/learn/java/web/src/main/java/service/TestService.java
 /Users/lichuangjian/work/learn/java/web/src/main/java/model/TestModel.java
-/Users/lichuangjian/work/learn/java/web/src/main/java/aop/ExceptionControllerAdvice.java
-/Users/lichuangjian/work/learn/java/web/src/main/java/service/InnerService.java
 /Users/lichuangjian/work/learn/java/web/src/main/java/service/OuterService.java

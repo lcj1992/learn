@@ -5,59 +5,73 @@ package structural.proxy;
  *
  */
 
-interface ICar {
-    void driveCar();
+interface Image {
+    public void displayImage();
 }
 
-class Car implements ICar {
+//on System A
+class RealImage implements Image {
 
-
-    public void driveCar() {
-        System.out.println("car has been driven!");
+    private String filename = null;
+    /**
+     * Constructor
+     * @param filename
+     */
+    public RealImage(final String filename) {
+        this.filename = filename;
+        loadImageFromDisk();
     }
+
+    /**
+     * Loads the image from the disk
+     */
+    private void loadImageFromDisk() {
+        System.out.println("Loading   " + filename);
+    }
+
+    /**
+     * Displays the image
+     */
+    public void displayImage() {
+        System.out.println("Displaying " + filename);
+    }
+
 }
 
-class ProxyCar implements ICar {
-    private Driver driver;
-    private ICar realCar;
+//on System B
+class ProxyImage implements Image {
 
-    ProxyCar(Driver driver) {
-        this.driver = driver;
-        realCar = new Car();
+    private RealImage image = null;
+    private String filename = null;
+    /**
+     * Constructor
+     * @param filename
+     */
+    public ProxyImage(final String filename) {
+        this.filename = filename;
     }
 
-
-    public void driveCar() {
-        if (driver.getAge() <= 16) {
-            System.out.println("sorry, the driver is too young to drive");
-        } else {
-            realCar.driveCar();
+    /**
+     * Displays the image
+     */
+    public void displayImage() {
+        if (image == null) {
+            image = new RealImage(filename);
         }
-    }
-}
-
-class Driver {
-    private int age;
-
-    public Driver(int age) {
-        this.age = age;
+        image.displayImage();
     }
 
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
 }
 
 public class ProxyTest {
     public static void main(String[] args) {
-        ICar car = new ProxyCar(new Driver(15));
-        car.driveCar();
+        final Image IMAGE1 = new ProxyImage("HiRes_10MB_Photo1");
+        final Image IMAGE2 = new ProxyImage("HiRes_10MB_Photo2");
 
-        car = new ProxyCar(new Driver(25));
-        car.driveCar();
+        IMAGE1.displayImage(); // loading necessary
+        IMAGE1.displayImage(); // loading unnecessary
+        IMAGE2.displayImage(); // loading necessary
+        IMAGE2.displayImage(); // loading unnecessary
+        IMAGE1.displayImage(); // loading unnecessary
     }
 }

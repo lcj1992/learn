@@ -78,12 +78,6 @@ public class ExchangerTest {
         }
     }
 
-    @Test
-    public void testx(){
-        try{
-            throw new RuntimeException("heheda");
-        } finally {
-            System.out.println("hehda");
-        }
-    }
 }
+
+

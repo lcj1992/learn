@@ -12,9 +12,6 @@ import java.util.concurrent.Semaphore;
  * Date: 16/8/21
  * Time: 上午11:30
  */
-
-
-
 public class SemaphoreTest {
 
     // Semaphore(int count)：创建拥有count个许可证的信号量

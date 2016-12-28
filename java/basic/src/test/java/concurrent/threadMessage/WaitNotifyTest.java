@@ -105,6 +105,26 @@ public class WaitNotifyTest {
     }
 
     @Test
+    public void waitAndNotify() throws InterruptedException {
+        Object object = new Object();
+        long start = System.currentTimeMillis();
+        new Thread(() -> {
+            try {
+                synchronized (object) {
+                    Thread.sleep(3000);
+                    object.notify();
+                }
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }).start();
+        synchronized (object) {
+            object.wait();
+        }
+        System.out.println("cost time " + (System.currentTimeMillis() - start));
+    }
+
+    @Test
     public void notifyMustOtherThread() throws InterruptedException {
         Object object = new Object();
         synchronized (object) {

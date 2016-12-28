@@ -26,7 +26,7 @@ class CoffeeFlavour {
 
 // Menu acts as a staticfactory and cache for CoffeeFlavour flyweight objects
 class Menu {
-    private Map<String, CoffeeFlavour> flavours = new ConcurrentHashMap<String, CoffeeFlavour>();
+    private Map<String, CoffeeFlavour> flavours = new ConcurrentHashMap<>();
 
     CoffeeFlavour lookup(String flavorName) {
         if (!flavours.containsKey(flavorName))
@@ -54,7 +54,7 @@ class Order {
 }
 
 class CoffeeShop {
-    private final List<Order> orders = new ArrayList<Order>();
+    private final List<Order> orders = new ArrayList<>();
     private final Menu menu = new Menu();
 
     void takeOrder(String flavourName, int table) {

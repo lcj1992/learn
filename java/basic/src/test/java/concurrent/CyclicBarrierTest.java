@@ -24,6 +24,7 @@ public class CyclicBarrierTest {
         new Player("B", cyclicBarrier).start();
         new Player("C", cyclicBarrier).start();
         Thread.sleep(1000000);
+
     }
 
 

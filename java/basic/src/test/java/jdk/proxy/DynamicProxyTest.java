@@ -5,11 +5,9 @@ import org.junit.Test;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
-import java.util.concurrent.Executors;
-import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * Desc:
+ * Desc: java动态代理简例
  * ------------------------------------
  * Author:lichuangjian@meituan.com
  * Date: 16/8/20
@@ -19,38 +17,27 @@ interface Booker {
     void book();
 }
 
-class BookerImpl implements Booker {
-
-    private static int counter = 0;
+class TripTicketBooker implements Booker {
 
     @Override
     public void book() {
-        try {
-            Thread.sleep(10);
-            System.out.println("go to bookStore to buy a book, counter: " + (counter++));
-            Thread.sleep(10);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
+        System.out.println("book a trip ticket");
     }
 }
 
-class BookerProxy implements InvocationHandler {
+class TransactionalInvocationHandler implements InvocationHandler {
 
     private Object target;
 
-    Object bind(Object target) {
+    TransactionalInvocationHandler(Object target) {
         this.target = target;
-        // 动态代理只针对接口,看下边的target.getClass().getInterfaces()
-        return Proxy.newProxyInstance(target.getClass().getClassLoader(), target.getClass().getInterfaces(), this);
     }
 
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-        System.out.println("go to bookStore by bus");
+        System.out.println("begin transaction");
         Object object = method.invoke(target, args);
-        System.out.println("go home");
+        System.out.println("end transaction");
         return object;
     }
 }
@@ -59,9 +46,9 @@ public class DynamicProxyTest {
 
     @Test
     public void dynamicProxyTest() throws InterruptedException {
-        BookerProxy proxy = new BookerProxy();
-        Booker booker = (Booker) proxy.bind(new BookerImpl());
-        for (int i = 0; i < 1000; i++) Executors.newSingleThreadExecutor().execute(() -> booker.book());
-        Thread.sleep(100000);
+        Booker booker = new TripTicketBooker();
+        Class clazz = booker.getClass();
+        Booker bookerProxy = (Booker) Proxy.newProxyInstance(clazz.getClassLoader(), clazz.getInterfaces(), new TransactionalInvocationHandler(booker));
+        bookerProxy.book();
     }
 }

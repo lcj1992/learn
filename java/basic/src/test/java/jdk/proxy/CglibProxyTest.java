@@ -1,5 +1,6 @@
 package jdk.proxy;
 
+import net.sf.cglib.core.DebuggingClassWriter;
 import net.sf.cglib.proxy.Enhancer;
 import net.sf.cglib.proxy.MethodInterceptor;
 import net.sf.cglib.proxy.MethodProxy;
@@ -25,25 +26,21 @@ class TransactionalMethodInterceptor implements MethodInterceptor {
 }
 
 class CglibBooker {
-    synchronized void addBook() {
-        System.out.println("增加图书的普通方法...");
-    }
-
-    synchronized void borrow() {
-        System.out.println("借阅一本书...");
+    synchronized void book() {
+        System.out.println("book a trip ticket");
     }
 }
 
 public class CglibProxyTest {
     @Test
     public void cglibProxy() {
+        System.setProperty(DebuggingClassWriter.DEBUG_LOCATION_PROPERTY, "/Users/lichuangjian/");
         TransactionalMethodInterceptor methodInterceptor = new TransactionalMethodInterceptor();
         CglibBooker cglibBooker = new CglibBooker();
         Enhancer enhancer = new Enhancer();
         enhancer.setSuperclass(cglibBooker.getClass());
         enhancer.setCallback(methodInterceptor);
         CglibBooker bookerProxy = (CglibBooker) enhancer.create();
-        bookerProxy.addBook();
-        bookerProxy.borrow();
+        bookerProxy.book();
     }
 }

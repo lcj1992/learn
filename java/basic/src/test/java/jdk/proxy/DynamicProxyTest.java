@@ -1,10 +1,12 @@
 package jdk.proxy;
 
 import org.junit.Test;
+import sun.security.action.GetBooleanAction;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
+import java.security.AccessController;
 
 /**
  * Desc: java动态代理简例
@@ -44,8 +46,10 @@ class TransactionalInvocationHandler implements InvocationHandler {
 
 public class DynamicProxyTest {
 
+
     @Test
-    public void dynamicProxyTest() throws InterruptedException {
+    public void testDynamicProxy() {
+        System.out.println(AccessController.doPrivileged(new GetBooleanAction("sun.misc.ProxyGenerator.saveGeneratedFiles")).booleanValue());
         Booker booker = new TripTicketBooker();
         Class clazz = booker.getClass();
         Booker bookerProxy = (Booker) Proxy.newProxyInstance(clazz.getClassLoader(), clazz.getInterfaces(), new TransactionalInvocationHandler(booker));

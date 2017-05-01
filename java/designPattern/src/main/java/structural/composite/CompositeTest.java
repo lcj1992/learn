@@ -10,46 +10,44 @@ import java.util.List;
 /**
  * "Component"
  */
-interface Graphic {
+interface Component {
 
     //Prints the graphic.
-    public void print();
+    void print();
 }
 
 /**
  * "Composite"
  */
-class CompositeGraphic implements Graphic {
+class CompositeComponent implements Component {
 
     //Collection of child graphics.
-    private List<Graphic> childGraphics = new ArrayList<Graphic>();
+    private List<Component> childComponents = new ArrayList<>();
 
     //Prints the graphic.
     public void print() {
-        for (Graphic graphic : childGraphics) {
-            graphic.print();
-        }
+        childComponents.forEach(Component::print);
     }
 
     //Adds the graphic to the composition.
-    public void add(Graphic graphic) {
-        childGraphics.add(graphic);
+    public void add(Component component) {
+        childComponents.add(component);
     }
 
     //Removes the graphic from the composition.
-    public void remove(Graphic graphic) {
-        childGraphics.remove(graphic);
+    public void remove(Component component) {
+        childComponents.remove(component);
     }
 }
 
 /**
  * "Leaf"
  */
-class Ellipse implements Graphic {
+class LeafComponent implements Component {
 
     //Prints the graphic.
     public void print() {
-        System.out.println("Ellipse");
+        System.out.println("LeafComponent");
     }
 }
 
@@ -59,28 +57,28 @@ class Ellipse implements Graphic {
 public class CompositeTest {
 
     public static void main(String[] args) {
-        //Initialize four ellipses
-        Ellipse ellipse1 = new Ellipse();
-        Ellipse ellipse2 = new Ellipse();
-        Ellipse ellipse3 = new Ellipse();
-        Ellipse ellipse4 = new Ellipse();
+        //Initialize four LearComponents
+        LeafComponent leafComponent1 = new LeafComponent();
+        LeafComponent leafComponent2 = new LeafComponent();
+        LeafComponent leafComponent3 = new LeafComponent();
+        LeafComponent leafComponent4 = new LeafComponent();
 
         //Initialize three composite graphics
-        CompositeGraphic graphic = new CompositeGraphic();
-        CompositeGraphic graphic1 = new CompositeGraphic();
-        CompositeGraphic graphic2 = new CompositeGraphic();
+        CompositeComponent compositeComponent = new CompositeComponent();
+        CompositeComponent compositeComponent1 = new CompositeComponent();
+        CompositeComponent compositeComponent2 = new CompositeComponent();
 
         //Composes the graphics
-        graphic1.add(ellipse1);
-        graphic1.add(ellipse2);
-        graphic1.add(ellipse3);
+        compositeComponent1.add(leafComponent1);
+        compositeComponent1.add(leafComponent2);
+        compositeComponent1.add(leafComponent3);
 
-        graphic2.add(ellipse4);
+        compositeComponent2.add(leafComponent4);
 
-        graphic.add(graphic1);
-        graphic.add(graphic2);
+        compositeComponent.add(compositeComponent1);
+        compositeComponent.add(compositeComponent2);
 
-        //Prints the complete graphic (four times the string "Ellipse").
-        graphic.print();
+        //Prints the complete graphic (four times the string "LeafComponent").
+        compositeComponent.print();
     }
 }

@@ -6,70 +6,70 @@ package creational.abstractFactory;
 //GuiFactory example
 
 //Abstract Product
-interface Button {
+interface Product1 {
     void paint();
 }
 
 //Abstract product
-interface Label {
+interface Product2 {
     void paint();
 }
 
 //Abstract Factory
-interface GUIFactory {
-    Button createButton();
+interface Factory {
+    Product1 createProduct1();
 
-    Label createLabel();
+    Product2 createProduct2();
 }
 
 //Concrete Factory
-class WinFactory implements GUIFactory {
-    public Button createButton() {
-        return new WinButton();
+class Factory1 implements Factory {
+    public Product1 createProduct1() {
+        return new ConcreteProduct1_2();
     }
 
-    public Label createLabel() {
-        return new WinLabel();
+    public Product2 createProduct2() {
+        return new ConcreteProduct2_2();
     }
 }
 
 //Concrete Factory
-class OSXFactory implements GUIFactory {
-    public Button createButton() {
-        return new OSXButton();
+class Factory2 implements Factory {
+    public Product1 createProduct1() {
+        return new ConcreteProduct1_1();
     }
 
-    public Label createLabel() {
-        return new OSXLabel();
+    public Product2 createProduct2() {
+        return new ConcreteProduct2_1();
     }
 
 }
 
 //Concrete Product
-class OSXButton implements Button {
+class ConcreteProduct1_1 implements Product1 {
     public void paint() {
-        System.out.println("I'm an OSXButton");
+        System.out.println("I'm an ConcreteProduct1_1");
     }
 }
 
 //Concrete Product
-class WinButton implements Button {
+class ConcreteProduct1_2 implements Product1 {
     public void paint() {
-        System.out.println("I'm a WinButton");
+        System.out.println("I'm a ConcreteProduct1_2");
     }
 }
 
 //Concrete Product
-class OSXLabel implements Label {
+class ConcreteProduct2_1 implements Product2 {
     public void paint() {
-        System.out.println("I'm an OSXLabel");
+        System.out.println("I'm an ConcreteProduct2_1");
     }
 }
 
 //Concrete Product
-class WinLabel implements Label {
+class ConcreteProduct2_2 implements Product2 {
     public void paint() {
-        System.out.println("I'm a WinLabel");
+        System.out.println("I'm a ConcreteProduct2_2");
     }
 }
 
@@ -79,14 +79,14 @@ public class AbstractFactoryTest {
 
     public static void main(String[] args) {
 
-        GUIFactory factory = new WinFactory();
+        Factory factory = new Factory1();
 
         // 产品族  button和label
-        Button button = factory.createButton();
-        Label label = factory.createLabel();
+        Product1 product1 = factory.createProduct1();
+        Product2 product2 = factory.createProduct2();
 
-        button.paint();
-        label.paint();
+        product1.paint();
+        product2.paint();
 
     }
 }

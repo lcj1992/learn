@@ -1,5 +1,7 @@
 package service;
 
+import dao.TestDao;
+import model.TestModel;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -14,15 +16,10 @@ import javax.annotation.Resource;
 @Service
 public class TestService {
 
-    private String name = "lcj";
+    @Resource
+    private TestDao testDao;
 
-    public String getName() {
-        return name;
+    public int test(TestModel testModel) {
+        return testDao.saveTest(testModel);
     }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-
 }

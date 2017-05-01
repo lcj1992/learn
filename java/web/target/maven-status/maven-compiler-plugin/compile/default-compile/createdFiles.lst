@@ -1,6 +1,0 @@
-service/CommonService.class
-model/TestModel.class
-dao/TestDao.class
-service/OuterService.class
-service/TestService.class
-controller/TestController.class

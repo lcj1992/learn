@@ -36,7 +36,6 @@ public class TestController {
 
     @RequestMapping("test")
     public String test(@RequestParam Set<Long> orderIds) {
-        System.out.println(testService.getName());
         System.out.println(SpringService.getBean("commonService", CommonService.class));
         return "hello";
 

@@ -1,5 +1,8 @@
 package concurrent;
 
+import com.google.common.util.concurrent.ListenableFuture;
+import com.google.common.util.concurrent.ListeningExecutorService;
+import com.google.common.util.concurrent.MoreExecutors;
 import org.junit.Test;
 
 import java.util.concurrent.*;
@@ -14,7 +17,7 @@ import java.util.concurrent.*;
 public class FutureTaskTest {
 
     @Test
-    public void test(){
+    public void test() {
         RunnableFuture<String> futureTask = new RunnableFuture<String>() {
             @Override
             public void run() {
@@ -46,5 +49,28 @@ public class FutureTaskTest {
                 return null;
             }
         };
+    }
+
+
+    private static final ExecutorService executor = Executors.newFixedThreadPool(5);
+
+    @Test
+    public void testFutures() {
+        ListeningExecutorService executorService = MoreExecutors.listeningDecorator(executor);
+
+        ListenableFuture<String> listenableFuture = executorService.submit(() -> {
+            throw new RuntimeException("hahaha");
+        });
+        listenableFuture.addListener(() -> System.out.println("执行完了，可能成功，也可能异常了"), executor);
+    }
+
+    @Test
+    public void testFutures2() {
+        ListeningExecutorService executorService = MoreExecutors.listeningDecorator(executor);
+
+        ListenableFuture<String> listenableFuture = executorService.submit(() -> {
+            throw new RuntimeException("hahaha");
+        });
+        listenableFuture.addListener(() -> System.out.println("执行完了，可能成功，也可能异常了"), executor);
     }
 }

@@ -14,7 +14,9 @@ public class App {
 
     public static void main(String[] args) {
         ApplicationContext context = new ClassPathXmlApplicationContext("spring-config.xml");
-        TestService service = (TestService) context.getBean("testService");
-        service.print();
+//        Test service = (Test) context.getBean("test");
+//        System.out.println(service.getName());
+        Test test    = new Test();
+        System.out.println(test.getName());
     }
 }

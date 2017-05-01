@@ -22,7 +22,7 @@ public class OuterService {
 
     @Transactional
     public void outerTest0() {
-        int i = testDao.updateNameById(101, "why");
+        int i = testDao.updateNameById(1, "why");
         System.out.println("countcount" + i);
     }
 }

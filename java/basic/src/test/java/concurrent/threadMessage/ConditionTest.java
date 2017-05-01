@@ -29,7 +29,6 @@ public class ConditionTest {
         Thread.sleep(100000);
     }
 
-//    private static final Lock lock = new ReentrantLock(true);
     private static final Lock lock = new ReentrantLock();
 
     // 队列满了

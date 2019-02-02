@@ -15,8 +15,5 @@ public interface TestDao {
 
     int deleteTestById(@Param("id") int id);
 
-    int updateNameById(@Param("id") int id, @Param("name") String name);
-
-    TestModel loadTestById(@Param("id") int id);
 }
 

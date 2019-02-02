@@ -1,5 +1,6 @@
 package service;
 
+import aop.Monitor;
 import dao.TestDao;
 import model.TestModel;
 import org.springframework.stereotype.Service;
@@ -19,6 +20,7 @@ public class TestService {
     @Resource
     private TestDao testDao;
 
+    @Monitor(key = "fuck")
     public int test(TestModel testModel) {
         return testDao.saveTest(testModel);
     }

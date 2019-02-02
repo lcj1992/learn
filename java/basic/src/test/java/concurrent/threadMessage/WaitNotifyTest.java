@@ -109,19 +109,30 @@ public class WaitNotifyTest {
         Object object = new Object();
         long start = System.currentTimeMillis();
         new Thread(() -> {
+            synchronized (object) {
+                try {
+                    object.wait(1000);
+                    System.out.println("wait time:" + (System.currentTimeMillis() - start));
+                } catch (InterruptedException e) {
+                    System.out.println("fuck fuck fuck ");
+                }
+            }
+        }).start();
+
+        Thread.sleep(10);
+
+        new Thread(() -> {
             try {
                 synchronized (object) {
                     Thread.sleep(3000);
-                    object.notify();
+                    object.notifyAll();
                 }
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }).start();
-        synchronized (object) {
-            object.wait();
-        }
-        System.out.println("cost time " + (System.currentTimeMillis() - start));
+
+        Thread.sleep(10000);
     }
 
     @Test

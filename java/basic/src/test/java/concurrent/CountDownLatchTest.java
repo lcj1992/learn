@@ -56,6 +56,28 @@ public class CountDownLatchTest {
         Thread.sleep(10000000);
     }
 
+
+    @Test
+    public void test1() throws InterruptedException {
+        CountDownLatch countDownLatch = new CountDownLatch(1);
+        countDownLatch.countDown();
+        countDownLatch.countDown();
+        countDownLatch.countDown();
+        countDownLatch.await();
+        System.out.println(countDownLatch.getCount());
+        Thread.sleep(100);
+    }
+
+    @Test
+    public void test2() throws InterruptedException {
+        CountDownLatch countDownLatch = new CountDownLatch(1);
+        Runnable runnable1 = new MyRunnable(countDownLatch);
+        ExecutorService executorService = Executors.newFixedThreadPool(3);
+        executorService.submit(runnable1);
+        countDownLatch.await(100L,TimeUnit.MILLISECONDS);
+        System.out.println(countDownLatch.getCount());
+    }
+
     private static class MyRunnable implements Runnable {
         private CountDownLatch countDownLatch;
 
@@ -74,7 +96,7 @@ public class CountDownLatchTest {
         }
 
         private void dealTask() throws InterruptedException {
-            Thread.sleep(5000L);
+            Thread.sleep(1000L);
             System.out.println(Thread.currentThread().getName() + " deal task");
         }
     }

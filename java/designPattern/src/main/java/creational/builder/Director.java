@@ -7,7 +7,7 @@ package creational.builder;
  * Time: 下午4:27
  */
 
-class Car {
+class Product {
     private int wheels;
 
     private String color;
@@ -34,49 +34,49 @@ class Car {
     }
 }
 
-interface CarBuilder{
+interface Builder {
     void buildView();
 
-    Car getResult();
+    Product getResult();
 }
 
-class RedCarBuilder implements CarBuilder{
+class ConcreteBuilder implements Builder {
 
-    private Car car;
+    private Product product;
 
 
-    public RedCarBuilder() {
-        this.car = new Car();
+    public ConcreteBuilder() {
+        this.product = new Product();
     }
 
     @Override
     public void buildView() {
-        car.setColor("Red");
-        car.setWheels(4);
+        product.setColor("Red");
+        product.setWheels(4);
     }
 
     @Override
-    public Car getResult() {
-        return car;
+    public Product getResult() {
+        return product;
     }
 }
 
 public class Director {
 
 
-    private CarBuilder carBuilder;
+    private Builder builder;
 
-    public Director(CarBuilder carBuilder) {
-        this.carBuilder = carBuilder;
+    public Director(Builder builder) {
+        this.builder = builder;
     }
 
-    public Car construct(){
-        carBuilder.buildView();
-        return carBuilder.getResult();
+    public Product construct(){
+        builder.buildView();
+        return builder.getResult();
     }
     public static void main(String[] args) {
-        CarBuilder carBuilder  = new RedCarBuilder();
-        Director director = new Director(carBuilder);
+        Builder builder = new ConcreteBuilder();
+        Director director = new Director(builder);
         System.out.println(director.construct());
     }
 }

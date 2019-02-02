@@ -1,21 +1,11 @@
 package reflect;
 
+import java.lang.reflect.*;
 
 /**
  * Created by lichuangjian on 16/7/16.
  */
 
-
-import java.lang.reflect.*;
-
-/**
- * 通过一个对象获得完整的包名和类名
- */
-
-interface FuckAble {
-
-    int fuck();
-}
 
 class Hello {
 
@@ -25,26 +15,9 @@ class Chinese {
 
 }
 
-class Person extends Chinese implements FuckAble {
+class Person extends Chinese {
     private String name;
     private int age;
-
-    public Person() {
-
-    }
-
-    public Person(String name) {
-        this.name = name;
-    }
-
-    public Person(int age) {
-        this.age = age;
-    }
-
-    public Person(String name, int age) {
-        this.name = name;
-        this.age = age;
-    }
 
     public String getName() {
         return name;
@@ -58,7 +31,7 @@ class Person extends Chinese implements FuckAble {
         return age;
     }
 
-    public void setAge(int age) {
+    void setAge(int age) {
         this.age = age;
     }
 
@@ -67,21 +40,16 @@ class Person extends Chinese implements FuckAble {
         return "[" + this.name + " " + this.age + "]";
     }
 
-    public void selfIntroduce() {
+    void selfIntroduce() {
         System.out.println("I'm" + name + ",and I'm" + age);
     }
 
-    public void sayHello(String name) {
+    void sayHello(String name) {
         System.out.println("hello " + name);
     }
 
     private static final int HIGH = 10;
-    private static final int JUST_SO_SO = 5;
-    private static final int LOW = 0;
 
-    public int fuck() {
-        return HIGH;
-    }
 }
 
 public class demo {

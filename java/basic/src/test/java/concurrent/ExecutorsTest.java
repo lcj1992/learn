@@ -48,6 +48,35 @@ public class ExecutorsTest {
         System.out.println(resultList.get(0).get());
     }
 
+
+    @Test
+    public void threadStateTest() throws InterruptedException {
+        AtomicLong threadNo = new AtomicLong(0);
+        class RunRun implements Runnable {
+
+            @Override
+            public void run() {
+                System.out.println("hhhhhhhhhh");
+                long result = 0;
+                for (long i = 0; i < 10000000000L; i++) {
+                    result += i * i;
+                }
+                System.out.println(result);
+            }
+        }
+        ExecutorService executor = new ThreadPoolExecutor(3, 8, 20L, TimeUnit.SECONDS, new ArrayBlockingQueue<>(1), r -> new Thread(r, "test-" + threadNo.getAndIncrement()));
+        executor.submit(new RunRun());
+        executor.submit(new RunRun());
+        executor.submit(new RunRun());
+        executor.submit(new RunRun());
+        executor.submit(new RunRun());
+        executor.submit(new RunRun());
+        executor.submit(new RunRun());
+
+        Thread.sleep(300000);
+
+    }
+
     @Test
     public void multiThreadTest() throws ExecutionException, InterruptedException {
         Callable<String> callable = new NormalCallable();

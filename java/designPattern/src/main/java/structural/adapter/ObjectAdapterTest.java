@@ -131,6 +131,3 @@ class Employee {
 
 }
 
-public class ObjectAdapterTest {
-
-}

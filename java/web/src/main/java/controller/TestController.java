@@ -1,12 +1,10 @@
 package controller;
 
 import org.springframework.context.annotation.Lazy;
-import org.springframework.web.SpringServletContainerInitializer;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import service.CommonService;
-import service.SpringService;
+import service.OuterService;
 import service.TestService;
 
 import javax.annotation.Resource;
@@ -23,6 +21,9 @@ public class TestController {
     @Resource
     private TestService testService;
 
+    @Resource
+    private OuterService outerService;
+
     @RequestMapping("testException")
     public String exceptionTest() throws Exception {
         throw new Exception("test exception to error page");
@@ -35,10 +36,9 @@ public class TestController {
     }
 
     @RequestMapping("test")
-    public String test(@RequestParam Set<Long> orderIds) {
-        System.out.println(SpringService.getBean("commonService", CommonService.class));
-        return "hello";
-
+    public String test(@RequestParam Set<Long> orderIds) throws InterruptedException {
+        outerService.outerTest0();
+        return "";
     }
 
 }

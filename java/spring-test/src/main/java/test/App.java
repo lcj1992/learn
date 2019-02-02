@@ -12,11 +12,9 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  */
 public class App {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         ApplicationContext context = new ClassPathXmlApplicationContext("spring-config.xml");
-//        Test service = (Test) context.getBean("test");
-//        System.out.println(service.getName());
-        Test test    = new Test();
-        System.out.println(test.getName());
+        Test test = (Test) context.getBean("test");
+        test.getName();
     }
 }

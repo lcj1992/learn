@@ -5,19 +5,11 @@
 <mapper namespace="dao.TestDao">
 
     <insert id="saveTest" parameterType="model.TestModel" useGeneratedKeys="true" keyProperty="id">
-        insert into name(name) values(#{name})
+        insert into name(packageId) values(#{packageId})
     </insert>
 
     <delete id="deleteTestById">
         delete from name where id = #{id};
     </delete>
-
-    <select id="loadTestById" resultType="model.TestModel">
-        select * from name where id = #{id};
-    </select>
-
-    <update id="updateNameById">
-        update name set name= #{name} where id = #{id};
-    </update>
 
 </mapper>

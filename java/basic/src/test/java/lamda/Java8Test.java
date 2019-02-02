@@ -5,14 +5,13 @@ import com.google.common.collect.Lists;
 import junit.framework.Assert;
 import org.junit.Test;
 
-import java.util.Comparator;
-import java.util.List;
-import java.util.NoSuchElementException;
-import java.util.Optional;
+import java.util.*;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * Desc:
@@ -32,7 +31,7 @@ interface Converter<F, T> {
         return 0;
     }
 
-//         静态方法中不能有范型,你能在编译期就确定类型么？
+    //         静态方法中不能有范型,你能在编译期就确定类型么？
 //         static String haha(F f){
 //           return "";
 //         }
@@ -225,8 +224,37 @@ public class Java8Test {
         Assert.assertEquals(2, strings.stream().filter(s -> s.startsWith("a")).count());
 
         Optional<String> reduced = strings.stream().sorted().reduce((s1, s2) -> s1 + "#" + s2);
-        reduced.ifPresent(System.out::println);
+        reduced.ifPresent(result -> System.out.println("reduced result:" + result));
+
+        Stream<List<Integer>> inputStream = Stream.of(
+                Arrays.asList(1), Arrays.asList(2, 3), Arrays.asList(4, 5, 6));
+        Stream<Integer> flatStream = inputStream.flatMap(Collection::stream);
+
+        Map<Boolean, List<Integer>> result = flatStream.collect(Collectors.partitioningBy(elem -> elem > 2));
+        System.out.println(result.get(true));
+
+        inputStream = Stream.of(
+                Arrays.asList(1, 2), Arrays.asList(1, 2, 3), Arrays.asList(1, 3, 4, 5, 6));
+        flatStream = inputStream.flatMap(Collection::stream);
+
+        Map<Integer, List<Integer>> results = flatStream.collect(Collectors.groupingBy(elem -> elem));
+        System.out.println(results.get(1));
+        System.out.println(results.get(2));
+
+        Stream<List<String>> strStream = Stream.of(
+                Arrays.asList("1", "2"), Arrays.asList("1", "2", "3"));
+        Stream<String> flatStrStream = strStream.flatMap(Collection::stream);
+        String str = flatStrStream.collect(Collectors.joining("，"));
+        System.out.println(str);
+
+        Stream<Integer> test = Stream.of(1, 2, 3, 4);
+        System.out.println(test.count());
+        test = Stream.of(1, 2, 3, 4);
+        test.mapToLong(e -> 1).reduce((e1, e2) -> e1 + e2).ifPresent(System.out::println);
+
+
     }
+
 }
 
 class ValueAbsentException extends Throwable {

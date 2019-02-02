@@ -1,4 +1,5 @@
 package model;
+
 /**
  * Created by lichuangjian on 16/7/21.
  * desprition:
@@ -6,7 +7,13 @@ package model;
 public class TestModel {
 
     private int id;
-    private String name;
+    private Integer packageId;
+    private String createTime;
+
+
+    public int id() {
+        return id;
+    }
 
     public int getId() {
         return id;
@@ -16,11 +23,26 @@ public class TestModel {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public Integer getPackageId() {
+        return packageId;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setPackageId(Integer packageId) {
+        this.packageId = packageId;
     }
+
+
+    public String getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(String createTime) {
+        this.createTime = createTime;
+    }
+
+
+    public TestModel() {
+    }
+
+
 }

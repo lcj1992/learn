@@ -1,10 +1,12 @@
 package service;
 
+import aop.log.Lifecycle;
+import aop.log.Result;
 import dao.TestDao;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
+import java.util.Date;
 
 /**
  * Created by lichuangjian on 16/7/21.
@@ -16,13 +18,14 @@ public class OuterService {
     @Resource
     private TestDao testDao;
 
-    public void outerTest() throws Exception {
-        outerTest0();
+    @Lifecycle
+    public Result outTest(){
+        return new Result();
     }
 
-    @Transactional
     public void outerTest0() {
-        int i = testDao.updateNameById(1, "why");
-        System.out.println("countcount" + i);
+        Date outThreadTime = new Date();
+        final String outThread = "outThread : ";
+        testDao.updateNameById(1, outThread + outThreadTime);
     }
 }

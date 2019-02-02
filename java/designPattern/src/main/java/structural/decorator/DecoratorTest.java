@@ -5,9 +5,9 @@ package structural.decorator;
  */
 // The Window interface class
 interface Window {
-    public void draw(); // Draws the Window
+    void draw(); // Draws the Window
 
-    public String getDescription(); // Returns a description of the Window
+    String getDescription(); // Returns a description of the Window
 }
 
 // Extension of a simple Window without any scrollbars

@@ -18,7 +18,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * 2. synchronized
  * 3. Atomic
  * ------------------------------------
- * Author:lichuangjian@meituan.com
+ * Author:foolchild
  * Date: 16/8/23
  * Time: 下午7:44
  */

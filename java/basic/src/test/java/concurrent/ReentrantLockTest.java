@@ -7,7 +7,7 @@ import java.util.concurrent.locks.ReentrantLock;
 /**
  * Desc: ReentrantLock源码研究
  * ------------------------------------
- * Author:lichuangjian@meituan.com
+ * Author:foolchild
  * Date: 16/8/22
  * Time: 下午8:12
  */

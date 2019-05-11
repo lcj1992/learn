@@ -39,6 +39,7 @@
           <element id="library" level="project" name="Maven: org.apache.logging.log4j:log4j-api:2.4.1" />
           <element id="library" level="project" name="Maven: org.apache.logging.log4j:log4j-core:2.4.1" />
           <element id="library" level="project" name="Maven: org.apache.logging.log4j:log4j-to-slf4j:2.4.1" />
+          <element id="library" level="project" name="Maven: org.projectlombok:lombok:1.16.20" />
         </element>
       </element>
       <element id="directory" name="META-INF">

@@ -10,7 +10,7 @@ import java.util.concurrent.atomic.AtomicLong;
 /**
  * Desc:
  * ------------------------------------
- * Author:lichuangjian@meituan.com
+ * Author:foolchild
  * Date: 16/8/21
  * Time: 上午9:49
  */

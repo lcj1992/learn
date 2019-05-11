@@ -8,7 +8,7 @@ import java.util.concurrent.ExecutionException;
 /**
  * Desc: Exchanger 简化两个线程间数据的交换
  * ------------------------------------
- * Author:lichuangjian@meituan.com
+ * Author:foolchild
  * Date: 16/8/21
  * Time: 下午1:06
  */

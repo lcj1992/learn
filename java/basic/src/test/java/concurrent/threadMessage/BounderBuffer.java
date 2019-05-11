@@ -11,7 +11,7 @@ import java.util.concurrent.locks.ReentrantLock;
 /**
  * Desc:
  * ------------------------------------
- * Author:lichuangjian@meituan.com
+ * Author:foolchild
  * Date: 2016/12/30
  * Time: 下午5:47
  */

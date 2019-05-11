@@ -7,7 +7,7 @@ import java.util.concurrent.locks.AbstractQueuedSynchronizer;
 /**
  * Desc:
  * ------------------------------------
- * Author:lichuangjian@meituan.com
+ * Author:foolchild
  * Date: 16/8/25
  * Time: 上午11:27
  */

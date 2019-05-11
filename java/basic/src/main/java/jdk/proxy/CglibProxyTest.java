@@ -11,7 +11,7 @@ import java.lang.reflect.Method;
 /**
  * Desc: cglib动态代理简例
  * ------------------------------------
- * Author:lichuangjian@meituan.com
+ * Author:foolchild
  * Date: 16/8/20
  * Time: 下午3:31
  */

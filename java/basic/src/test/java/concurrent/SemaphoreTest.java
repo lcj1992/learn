@@ -8,7 +8,7 @@ import java.util.concurrent.Semaphore;
  * Desc: Semaphore 经典的信号量,通过计数器控制对共享资源的访问
  * 锁是特殊的信号量(只有一个信号)
  * ------------------------------------
- * Author:lichuangjian@meituan.com
+ * Author:foolchild
  * Date: 16/8/21
  * Time: 上午11:30
  */

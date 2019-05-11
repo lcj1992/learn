@@ -7,7 +7,7 @@ import java.util.concurrent.Phaser;
 /**
  * Desc:
  * ------------------------------------
- * Author:lichuangjian@meituan.com
+ * Author:foolchild
  * Date: 16/8/21
  * Time: 下午1:10
  */

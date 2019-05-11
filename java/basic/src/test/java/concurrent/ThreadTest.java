@@ -12,7 +12,7 @@ import java.util.concurrent.Future;
  * Thread#interrupt():  just to set the interrupt flag
  * thread1#join():  wait until the thread1 die or timeout
  * ------------------------------------
- * Author:lichuangjian@meituan.com
+ * Author:foolchild
  * Date: 16/8/23
  * Time: 下午7:45
  */

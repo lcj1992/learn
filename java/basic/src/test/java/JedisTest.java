@@ -6,7 +6,7 @@ import redis.clients.jedis.Jedis;
 /**
  * Desc:
  * ------------------------------------
- * Author:lichuangjian@meituan.com
+ * Author:foolchild
  * Date: 2016/10/17
  * Time: 上午12:17
  */
@@ -14,6 +14,9 @@ public class JedisTest {
 
     private static final Jedis jedis = new Jedis("127.0.0.1", 6379);
 
+    {
+        System.out.println("heheda");
+    }
 
     @Test
     public void stringTransformTest() {

@@ -12,7 +12,7 @@ import java.util.concurrent.Future;
 /**
  * Desc:
  * ------------------------------------
- * Author:lichuangjian@meituan.com
+ * Author:foolchild
  * Date: 16/9/14
  * Time: 下午12:35
  */

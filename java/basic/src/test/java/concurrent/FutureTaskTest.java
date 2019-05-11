@@ -10,7 +10,7 @@ import java.util.concurrent.*;
 /**
  * Desc:
  * ------------------------------------
- * Author:lichuangjian@meituan.com
+ * Author:foolchild
  * Date: 16/8/25
  * Time: 上午11:47
  */

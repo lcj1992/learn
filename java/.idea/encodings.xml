@@ -2,11 +2,10 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/algorithm" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/basic" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/designPattern" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/log" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/spring-test" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/thrift_demo" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/web" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/data_structure" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/design_pattern" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/leetcode" charset="UTF-8" />
   </component>
 </project>

@@ -11,7 +11,7 @@ import java.util.List;
  * 2.LockSupport.park()和LockSupport#unpark()
  * 3.Condition.await()和Condition.signal()
  * ------------------------------------
- * Author:lichuangjian@meituan.com
+ * Author:foolchild
  * Date: 16/8/23
  * Time: 下午7:55
  */
@@ -138,9 +138,20 @@ public class WaitNotifyTest {
     @Test
     public void notifyMustOtherThread() throws InterruptedException {
         Object object = new Object();
+        new Thread(() -> {
+            synchronized (object){
+                try {
+                    Thread.sleep(3000);
+                    object.notifyAll();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }).start();
         synchronized (object) {
+            long start = System.currentTimeMillis();
             object.wait();
-            object.notify();
+            System.out.println(System.currentTimeMillis() - start);
         }
         // 这里一直打印不了hehe,线程阻塞了。
         System.out.println("hehe");

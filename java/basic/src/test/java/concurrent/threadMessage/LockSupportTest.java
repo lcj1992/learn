@@ -10,7 +10,7 @@ import java.util.concurrent.locks.LockSupport;
 /**
  * Desc: LockSupport源码给出的demo
  * ------------------------------------
- * Author:lichuangjian@meituan.com
+ * Author:foolchild
  * Date: 16/8/24
  * Time: 下午6:10
  */
@@ -80,7 +80,7 @@ public class LockSupportTest {
         });
         thread1.start();
         thread2.start();
-        Thread.sleep(10000);
+        Thread.sleep(100000);
     }
 }
 

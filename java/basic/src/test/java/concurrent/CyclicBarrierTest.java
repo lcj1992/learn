@@ -8,7 +8,7 @@ import java.util.concurrent.CyclicBarrier;
 /**
  * Desc:
  * ------------------------------------
- * Author:lichuangjian@meituan.com
+ * Author:foolchild
  * Date: 16/8/21
  * Time: 下午12:56
  */

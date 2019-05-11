@@ -10,7 +10,7 @@ import java.util.concurrent.Executors;
 /**
  * Desc:
  * ------------------------------------
- * Author:lichuangjian@meituan.com
+ * Author:foolchild
  * Date: 2017/2/10
  * Time: 上午11:19
  */

@@ -13,7 +13,7 @@ import java.util.concurrent.atomic.AtomicReference;
 /**
  * Desc:
  * ------------------------------------
- * Author:lichuangjian@meituan.com
+ * Author:foolchild
  * Date: 16/8/21
  * Time: 下午6:32
  */

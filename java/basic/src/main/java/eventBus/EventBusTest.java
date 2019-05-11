@@ -6,7 +6,7 @@ import com.google.common.eventbus.Subscribe;
 /**
  * Desc:
  * ------------------------------------
- * Author:lichuangjian@meituan.com
+ * Author:foolchild
  * Date: 2017/1/11
  * Time: 下午11:47
  */

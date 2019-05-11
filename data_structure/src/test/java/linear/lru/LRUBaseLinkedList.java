@@ -9,11 +9,11 @@ import java.util.Objects;
  * Date: 2019/3/20
  * Time: 下午4:08
  */
-public class LRUBaseLinkedList<AnyType> {
+public class LRUBaseLinkedList<E> {
 
     private static final int DEFAULT_CAPACITY = 5;
 
-    private Node<AnyType> head;
+    private Node<E> head;
 
     private int size;
 
@@ -35,8 +35,8 @@ public class LRUBaseLinkedList<AnyType> {
         return size;
     }
 
-    public void add(AnyType data) {
-        Node<AnyType> node = find(data);
+    public void add(E data) {
+        Node<E> node = find(data);
         if (Objects.nonNull(node)) {
             remove(node);
             addAtHead(data);
@@ -52,7 +52,7 @@ public class LRUBaseLinkedList<AnyType> {
         if (head.next == null) {
             return;
         }
-        Node<AnyType> node = head;
+        Node<E> node = head;
         while (Objects.nonNull(node.next.next)) {
             node = node.next;
         }
@@ -60,17 +60,17 @@ public class LRUBaseLinkedList<AnyType> {
         size--;
     }
 
-    private void addAtHead(AnyType data) {
-        Node<AnyType> node = new Node<>(data, head.next);
+    private void addAtHead(E data) {
+        Node<E> node = new Node<>(data, head.next);
         head.next = node;
         size++;
     }
 
-    private Node<AnyType> find(AnyType data) {
+    private Node<E> find(E data) {
         if (head.next == null) {
             return null;
         }
-        Node<AnyType> node = head;
+        Node<E> node = head;
         while (Objects.nonNull(node.next)) {
             if (Objects.nonNull(node.data) && Objects.equals(node.data, data)) {
                 return node;
@@ -80,8 +80,8 @@ public class LRUBaseLinkedList<AnyType> {
         return null;
     }
 
-    private void remove(Node<AnyType> node) {
-        Node<AnyType> temp = head;
+    private void remove(Node<E> node) {
+        Node<E> temp = head;
         while (Objects.nonNull(temp)) {
             if (temp.next == node) {
                 temp.next = temp.next.next;
@@ -107,7 +107,7 @@ public class LRUBaseLinkedList<AnyType> {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        Node<AnyType> temp = head;
+        Node<E> temp = head;
         while (Objects.nonNull(temp.next)) {
             sb.append(temp.next.data + ", ");
             temp = temp.next;

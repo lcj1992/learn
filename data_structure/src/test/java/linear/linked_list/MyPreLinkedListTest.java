@@ -1,20 +1,19 @@
-package linear;
+package linear.linked_list;
 
-import linear.linked_list.MyLinkedList;
 import org.junit.Test;
 
 /**
  * Desc:
  * ------------------------------------
  * Author:foolchild
- * Date: 2019/3/19
- * Time: 下午11:06
+ * Date: 2019/3/20
+ * Time: 上午9:34
  */
-public class MyLinkedListTest {
+public class MyPreLinkedListTest {
 
     @Test
     public void test() throws Exception {
-        MyLinkedList<Integer> list = new MyLinkedList<>();
+        MyLinkedListBaseOnDoublyList<Integer> list = new MyLinkedListBaseOnDoublyList<>();
         list.add(1);
         list.add(2);
         list.add(3);

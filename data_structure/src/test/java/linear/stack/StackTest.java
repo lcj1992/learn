@@ -1,6 +1,5 @@
-package linear;
+package linear.stack;
 
-import linear.stack.Stack;
 import org.junit.Test;
 
 /**

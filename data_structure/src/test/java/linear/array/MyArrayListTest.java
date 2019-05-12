@@ -1,4 +1,4 @@
-package linear;
+package linear.array;
 
 import linear.array.MyArrayList;
 import org.junit.Test;

@@ -1,4 +1,4 @@
-package linear;
+package linear.lru;
 
 import linear.lru.LRUBaseLinkedList;
 import org.junit.Test;

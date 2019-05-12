@@ -1,4 +1,4 @@
-package linear;
+package linear.queue;
 
 import linear.queue.MyQueue;
 import org.junit.Test;

@@ -9,6 +9,7 @@ import java.util.Date;
  */
 public class ClassLoaderTest {
 
+
     @Test
     public void test() throws ClassNotFoundException, InterruptedException {
         FileClassLoader fileClassLoader = new FileClassLoader("/home/lcj/work/simple/lcj-java/target/classes");
@@ -17,6 +18,4 @@ public class ClassLoaderTest {
         System.out.println(clazz.getClassLoader());
 
     }
-
-
 }

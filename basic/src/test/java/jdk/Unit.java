@@ -1,4 +1,4 @@
-package equal_hashcode;
+package jdk;
 
 import java.util.Arrays;
 

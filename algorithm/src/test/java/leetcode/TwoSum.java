@@ -11,13 +11,13 @@ import java.util.Arrays;
  * Date: 2019/4/20
  * Time: 上午10:42
  */
-public class TwoSumTest {
+public class TwoSum {
 
     @Test
     public void testTwoSum() {
         int[] nums = new int[]{2, 7, 11, 15};
         int target = 9;
-        TwoSumTest twoSum = new TwoSumTest();
+        TwoSum twoSum = new TwoSum();
         int[] ints = twoSum.twoSum(nums, target);
         Arrays.stream(ints).forEach(System.out::print);
     }

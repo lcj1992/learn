@@ -1,4 +1,4 @@
-package equal_hashcode;
+package jdk;
 
 
 import java.util.HashMap;
@@ -34,12 +34,25 @@ public class People {
     }
 
     public static void main(String[] args) {
-        People p1 = new People("foolchild", 24);
-        System.out.println(p1.hashCode());
+//        People p1 = new People("foolchild", 24);
+//        System.out.println(p1.hashCode());
+//
+//        Map<People, Integer> hashMap = new HashMap<People, Integer>();
+//        hashMap.put(p1, 1);
+//
+//        System.out.println(hashMap.get(new People("foolchild", 24)));
 
-        Map<People, Integer> hashMap = new HashMap<People, Integer>();
-        hashMap.put(p1, 1);
+        Thread thread = new Thread(() -> {
+            try {
+                Thread.sleep(3000);
+                System.out.println("i am alive!");
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
 
-        System.out.println(hashMap.get(new People("foolchild", 24)));
+        });
+        thread.setDaemon(true);
+        thread.start();
+        System.out.println("main end");
     }
 }

@@ -3,7 +3,6 @@ package concurrent;
 import org.junit.Test;
 
 import java.util.concurrent.Exchanger;
-import java.util.concurrent.ExecutionException;
 
 /**
  * Desc: Exchanger 简化两个线程间数据的交换

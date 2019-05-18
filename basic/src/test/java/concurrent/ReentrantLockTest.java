@@ -18,7 +18,6 @@ public class ReentrantLockTest {
     // 2.CAS保证state的操作的原子性
     // 3.CLH队列
 
-
     @Test
     public void howToLockTest() throws InterruptedException {
         ReentrantLock lock = new ReentrantLock();
@@ -26,8 +25,7 @@ public class ReentrantLockTest {
         new Thread(new MyRunnable(lock), "thread2").start();
         new Thread(new MyRunnable(lock), "thread3").start();
         new Thread(new MyRunnable(lock), "thread4").start();
-
-        Thread.sleep(1000000000);
+        Thread.sleep(10000);
     }
 
     private class MyRunnable implements Runnable {
@@ -42,6 +40,7 @@ public class ReentrantLockTest {
             lock.lock();
             try {
                 Thread.sleep(1000);
+                System.out.println("hello world");
             } catch (InterruptedException e) {
                 e.printStackTrace();
             } finally {

@@ -11,7 +11,7 @@ import java.util.Objects;
  * Date: 2019/5/11
  * Time: 下午2:04
  */
-public class invertTreeTest {
+public class InvertTree {
 
     public class TreeNode {
         int val;

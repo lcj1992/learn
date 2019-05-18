@@ -4,7 +4,6 @@ import org.junit.Assert;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -18,12 +17,10 @@ import java.util.stream.Collectors;
  */
 public class Developer {
 
-    private String name;
     private Set<String> languages;
 
-    public Developer(String name) {
+    public Developer() {
         this.languages = new HashSet<>();
-        this.name = name;
     }
 
     public void add(String language) {
@@ -36,13 +33,13 @@ public class Developer {
 
     public static void main(String[] args) {
         List<Developer> team = new ArrayList<>();
-        Developer polyglot = new Developer("esoteric");
+        Developer polyglot = new Developer();
         polyglot.add("clojure");
         polyglot.add("scala");
         polyglot.add("groovy");
         polyglot.add("go");
 
-        Developer busy = new Developer("pragmatic");
+        Developer busy = new Developer();
         busy.add("java");
         busy.add("javascript");
 

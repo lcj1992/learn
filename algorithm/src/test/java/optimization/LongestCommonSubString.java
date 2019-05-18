@@ -27,6 +27,7 @@ public class LongestCommonSubString {
                     }
                     continue;
                 }
+
                 if (str1.charAt(i) == str2.charAt(j)) {
                     if (j == 0) {
                         table[i][j] = 1;
@@ -36,6 +37,7 @@ public class LongestCommonSubString {
                 } else {
                     table[i][j] = 0;
                 }
+
                 if (table[i][j] > longestLength) {
                     longestLength = table[i][j];
                 }

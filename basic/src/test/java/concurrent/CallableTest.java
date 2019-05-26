@@ -18,7 +18,6 @@ import java.util.concurrent.Future;
  */
 public class CallableTest {
 
-
     // callable可以返回结果,runnable不可以
     // callable可以抛出异常给父线程,runnable不可以
     // executor的invokeXXX只接受callable类型,submit既接受callable类型也接受runnable类型
@@ -37,26 +36,4 @@ public class CallableTest {
         // runnable
         executorService.submit(() -> System.out.println("runnable"));
     }
-
-    class XX{
-        Integer aa;
-
-        public Integer getAa() {
-            return aa;
-        }
-
-        public void setAa(Integer aa) {
-            this.aa = aa;
-        }
-    }
-
-    @Test
-
-    public void test(){
-        XX xx = new XX();
-        if(xx.getAa() == 0){
-            System.out.println("xx");
-        }
-    }
-
 }

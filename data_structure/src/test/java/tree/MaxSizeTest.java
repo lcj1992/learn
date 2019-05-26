@@ -1,12 +1,9 @@
-import com.google.common.collect.Lists;
-import lombok.AllArgsConstructor;
+package tree;
+
 import lombok.Data;
-import lombok.Getter;
 import org.junit.Assert;
 import org.junit.Test;
-import org.springframework.util.CollectionUtils;
 
-import java.util.List;
 import java.util.Objects;
 
 /**
@@ -17,48 +14,6 @@ import java.util.Objects;
  * Time: 下午4:30
  */
 public class MaxSizeTest {
-
-    @AllArgsConstructor
-    @Getter
-    public class TreeNode {
-        private int value;
-        private List<TreeNode> children;
-
-        public TreeNode(int value) {
-            this.value = value;
-        }
-    }
-
-    public int maxSize(TreeNode root) {
-        if (CollectionUtils.isEmpty(root.getChildren())) {
-            return 1;
-        }
-        int maxSize = 0;
-        List<TreeNode> children = root.getChildren();
-        int currentLevelSize = 0;
-        for (TreeNode child : children) {
-            int eachChildSize = maxSize(child);
-            currentLevelSize += eachChildSize;
-        }
-        return maxSize > currentLevelSize ? maxSize : currentLevelSize;
-    }
-
-    @Test
-    public void test() {
-        TreeNode treeNode10 = new TreeNode(10);
-        TreeNode treeNode9 = new TreeNode(9);
-        TreeNode treeNode8 = new TreeNode(8);
-        TreeNode treeNode7 = new TreeNode(7);
-        TreeNode treeNode6 = new TreeNode(6);
-        TreeNode treeNode5 = new TreeNode(5);
-        TreeNode treeNode4 = new TreeNode(4, Lists.newArrayList(treeNode9, treeNode10));
-        TreeNode treeNode3 = new TreeNode(3, Lists.newArrayList(treeNode8));
-        TreeNode treeNode2 = new TreeNode(2, Lists.newArrayList(treeNode5, treeNode6, treeNode7));
-        TreeNode treeNode1 = new TreeNode(1, Lists.newArrayList(treeNode2, treeNode3, treeNode4));
-        int maxSize = maxSize(treeNode1);
-        Assert.assertEquals(6, maxSize);
-    }
-
 
     @Data
     public class ListNode {

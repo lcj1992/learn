@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>lcj</groupId>
-    <artifactId>data_structure</artifactId>
+    <artifactId>leetcode</artifactId>
     <dependencies>
         <dependency>
             <groupId>com.google.guava</groupId>

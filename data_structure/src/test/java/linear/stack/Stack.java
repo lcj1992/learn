@@ -3,7 +3,7 @@ package linear.stack;
 import java.util.Iterator;
 
 /**
- * Desc: 后进先出线性表
+ * Desc: 栈，基于链表实现的，后进先出
  * ------------------------------------
  * Author:foolchild
  * Date: 2019/3/20

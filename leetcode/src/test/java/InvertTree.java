@@ -1,5 +1,3 @@
-package leetcode;
-
 import org.junit.Test;
 
 import java.util.Objects;
@@ -23,7 +21,7 @@ public class InvertTree {
         }
     }
 
-    public TreeNode invertTree(TreeNode root) {
+    private TreeNode invertTree(TreeNode root) {
         if (Objects.isNull(root)) {
             return null;
         }

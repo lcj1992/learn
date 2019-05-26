@@ -1,5 +1,3 @@
-package leetcode;
-
 import junit.framework.Assert;
 import org.junit.Test;
 
@@ -21,8 +19,7 @@ public class WildcardChar {
         Assert.assertEquals(isMatch("acdcb", "a*c?b"), false);
     }
 
-
-    public boolean isMatch(String s, String p) {
+    private boolean isMatch(String s, String p) {
         // dp[i][j]表示s到i位置,p到j位置是否匹配!
         boolean[][] dp = new boolean[s.length() + 1][p.length() + 1];
         dp[0][0] = true;

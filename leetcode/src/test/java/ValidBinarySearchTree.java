@@ -1,5 +1,3 @@
-package leetcode;
-
 import junit.framework.Assert;
 import org.junit.Test;
 
@@ -24,11 +22,11 @@ public class ValidBinarySearchTree {
         }
     }
 
-    public boolean isValidBST(TreeNode root) {
+    private boolean isValidBST(TreeNode root) {
         return isValidBST(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
     }
 
-    public boolean isValidBST(TreeNode root, long min, long max) {
+    private boolean isValidBST(TreeNode root, long min, long max) {
         if (Objects.isNull(root)) {
             return true;
         }

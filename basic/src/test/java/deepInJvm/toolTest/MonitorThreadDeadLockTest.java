@@ -4,17 +4,19 @@ package deepInJvm.toolTest;
  * Created by lcj on 15-6-8.
  */
 public class MonitorThreadDeadLockTest {
-    static class SynAddRunable implements Runnable {
-        int a, b;
+    static class SynAddRunnable implements Runnable {
+        private final Integer a;
+        private final Integer b;
 
-        public SynAddRunable(int a, int b) {
+
+        SynAddRunnable(int a, int b) {
             this.a = a;
             this.b = b;
         }
 
         public void run() {
-            synchronized (Integer.valueOf(a)) {
-                synchronized (Integer.valueOf(b)) {
+            synchronized (a) {
+                synchronized (b) {
                     System.out.println(a + b);
                 }
             }
@@ -22,9 +24,9 @@ public class MonitorThreadDeadLockTest {
     }
 
     public static void main(String[] args) {
-        for (int i = 0; i < 10000; i++) {
-            new Thread(new SynAddRunable(1, 2)).start();
-            new Thread(new SynAddRunable(2, 1)).start();
+        for (int i = 0; i < 1000; i++) {
+            new Thread(new SynAddRunnable(1, 2)).start();
+            new Thread(new SynAddRunnable(2, 1)).start();
         }
     }
 }

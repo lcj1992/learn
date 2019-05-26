@@ -5,20 +5,14 @@ package deepInJvm.toolTest;
  */
 public class MonitorThreadBusyTest {
 
-    /**
-     * 线程死循环演示
-     */
-    public static void createBusyThread() {
-        Thread thread = new Thread(new Runnable() {
 
-            public void run() {
-                while (true)
-                    ;
-            }
+    public static void createBusyThread() {
+        Thread thread = new Thread(() -> {
+            while (true)
+                ;
         }, "testBusyThread");
         thread.start();
     }
-
 
     public static void main(String[] args) throws Exception {
         createBusyThread();

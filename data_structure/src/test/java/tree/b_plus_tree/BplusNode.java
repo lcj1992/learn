@@ -1,4 +1,4 @@
-package tree.bplusTree;
+package tree.b_plus_tree;
 
 import java.util.AbstractMap;
 import java.util.ArrayList;

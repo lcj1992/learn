@@ -1,6 +1,7 @@
 package concurrent;
 
 import com.google.common.collect.Lists;
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.List;
@@ -19,11 +20,13 @@ import java.util.concurrent.atomic.AtomicReference;
  */
 public class AtomicTest {
 
+    private static final int FINAL_VALUE = 100000;
+
     @Test
-    public void AtomicReferenceTest() {
+    public void atomicReferenceTest() {
         AtomicReference<Integer> atomicReference = new AtomicReference<>();
         atomicReference.set(10);
-        System.out.println(atomicReference.compareAndSet(10, 10));
+        Assert.assertEquals(atomicReference.compareAndSet(10, 11), true);
     }
 
     @Test
@@ -31,33 +34,25 @@ public class AtomicTest {
         AtomicInteger atomicInteger = new AtomicInteger();
         ExecutorService executorService = Executors.newFixedThreadPool(30);
         List<Callable<Integer>> callableList = Lists.newArrayList();
-        for (int i = 0; i < 10000000; i++) {
+        for (int i = 0; i < FINAL_VALUE; i++) {
             callableList.add(atomicInteger::getAndIncrement);
         }
         executorService.invokeAll(callableList);
-        System.out.println(atomicInteger.get());
+        Assert.assertEquals(atomicInteger.get(), FINAL_VALUE);
     }
 
+    private volatile Integer atomicInteger = 0;
 
-    volatile Integer atomicInteger = 0;
     @Test
     public void volatileIntegerTest() throws InterruptedException {
 
         ExecutorService executorService = Executors.newFixedThreadPool(30);
         List<Callable<Integer>> callableList = Lists.newArrayList();
-        for (int i = 0; i < 10000000; i++) {
-            callableList.add(()-> atomicInteger++);
+
+        for (int i = 0; i < FINAL_VALUE; i++) {
+            callableList.add(() -> atomicInteger++);
         }
         executorService.invokeAll(callableList);
-        System.out.println(atomicInteger);
-    }
-
-    @Test
-    public void test() {
-        List<String> list = Lists.newArrayList();
-        list.add("a");
-        list.add("ab");
-        boolean ok = list.stream().filter(s -> s.length() > 1).count() > 0;
-        System.out.println(ok);
+        Assert.assertEquals(atomicInteger < FINAL_VALUE, true);
     }
 }

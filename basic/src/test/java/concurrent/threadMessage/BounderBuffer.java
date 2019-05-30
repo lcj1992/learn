@@ -16,39 +16,39 @@ import java.util.concurrent.locks.ReentrantLock;
  * Time: 下午5:47
  */
 public class BounderBuffer {
-    final Lock lock = new ReentrantLock();
-    final Condition notFull = lock.newCondition();
-    final Condition notEmpty = lock.newCondition();
+    private final Lock LOCK = new ReentrantLock();
+    private final Condition NOT_FULL = LOCK.newCondition();
+    private final Condition NOT_EMPTY = LOCK.newCondition();
 
-    final Object[] items = new Object[100];
-    int putptr, takeptr, count;
+    private final Object[] items = new Object[100];
+    private int putptr, takeptr, count;
 
     public void put(Object x) throws InterruptedException {
-        lock.lock();
+        LOCK.lock();
         try {
             while (count == items.length)
-                notFull.await();
+                NOT_FULL.await();
             items[putptr] = x;
             if (++putptr == items.length) putptr = 0;
             ++count;
-            notEmpty.signal();
+            NOT_EMPTY.signal();
         } finally {
-            lock.unlock();
+            LOCK.unlock();
         }
     }
 
     public Object take() throws InterruptedException {
-        lock.lock();
+        LOCK.lock();
         try {
             while (count == 0)
-                notEmpty.await();
+                NOT_EMPTY.await();
             Object x = items[takeptr];
             if (++takeptr == items.length) takeptr = 0;
             --count;
-            notFull.signal();
+            NOT_FULL.signal();
             return x;
         } finally {
-            lock.unlock();
+            LOCK.unlock();
         }
     }
 
@@ -73,14 +73,10 @@ public class BounderBuffer {
                 for (int i = 0; i < 100; i++) {
                     buffer.take();
                     System.out.println("consume one");
-
                 }
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         });
-
-        Thread.sleep(100000);
-
     }
 }

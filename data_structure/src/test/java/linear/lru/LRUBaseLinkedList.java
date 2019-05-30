@@ -19,13 +19,13 @@ public class LRUBaseLinkedList<E> {
 
     private int capacity;
 
-    public LRUBaseLinkedList() {
+    LRUBaseLinkedList() {
         this.head = new Node<>(null, null);
         this.size = 0;
         this.capacity = DEFAULT_CAPACITY;
     }
 
-    public LRUBaseLinkedList(int capacity) {
+    LRUBaseLinkedList(int capacity) {
         this.head = new Node<>(null, null);
         this.size = 0;
         this.capacity = capacity;
@@ -93,12 +93,12 @@ public class LRUBaseLinkedList<E> {
 
     }
 
-    private static class Node<AnyType> {
-        private AnyType data;
+    private static class Node<E> {
+        private E data;
 
-        private Node<AnyType> next;
+        private Node<E> next;
 
-        private Node(AnyType data, Node<AnyType> next) {
+        private Node(E data, Node<E> next) {
             this.data = data;
             this.next = next;
         }
@@ -109,7 +109,7 @@ public class LRUBaseLinkedList<E> {
         StringBuilder sb = new StringBuilder();
         Node<E> temp = head;
         while (Objects.nonNull(temp.next)) {
-            sb.append(temp.next.data + ", ");
+            sb.append(temp.next.data).append(", ");
             temp = temp.next;
         }
         return sb.toString().substring(0, sb.length() - 2);

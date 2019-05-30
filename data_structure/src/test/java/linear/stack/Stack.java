@@ -13,13 +13,13 @@ public class Stack<E> implements Iterable<E> {
 
     private Node<E> top = null;
 
-    public void push(E val) {
+    void push(E val) {
         Node<E> newNode = new Node<>(val, null);
         newNode.next = top;
         top = newNode;
     }
 
-    public E pop() {
+    E pop() {
         if (top == null) {
             return null;
         }

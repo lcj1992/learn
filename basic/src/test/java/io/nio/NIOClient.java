@@ -22,20 +22,15 @@ public class NIOClient {
 
     public void sendAndRecv(String words) throws IOException {
         byte[] msg = words.getBytes();
-        ByteBuffer buffer = ByteBuffer.wrap(msg);
+        ByteBuffer buffer = ByteBuffer.allocate(1024);
+        buffer.put(msg);
         System.out.println("sending: " + words);
         channel.write(buffer);
         buffer.clear();
-        channel.read(buffer);
-        System.out.println("received: " + new String(buffer.array()).trim());
 
-        buffer.clear();
-        System.out.println("sending: " + "again");
-        buffer = ByteBuffer.wrap("again".getBytes());
-        channel.write(buffer);
-        buffer.clear();
         channel.read(buffer);
         System.out.println("received: " + new String(buffer.array()).trim());
+        buffer.clear();
 
         channel.close();
     }

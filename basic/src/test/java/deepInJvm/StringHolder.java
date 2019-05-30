@@ -20,27 +20,29 @@ public class StringHolder {
 
     public static void main(String[] args) throws InterruptedException {
         System.out.println("heheda");
-        Thread thread = new Thread(){
-            @Override
-            public void run() {
-                System.out.println(currentThread().getName());
-                throw new RuntimeException("hahaha");
+        long start = System.currentTimeMillis();
+        Thread thread = new Thread(() -> {
+            System.out.println(currentThread().getName());
+            try {
+                Thread.sleep(10000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
-        };
+        });
         thread.start();
 
-        Thread.sleep(3000L);
+        Thread.sleep(1000L);
         System.out.println(currentThread().getName());
         System.out.println(Thread.activeCount());
 
-        Thread thread1 = new Thread(){
-            @Override
-            public void run() {
-                System.out.println("hehe");
-            }
-        };
+        Thread thread1 = new Thread(() -> System.out.println("hehe"));
         thread1.start();
         System.out.println(Thread.activeCount());
         System.out.println("end end!");
+        System.out.println(System.currentTimeMillis() - start);
+        thread.join();
+        System.out.println(System.currentTimeMillis() - start);
+
+
     }
 }

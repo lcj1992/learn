@@ -26,7 +26,6 @@ public class NIOServer {
     }
 
     void listen() throws IOException {
-        System.out.println("server started succeed!");
         while (true) {
             selector.select();
             Iterator<SelectionKey> ite = selector.selectedKeys().iterator();
@@ -36,8 +35,17 @@ public class NIOServer {
                     SocketChannel channel = serverSocketChannel.accept();
                     channel.configureBlocking(false);
                     channel.register(selector, SelectionKey.OP_READ);
-                } else if (key.isReadable()) {
+                }
+                if (key.isReadable()) {
                     recvAndReply(key);
+                }
+                if (key.isWritable()) {
+                    //do something
+                    System.out.println("key is writable");
+                }
+                if (key.isConnectable()) {
+                    //do something
+                    System.out.println("key is connectable");
                 }
                 ite.remove();
             }
@@ -46,13 +54,11 @@ public class NIOServer {
 
     private void recvAndReply(SelectionKey key) throws IOException {
         SocketChannel channel = (SocketChannel) key.channel();
-        ByteBuffer buffer = ByteBuffer.allocate(256);
+        ByteBuffer buffer = ByteBuffer.allocate(2048);
         int i = channel.read(buffer);
         if (i != -1) { //用于判断客户端是否断开了连接
             String msg = new String(buffer.array()).trim();
-            System.out.println("server received message: " + msg);
-            System.out.println("server reply: " + msg);
-            channel.write(ByteBuffer.wrap(msg.getBytes()));
+            channel.write(ByteBuffer.wrap(("hello client, I receive you msg").getBytes()));
         } else {
             channel.close(); //如果客户端断开连接就关闭该连接
         }

@@ -14,19 +14,19 @@ public class MyQueue<E> implements Iterable<E> {
     private Node<E> head = new Node<>(null, null);
     private Node<E> tail = new Node<>(null, null);
 
-    public MyQueue() {
+    MyQueue() {
         tail = new Node<>(null, null);
         head = new Node<>(null, tail);
     }
 
-    public void enqueue(E val) {
+    void enqueue(E val) {
         Node<E> newTail = new Node<>(null, null);
         tail.data = val;
         tail.next = newTail;
         tail = newTail;
     }
 
-    public E dequeue() {
+    E dequeue() {
         E data = head.next.data;
         head = head.next;
         return data;

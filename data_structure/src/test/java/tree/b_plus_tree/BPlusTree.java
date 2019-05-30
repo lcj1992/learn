@@ -11,11 +11,11 @@ import java.util.Random;
  * Date: 2019/5/8
  * Time: 上午8:59
  */
-public class BplusTree<K extends Comparable<K>, V> {
+public class BPlusTree<K extends Comparable<K>, V> {
     /**
      * 根节点
      */
-    private BplusNode<K, V> root;
+    private BPlusNode<K, V> root;
 
     /**
      * 阶数，M值
@@ -25,26 +25,26 @@ public class BplusTree<K extends Comparable<K>, V> {
     /**
      * 叶子节点的链表头
      */
-    private BplusNode<K, V> head;
+    private BPlusNode<K, V> head;
 
     /**
      * 树高
      */
     private int height = 0;
 
-    public BplusNode<K, V> getHead() {
+    public BPlusNode<K, V> getHead() {
         return head;
     }
 
-    public void setHead(BplusNode<K, V> head) {
+    public void setHead(BPlusNode<K, V> head) {
         this.head = head;
     }
 
-    public BplusNode<K, V> getRoot() {
+    public BPlusNode<K, V> getRoot() {
         return root;
     }
 
-    public void setRoot(BplusNode<K, V> root) {
+    public void setRoot(BPlusNode<K, V> root) {
         this.root = root;
     }
 
@@ -77,13 +77,13 @@ public class BplusTree<K extends Comparable<K>, V> {
 
     }
 
-    public BplusTree(int order) {
+    public BPlusTree(int order) {
         if (order < 3) {
             System.out.print("order must be greater than 2");
             System.exit(0);
         }
         this.order = order;
-        root = new BplusNode<K, V>(true, true);
+        root = new BPlusNode<K, V>(true, true);
         head = root;
     }
 
@@ -106,7 +106,7 @@ public class BplusTree<K extends Comparable<K>, V> {
     }
 
     private static void testOrderRemove(int size, int order) {
-        BplusTree<Integer, Integer> tree = new BplusTree<Integer, Integer>(order);
+        BPlusTree<Integer, Integer> tree = new BPlusTree<Integer, Integer>(order);
         System.out.println("\nTest order remove " + size + " datas, of order:"
                 + order);
         System.out.println("Begin order insert...");
@@ -127,7 +127,7 @@ public class BplusTree<K extends Comparable<K>, V> {
     }
 
     private static void testRandomRemove(int size, int order) {
-        BplusTree<Integer, Integer> tree = new BplusTree<Integer, Integer>(order);
+        BPlusTree<Integer, Integer> tree = new BPlusTree<Integer, Integer>(order);
         System.out.println("\nTest random remove " + size + " datas, of order:"
                 + order);
         Random random = new Random();
@@ -160,7 +160,7 @@ public class BplusTree<K extends Comparable<K>, V> {
     }
 
     private static void testOrderSearch(int size, int order) {
-        BplusTree<Integer, Integer> tree = new BplusTree<Integer, Integer>(order);
+        BPlusTree<Integer, Integer> tree = new BPlusTree<Integer, Integer>(order);
         System.out.println("\nTest order search " + size + " datas, of order:"
                 + order);
         System.out.println("Begin order insert...");
@@ -180,7 +180,7 @@ public class BplusTree<K extends Comparable<K>, V> {
     }
 
     private static void testRandomSearch(int size, int order) {
-        BplusTree<Integer, Integer> tree = new BplusTree<Integer, Integer>(order);
+        BPlusTree<Integer, Integer> tree = new BPlusTree<Integer, Integer>(order);
         System.out.println("\nTest random search " + size + " datas, of order:"
                 + order);
         Random random = new Random();
@@ -208,7 +208,7 @@ public class BplusTree<K extends Comparable<K>, V> {
     }
 
     private static void testRandomInsert(int size, int order) {
-        BplusTree<Integer, Integer> tree = new BplusTree<Integer, Integer>(order);
+        BPlusTree<Integer, Integer> tree = new BPlusTree<Integer, Integer>(order);
         System.out.println("\nTest random insert " + size + " datas, of order:"
                 + order);
         Random random = new Random();
@@ -225,7 +225,7 @@ public class BplusTree<K extends Comparable<K>, V> {
     }
 
     private static void testOrderInsert(int size, int order) {
-        BplusTree<Integer, Integer> tree = new BplusTree<Integer, Integer>(order);
+        BPlusTree<Integer, Integer> tree = new BPlusTree<Integer, Integer>(order);
         System.out.println("\nTest order insert " + size + " datas, of order:"
                 + order);
         long current = System.currentTimeMillis();

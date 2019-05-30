@@ -18,7 +18,7 @@ public class MyArrayList<E> implements Iterable<E> {
 
     private E[] theItems;
 
-    public MyArrayList() {
+    MyArrayList() {
         theSize = 0;
         ensureCapacity(DEFAULT_CAPACITY);
     }
@@ -52,7 +52,7 @@ public class MyArrayList<E> implements Iterable<E> {
     }
 
     // 改
-    public E set(int idx, E newVal) {
+    E set(int idx, E newVal) {
         if (idx < 0 || idx >= size()) {
             throw new ArrayIndexOutOfBoundsException();
         }
@@ -89,15 +89,6 @@ public class MyArrayList<E> implements Iterable<E> {
     // 统计相关
     public int size() {
         return this.theSize;
-    }
-
-    public boolean isEmpty() {
-        return size() == 0;
-    }
-
-    // 节省空间
-    public void trimToSize() {
-        ensureCapacity(size());
     }
 
     private class ArrayListIterator implements Iterator<E> {

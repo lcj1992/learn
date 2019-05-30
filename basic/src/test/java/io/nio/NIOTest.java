@@ -28,6 +28,7 @@ public class NIOTest {
                 e.printStackTrace();
             }
         });
+
         Thread.sleep(1000);
         NIOClient client = newClient();
         client.sendAndRecv("this is client");

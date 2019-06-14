@@ -1,37 +1,23 @@
 package reflect;
 
+import lombok.Data;
+
 import java.lang.reflect.*;
 
 /**
  * Created by lichuangjian on 16/7/16.
  */
-
-
 class Hello {
 }
 
 class Chinese {
 }
 
+@Data
 class Person extends Chinese {
+    private static final int HIGH = 10;
     private String name;
     private int age;
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    void setAge(int age) {
-        this.age = age;
-    }
 
     @Override
     public String toString() {
@@ -45,9 +31,6 @@ class Person extends Chinese {
     void sayHello(String name) {
         System.out.println("hello " + name);
     }
-
-    private static final int HIGH = 10;
-
 }
 
 public class demo {
@@ -207,9 +190,6 @@ public class demo {
 
         // 获取类加载器
         System.out.println(cls4GSet.getClassLoader().getClass().getName());
-
-        // 动态代理
-
     }
 
 }

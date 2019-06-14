@@ -1,6 +1,6 @@
 package creational.singleton.lazyInit;
 
-import java.util.concurrent.ExecutionException;
+import java.util.Objects;
 
 /**
  * Created by lcj on 15-10-31.
@@ -13,26 +13,21 @@ public class DoubleCheckVersion {
     }
 
     public static DoubleCheckVersion getInstance() {
-        if (instance == null) {
-            synchronized (DoubleCheckVersion.class) {
-                if (instance == null) {
-                    instance = new DoubleCheckVersion();
-                }
-            }
+        if (Objects.nonNull(instance)) {
+            return instance;
         }
-        return instance;
+        synchronized (DoubleCheckVersion.class) {
+            if (Objects.nonNull(instance)) {
+                return instance;
+            }
+            instance = new DoubleCheckVersion();
+            return instance;
+        }
     }
 
-
-    public static void main(String[] args) throws ExecutionException, InterruptedException {
-        Thread thread1 = new Thread(() -> {
-            DoubleCheckVersion singleton = DoubleCheckVersion.getInstance();
-        });
-
-        Thread thread2 = new Thread(() -> {
-            DoubleCheckVersion singleton = DoubleCheckVersion.getInstance();
-        });
-        thread1.start();
-        thread2.start();
+    public void sayHello() {
+        System.out.println("hello world!");
     }
+
 }
+

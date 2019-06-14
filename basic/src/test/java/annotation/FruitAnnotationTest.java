@@ -8,15 +8,11 @@ import java.lang.reflect.Field;
 /**
  * Created by lcj on 15-4-18.
  */
-
 class Apple {
-
     @FruitName("Apple")
     private String appleName;
-
     @FruitColor(fruitColor = FruitColor.Color.RED)
     private String appleColor;
-
     @FruitProvider(id = 1, name = "陕西红富士集团", address = "陕西省西安市延安路89号红富士大厦")
     private String appleProvider;
 }
@@ -26,7 +22,6 @@ class Apple {
 @Documented
 @interface FruitColor {
 
-    // 颜色枚举
     enum Color {
         BLUE, RED, GREEN
     }
@@ -39,7 +34,7 @@ class Apple {
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-@interface FruitName{
+@interface FruitName {
     String value() default "";
 }
 
@@ -86,7 +81,6 @@ class FruitInfoUtil {
 }
 
 public class FruitAnnotationTest {
-
     @Test
     public void test() {
         Apple apple = new Apple();

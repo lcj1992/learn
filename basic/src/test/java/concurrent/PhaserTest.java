@@ -13,12 +13,10 @@ import java.util.concurrent.Phaser;
  */
 public class PhaserTest {
 
-
     @Test
-    public void test(){
+    public void test() {
         Phaser phaser = new Phaser(1);
         System.out.println("starting...");
-
         new Worker("服务员", phaser).start();
         new Worker("厨师", phaser).start();
         new Worker("上菜员", phaser).start();

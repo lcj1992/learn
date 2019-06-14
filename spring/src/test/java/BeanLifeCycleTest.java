@@ -1,6 +1,9 @@
+import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import java.util.Objects;
 
 /**
  * Desc:
@@ -13,12 +16,10 @@ public class BeanLifeCycleTest {
 
     @Test
     public void testBeanLifeCycle() {
-
-
         ApplicationContext factory = new ClassPathXmlApplicationContext("spring-context.xml");
-
         Person person = factory.getBean("person", Person.class);
-
+        String name = person.getName();
         ((ClassPathXmlApplicationContext) factory).registerShutdownHook();
+        Assert.assertEquals(Objects.nonNull(name), true);
     }
 }

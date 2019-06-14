@@ -45,7 +45,6 @@ public class AtomicTest {
 
     @Test
     public void volatileIntegerTest() throws InterruptedException {
-
         ExecutorService executorService = Executors.newFixedThreadPool(30);
         List<Callable<Integer>> callableList = Lists.newArrayList();
 

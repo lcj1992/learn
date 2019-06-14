@@ -25,7 +25,6 @@ public class BIOTest {
     public void test() throws InterruptedException {
         // Socket 服务器端（简单的发送信息）
         startServer();
-
         readFromServer();
     }
 

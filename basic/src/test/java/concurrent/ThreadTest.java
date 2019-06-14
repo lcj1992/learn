@@ -18,7 +18,7 @@ import java.util.concurrent.Future;
  */
 public class ThreadTest {
 
-    // interupt() 只是设置中断标志位，并不会影响执行。一些方法会判断中断标志位，然后抛出InterruptedException
+    // interrupt() 只是设置中断标志位，并不会影响执行。一些方法会判断中断标志位，然后抛出InterruptedException
     @Test
     public void interruptTest() throws InterruptedException, ExecutionException {
         ExecutorService executorService = Executors.newSingleThreadExecutor();
@@ -36,7 +36,6 @@ public class ThreadTest {
         Thread t3 = new Thread(new MyRunnable(), "t3");
 
         t1.start();
-
         //start second thread after waiting for 2 seconds or if it's dead
         try {
             long start = System.currentTimeMillis();
@@ -64,7 +63,6 @@ public class ThreadTest {
             t2.join();
             t3.join();
         } catch (InterruptedException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
 
@@ -73,7 +71,6 @@ public class ThreadTest {
 
 
     private class MyRunnable implements Runnable {
-
         @Override
         public void run() {
             System.out.println("Thread started: " + Thread.currentThread().getName());

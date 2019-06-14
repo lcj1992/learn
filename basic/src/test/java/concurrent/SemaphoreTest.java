@@ -1,5 +1,6 @@
 package concurrent;
 
+import concurrent.threadMessage.produer_consumer_model.utils.TimeConsumeSimulator;
 import org.junit.Test;
 
 import java.util.concurrent.Semaphore;
@@ -40,17 +41,18 @@ public class SemaphoreTest {
 
         @Override
         public void run() {
-            System.out.println(getName() + " is waiting ...");
+
             try {
                 long start = System.currentTimeMillis();
                 semaphore.acquire();
-                Thread.sleep(1000);
+                TimeConsumeSimulator.simulateFixedTimeConsume(500);
                 System.out.println(getName() + " is done! cost time: " + (System.currentTimeMillis() - start));
             } catch (InterruptedException e) {
                 e.printStackTrace();
             } finally {
                 semaphore.release();
             }
+
         }
     }
 }

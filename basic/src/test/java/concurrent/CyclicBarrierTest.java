@@ -3,6 +3,7 @@ package concurrent;
 import org.junit.Test;
 
 import java.util.concurrent.BrokenBarrierException;
+import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.CyclicBarrier;
 
 /**
@@ -19,14 +20,47 @@ public class CyclicBarrierTest {
     //  await()：到达临界点后暂停线程
     @Test
     public void test() throws InterruptedException {
-        CyclicBarrier cyclicBarrier = new CyclicBarrier(3, () -> System.out.println("Game start"));
+        CyclicBarrier cyclicBarrier = new CyclicBarrier(5, () -> System.out.println("KPL Game start"));
         new Player("A", cyclicBarrier).start();
         new Player("B", cyclicBarrier).start();
         new Player("C", cyclicBarrier).start();
+        new Player("D", cyclicBarrier).start();
+        new Player("E", cyclicBarrier).start();
         Thread.sleep(1000000);
-
     }
 
+    @Test
+    public void testCountdownLatch() throws InterruptedException {
+        CountDownLatch countDownLatch = new CountDownLatch(5);
+        new CountDownLatchPlayer("A", countDownLatch).start();
+        new CountDownLatchPlayer("B", countDownLatch).start();
+        new CountDownLatchPlayer("C", countDownLatch).start();
+        new CountDownLatchPlayer("D", countDownLatch).start();
+        new CountDownLatchPlayer("E", countDownLatch).start();
+        countDownLatch.await();
+        System.out.println("KPL Game start");
+        Thread.sleep(1000000);
+    }
+
+
+    private class CountDownLatchPlayer extends Thread {
+        private CountDownLatch countDownLatch;
+
+        CountDownLatchPlayer(String name, CountDownLatch countDownLatch) {
+            super(name);
+            this.countDownLatch = countDownLatch;
+        }
+
+        @Override
+        public void run() {
+            System.out.println(getName() + " is waiting other players...");
+            try {
+                countDownLatch.countDown();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
 
     private class Player extends Thread {
         private CyclicBarrier cyclicBarrier;
@@ -41,6 +75,7 @@ public class CyclicBarrierTest {
             System.out.println(getName() + " is waiting other players...");
             try {
                 cyclicBarrier.await();
+                System.out.println(getName() + "start playing");
             } catch (InterruptedException | BrokenBarrierException e) {
                 e.printStackTrace();
             }

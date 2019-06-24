@@ -10,7 +10,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * Time: 上午8:17
  */
 public class IDGenerator {
-    private static final AtomicInteger ID = new AtomicInteger(0);
+    private static final AtomicInteger ID = new AtomicInteger(1);
 
     public static int generateId() {
         return ID.getAndIncrement();

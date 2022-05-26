@@ -17,7 +17,7 @@ import java.util.stream.Collectors;
  * Date: 2019/5/18
  * Time: 下午10:39
  */
-public class GetImportance {
+public class GetImportanceTest {
 
     @Test
     public void test() {

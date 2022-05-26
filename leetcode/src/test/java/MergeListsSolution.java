@@ -46,7 +46,7 @@ public class MergeListsSolution {
 
     }
 
-    public class ListNode {
+    public static class ListNode {
         int val;
         ListNode next;
 
@@ -59,7 +59,7 @@ public class MergeListsSolution {
             if (Objects.isNull(this.next)) {
                 return String.valueOf(val);
             }
-            return String.valueOf(val) + next.toString();
+            return val + next.toString();
 
         }
     }

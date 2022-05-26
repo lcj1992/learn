@@ -52,8 +52,7 @@ public class Permute {
                     results.add(result);
                     placed.put(collect, true);
                 }
-                List<Integer> result2 = new ArrayList<>();
-                result2.addAll(subListResult);
+                List<Integer> result2 = new ArrayList<>(subListResult);
                 result2.add(integer);
                 String collect1 = result2.stream().map(String::valueOf).collect(Collectors.joining());
                 if (null == placed.get(collect1) || !placed.get(collect1)) {

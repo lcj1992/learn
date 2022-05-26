@@ -9,9 +9,9 @@ import java.util.Objects;
  * Date: 2019/5/11
  * Time: 下午2:04
  */
-public class InvertTree {
+public class InvertTreeTest {
 
-    public class TreeNode {
+    public static class TreeNode {
         int val;
         TreeNode left;
         TreeNode right;

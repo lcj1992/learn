@@ -10,8 +10,8 @@ import java.util.Objects;
  * Date: 2019/5/15
  * Time: 上午10:24
  */
-public class MaxDepthTree {
-    public class TreeNode {
+public class MaxDepthTreeTest {
+    public static class TreeNode {
         int val;
         TreeNode left;
         TreeNode right;

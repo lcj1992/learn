@@ -8,7 +8,7 @@ import org.junit.Test;
  * Date: 2019/5/19
  * Time: 上午8:40
  */
-public class IsPowerOfTwoSolutionTest {
+public class IsPowerOfTwoTest {
 
     @Test
     public void test() {

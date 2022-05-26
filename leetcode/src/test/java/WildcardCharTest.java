@@ -1,4 +1,4 @@
-import junit.framework.Assert;
+import org.junit.Assert;
 import org.junit.Test;
 
 /**
@@ -8,15 +8,15 @@ import org.junit.Test;
  * Date: 2019/5/14
  * Time: 下午11:02
  */
-public class WildcardChar {
+public class WildcardCharTest {
 
     @Test
     public void test() {
-        Assert.assertEquals(isMatch("aa", "a"), false);
-        Assert.assertEquals(isMatch("aa", "*"), true);
-        Assert.assertEquals(isMatch("cb", "?a"), false);
-        Assert.assertEquals(isMatch("adceb", "*a*b"), true);
-        Assert.assertEquals(isMatch("acdcb", "a*c?b"), false);
+        Assert.assertFalse(isMatch("aa", "a"));
+        Assert.assertTrue(isMatch("aa", "*"));
+        Assert.assertFalse(isMatch("cb", "?a"));
+        Assert.assertTrue(isMatch("adceb", "*a*b"));
+        Assert.assertFalse(isMatch("acdcb", "a*c?b"));
     }
 
     private boolean isMatch(String s, String p) {

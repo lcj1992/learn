@@ -8,7 +8,7 @@ import org.junit.Test;
  * Date: 2019/5/19
  * Time: 上午8:43
  */
-public class HammingWeightSolution {
+public class HammingWeightTest {
 
     @Test
     public void test() {

@@ -10,7 +10,7 @@ import java.util.Objects;
  * Date: 2019/5/19
  * Time: 上午9:27
  */
-public class MergeListsSolution {
+public class MergeListsTest {
 
     // 归并排序
     @Test

@@ -10,9 +10,9 @@ import java.util.Objects;
  * Date: 2019/5/14
  * Time: 下午11:54
  */
-public class ValidBinarySearchTree {
+public class ValidBinarySearchTreeTest {
 
-    public class TreeNode {
+    public static class TreeNode {
         int val;
         TreeNode left;
         TreeNode right;

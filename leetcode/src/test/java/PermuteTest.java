@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
  * Date: 2019/5/18
  * Time: 下午11:40
  */
-public class Permute {
+public class PermuteTest {
 
     @Test
     public void test() {

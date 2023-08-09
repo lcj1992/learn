@@ -9,8 +9,7 @@ public class IsSymmetricSolution {
     public static void main(String[] args) {
         IsSymmetricSolution solution = new IsSymmetricSolution();
         TreeNode root = new TreeNode(1, new TreeNode(2, new TreeNode(3), new TreeNode(4)), new TreeNode(2, new TreeNode(4), new TreeNode(3)));
-        TreeNode root2 = new TreeNode(1, new TreeNode(2), new TreeNode(3));
-        boolean symmetric = solution.isSymmetric(root2);
+        boolean symmetric = solution.isSymmetric(root);
         System.out.println(symmetric);
     }
 

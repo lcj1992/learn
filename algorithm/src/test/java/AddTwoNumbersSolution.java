@@ -3,7 +3,8 @@
  * @date 2023/6/4
  */
 
-import java.util.List;
+import common.ListNode;
+
 import java.util.Objects;
 
 /**
@@ -66,21 +67,4 @@ public class AddTwoNumbersSolution {
         return head;
     }
 
-
-    public static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode() {
-        }
-
-        ListNode(int val) {
-            this.val = val;
-        }
-
-        ListNode(int val, ListNode next) {
-            this.val = val;
-            this.next = next;
-        }
-    }
 }

@@ -13,42 +13,10 @@ public class LengthOfLISSolution {
         System.out.println(i);
     }
 
-
     // 1、确认是否存在最优子结构
     // 2、确认状态方程是啥
     // 3、确认状态如何保存
     public int lengthOfLIS(int[] nums) {
-        int length = nums.length;
-        int result = 1;
-        for (int i = 0; i < length; i++) {
-            Stack<Integer> stack = new Stack<>();
-            stack.push(nums[i]);
-            for (int j = i + 1; j < length; j++) {
-                Integer top = stack.peek();
-                // 栈顶元素小于当前值
-                if (top < nums[j]) {
-                    stack.push(nums[j]);
-                    if (stack.size() > result) {
-                        result = stack.size();
-                    }
-                    continue;
-                }
-                // 栈顶元素大于当前值，比较栈二顶元素是否小于当前值
-                if (top > nums[j] && stack.size() > 1) {
-                    Integer pop = stack.pop();
-                    Integer peek = stack.peek();
-                    if (peek < nums[j]) {
-                        stack.push(nums[j]);
-                    } else {
-                        stack.push(pop);
-                    }
-                }
-            }
-        }
-        return result;
-    }
-
-    public int lengthOfLIS1(int[] nums) {
         if (nums.length == 0) {
             return 0;
         }
@@ -68,4 +36,36 @@ public class LengthOfLISSolution {
         }
         return result;
     }
+
+    public int lengthOfLIS1(int[] nums) {
+        int length = nums.length;
+        int result = 1;
+        for (int i = 0; i < length; i++) {
+            Stack<Integer> stack = new Stack<>();
+            stack.push(nums[i]);
+            for (int j = i + 1; j < length; j++) {
+                Integer top = stack.peek();
+                // 栈顶元素小于当前值
+                if (top < nums[j]) {
+                    stack.push(nums[j]);
+                    if (stack.size() > result) {
+                        result = stack.size();
+                    }
+                    continue;
+                }
+                // 栈顶元素大于当前值，比较栈顶元素是否小于当前值
+                if (top > nums[j] && stack.size() > 1) {
+                    Integer pop = stack.pop();
+                    Integer peek = stack.peek();
+                    if (peek < nums[j]) {
+                        stack.push(nums[j]);
+                    } else {
+                        stack.push(pop);
+                    }
+                }
+            }
+        }
+        return result;
+    }
+
 }

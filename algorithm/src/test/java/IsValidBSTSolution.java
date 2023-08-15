@@ -1,3 +1,5 @@
+import common.TreeNode;
+
 import java.util.Objects;
 
 /**
@@ -42,23 +44,4 @@ public class IsValidBSTSolution {
         return isValidLeft(leftChild.right, val) && isValidLeft(leftChild.left, val);
     }
 
-
-    public static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode() {
-        }
-
-        TreeNode(int val) {
-            this.val = val;
-        }
-
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-    }
 }

@@ -3,6 +3,8 @@ import java.util.List;
 import java.util.Objects;
 
 /**
+ * https://leetcode.cn/problems/binary-tree-inorder-traversal/submissions/
+ * 中序遍历
  * @author lichuangjian
  * @date 2023/6/12
  */
@@ -25,15 +27,11 @@ public class InorderTraversalSolution {
         }
         List<Integer> results = new ArrayList<>();
         // 遍历左子树
-        if (Objects.nonNull(root.left)) {
-            results.addAll(inorderTraversal(root.left));
-        }
+        results.addAll(inorderTraversal(root.left));
         // 遍历根节点
         results.add(root.val);
         // 遍历右子树
-        if (Objects.nonNull(root.right)) {
-            results.addAll(inorderTraversal(root.right));
-        }
+        results.addAll(inorderTraversal(root.right));
         return results;
     }
 

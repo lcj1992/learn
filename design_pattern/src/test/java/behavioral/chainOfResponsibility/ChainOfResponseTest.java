@@ -8,7 +8,6 @@ import java.io.InputStreamReader;
 
 /**
  * Created by lcj on 15-10-31.
- *
  */
 abstract class PurchasePower {
     static final double BASE = 500;

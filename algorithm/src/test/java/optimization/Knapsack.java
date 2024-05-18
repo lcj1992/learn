@@ -19,25 +19,25 @@ public class Knapsack {
     }
 
     private int knapsack(int[] weight, int quantity, int limitedWeight) {
-        int table[][] = new int[quantity][limitedWeight + 1];
+        int[][] dp = new int[quantity][limitedWeight + 1];
 
         for (int idx = 0; idx < quantity; idx++) {
             for (int curWeight = 1; curWeight <= limitedWeight; curWeight++) {
                 if (idx == 0) {
                     if (weight[idx] <= curWeight) {
-                        table[idx][curWeight] = weight[idx];
+                        dp[idx][curWeight] = weight[idx];
                     }
                     continue;
                 }
                 if (weight[idx] > curWeight) {
-                    table[idx][curWeight] = table[idx - 1][curWeight];
+                    dp[idx][curWeight] = dp[idx - 1][curWeight];
                 } else {
-                    int weightWhenPlaced = table[idx - 1][curWeight - weight[idx]] + weight[idx];
-                    int weightWhenNotPlaced = table[idx - 1][curWeight];
-                    table[idx][curWeight] = Math.max(weightWhenNotPlaced, weightWhenPlaced);
+                    int weightWhenPlaced = dp[idx - 1][curWeight - weight[idx]] + weight[idx];
+                    int weightWhenNotPlaced = dp[idx - 1][curWeight];
+                    dp[idx][curWeight] = Math.max(weightWhenNotPlaced, weightWhenPlaced);
                 }
             }
         }
-        return table[quantity - 1][limitedWeight];
+        return dp[quantity - 1][limitedWeight];
     }
 }

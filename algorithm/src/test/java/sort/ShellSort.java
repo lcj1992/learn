@@ -8,7 +8,7 @@ package sort;
  * Time: 上午9:50
  */
 public class ShellSort {
-    public  void shellSort(int items[]) {
+    public  void shellSort(int[] items) {
 
     }
 

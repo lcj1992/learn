@@ -9,7 +9,7 @@ package sort;
  */
 public class InsertionSort {
 
-    public void insertionSort(int items[]) {
+    public void insertionSort(int[] items) {
         if (items.length <= 1) {
             return;
         }

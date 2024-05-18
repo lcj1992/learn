@@ -17,18 +17,19 @@ public class LongestCommonSubString {
 
     private static long longestCommonSubString(String str1, String str2) {
         long longestLength = 0;
-        int table[][] = new int[str1.length()][str2.length()];
+        int[][] table = new int[str1.length()][str2.length()];
         for (int i = 0; i < str1.length(); i++) {
             for (int j = 0; j < str2.length(); j++) {
+                boolean equal = str1.charAt(i) == str2.charAt(j);
                 if (i == 0) {
-                    if (str1.charAt(i) == str2.charAt(j)) {
+                    if (equal) {
                         longestLength = 1;
                         table[0][j] = 1;
                     }
                     continue;
                 }
 
-                if (str1.charAt(i) == str2.charAt(j)) {
+                if (equal) {
                     if (j == 0) {
                         table[i][j] = 1;
                     } else {

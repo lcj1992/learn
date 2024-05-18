@@ -9,7 +9,7 @@ package sort;
  */
 public class HeapSort {
 
-    public void heapSort(int items[]) {
+    public void heapSort(int[] items) {
 
     }
 }

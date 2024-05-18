@@ -6,8 +6,8 @@ public class ContainsNearbyDuplicateSolution {
 
     public static void main(String[] args) {
         ContainsNearbyDuplicateSolution solution = new ContainsNearbyDuplicateSolution();
-        int[] nums = new int[]{1, 2, 3, 1};
-        boolean b = solution.containsNearbyDuplicate(nums, 3);
+        int[] numbers = new int[]{1, 2, 3, 1};
+        boolean b = solution.containsNearbyDuplicate(numbers, 3);
         System.out.println(b);
     }
 

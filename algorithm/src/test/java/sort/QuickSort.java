@@ -8,7 +8,7 @@ package sort;
  * Time: 上午9:50
  */
 public class QuickSort {
-    public void quickSort(int items[]) {
+    public void quickSort(int[] items) {
 
     }
 

@@ -24,7 +24,6 @@ public class TreeTraverseSolution {
         Assert.assertEquals(6, lists.stream().mapToInt(List::size).max().getAsInt());
     }
 
-
     @Test
     public void testPreOrder() {
         TreeNode node = initTree();

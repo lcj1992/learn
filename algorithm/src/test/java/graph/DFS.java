@@ -65,8 +65,7 @@ public class DFS {
         bfs(graph, dist, start);
     }
 
-    private static void bfs(Map<Character, LinkedList<Character>> graph, HashMap<Character, Integer> dist,
-                            char start) {
+    private static void bfs(Map<Character, LinkedList<Character>> graph, HashMap<Character, Integer> dist, char start) {
         Queue<Character> q = new LinkedList<>();
         q.add(start);// 将s作为起始顶点加入队列
         dist.put(start, 0);

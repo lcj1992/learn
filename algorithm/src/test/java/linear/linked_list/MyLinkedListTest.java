@@ -1,6 +1,5 @@
 package linear.linked_list;
 
-import linear.linked_list.MyLinkedList;
 import org.junit.Test;
 
 /**

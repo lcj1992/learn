@@ -1,7 +1,5 @@
 package tree;
 
-import lombok.Data;
-
 import java.util.List;
 
 /**

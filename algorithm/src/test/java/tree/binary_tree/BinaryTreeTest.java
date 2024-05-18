@@ -1,7 +1,6 @@
 package tree.binary_tree;
 
 import com.google.common.collect.Lists;
-import com.google.common.collect.Maps;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -15,49 +14,36 @@ import java.util.stream.Collectors;
  * Date: 2019/3/20
  * Time: 下午11:30
  */
-public class BinaryTreeTraverseTest {
+public class BinaryTreeTest {
 
+    /**
+     * 树的遍历
+     */
     @Test
-    public void testPreOrder() {
+    public void testTraversal() {
         BinaryTreeNode root = initBinaryTree();
-        List<Integer> preOrderResults = preOrder(root);
-        Assert.assertEquals(toString(preOrderResults), "12489510367");
-    }
+        List<Integer> results;
+        // 前序遍历，根左右
+        results = preOrder(root);
+        Assert.assertEquals(toString(results), "12489510367");
+        results = preOrderStack(root);
+        Assert.assertEquals(toString(results), "12489510367");
 
-    @Test
-    public void testPreOrderStack() {
-        BinaryTreeNode root = initBinaryTree();
-        List<Integer> preOrderResults = preOrderStack(root);
-        Assert.assertEquals(toString(preOrderResults), "12489510367");
-    }
+        // 中序遍历，左根右
+        results = inOrder(root);
+        Assert.assertEquals(toString(results), "84921051637");
+        results = inOrderStack(root);
+        Assert.assertEquals(toString(results), "84921051637");
 
-    @Test
-    public void testInOrder() {
-        BinaryTreeNode root = initBinaryTree();
-        List<Integer> inOrderResults = inOrder(root);
-        Assert.assertEquals(toString(inOrderResults), "84921051637");
-    }
+        // 后序遍历，左右根
+        results = postOrder(root);
+        Assert.assertEquals(toString(results), "89410526731");
+        results = postOrderStack(root);
+        Assert.assertEquals(toString(results), "89410526731");
 
-    // 非递归前序遍历
-    @Test
-    public void testInOrderStack() {
-        BinaryTreeNode root = initBinaryTree();
-        List<Integer> preOrderResult = inOrderStack(root);
-        Assert.assertEquals(toString(preOrderResult), "84921051637");
-    }
-
-    @Test
-    public void testPostOrder() {
-        BinaryTreeNode root = initBinaryTree();
-        List<Integer> postOrderResults = postOrder(root);
-        Assert.assertEquals(toString(postOrderResults), "89410526731");
-    }
-
-    @Test
-    public void testPostOrderStack() {
-        BinaryTreeNode root = initBinaryTree();
-        List<Integer> postOrderResults = postOrderStack(root);
-        Assert.assertEquals(toString(postOrderResults), "89410526731");
+        // 层序遍历
+        results = levelOrder(root);
+        Assert.assertEquals(toString(results), "12345678910");
     }
 
     @Test

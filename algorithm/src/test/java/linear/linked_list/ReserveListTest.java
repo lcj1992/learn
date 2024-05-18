@@ -1,8 +1,6 @@
 package linear.linked_list;
 
 import com.google.common.base.Preconditions;
-import lombok.AllArgsConstructor;
-import lombok.Data;
 import org.junit.Assert;
 import org.junit.Test;
 

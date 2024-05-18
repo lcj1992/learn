@@ -149,7 +149,7 @@ public class MyLinkedList<E> implements Iterable<E> {
 
     @Override
     public Iterator<E> iterator() {
-        return new MyLinkedList.LinkedListIterator();
+        return new LinkedListIterator();
     }
 
     @Override

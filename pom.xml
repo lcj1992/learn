@@ -8,9 +8,7 @@
     <modules>
         <module>basic</module>
         <module>design_pattern</module>
-        <module>data_structure</module>
         <module>algorithm</module>
-        <module>leetcode</module>
         <module>spring</module>
     </modules>
     <packaging>pom</packaging>

@@ -1,6 +1,5 @@
 package tree;
 
-import lombok.Data;
 import org.junit.Assert;
 import org.junit.Test;
 

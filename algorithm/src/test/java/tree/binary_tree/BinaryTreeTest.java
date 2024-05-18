@@ -49,6 +49,8 @@ public class BinaryTreeTest {
         // 层序遍历
         results = levelOrder(root);
         assertEquals(toString(results), "12345678910");
+        results = levelOrderStack(root);
+        assertEquals(toString(results), "12345678910");
     }
 
     @Test
@@ -163,25 +165,56 @@ public class BinaryTreeTest {
     }
 
     private List<Integer> levelOrder(BinaryTreeNode root) {
+        if (Objects.isNull(root)) {
+            return new ArrayList<>();
+        }
+        List<BinaryTreeNode> nodeList = new ArrayList<>();
+        nodeList.add(root);
+        return levelOrder(nodeList);
+    }
+
+    private List<Integer> levelOrder(List<BinaryTreeNode> nodeList) {
+        if (nodeList == null || nodeList.isEmpty()) {
+            return new ArrayList<>();
+        }
+        List<Integer> results = new ArrayList<>();
+        List<BinaryTreeNode> newList = new ArrayList<>();
+        for (BinaryTreeNode binaryTreeNode : nodeList) {
+            results.add(binaryTreeNode.getVal());
+            if (binaryTreeNode.getLeft() != null) {
+                newList.add(binaryTreeNode.getLeft());
+            }
+            if (binaryTreeNode.getRight() != null) {
+                newList.add(binaryTreeNode.getRight());
+            }
+        }
+        results.addAll(levelOrder(newList));
+        return results;
+    }
+
+    private List<Integer> levelOrderStack(BinaryTreeNode root) {
         List<Integer> result = Lists.newArrayList();
         if (Objects.isNull(root)) {
             return result;
         }
-        Queue<BinaryTreeNode> queue = new ArrayDeque<>();
-        queue.offer(root);
-        while (!queue.isEmpty()) {
-            int levelSize = queue.size();
-            for (int i = 0; i < levelSize; i++) {
-                BinaryTreeNode poll = queue.poll();
-                if (poll != null) {
-                    result.add(poll.getVal());
-                    if (Objects.nonNull(poll.getLeft())) {
-                        queue.offer(poll.getLeft());
+        Stack<List<BinaryTreeNode>> stack = new Stack<>();
+        List<BinaryTreeNode> list = new ArrayList<>();
+        list.add(root);
+        stack.push(list);
+        while (!stack.isEmpty()) {
+            List<BinaryTreeNode> pops = stack.pop();
+            List<BinaryTreeNode> newList = new ArrayList<>();
+            if (pops != null && !pops.isEmpty()) {
+                for (BinaryTreeNode pop : pops) {
+                    result.add(pop.getVal());
+                    if (Objects.nonNull(pop.getLeft())) {
+                        newList.add(pop.getLeft());
                     }
-                    if (Objects.nonNull(poll.getRight())) {
-                        queue.offer(poll.getRight());
+                    if (Objects.nonNull(pop.getRight())) {
+                        newList.add(pop.getRight());
                     }
                 }
+                stack.push(newList);
             }
         }
         return result;

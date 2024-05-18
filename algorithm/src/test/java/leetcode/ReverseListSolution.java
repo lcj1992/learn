@@ -21,7 +21,7 @@ public class ReverseListSolution {
         third.next = forth;
         forth.next = fifth;
         ReverseListSolution solution = new ReverseListSolution();
-        ListNode listNode = solution.reverseList(first);
+        ListNode listNode = solution.reverseList2(first);
         while (listNode != null) {
             System.out.println(listNode.val);
             listNode = listNode.next;
@@ -46,4 +46,17 @@ public class ReverseListSolution {
         }
         return newHead;
     }
+
+    public ListNode reverseList2(ListNode head) {
+        ListNode newHead = null;
+        ListNode curr = head;
+        while (curr != null) {
+            ListNode next = curr.next;
+            curr.next = newHead;
+            newHead = curr;
+            curr = next;
+        }
+        return newHead;
+    }
+
 }

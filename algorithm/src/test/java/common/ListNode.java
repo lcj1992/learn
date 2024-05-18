@@ -28,7 +28,7 @@ public class ListNode {
             return;
         }
         while (node != null) {
-            System.out.println(node.val);
+            System.out.print(node.val + (node.val > 10 ? " " : "  "));
             node = node.next;
         }
     }

@@ -21,11 +21,10 @@ public class SearchSolution {
             mid = (end + start) / 2;
             // 中间值
             int midNum = nums[mid];
-            // 中间值大于目标值
             if (midNum == target) {
                 return mid;
             }
-            // 如果 start 和 mid 间有序
+            //
             if (nums[0] <= midNum) {
                 if (nums[0] <= target && target < nums[mid]) {
                     end = mid - 1;
@@ -33,11 +32,10 @@ public class SearchSolution {
                     start = mid + 1;
                 }
             } else {
-                // 如果 mid 和 end 间有序
                 if (nums[mid] < target && target <= nums[nums.length - 1]) {
-                    start = mid - 1;
+                    start = mid + 1;
                 } else {
-                    end = mid + 1;
+                    end = mid - 1;
                 }
             }
         }

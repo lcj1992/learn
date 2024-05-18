@@ -18,62 +18,69 @@ import java.util.stream.Collectors;
 public class BinaryTreeTraverseTest {
 
     @Test
-    public void testPreOrder() throws Exception {
+    public void testPreOrder() {
         BinaryTreeNode root = initBinaryTree();
-        List<BinaryTreeNode> preOrderResults = preOrder(root);
+        List<Integer> preOrderResults = preOrder(root);
         Assert.assertEquals(toString(preOrderResults), "12489510367");
     }
 
     @Test
-    public void testPreOrderRecursively() throws Exception {
+    public void testPreOrderStack() {
         BinaryTreeNode root = initBinaryTree();
-        List<BinaryTreeNode> preOrderResults = preOrderRecursively(root);
+        List<Integer> preOrderResults = preOrderStack(root);
         Assert.assertEquals(toString(preOrderResults), "12489510367");
     }
 
     @Test
-    public void testInfixOrder() throws Exception {
+    public void testInOrder() {
         BinaryTreeNode root = initBinaryTree();
-        List<BinaryTreeNode> infixOrderResults = infixOrder(root);
-        Assert.assertEquals(toString(infixOrderResults), "84921051637");
+        List<Integer> inOrderResults = inOrder(root);
+        Assert.assertEquals(toString(inOrderResults), "84921051637");
     }
 
     // 非递归前序遍历
     @Test
-    public void testInfixOrderNonRecursively() throws Exception {
+    public void testInOrderStack() {
         BinaryTreeNode root = initBinaryTree();
-        List<BinaryTreeNode> preOrderResult = infixOrderNonRecursively(root);
+        List<Integer> preOrderResult = inOrderStack(root);
         Assert.assertEquals(toString(preOrderResult), "84921051637");
     }
 
     @Test
-    public void testPostOrder() throws Exception {
+    public void testPostOrder() {
         BinaryTreeNode root = initBinaryTree();
-        List<BinaryTreeNode> postOrderResults = postOrder(root);
+        List<Integer> postOrderResults = postOrder(root);
         Assert.assertEquals(toString(postOrderResults), "89410526731");
     }
 
     @Test
-    public void testLevelOrder() throws Exception {
+    public void testPostOrderStack() {
         BinaryTreeNode root = initBinaryTree();
-        List<BinaryTreeNode> levelOrderResults = levelOrder(root);
+        List<Integer> postOrderResults = postOrderStack(root);
+        Assert.assertEquals(toString(postOrderResults), "89410526731");
+    }
+
+    @Test
+    public void testLevelOrder() {
+        BinaryTreeNode root = initBinaryTree();
+        List<Integer> levelOrderResults = levelOrder(root);
         Assert.assertEquals(toString(levelOrderResults), "12345678910");
     }
 
 
-    private List<BinaryTreeNode> preOrder(BinaryTreeNode root) {
-        List<BinaryTreeNode> result = Lists.newArrayList();
+    private List<Integer> preOrder(BinaryTreeNode root) {
+        List<Integer> result = Lists.newArrayList();
         if (Objects.isNull(root)) {
             return result;
         }
-        result.add(root);
+        result.add(root.getVal());
         result.addAll(preOrder(root.getLeft()));
         result.addAll(preOrder(root.getRight()));
         return result;
     }
 
-    private List<BinaryTreeNode> preOrderRecursively(BinaryTreeNode root) {
-        List<BinaryTreeNode> result = Lists.newArrayList();
+    private List<Integer> preOrderStack(BinaryTreeNode root) {
+        List<Integer> result = Lists.newArrayList();
         if (Objects.isNull(root)) {
             return result;
         }
@@ -81,7 +88,7 @@ public class BinaryTreeTraverseTest {
         stack.push(root);
         while (!stack.isEmpty()) {
             BinaryTreeNode pop = stack.pop();
-            result.add(pop);
+            result.add(pop.getVal());
             if (Objects.nonNull(pop.getRight())) {
                 stack.push(pop.getRight());
             }
@@ -92,56 +99,76 @@ public class BinaryTreeTraverseTest {
         return result;
     }
 
-    private List<BinaryTreeNode> infixOrder(BinaryTreeNode root) {
-        List<BinaryTreeNode> result = Lists.newArrayList();
+    private List<Integer> inOrder(BinaryTreeNode root) {
+        List<Integer> result = Lists.newArrayList();
         if (Objects.isNull(root)) {
             return result;
         }
-        result.addAll(infixOrder(root.getLeft()));
-        result.add(root);
-        result.addAll(infixOrder(root.getRight()));
+        result.addAll(inOrder(root.getLeft()));
+        result.add(root.getVal());
+        result.addAll(inOrder(root.getRight()));
         return result;
     }
 
-    private List<BinaryTreeNode> infixOrderNonRecursively(BinaryTreeNode root) {
-        List<BinaryTreeNode> result = Lists.newArrayList();
+    private List<Integer> inOrderStack(BinaryTreeNode root) {
+        List<Integer> result = Lists.newArrayList();
         if (Objects.isNull(root)) {
             return result;
         }
-        Map<BinaryTreeNode, Boolean> visitedMap = Maps.newHashMap();
         Stack<BinaryTreeNode> stack = new Stack<>();
-        stack.push(root);
-        while (!stack.isEmpty()) {
-            BinaryTreeNode topNode = stack.peek();
-            BinaryTreeNode leftNode = topNode.getLeft();
-            if (Objects.nonNull(leftNode) && !visitedMap.containsKey(leftNode)) {
-                stack.push(leftNode);
-            } else {
-                BinaryTreeNode pop = stack.pop();
-                result.add(pop);
-                visitedMap.put(pop, true);
-                BinaryTreeNode rightNode = pop.getRight();
-                if (Objects.nonNull(rightNode)) {
-                    stack.push(rightNode);
-                }
+        BinaryTreeNode current = root;
+        while (current != null || !stack.isEmpty()) {
+            while (current != null) {
+                stack.push(current);
+                current = current.getLeft();
             }
+            current = stack.pop();
+            result.add(current.getVal());
+            current = current.getRight();
         }
         return result;
     }
 
-    private List<BinaryTreeNode> postOrder(BinaryTreeNode root) {
-        List<BinaryTreeNode> result = Lists.newArrayList();
+
+    private List<Integer> postOrder(BinaryTreeNode root) {
+        List<Integer> result = Lists.newArrayList();
         if (Objects.isNull(root)) {
             return result;
         }
         result.addAll(postOrder(root.getLeft()));
         result.addAll(postOrder(root.getRight()));
-        result.add(root);
+        result.add(root.getVal());
         return result;
     }
 
-    private List<BinaryTreeNode> levelOrder(BinaryTreeNode root) {
-        List<BinaryTreeNode> result = Lists.newArrayList();
+    private List<Integer> postOrderStack(BinaryTreeNode root) {
+        List<Integer> result = Lists.newArrayList();
+        if (Objects.isNull(root)) {
+            return result;
+        }
+        Stack<BinaryTreeNode> stack = new Stack<>();
+        BinaryTreeNode current = root;
+        BinaryTreeNode lastVisited = null;
+        while (current != null || !stack.isEmpty()) {
+            while (current != null) {
+                stack.push(current);
+                current = current.getLeft();
+            }
+            current = stack.peek();
+            if (current.getRight() == null || current.getRight() == lastVisited) {
+                stack.pop();
+                result.add(current.getVal());
+                lastVisited = current;
+                current = null;
+            } else {
+                current = current.getRight();
+            }
+        }
+        return result;
+    }
+
+    private List<Integer> levelOrder(BinaryTreeNode root) {
+        List<Integer> result = Lists.newArrayList();
         if (Objects.isNull(root)) {
             return result;
         }
@@ -151,12 +178,14 @@ public class BinaryTreeTraverseTest {
             int levelSize = queue.size();
             for (int i = 0; i < levelSize; i++) {
                 BinaryTreeNode poll = queue.poll();
-                result.add(poll);
-                if (Objects.nonNull(poll.getLeft())) {
-                    queue.offer(poll.getLeft());
-                }
-                if (Objects.nonNull(poll.getRight())) {
-                    queue.offer(poll.getRight());
+                if (poll != null) {
+                    result.add(poll.getVal());
+                    if (Objects.nonNull(poll.getLeft())) {
+                        queue.offer(poll.getLeft());
+                    }
+                    if (Objects.nonNull(poll.getRight())) {
+                        queue.offer(poll.getRight());
+                    }
                 }
             }
         }
@@ -176,7 +205,7 @@ public class BinaryTreeTraverseTest {
         return new BinaryTreeNode(1, node2, node3);
     }
 
-    private String toString(List<BinaryTreeNode> preOrderResults) {
-        return preOrderResults.stream().map(each -> each.getVal().toString()).collect(Collectors.joining());
+    private String toString(List<Integer> preOrderResults) {
+        return preOrderResults.stream().map(Object::toString).collect(Collectors.joining());
     }
 }

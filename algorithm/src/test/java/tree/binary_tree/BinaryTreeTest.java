@@ -1,11 +1,13 @@
 package tree.binary_tree;
 
 import com.google.common.collect.Lists;
-import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.*;
 import java.util.stream.Collectors;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 
 /**
  * Desc: 二叉树的遍历（前序、中序、后序、层序）
@@ -18,6 +20,9 @@ public class BinaryTreeTest {
 
     /**
      * 树的遍历
+     * 前序遍历：根左右
+     * 中序遍历：左根右
+     * 后序遍历：左右根
      */
     @Test
     public void testTraversal() {
@@ -25,32 +30,36 @@ public class BinaryTreeTest {
         List<Integer> results;
         // 前序遍历，根左右
         results = preOrder(root);
-        Assert.assertEquals(toString(results), "12489510367");
+        assertEquals(toString(results), "12489510367");
         results = preOrderStack(root);
-        Assert.assertEquals(toString(results), "12489510367");
+        assertEquals(toString(results), "12489510367");
 
         // 中序遍历，左根右
         results = inOrder(root);
-        Assert.assertEquals(toString(results), "84921051637");
+        assertEquals(toString(results), "84921051637");
         results = inOrderStack(root);
-        Assert.assertEquals(toString(results), "84921051637");
+        assertEquals(toString(results), "84921051637");
 
         // 后序遍历，左右根
         results = postOrder(root);
-        Assert.assertEquals(toString(results), "89410526731");
+        assertEquals(toString(results), "89410526731");
         results = postOrderStack(root);
-        Assert.assertEquals(toString(results), "89410526731");
+        assertEquals(toString(results), "89410526731");
 
         // 层序遍历
         results = levelOrder(root);
-        Assert.assertEquals(toString(results), "12345678910");
+        assertEquals(toString(results), "12345678910");
     }
 
     @Test
-    public void testLevelOrder() {
-        BinaryTreeNode root = initBinaryTree();
-        List<Integer> levelOrderResults = levelOrder(root);
-        Assert.assertEquals(toString(levelOrderResults), "12345678910");
+    public void testIsValidBST() {
+        BinaryTreeNode treeNode = new BinaryTreeNode(5);
+        treeNode.setLeft(new BinaryTreeNode(1));
+        treeNode.setRight(new BinaryTreeNode(4));
+        treeNode.getRight().setLeft(new BinaryTreeNode(3));
+        treeNode.getRight().setRight(new BinaryTreeNode(6));
+        assertFalse(isValidBST(treeNode));
+
     }
 
 
@@ -177,6 +186,22 @@ public class BinaryTreeTest {
         }
         return result;
     }
+
+    private boolean isValidBST(BinaryTreeNode root) {
+        return isValidBST(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
+    }
+
+    private boolean isValidBST(BinaryTreeNode root, long min, long max) {
+        if (Objects.isNull(root)) {
+            return true;
+        }
+        int val = root.getVal();
+        if (val >= max || val <= min) {
+            return false;
+        }
+        return isValidBST(root.getLeft(), min, val) && isValidBST(root.getRight(), val, max);
+    }
+
 
     private BinaryTreeNode initBinaryTree() {
         BinaryTreeNode node10 = new BinaryTreeNode(10);

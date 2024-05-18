@@ -46,36 +46,6 @@ public class Journey {
         private int score;
 
         private String name;
-
-        public PointOfInterest(int costDays, int score, String name) {
-            this.costDays = costDays;
-            this.score = score;
-            this.name = name;
-        }
-
-        public int getCostDays() {
-            return costDays;
-        }
-
-        public void setCostDays(int costDays) {
-            this.costDays = costDays;
-        }
-
-        public int getScore() {
-            return score;
-        }
-
-        public void setScore(int score) {
-            this.score = score;
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
     }
 
     private static List<PointOfInterest> journey(List<PointOfInterest> poiList, int totalCost) {
@@ -85,11 +55,6 @@ public class Journey {
         class TableIndex {
             private int x;
             private int y;
-
-            public TableIndex(int x, int y) {
-                this.x = x;
-                this.y = y;
-            }
 
             public int getX() {
                 return x;

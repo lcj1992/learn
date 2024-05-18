@@ -28,7 +28,7 @@ public class ExecutorsTest {
             }
         });
         System.out.println("耗时：" + (System.currentTimeMillis() - start));
-        Thread.sleep(1000000);
+        Thread.sleep(1000);
     }
 
 

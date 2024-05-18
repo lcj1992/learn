@@ -1,7 +1,12 @@
 package common;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.Objects;
 
+@Getter
+@Setter
 public class ListNode {
     public int val;
     public ListNode next;

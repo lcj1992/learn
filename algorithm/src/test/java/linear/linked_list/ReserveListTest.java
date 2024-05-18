@@ -1,6 +1,7 @@
 package linear.linked_list;
 
 import com.google.common.base.Preconditions;
+import common.ListNode;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -41,44 +42,44 @@ public class ReserveListTest {
     @Test
     public void test3() {
         // 1->2->3->4->5
-        Node node5 = new Node(5, null);
-        Node node4 = new Node(4, node5);
-        Node node3 = new Node(3, node4);
-        Node node2 = new Node(2, node3);
-        Node root = new Node(1, node2);
+        ListNode node5 = new ListNode(5, null);
+        ListNode node4 = new ListNode(4, node5);
+        ListNode node3 = new ListNode(3, node4);
+        ListNode node2 = new ListNode(2, node3);
+        ListNode root = new ListNode(1, node2);
         Assert.assertEquals("54321", reserveSpecificIdx(root, 1, 5).toString());
     }
 
     @Test
     public void test4() {
         // 1->2->3->4->5
-        Node node5 = new Node(5, null);
-        Node node4 = new Node(4, node5);
-        Node node3 = new Node(3, node4);
-        Node node2 = new Node(2, node3);
-        Node root = new Node(1, node2);
+        ListNode node5 = new ListNode(5, null);
+        ListNode node4 = new ListNode(4, node5);
+        ListNode node3 = new ListNode(3, node4);
+        ListNode node2 = new ListNode(2, node3);
+        ListNode root = new ListNode(1, node2);
         Assert.assertEquals("54321", reserve2(root).toString());
     }
 
-    public Node reserveSpecificIdx(Node head, int idx1, int idx2) {
+    public ListNode reserveSpecificIdx(ListNode head, int idx1, int idx2) {
         Preconditions.checkArgument(idx1 >= 1);
         int size = getSize(head);
         Preconditions.checkArgument(idx2 <= size);
         if (idx1 == 1) {
-            Node idx2Node = findIdxNode(head, idx2);
-            Node tailList = idx2Node.getNext();
+            ListNode idx2Node = findIdxNode(head, idx2);
+            ListNode tailList = idx2Node.getNext();
             idx2Node.setNext(null);
-            Node reserve = reserve(head);
+            ListNode reserve = reserve(head);
             head.setNext(tailList);
             return reserve;
         } else {
-            Node idx1PreNode = findIdxNode(head, idx1 - 1);
-            Node idx1Node = idx1PreNode.getNext();
-            Node idx2Node = findIdxNode(head, idx2);
-            Node tailList = idx2Node.getNext();
+            ListNode idx1PreNode = findIdxNode(head, idx1 - 1);
+            ListNode idx1Node = idx1PreNode.getNext();
+            ListNode idx2Node = findIdxNode(head, idx2);
+            ListNode tailList = idx2Node.getNext();
 
             idx2Node.setNext(null);
-            Node reserve = reserve(idx1Node);
+            ListNode reserve = reserve(idx1Node);
 
             idx1Node.setNext(tailList);
             idx1PreNode.setNext(reserve);
@@ -86,9 +87,9 @@ public class ReserveListTest {
         }
     }
 
-    private int getSize(Node head) {
+    private int getSize(ListNode head) {
         int size = 0;
-        Node tmp = head;
+        ListNode tmp = head;
         while (Objects.nonNull(tmp)) {
             size++;
             tmp = tmp.getNext();
@@ -96,23 +97,23 @@ public class ReserveListTest {
         return size;
     }
 
-    public Node reserve(Node head) {
+    public ListNode reserve(ListNode head) {
         if (head == null || head.getNext() == null) {
             return head;
         }
-        Node reHead = reserve(head.getNext());
+        ListNode reHead = reserve(head.getNext());
         head.getNext().setNext(head);
         head.setNext(null);
         return reHead;
     }
 
-    public Node reserve2(Node head) {
+    public ListNode reserve2(ListNode head) {
         if (Objects.isNull(head) || Objects.isNull(head.getNext())) {
             return head;
         }
-        Node tmp = head;
+        ListNode tmp = head;
         while (Objects.nonNull(tmp.getNext())) {
-            Node curNext = tmp.getNext();
+            ListNode curNext = tmp.getNext();
             tmp.setNext(tmp.getNext().getNext());
             curNext.setNext(head);
             head = curNext;
@@ -120,7 +121,7 @@ public class ReserveListTest {
         return head;
     }
 
-    private Node findIdxNode(Node tmp, int idx1) {
+    private ListNode findIdxNode(ListNode tmp, int idx1) {
         for (int i = 0; Objects.nonNull(tmp); i++) {
             if (i == idx1 - 1) {
                 return tmp;
@@ -130,37 +131,4 @@ public class ReserveListTest {
         return null;
     }
 
-    private static class Node {
-        int value;
-        Node next;
-
-        public Node(int value, Node next) {
-            this.value = value;
-            this.next = next;
-        }
-
-        public int getValue() {
-            return value;
-        }
-
-        public void setValue(int value) {
-            this.value = value;
-        }
-
-        public Node getNext() {
-            return next;
-        }
-
-        public void setNext(Node next) {
-            this.next = next;
-        }
-
-        @Override
-        public String toString() {
-            if (Objects.isNull(this.getNext())) {
-                return String.valueOf(value);
-            }
-            return value + next.toString();
-        }
-    }
 }

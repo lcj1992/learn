@@ -19,22 +19,22 @@ public class ReserveListTest {
     @Test
     public void test1() {
         // 1->2->3->4->5
-        Node node5 = new Node(5, null);
-        Node node4 = new Node(4, node5);
-        Node node3 = new Node(3, node4);
-        Node node2 = new Node(2, node3);
-        Node root = new Node(1, node2);
+        ListNode node5 = new ListNode(5, null);
+        ListNode node4 = new ListNode(4, node5);
+        ListNode node3 = new ListNode(3, node4);
+        ListNode node2 = new ListNode(2, node3);
+        ListNode root = new ListNode(1, node2);
         Assert.assertEquals("43215", reserveSpecificIdx(root, 1, 4).toString());
     }
 
     @Test
     public void test2() {
         // 1->2->3->4->5
-        Node node5 = new Node(5, null);
-        Node node4 = new Node(4, node5);
-        Node node3 = new Node(3, node4);
-        Node node2 = new Node(2, node3);
-        Node root = new Node(1, node2);
+        ListNode node5 = new ListNode(5, null);
+        ListNode node4 = new ListNode(4, node5);
+        ListNode node3 = new ListNode(3, node4);
+        ListNode node2 = new ListNode(2, node3);
+        ListNode root = new ListNode(1, node2);
         Assert.assertEquals(getSize(root), 5);
         Assert.assertEquals("14325", reserveSpecificIdx(root, 2, 4).toString());
     }

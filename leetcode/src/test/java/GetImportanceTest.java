@@ -4,10 +4,7 @@ import lombok.NoArgsConstructor;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
-import java.util.Stack;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -88,5 +85,12 @@ public class GetImportanceTest {
         public int importance;
         // the id of direct subordinates
         public List<Integer> subordinates;
+
+
+        public Employee(int id, int importance, List<Integer> subordinates) {
+            this.id = id;
+            this.importance = importance;
+            this.subordinates = subordinates;
+        }
     }
 }

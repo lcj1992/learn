@@ -11,8 +11,7 @@ import java.util.List;
  * Date: 2019/5/18
  * Time: 下午7:31
  */
-@Data
-class TreeNode {
+public class TreeNode {
 
     private int val;
 
@@ -26,4 +25,21 @@ class TreeNode {
         this.val = val;
         this.children = children;
     }
+
+    public int getVal() {
+        return val;
+    }
+
+    public void setVal(int val) {
+        this.val = val;
+    }
+
+    public List<TreeNode> getChildren() {
+        return children;
+    }
+
+    public void setChildren(List<TreeNode> children) {
+        this.children = children;
+    }
 }
+

@@ -14,8 +14,6 @@ import lombok.NoArgsConstructor;
  */
 @Getter
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
 public class BinaryTreeNode {
 
     private Integer val;
@@ -24,7 +22,37 @@ public class BinaryTreeNode {
 
     private BinaryTreeNode right;
 
-    BinaryTreeNode(Integer val) {
+    public BinaryTreeNode(Integer val) {
         this.val = val;
+    }
+
+    public BinaryTreeNode(Integer val, BinaryTreeNode left, BinaryTreeNode right) {
+        this.val = val;
+        this.left = left;
+        this.right = right;
+    }
+
+    public Integer getVal() {
+        return val;
+    }
+
+    public void setVal(Integer val) {
+        this.val = val;
+    }
+
+    public BinaryTreeNode getLeft() {
+        return left;
+    }
+
+    public void setLeft(BinaryTreeNode left) {
+        this.left = left;
+    }
+
+    public BinaryTreeNode getRight() {
+        return right;
+    }
+
+    public void setRight(BinaryTreeNode right) {
+        this.right = right;
     }
 }

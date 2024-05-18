@@ -19,10 +19,10 @@ public class ArrayTest {
 
     @Test
     public void testGenerateMatrix() {
-        int[][] ints = generateMatrix(5);
-        for (int i = 0; i < ints.length; i++) {
-            for (int i1 : ints[i]) {
-                System.out.print(i1 + (i1 >= 10 ? " " : "  "));
+        int[][] matrix = generateMatrix(5);
+        for (int[] array : matrix) {
+            for (int item : array) {
+                System.out.print(item + (item >= 10 ? " " : "  "));
             }
             System.out.println();
         }

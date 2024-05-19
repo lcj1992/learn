@@ -12,19 +12,19 @@ import lombok.Getter;
  */
 @Getter
 @Data
-public class BinaryTreeNode {
+public class BiTreeNode {
 
     private Integer val;
 
-    private BinaryTreeNode left;
+    private BiTreeNode left;
 
-    private BinaryTreeNode right;
+    private BiTreeNode right;
 
-    public BinaryTreeNode(Integer val) {
+    public BiTreeNode(Integer val) {
         this.val = val;
     }
 
-    public BinaryTreeNode(Integer val, BinaryTreeNode left, BinaryTreeNode right) {
+    public BiTreeNode(Integer val, BiTreeNode left, BiTreeNode right) {
         this.val = val;
         this.left = left;
         this.right = right;
@@ -38,19 +38,19 @@ public class BinaryTreeNode {
         this.val = val;
     }
 
-    public BinaryTreeNode getLeft() {
+    public BiTreeNode getLeft() {
         return left;
     }
 
-    public void setLeft(BinaryTreeNode left) {
+    public void setLeft(BiTreeNode left) {
         this.left = left;
     }
 
-    public BinaryTreeNode getRight() {
+    public BiTreeNode getRight() {
         return right;
     }
 
-    public void setRight(BinaryTreeNode right) {
+    public void setRight(BiTreeNode right) {
         this.right = right;
     }
 }

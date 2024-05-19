@@ -42,7 +42,6 @@ public class LinkListTest {
         if (visited.contains(node)) {
             return false; // 已经访问过该节点，不需要再次访问
         }
-
         visited.add(node);
         recStack.add(node);
 

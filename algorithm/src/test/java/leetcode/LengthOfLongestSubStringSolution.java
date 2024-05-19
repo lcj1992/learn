@@ -18,7 +18,7 @@ public class LengthOfLongestSubStringSolution {
 
     public int lengthOfLongestSubstring(String s) {
         int length = s.length();
-        if (length <= 0) {
+        if (length == 0) {
             return 0;
         }
         int maxLength = 0;

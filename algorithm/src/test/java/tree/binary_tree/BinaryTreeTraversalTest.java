@@ -16,7 +16,7 @@ import static org.junit.Assert.assertFalse;
  * 1. 二叉树的遍历（前序、中序、后序、层序）
  * 2. 统计所有非叶子节点的和
  */
-public class BinaryTreeTest {
+public class BinaryTreeTraversalTest {
 
     /**
      * 树的遍历

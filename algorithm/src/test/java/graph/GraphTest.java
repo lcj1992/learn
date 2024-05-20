@@ -1,4 +1,4 @@
-package linear.linked_list;
+package graph;
 
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
@@ -8,7 +8,7 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-public class LinkListTest {
+public class GraphTest {
 
 
     @Test

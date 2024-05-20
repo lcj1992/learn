@@ -76,8 +76,8 @@ public class DFS {
             System.out.println("The " + i + "th element:" + top + " Distance from s is:" + dist.get(top));
             int d = dist.get(top) + 1;// 得出其周边还未被访问的节点的距离
             for (Character c : graph.get(top)) {
-                if (!dist.containsKey(c))// 如果dist中还没有该元素说明还没有被访问
-                {
+                // 如果dist中还没有该元素说明还没有被访问
+                if (!dist.containsKey(c)) {
                     dist.put(c, d);
                     q.add(c);
                 }

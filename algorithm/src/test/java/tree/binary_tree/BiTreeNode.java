@@ -14,11 +14,11 @@ import lombok.Getter;
 @Data
 public class BiTreeNode {
 
-    private Integer val;
+    public Integer val;
 
-    private BiTreeNode left;
+    public BiTreeNode left;
 
-    private BiTreeNode right;
+    public BiTreeNode right;
 
     public BiTreeNode(Integer val) {
         this.val = val;

@@ -1,7 +1,7 @@
 package leetcode;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author lichuangjian
@@ -11,30 +11,30 @@ public class LengthOfLongestSubStringSolution {
 
     public static void main(String[] args) {
         LengthOfLongestSubStringSolution solution = new LengthOfLongestSubStringSolution();
-        String s = "abcabcbb";
+        String s = "abba";
         int i = solution.lengthOfLongestSubstring(s);
         System.out.println(i);
     }
 
     public int lengthOfLongestSubstring(String s) {
-        int length = s.length();
-        if (length == 0) {
+        if (s == null || s.isEmpty()) {
             return 0;
         }
-        int maxLength = 0;
+        int length = s.length();
+        int max = 0;
         char[] chars = s.toCharArray();
-        List<Character> results = new ArrayList<>();
-        for (int i = 0; i < length; i++) {
-            char aChar = chars[i];
-            if (results.contains(aChar)) {
-                maxLength = Math.max(maxLength, results.size());
-                // 找到该字符坐标
-                int index = results.indexOf(aChar);
-                results = results.subList(index + 1, results.size());
+        // 记录最新字符的坐标
+        Map<Character, Integer> exists = new HashMap<>();
+        int left = 0;
+        for (int current = 0; current < length; current++) {
+            char character = chars[current];
+            if (exists.containsKey(character)) {
+                left = Math.max(left, exists.get(character) + 1);
             }
-            results.add(aChar);
+            exists.put(character, current);
+            max = Math.max(max, current - left + 1);
         }
-        maxLength = Math.max(maxLength, results.size());
-        return maxLength;
+        return max;
     }
+
 }

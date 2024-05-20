@@ -3,7 +3,10 @@ package tree.binary_tree;
 import com.google.common.collect.Lists;
 import org.junit.Test;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+import java.util.Stack;
 import java.util.stream.Collectors;
 
 import static org.junit.Assert.assertEquals;
@@ -67,6 +70,29 @@ public class BinaryTreeTest {
         System.out.println(result);
         result = sumMidNodeStack(root);
         System.out.println(result);
+    }
+
+    @Test
+    public void testSameTree() {
+        BiTreeNode root = initBinaryTree();
+        BiTreeNode subTree = initSubTree();
+        boolean sameTree = isSameTree(root, subTree);
+        System.out.println(sameTree);
+        sameTree = isSameTree(root, root);
+        System.out.println(sameTree);
+        sameTree = isSameTreeStack(root, subTree);
+        System.out.println(sameTree);
+        sameTree = isSameTreeStack(root, root);
+        System.out.println(sameTree);
+    }
+
+    @Test
+    public void testSubTree() {
+        BiTreeNode root = initBinaryTree();
+        BiTreeNode subTree = initSubTree();
+        boolean result = isSubTree(root, subTree);
+        System.out.println(result);
+
     }
 
 
@@ -274,6 +300,83 @@ public class BinaryTreeTest {
         return sum;
     }
 
+    private boolean sub(BiTreeNode tree1, BiTreeNode tree2) {
+        if (tree2 == null) {
+            return true;
+        }
+        if (tree1 == null || !Objects.equals(tree1.val, tree2.val)) {
+            return false;
+        }
+        return sub(tree1.left, tree2.left) && sub(tree1.right, tree2.right);
+    }
+
+    private boolean isSameTree(BiTreeNode tree1, BiTreeNode tree2) {
+        if (tree1 == null && tree2 == null) {
+            return true;
+        }
+        if (tree1 == null) {
+            return false;
+        }
+        if (tree2 == null) {
+            return false;
+        }
+        return Objects.equals(tree1.val, tree2.val) && isSameTree(tree1.left, tree2.left) && isSameTree(tree1.right, tree2.right);
+    }
+
+    public boolean isSameTreeStack(BiTreeNode tree1, BiTreeNode tree2) {
+        if (tree1 == null && tree2 == null) {
+            return true;
+        }
+        if (tree1 == null) {
+            return false;
+        }
+        if (tree2 == null) {
+            return false;
+        }
+        Stack<BiTreeNode> stack1 = new Stack<>();
+        Stack<BiTreeNode> stack2 = new Stack<>();
+        stack1.push(tree1);
+        stack2.push(tree2);
+        while (!stack1.isEmpty() && !stack2.isEmpty()) {
+            BiTreeNode pop1 = stack1.pop();
+            BiTreeNode pop2 = stack2.pop();
+            if (!Objects.equals(pop1.val, pop2.val)) {
+                return false;
+            }
+            if (pop1.right == null && pop2.right != null) {
+                return false;
+            }
+            if (pop1.right != null && pop2.right == null) {
+                return false;
+            }
+            if (pop1.left == null && pop2.left != null) {
+                return false;
+            }
+            if (pop1.left != null && pop2.left == null) {
+                return false;
+            }
+            if (pop1.right != null) {
+                stack1.push(pop1.right);
+                stack2.push(pop2.right);
+            }
+            if (pop1.left != null) {
+                stack1.push(pop1.left);
+                stack2.push(pop2.left);
+            }
+        }
+        return stack1.isEmpty() && stack2.isEmpty();
+    }
+
+    private boolean isSubTree(BiTreeNode tree1, BiTreeNode tree2) {
+        if (tree1 == null || tree2 == null) {
+            return true;
+        }
+        if (sub(tree1, tree2)) {
+            return true;
+        }
+        return isSubTree(tree1.getLeft(), tree2) || isSubTree(tree1.getRight(), tree2);
+    }
+
 
     private BiTreeNode initBinaryTree() {
         BiTreeNode node10 = new BiTreeNode(10);
@@ -285,6 +388,17 @@ public class BinaryTreeTest {
         BiTreeNode node4 = new BiTreeNode(4, node8, node9);
         BiTreeNode node3 = new BiTreeNode(3, node6, node7);
         BiTreeNode node2 = new BiTreeNode(2, node4, node5);
+        return new BiTreeNode(1, node2, node3);
+    }
+
+    private BiTreeNode initSubTree() {
+        BiTreeNode node9 = new BiTreeNode(9);
+        BiTreeNode node8 = new BiTreeNode(8);
+        BiTreeNode node7 = new BiTreeNode(7);
+        BiTreeNode node6 = new BiTreeNode(6);
+        BiTreeNode node4 = new BiTreeNode(4, node8, node9);
+        BiTreeNode node3 = new BiTreeNode(3, node6, node7);
+        BiTreeNode node2 = new BiTreeNode(2, node4, null);
         return new BiTreeNode(1, node2, node3);
     }
 

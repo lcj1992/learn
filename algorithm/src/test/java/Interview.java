@@ -20,7 +20,7 @@ public class Interview {
 
     // 二叉树
     // BinaryTreeTest，二叉树的前中后序遍历、层序遍历、是否子树、是否完全相同、共同子结构
-    // TODO 镜像二叉树 Java 反射
+    // TODO 镜像二叉树
     // TODO 从右边看二叉树输出；平衡二叉树，优化
     // TODO 找出二叉树中所有路径节点值相加为指定值的路径
     // TODO 二叉树中，查找所有根到叶子节点的和为 target 的路径

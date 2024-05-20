@@ -1,6 +1,7 @@
-package leetcode;
+package linear.linked_list;
 
 import com.google.common.collect.Lists;
+import common.ListNode;
 
 import java.util.*;
 
@@ -15,8 +16,7 @@ public class MergeKListsSolution {
         ListNode list2 = new ListNode(1, new ListNode(3, new ListNode(4)));
         ListNode list3 = new ListNode(2, new ListNode(6));
         ListNode[] listNodes1 = new ListNode[]{list1, list2, list3};
-        ListNode[] listNodes2 = new ListNode[]{new ListNode()};
-        ListNode listNode = solution.mergeKLists(listNodes2);
+        ListNode listNode = solution.mergeKLists(listNodes1);
         List<Integer> results = Lists.newArrayList();
         while (Objects.nonNull(listNode)) {
             results.add(listNode.val);
@@ -68,21 +68,4 @@ public class MergeKListsSolution {
         return head;
     }
 
-
-    public static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode() {
-        }
-
-        ListNode(int val) {
-            this.val = val;
-        }
-
-        ListNode(int val, ListNode next) {
-            this.val = val;
-            this.next = next;
-        }
-    }
 }

@@ -8,7 +8,7 @@ public class Interview {
     // RemoveZeroSumSublistsSolution，移除链表中连续和为0的元素，前缀和
     // ReverseListSolution，反转链表
     // ReverseKGroupSolutionTest，间隔k位反转链表，间隔2位反转链表
-    // TODO 反转链表，left到right之间的
+    // ReverseBetweenTest， 反转链表，left到right之间的
     // TODO 两个链表相乘，1->9->null,3->2->null 返回 6->0->8 不能遍历后变成整数直接计算
     // kthToLastSolution，链表中倒数第k个元素，双指针
     // TODO 奇数位升序偶数位降序链表排序

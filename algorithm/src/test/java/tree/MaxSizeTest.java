@@ -1,5 +1,6 @@
 package tree;
 
+import common.ListNode;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -13,32 +14,6 @@ import java.util.Objects;
  * Time: 下午4:30
  */
 public class MaxSizeTest {
-
-    public class ListNode {
-        int value;
-
-        private ListNode next;
-
-        public ListNode(int value) {
-            this.value = value;
-        }
-
-        public int getValue() {
-            return value;
-        }
-
-        public void setValue(int value) {
-            this.value = value;
-        }
-
-        public ListNode getNext() {
-            return next;
-        }
-
-        public void setNext(ListNode next) {
-            this.next = next;
-        }
-    }
 
 
     public ListNode getReserveIdxNode(ListNode listNode, int reserveIdx) {
@@ -80,6 +55,6 @@ public class MaxSizeTest {
 
         Assert.assertEquals(getListSize(listNode1), 4);
         Assert.assertEquals(getListSize(listNode2), 3);
-        Assert.assertEquals(reserveIdxNode.getValue(), 2);
+        Assert.assertEquals(reserveIdxNode.getVal(), 2);
     }
 }

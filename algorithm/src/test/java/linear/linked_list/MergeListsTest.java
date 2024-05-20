@@ -1,5 +1,6 @@
-package leetcode;
+package linear.linked_list;
 
+import common.ListNode;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -46,24 +47,6 @@ public class MergeListsTest {
         }
         return head;
 
-    }
-
-    public static class ListNode {
-        int val;
-        ListNode next;
-
-
-        ListNode(int x) {
-            val = x;
-        }
-
-        public String toString() {
-            if (Objects.isNull(this.next)) {
-                return String.valueOf(val);
-            }
-            return val + next.toString();
-
-        }
     }
 
 

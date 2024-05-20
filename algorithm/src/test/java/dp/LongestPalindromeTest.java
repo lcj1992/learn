@@ -1,13 +1,13 @@
-package leetcode;
+package dp;
 
 /**
  * @author lichuangjian
  * @date 2023/8/2
  */
-public class LongestPalindromeSolution {
+public class LongestPalindromeTest {
 
     public static void main(String[] args) {
-        LongestPalindromeSolution solution = new LongestPalindromeSolution();
+        LongestPalindromeTest solution = new LongestPalindromeTest();
         String babad = solution.longestPalindrome("xaabacxcabaaxcabaax");
         System.out.println(babad);
     }

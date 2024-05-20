@@ -9,9 +9,9 @@ import java.util.*;
  * @author lichuangjian
  * @date 2023/7/1
  */
-public class MergeKListsSolution {
+public class MergeKListsTest {
     public static void main(String[] args) {
-        MergeKListsSolution solution = new MergeKListsSolution();
+        MergeKListsTest solution = new MergeKListsTest();
         ListNode list1 = new ListNode(1, new ListNode(4, new ListNode(5)));
         ListNode list2 = new ListNode(1, new ListNode(3, new ListNode(4)));
         ListNode list3 = new ListNode(2, new ListNode(6));

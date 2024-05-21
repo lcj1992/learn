@@ -25,17 +25,6 @@ public class kthToLastSolution {
     }
 
 
-    public int kthToLast2(ListNode head, int k) {
-        Map<Integer, ListNode> map = new HashMap<>();
-        ListNode temp = head;
-        int index = 0;
-        while (temp != null) {
-            map.put(index++, temp);
-            temp = temp.getNext();
-        }
-        return map.get(index - k).getVal();
-    }
-
     public int kthToLast(ListNode head, int k) {
         ListNode pre = head;
         ListNode cur = head;
@@ -47,5 +36,16 @@ public class kthToLastSolution {
             cur = cur.next;
         }
         return pre.val;
+    }
+
+    public int kthToLast2(ListNode head, int k) {
+        Map<Integer, ListNode> map = new HashMap<>();
+        ListNode temp = head;
+        int index = 0;
+        while (temp != null) {
+            map.put(index++, temp);
+            temp = temp.getNext();
+        }
+        return map.get(index - k).getVal();
     }
 }

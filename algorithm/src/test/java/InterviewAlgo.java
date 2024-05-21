@@ -38,6 +38,7 @@ public class InterviewAlgo {
     // TODO 二叉树其他题目，https://blog.csdn.net/LaoJiu_/article/details/66974736
 
     // 排序
+    // TODO 12. 在有序数组里查询一个数，数组里数相等的情况取最小 idx
     // LargestNumberSolutionTest，最大数，本质上还是排序，自定义排序逻辑而已。给定一组非负整数，重新排列它们的顺序使之组成一个最大的整数，https://leetcode.cn/problems/largest-number/solutions/27403/179-by-ikaruga/
 
     // 查找
@@ -66,6 +67,7 @@ public class InterviewAlgo {
     // TODO YSFCircleTest 约瑟夫问题，https://blog.csdn.net/longintchar/article/details/75150621
     // Three6AddSolution，36进制加法
     // TODO 进制转换
+    // 7. 在2.5亿个整数中找出不重复的整数，内存不足以容纳这2.5亿个整数
 
 
 }

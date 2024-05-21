@@ -2,10 +2,7 @@ package leetcode;
 
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -20,6 +17,9 @@ public class PermuteTest {
     @Test
     public void test() {
         List<List<Integer>> permute = permute(new int[]{1, 2, 3});
+        permute.forEach(System.out::println);
+        System.out.println("-------------");
+        permute = permute2(new int[]{1, 2, 3});
         permute.forEach(System.out::println);
     }
 
@@ -65,4 +65,30 @@ public class PermuteTest {
         }
         return results;
     }
+
+    public List<List<Integer>> permute2(int[] nums) {
+        List<Integer> input = Arrays.stream(nums).boxed().collect(Collectors.toList());
+        return permuteRecursion(input);
+    }
+
+    private List<List<Integer>> permuteRecursion(List<Integer> input) {
+        List<List<Integer>> results = new ArrayList<>();
+        if (input.size() == 1) {
+            List<Integer> result = new ArrayList<>();
+            result.add(input.get(0));
+            results.add(result);
+            return results;
+        }
+        Integer first = input.get(0);
+        List<List<Integer>> lists = permuteRecursion(input.subList(1, input.size()));
+        for (List<Integer> list : lists) {
+            for (int i = 0; i < list.size() + 1; i++) {
+                List<Integer> result = new ArrayList<>(list);
+                result.add(i, first);
+                results.add(result);
+            }
+        }
+        return results;
+    }
+
 }

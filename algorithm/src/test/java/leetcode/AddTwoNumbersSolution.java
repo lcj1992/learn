@@ -1,14 +1,13 @@
-package leetcode; /**
- * @author lichuangjian
- * @date 2023/6/4
- */
+package leetcode;
+
 
 import common.ListNode;
 
 import java.util.Objects;
 
 /**
- *
+ * @author lichuangjian
+ * @date 2023/6/4
  */
 public class AddTwoNumbersSolution {
 

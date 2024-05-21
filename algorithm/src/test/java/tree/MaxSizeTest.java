@@ -15,7 +15,6 @@ import java.util.Objects;
  */
 public class MaxSizeTest {
 
-
     public ListNode getReserveIdxNode(ListNode listNode, int reserveIdx) {
         int size = getListSize(listNode);
 

@@ -54,8 +54,8 @@ public class InterviewAlgo {
 
 
     // 双指针，滑动窗口
-    // LengthOfLongestSubstringKDistinctSolution，至多包含 K 个不同字符的最长子串，和最长无重复子串类似，https://leetcode.cn/problems/longest-substring-with-at-most-k-distinct-characters/description/
-    // LengthOfLongestSubStringSolution，map记录出现过的字符，调整left指针，最大长度即为当前值和（当前指针-left指针+1）两者的最大值；要求输出重复最长子串 https://leetcode.cn/problems/longest-substring-without-repeating-characters/solutions/3982/hua-dong-chuang-kou-by-powcai/
+    // LengthOfLongestSubstringKDistinctSolution，至多包含 K 个不同字符的最长子串，和最长无重复子串类似，
+    // LengthOfLongestSubStringSolution，map记录出现过的字符，调整left指针，最大长度即为当前值和（当前指针-left指针+1）两者的最大值；要求输出重复最长子串
     // ContainCharArrayTest，tibcacbdata，问能否在这个字符串中找到一个长度为m的连续子串，使得这个子串刚好由上面m个字符组成，顺序无所谓，返回任意满足条件的一个子串的起始位置，未找到返回-1，时间复杂度On，比如上面这个例子，acbd，3。https://cloud.tencent.com/developer/article/2285729
     // kthToLastSolution，链表中倒数第k个元素，双指针
 

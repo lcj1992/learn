@@ -33,7 +33,7 @@ public class ListNode {
         }
     }
 
-    public static ListNode createFromArray(int[] nums) {
+    public static ListNode createFromArray(int... nums) {
         int first = nums[0];
         ListNode head = new ListNode(first);
         ListNode temp = head;

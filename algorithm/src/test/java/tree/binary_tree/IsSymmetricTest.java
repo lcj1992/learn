@@ -1,6 +1,7 @@
-package leetcode;
+package tree.binary_tree;
 
 import common.TreeNode;
+import org.junit.Test;
 
 import java.util.Objects;
 
@@ -8,12 +9,12 @@ import java.util.Objects;
  * @author lichuangjian
  * @date 2023/8/2
  */
-public class IsSymmetricSolution {
+public class IsSymmetricTest {
 
-    public static void main(String[] args) {
-        IsSymmetricSolution solution = new IsSymmetricSolution();
+    @Test
+    public void test() {
         TreeNode root = new TreeNode(1, new TreeNode(2, new TreeNode(3), new TreeNode(4)), new TreeNode(2, new TreeNode(4), new TreeNode(3)));
-        boolean symmetric = solution.isSymmetric(root);
+        boolean symmetric = isSymmetric(root);
         System.out.println(symmetric);
     }
 

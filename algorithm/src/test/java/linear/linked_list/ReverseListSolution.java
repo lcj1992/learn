@@ -1,6 +1,7 @@
 package linear.linked_list;
 
 import common.ListNode;
+import org.junit.Test;
 
 /**
  * @author lichuangjian
@@ -8,22 +9,13 @@ import common.ListNode;
  */
 public class ReverseListSolution {
 
-    public static void main(String[] args) {
-        ListNode first = new ListNode(1);
-        ListNode second = new ListNode(2);
-        ListNode third = new ListNode(3);
-        ListNode forth = new ListNode(4);
-        ListNode fifth = new ListNode(5);
-        first.next = second;
-        second.next = third;
-        third.next = forth;
-        forth.next = fifth;
-        ReverseListSolution solution = new ReverseListSolution();
-        ListNode listNode = solution.reverseList(first);
-        while (listNode != null) {
-            System.out.println(listNode.val);
-            listNode = listNode.next;
-        }
+    @Test
+    public void test() {
+        ListNode listNode = reverseList(ListNode.createFromArray(1, 2, 3, 4, 5));
+        ListNode.print(listNode);
+        System.out.println();
+        listNode = reverseList2(ListNode.createFromArray(1, 2, 3, 4, 5));
+        ListNode.print(listNode);
     }
 
     public ListNode reverseList(ListNode head) {
@@ -36,6 +28,22 @@ public class ReverseListSolution {
             curr = next;
         }
         return prev;
+    }
+
+    public ListNode reverseList2(ListNode head) {
+        if (head == null) {
+            return null;
+        }
+        ListNode dummy = new ListNode();
+        dummy.next = head;
+        ListNode cur = dummy.next;
+        while (cur.next != null) {
+            ListNode next = cur.next;
+            cur.next = next.next;
+            next.next = dummy.next;
+            dummy.next = next;
+        }
+        return dummy.next;
     }
 
 }

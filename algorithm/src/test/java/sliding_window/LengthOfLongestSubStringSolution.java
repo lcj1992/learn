@@ -1,9 +1,12 @@
-package leetcode;
+package sliding_window;
 
 import java.util.HashMap;
 import java.util.Map;
 
 /**
+ * <a href="https://leetcode.cn/problems/longest-substring-without-repeating-characters/solutions/3982/hua-dong-chuang-kou-by-powcai/">...</a>
+ * 无重复字符的最长子串
+ *
  * @author lichuangjian
  * @date 2023/6/11
  */

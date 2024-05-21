@@ -1,4 +1,4 @@
-package leetcode;
+package tree.binary_tree;
 
 import common.TreeNode;
 
@@ -7,7 +7,7 @@ import java.util.List;
 
 /**
  * https://leetcode.cn/problems/binary-tree-postorder-traversal/
- * 后续遍历
+ * 后序遍历
  *
  * @author lichuangjian
  * @date 2023/8/17

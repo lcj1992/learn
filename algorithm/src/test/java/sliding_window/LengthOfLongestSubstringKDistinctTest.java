@@ -1,10 +1,15 @@
-package leetcode;
+package sliding_window;
 
 import org.junit.Test;
 
-import java.util.*;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
-public class LengthOfLongestSubstringKDistinctSolution {
+/**
+ * <a href="https://leetcode.cn/problems/longest-substring-with-at-most-k-distinct-characters/description/">...</a>
+ * 340. 至多包含 K 个不同字符的最长子串
+ */
+public class LengthOfLongestSubstringKDistinctTest {
     @Test
     public void test() {
         String s = "eceba";

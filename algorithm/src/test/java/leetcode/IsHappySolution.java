@@ -21,7 +21,7 @@ public class IsHappySolution {
         Set<Integer> existed = new HashSet<>();
         while (true) {
             for (char aChar : chars) {
-                res += Math.pow(aChar - '1' + 1, 2);
+                res += (int) Math.pow(aChar - '1' + 1, 2);
             }
             if (res == 1) {
                 return true;

@@ -1,14 +1,14 @@
 public class InterviewBase {
-    //// shell命令
+    //// shell命令：网上找一下
     // 文本sed，kill、ed、awk、xargs
     // top、free、arthas、ss、
 
 
-    //// spring
+    //// spring、spring cloud、spring boot：之前的PPT
     // ApplicationContext 的初始化过程?初始化过程中发现循环依赖 Spring 是如何处理的?
 
 
-    //// 数据库
+    //// 数据库：高性能MySQL、极客时间课程、之前PPT，宗星的PPT、ata
     // mysql的隔离级：读未提交、读提交、可重复读、串行化
     // mysql的ACID特性：原子性、一致性、隔离性、持久性
     // 索引用 B+树有什么好处
@@ -40,7 +40,7 @@ public class InterviewBase {
     // TODO MySQL，互斥锁，乐观锁
 
 
-    //// 编程语言
+    //// 编程语言：java并发编程实战、之前的ppt、极客时间的课
     // Java 反射，能否获取到父类
     // java的零拷贝
     // int integer 区别
@@ -51,7 +51,6 @@ public class InterviewBase {
     // volatile，是否能保证原子性
     // 说一下可见性
     // Java 的 Atomic 的递增方法能保证可见性吗
-    // Volatile 关键字，
     // 指令重排序有什么意义?
     // synchronized 怎么用? 并发包里的原子类有哪些，
     // 怎么实现?cas 在 CPU 级别用什么指令实现的?
@@ -64,13 +63,12 @@ public class InterviewBase {
     // 死锁的4个条件，排查线程死锁，如何定位
     // 线程池，核心线程
     // 如何解决重入的问题?在第一步写 redis 失败怎么办?
-    // Java 虚引用，补了句实际用过吗?
+    // Java 虚引用，实际用过吗?
     // AQS 的实现原理，cas 有什么问题
     // 类加载过程
     // JUC AQS countLatch
     // 线程间通信，两个线程，一个依次输出[1,3,5,7,9],一个依次输出[2,4,6,8,10]，怎么保证最后输出结果是[1,2,3,4,5,6,7,8,9,10]
     // 之前有没有碰到过线上的并发问题
-    // Java 的 Atomic 的递增方法能保证可见性吗
     // 最大线程10，有界队列100，执行过程中有任务被放到了有界队列，问过了一段时间后，任务执行完成后，线程池的线程数量是多少，闲置的线程是怎么销毁的
 
     //// RPC
@@ -89,7 +87,7 @@ public class InterviewBase {
     // kafka 为什么 topic 多了，性能会下降?怎么设计才能使保证消息只投递过一次，不是能使用业务上的
 
 
-    //// Redis、tair
+    //// Redis、tair，redis源码，redis实战，redis源码解读
     // redis的数据结构
     // redis的扩容机制
     // Redis缓存雪崩和缓存击穿是什么？什么解决方案。
@@ -144,12 +142,12 @@ public class InterviewBase {
     // 网络tcp的time-wait，说下四次挥手
 
 
-    //// 操作系统
+    //// 操作系统，CSAPP
     // 进程、线程、协程
     // ctrl+c 背后系统发生的事情
 
 
-    //// 虚拟机
+    //// 虚拟机，之前的ppt、深入理解java虚拟机
     // 字节码
     // jvm的内存结构
     // jvm的垃圾回收机制

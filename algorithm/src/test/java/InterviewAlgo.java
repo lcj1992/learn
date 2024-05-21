@@ -55,7 +55,7 @@ public class InterviewAlgo {
     // Knapsack01Test，01背包问题，状态转移方程：dp[i][j] = Math.max(dp[i - 1][j], (v[i - 1] + dp[i - 1][j - w[i - 1]])); dp[i][j] = dp[i-1][j]
     // LengthOfLISTest，最长上升子序列，状态转移方程：dp[i]=max(dp[j])+1，其中0≤j<i且num[j]<num[i]，https://leetcode.cn/problems/longest-increasing-subsequence/description/
     // LongestCommonSubsequenceTest，最长公共子序列，状态转移方程：https://leetcode.cn/problems/qJnOS7/description/
-    // LongestPalindromeTest
+    // LongestPalindromeTest，最长回文子串
     // FindNumberOfLISTest
 
     // TODO 回溯

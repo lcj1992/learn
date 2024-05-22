@@ -16,7 +16,7 @@ public class RemoveNthFromEndTest {
     @Test
     public void test() {
         ListNode listNode = ListNode.createFromArray(1, 2, 3, 4, 5);
-        ListNode result = removeNthFromEnd(listNode, 3);
+        ListNode result = removeNthFromEnd(listNode, 2);
         ListNode.print(result);
     }
 
@@ -25,13 +25,14 @@ public class RemoveNthFromEndTest {
         dummy.next = head;
         ListNode pre = dummy;
         ListNode cur = dummy;
-        for (int i = 0; i < n - 1; i++) {
+        for (int i = 0; i < n; i++) {
+            cur = cur.next;
+        }
+        while (cur.next != null) {
             pre = pre.next;
             cur = cur.next;
         }
-        if (cur != null && cur.next != null) {
-            cur.next = cur.next.next;
-        }
+        pre.next = pre.next.next;
         return dummy.next;
     }
 

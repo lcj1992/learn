@@ -1,5 +1,6 @@
 package search;
 
+import common.Utils;
 import org.junit.Test;
 
 /**
@@ -12,47 +13,60 @@ public class SearchRangeTest {
 
     @Test
     public void testSearchRange() {
-        int[] nums = new int[]{5, 7, 7, 8, 8, 10};
-        int[] ints = searchRange(nums, 7);
-        for (int anInt : ints) {
-            System.out.print(anInt + " ");
-        }
+        int[] nums = new int[]{5, 7, 7, 8, 8, 8, 8, 8, 10};
+        int[] ints = searchRange(nums, 8);
+        Utils.printArray(ints);
     }
 
     public int[] searchRange(int[] nums, int target) {
         if (nums == null || nums.length == 0) {
             return new int[]{-1, -1};
         }
+        int lowBound = searchLowBound(nums, target);
+        int upperBound = searchUpperBound(nums, target);
+        return new int[]{lowBound, upperBound};
+    }
+
+
+    public int searchLowBound(int[] nums, int target) {
+        if (nums == null || nums.length == 0) {
+            return -1;
+        }
+        int left = 0;
+        int right = nums.length;
+        int res = -1;
+        while (left < right) {
+            int mid = left + (right - left) / 2;
+            if (nums[mid] == target) {
+                res = mid;
+                right = mid;
+            } else if (nums[mid] > target) {
+                right = mid;
+            } else {
+                left = mid + 1;
+            }
+        }
+        return res;
+    }
+
+    public int searchUpperBound(int[] nums, int target) {
+        if (nums == null || nums.length == 0) {
+            return -1;
+        }
         int left = 0;
         int right = nums.length - 1;
+        int res = -1;
         while (left <= right) {
-            int mid = (right + left) / 2;
-            int midVal = nums[mid];
-            if (midVal == target) {
-                int startIndex = mid;
-                int endIndex = mid;
-                while (nums[startIndex] == nums[mid]) {
-                    startIndex--;
-                    if (startIndex < 0) {
-                        break;
-                    }
-                }
-                startIndex++;
-                while (nums[endIndex] == nums[mid]) {
-                    endIndex++;
-                    if (endIndex > nums.length - 1) {
-                        break;
-                    }
-                }
-                endIndex--;
-                return new int[]{startIndex, endIndex};
-            }
-            if (midVal < target) {
+            int mid = left + (right - left) / 2;
+            if (nums[mid] == target) {
+                res = mid;
+                left = mid + 1;
+            } else if (nums[mid] < target) {
                 left = mid + 1;
             } else {
                 right = mid - 1;
             }
         }
-        return new int[]{-1, -1};
+        return res;
     }
 }

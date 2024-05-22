@@ -1,6 +1,6 @@
 public class InterviewAlgo {
     // 数组
-    // SpiralArrayTest，二维数组顺时针打印
+    // SpiralArrayTest，螺旋遍历二维数组
     // SearchMatrixTest，搜索二维矩阵
     // ArrayTest#testGenerateMatrix，给定数字打印矩阵
     // 1  2  6  7

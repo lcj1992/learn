@@ -8,6 +8,9 @@ import java.util.Objects;
 
 /**
  * <a href="https://leetcode.cn/problems/shun-shi-zhen-da-yin-ju-zhen-lcof/">...</a>
+ * 螺旋遍历二维数组
+ * 思路：
+ * 1. 向右、向下、向左、向上，分别调整top、left、bottom、right坐标
  */
 public class SpiralArrayTest {
 

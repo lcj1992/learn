@@ -1,4 +1,4 @@
-package leetcode;
+package linear.linked_list;
 
 
 import common.ListNode;

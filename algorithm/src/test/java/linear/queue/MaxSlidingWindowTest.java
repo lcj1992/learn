@@ -1,23 +1,32 @@
-package leetcode;
+package linear.queue;
 
-import java.util.*;
+import org.junit.Test;
+
+import java.util.Deque;
+import java.util.LinkedList;
+import java.util.PriorityQueue;
+import java.util.TreeMap;
 
 /**
+ * <a href="https://leetcode.cn/problems/sliding-window-maximum/description/">...</a>
+ * 滑动窗口最大值
+ *
  * @author lichuangjian
  * @date 2023/7/5
  */
-public class MaxSlidingWindowSolution {
+public class MaxSlidingWindowTest {
 
-    public static void main(String[] args) {
-        MaxSlidingWindowSolution maxSlidingWindowSolution = new MaxSlidingWindowSolution();
+    @Test
+    public void test() {
         int[] nums = new int[]{1, 3, -1, -3, 5, 3, 6, 7};
-        int[] results = maxSlidingWindowSolution.maxSlidingWindow1(nums, 3);
+        int[] results = maxSlidingWindow(nums, 3);
         for (int result : results) {
             System.out.println(result);
         }
     }
 
 
+    // 优先队列
     public int[] maxSlidingWindow(int[] nums, int k) {
         if (nums.length == 0) {
             return new int[]{};
@@ -60,5 +69,31 @@ public class MaxSlidingWindowSolution {
             result[i - k + 1] = window.firstKey();
         }
         return result;
+    }
+
+    // 单调队列
+    public int[] maxSlidingWindow2(int[] nums, int k) {
+        int n = nums.length;
+        Deque<Integer> deque = new LinkedList<>();
+        for (int i = 0; i < k; ++i) {
+            while (!deque.isEmpty() && nums[i] >= nums[deque.peekLast()]) {
+                deque.pollLast();
+            }
+            deque.offerLast(i);
+        }
+
+        int[] ans = new int[n - k + 1];
+        ans[0] = nums[deque.peekFirst()];
+        for (int i = k; i < n; ++i) {
+            while (!deque.isEmpty() && nums[i] >= nums[deque.peekLast()]) {
+                deque.pollLast();
+            }
+            deque.offerLast(i);
+            while (deque.peekFirst() <= i - k) {
+                deque.pollFirst();
+            }
+            ans[i - k + 1] = nums[deque.peekFirst()];
+        }
+        return ans;
     }
 }

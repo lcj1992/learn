@@ -7,6 +7,11 @@ import org.junit.Test;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * <a href="https://leetcode.cn/problems/kth-node-from-end-of-list-lcci/submissions/532884868/">...</a>
+ * 描述：返回倒数第 k 个节点
+ * 思路：双指针
+ */
 public class kthToLastSolution {
 
     @Test

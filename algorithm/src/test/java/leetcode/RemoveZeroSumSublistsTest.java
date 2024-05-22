@@ -6,7 +6,12 @@ import org.junit.Test;
 import java.util.HashMap;
 import java.util.Map;
 
-public class RemoveZeroSumSublistsSolution {
+/**
+ * <a href="https://leetcode.cn/problems/remove-zero-sum-consecutive-nodes-from-linked-list/">...</a>
+ * 描述：移除链表中连续和为0的元素
+ * 解题思路：前缀和
+ */
+public class RemoveZeroSumSublistsTest {
     @Test
     public void testRemoveZeroSumSublits() {
         ListNode listNode = ListNode.createFromArray(new int[]{1, 2, -3, 3, 1});

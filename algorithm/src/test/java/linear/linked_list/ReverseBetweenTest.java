@@ -4,6 +4,12 @@ import common.ListNode;
 import org.junit.Test;
 
 /**
+ * <a href="https://leetcode.cn/problems/reverse-linked-list-ii/description/">...</a>
+ * 描述：反转left和right之间的链表
+ * 解题思路：
+ * 1. 找到left的前缀位置
+ * 2. 反转直至right位置
+ *
  * @author foolchid
  * @date 2024/5/20
  **/

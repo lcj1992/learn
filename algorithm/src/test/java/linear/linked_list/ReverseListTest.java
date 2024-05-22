@@ -4,10 +4,14 @@ import common.ListNode;
 import org.junit.Test;
 
 /**
+ * <a href="https://leetcode.cn/problems/UHnkqh/description/">...</a>
+ * 描述：反转链表
+ * 解题思路：反转过程中注意赋值的顺序
+ *
  * @author lichuangjian
  * @date 2023/8/15
  */
-public class ReverseListSolution {
+public class ReverseListTest {
 
     @Test
     public void test() {

@@ -1,14 +1,19 @@
 package search;
 
 /**
+ * <a href="https://leetcode.cn/problems/search-in-rotated-sorted-array">...</a>
+ * 搜索旋转数组
+ * 解题思路：
+ * 1. 二分法的变种
+ *
  * @author lichuangjian
  * @date 2023/8/18
  */
-public class SearchSolution {
+public class SearchTest {
 
     public static void main(String[] args) {
         int[] nums = new int[]{4, 5, 6, 7, 0, 1, 2};
-        SearchSolution solution = new SearchSolution();
+        SearchTest solution = new SearchTest();
         System.out.println(solution.search(nums, 0));
     }
 

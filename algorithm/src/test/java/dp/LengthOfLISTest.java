@@ -1,8 +1,9 @@
 package dp;
 
 /**
- * 最长递增子序列
  * <a href="https://leetcode.cn/problems/longest-increasing-subsequence/description/"/>
+ * 最长递增子序列
+ * 状态转移方程：dp[i]=max(dp[j])+1，其中0≤j<i且num[j]<num[i]
  *
  * @author lichuangjian
  * @date 2023/6/28

@@ -9,6 +9,11 @@ import java.util.Map;
  * <a href="https://leetcode.cn/problems/longest-substring-with-at-most-k-distinct-characters/description/">...</a>
  * <a href="https://leetcode.cn/problems/longest-substring-with-at-most-two-distinct-characters/description/">...</a>
  * 340. 至多包含 K 个不同字符的最长子串
+ * 解题思路：
+ * 1. map记录字符和字符坐标
+ * 2. 和最长无重复子串不同的是，调整left指针的判定条件
+ * 3. 最长无重复子串是当出现重复时，本题是当出现的字符数大于k时
+ * 4. 使用LinkedHashMap来存储，便于移除第一个key的entry
  */
 public class LengthOfLongestSubstringKDistinctTest {
     @Test

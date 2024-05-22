@@ -1,14 +1,21 @@
 package search;
 
+import org.junit.Test;
+
 /**
+ * <a href="https://leetcode.cn/problems/search-a-2d-matrix/">...</a>
+ * 解题思路：
+ * 1. 先在一维上查找，可以暴力查找，也可以二分查找
+ * 2. 再在另一维上查找
+ *
  * @author lichuangjian
  * @date 2023/6/20
  */
-public class SearchMatrixSolution {
+public class SearchMatrixTest {
 
 
-    public static void main(String[] args) {
-        SearchMatrixSolution solution = new SearchMatrixSolution();
+    @Test
+    public void test() {
         int[] a1 = new int[]{1, 3, 5, 7};
         int[] a2 = new int[]{10, 11, 16, 20};
         int[] a3 = new int[]{23, 30, 34, 60};
@@ -17,7 +24,7 @@ public class SearchMatrixSolution {
         matrix[1] = a2;
         matrix[2] = a3;
 
-        boolean result = solution.searchMatrix(matrix, 24);
+        boolean result = searchMatrix(matrix, 24);
         System.out.println(result);
     }
 

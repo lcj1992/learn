@@ -2,15 +2,20 @@ package search;
 
 import org.junit.Test;
 
-public class SearchRangeSolution {
+/**
+ * <a href="https://leetcode.cn/problems/find-first-and-last-position-of-element-in-sorted-array/">...</a>
+ * 34. 在排序数组中查找元素的第一个和最后一个位置
+ * 解题思路：
+ * 1. 二分查找的变种
+ */
+public class SearchRangeTest {
 
     @Test
     public void testSearchRange() {
-//        int[] nums = new int[]{5, 7, 7, 8, 8, 10};
-        int[] nums = new int[]{1};
-        int[] ints = searchRange(nums, 1);
+        int[] nums = new int[]{5, 7, 7, 8, 8, 10};
+        int[] ints = searchRange(nums, 7);
         for (int anInt : ints) {
-            System.out.println(anInt);
+            System.out.print(anInt + " ");
         }
     }
 

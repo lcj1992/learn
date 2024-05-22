@@ -9,15 +9,14 @@ public class InterviewAlgo {
     // 10 11 15 16
     // TODO 数组中元素与下一个比它大的元素之间的距离
 
-
     // 线性表
-    // RemoveZeroSumSublistsSolution，移除链表中连续和为0的元素，前缀和，https://leetcode.cn/problems/remove-zero-sum-consecutive-nodes-from-linked-list/
-    // ReverseListSolution，反转链表，https://leetcode.cn/problems/UHnkqh/description/
-    // ReverseKGroupSolutionTest，间隔k位反转链表，间隔2位反转链表，https://leetcode.cn/problems/reverse-nodes-in-k-group/description/
-    // ReverseBetweenTest， 反转链表，left到right之间的，https://leetcode.cn/problems/reverse-linked-list-ii/description/
+    // RemoveZeroSumSublistsTest，移除链表中连续和为0的元素
+    // ReverseListTest，反转链表
+    // ReverseKGroupSolutionTest，间隔k位反转链表，间隔2位反转链表
+    // ReverseBetweenTest， 反转链表，left到right之间的，
     // TODO 两个链表相乘，1->9->null,3->2->null 返回 6->0->8 不能遍历后变成整数直接计算
-    // kthToLastSolution，链表中倒数第k个元素，双指针，https://leetcode.cn/problems/kth-node-from-end-of-list-lcci/submissions/532884868/
-    // 删除链表倒数第k个元素，https://leetcode.cn/problems/remove-nth-node-from-end-of-list/
+    // kthToLastSolution，链表中倒数第k个元素，双指针，
+    // TODO RemoveNthFromEndTest，删除链表倒数第k个元素
     // TODO 奇数位升序偶数位降序链表排序
     // TODO LRU缓存机制
     // TODO 找两个队列里的相同元素
@@ -48,22 +47,23 @@ public class InterviewAlgo {
 
 
     // 查找
-    // SearchSolution，搜索旋转排序数组，https://leetcode.cn/problems/search-in-rotated-sorted-array
-    // SearchMatrixSolution，搜索二维矩阵，https://leetcode.cn/problems/search-a-2d-matrix/
-    // SearchRangeSolution，给定一个升序整型数组，如[1,2,2,3,4,5,5,6]，给定一个target，找到开始index和结束index，如target=2返回[1,2]，target=3返回[3,3]，如果target不存在，则返回[-1,-1]，如target=7返回[-1,-1]。二分查找变种，两种思路，一种是找到后暴力探索，https://leetcode.cn/problems/find-first-and-last-position-of-element-in-sorted-array/
+    // SearchTest，搜索旋转排序数组，
+    // SearchMatrixTest，搜索二维矩阵，
+    // SearchRangeTest，在排序数组中查找元素的第一个和最后一个位置
 
 
     // 双指针，滑动窗口
-    // LengthOfLongestSubstringKDistinctSolution，至多包含 K 个不同字符的最长子串，和最长无重复子串类似，
-    // LengthOfLongestSubStringSolution，map记录出现过的字符，调整left指针，最大长度即为当前值和（当前指针-left指针+1）两者的最大值；要求输出重复最长子串
+    // LengthOfLongestSubstringKDistinctTest，至多包含 K 个不同字符的最长子串
+    // LengthOfLongestSubStringTest，最长无重复子串
     // ContainCharArrayTest，tibcacbdata，问能否在这个字符串中找到一个长度为m的连续子串，使得这个子串刚好由上面m个字符组成，顺序无所谓，返回任意满足条件的一个子串的起始位置，未找到返回-1，时间复杂度On，比如上面这个例子，acbd，3。https://cloud.tencent.com/developer/article/2285729
     // kthToLastSolution，链表中倒数第k个元素，双指针
+    // MaxSlidingWindowTest，滑动窗口最大值
 
 
     // 动态规划
-    // Knapsack01Test，01背包问题，状态转移方程：dp[i][j] = Math.max(dp[i - 1][j], (v[i - 1] + dp[i - 1][j - w[i - 1]])); dp[i][j] = dp[i-1][j]
-    // LengthOfLISTest，最长上升子序列，状态转移方程：dp[i]=max(dp[j])+1，其中0≤j<i且num[j]<num[i]，https://leetcode.cn/problems/longest-increasing-subsequence/description/
-    // LongestCommonSubsequenceTest，最长公共子序列，状态转移方程：https://leetcode.cn/problems/qJnOS7/description/
+    // Knapsack01Test，01背包问题
+    // LengthOfLISTest，最长上升子序列
+    // LongestCommonSubsequenceTest，最长公共子序列，
     // LongestPalindromeTest，最长回文子串
     // FindNumberOfLISTest
 
@@ -79,7 +79,7 @@ public class InterviewAlgo {
 
     // 其他
     // Three6AddSolution，36进制加法
-    // TODO YSFCircleTest 约瑟夫问题，https://blog.csdn.net/longintchar/article/details/75150621
+    // TODO YSFCircleTest 约瑟夫问题，
     // TODO 手写一致性 hash 算法的应用场景，请求进来怎么通过一致性哈希算法 找到实际的机器 IP 的代码实现 过程
     // TODO 进制转换
     // TODO 在2.5亿个整数中找出不重复的整数，内存不足以容纳这2.5亿个整数

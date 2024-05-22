@@ -2,6 +2,10 @@ package dp;
 
 /**
  * 01背包问题
+ * 解题思路
+ * 1. 状态转移方程：
+ *  1.1 dp[i][j] = Math.max(dp[i - 1][j], (v[i - 1] + dp[i - 1][j - w[i - 1]]));
+ *  1.2 dp[i][j] = dp[i-1][j]
  *
  * @author lichuangjian
  * @date 2023/6/27

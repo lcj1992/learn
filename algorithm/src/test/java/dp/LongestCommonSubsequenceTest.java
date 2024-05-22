@@ -3,6 +3,10 @@ package dp;
 import org.junit.Test;
 
 /**
+ * <a href="https://leetcode.cn/problems/qJnOS7/">...</a>
+ * 描述：LCR 095. 最长公共子序列
+ * 解题思路：
+ *
  * @author foolchid
  * @date 2024/5/20
  **/

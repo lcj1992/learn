@@ -4,7 +4,8 @@ import org.junit.Test;
 
 /**
  * <a href="https://leetcode.cn/problems/search-a-2d-matrix/">...</a>
- * 解题思路：
+ * 描述：搜索二维矩阵
+ * 思路：
  * 1. 先在一维上查找，可以暴力查找，也可以二分查找
  * 2. 再在另一维上查找
  *

@@ -6,6 +6,10 @@ import common.ListNode;
 import java.util.*;
 
 /**
+ * <a href="https://leetcode.cn/problems/merge-k-sorted-lists/description/">...</a>
+ * 描述：合并k个有序链表
+ * 思路：
+ *
  * @author lichuangjian
  * @date 2023/7/1
  */

@@ -1,7 +1,7 @@
 public class InterviewAlgo {
     // 数组
-    // SpiralArraySolution，二维数组顺时针打印，https://leetcode.cn/problems/shun-shi-zhen-da-yin-ju-zhen-lcof/
-    // SearchMatrixSolution，搜索二维矩阵，https://leetcode.cn/problems/search-a-2d-matrix/
+    // SpiralArrayTest，二维数组顺时针打印
+    // SearchMatrixTest，搜索二维矩阵
     // ArrayTest#testGenerateMatrix，给定数字打印矩阵
     // 1  2  6  7
     // 3  5  8  13
@@ -13,14 +13,14 @@ public class InterviewAlgo {
     // RemoveZeroSumSublistsTest，移除链表中连续和为0的元素
     // ReverseListTest，反转链表
     // ReverseKGroupSolutionTest，间隔k位反转链表，间隔2位反转链表
-    // ReverseBetweenTest， 反转链表，left到right之间的，
+    // ReverseBetweenTest， 反转链表，left到right之间的
     // TODO 两个链表相乘，1->9->null,3->2->null 返回 6->0->8 不能遍历后变成整数直接计算
-    // kthToLastSolution，链表中倒数第k个元素，双指针，
+    // kthToLastSolution，链表中倒数第k个元素，双指针
     // TODO RemoveNthFromEndTest，删除链表倒数第k个元素
     // TODO 奇数位升序偶数位降序链表排序
     // TODO LRU缓存机制
     // TODO 找两个队列里的相同元素
-    // MergeKListsTest，合并多个有序链表，merge k sorted list，https://leetcode.cn/problems/merge-k-sorted-lists/description/
+    // MergeKListsTest，合并多个有序链表，merge k sorted list
 
 
     // 图
@@ -30,7 +30,7 @@ public class InterviewAlgo {
 
     // 二叉树
     // BinaryTreeTraversalTest，二叉树的前中后序遍历、层序遍历、是否子树、是否完全相同、共同子结构
-    // 判断一个二叉树是否是另一个二叉树的子树，https://leetcode.cn/problems/shu-de-zi-jie-gou-lcof/
+    // testSubTree， 判断一个二叉树是否是另一个二叉树的子树
     // BinaryTreeTraversalTest#testMidNodeSum，树的非叶子节点求和
     // TODO 镜像二叉树
     // TODO 从右边看二叉树输出；平衡二叉树，优化
@@ -43,12 +43,12 @@ public class InterviewAlgo {
 
     // 排序
     // TODO 12. 在有序数组里查询一个数，数组里数相等的情况取最小 idx
-    // LargestNumberSolutionTest，最大数，本质上还是排序，自定义排序逻辑而已。给定一组非负整数，重新排列它们的顺序使之组成一个最大的整数，https://leetcode.cn/problems/largest-number/solutions/27403/179-by-ikaruga/
+    // LargestNumberSolutionTest，最大数
 
 
     // 查找
-    // SearchTest，搜索旋转排序数组，
-    // SearchMatrixTest，搜索二维矩阵，
+    // SearchTest，搜索旋转排序数组
+    // SearchMatrixTest，搜索二维矩阵
     // SearchRangeTest，在排序数组中查找元素的第一个和最后一个位置
 
 
@@ -56,14 +56,15 @@ public class InterviewAlgo {
     // LengthOfLongestSubstringKDistinctTest，至多包含 K 个不同字符的最长子串
     // LengthOfLongestSubStringTest，最长无重复子串
     // ContainCharArrayTest，tibcacbdata，问能否在这个字符串中找到一个长度为m的连续子串，使得这个子串刚好由上面m个字符组成，顺序无所谓，返回任意满足条件的一个子串的起始位置，未找到返回-1，时间复杂度On，比如上面这个例子，acbd，3。https://cloud.tencent.com/developer/article/2285729
-    // kthToLastSolution，链表中倒数第k个元素，双指针
+    // kthToLastSolution，链表中倒数第k个元素
+    // RemoveNthFromEndTest
     // MaxSlidingWindowTest，滑动窗口最大值
 
 
     // 动态规划
     // Knapsack01Test，01背包问题
     // LengthOfLISTest，最长上升子序列
-    // LongestCommonSubsequenceTest，最长公共子序列，
+    // LongestCommonSubsequenceTest，最长公共子序列
     // LongestPalindromeTest，最长回文子串
     // FindNumberOfLISTest
 
@@ -79,12 +80,12 @@ public class InterviewAlgo {
 
     // 其他
     // Three6AddSolution，36进制加法
-    // TODO YSFCircleTest 约瑟夫问题，
+    // TODO YSFCircleTest 约瑟夫问题
     // TODO 手写一致性 hash 算法的应用场景，请求进来怎么通过一致性哈希算法 找到实际的机器 IP 的代码实现 过程
     // TODO 进制转换
     // TODO 在2.5亿个整数中找出不重复的整数，内存不足以容纳这2.5亿个整数
     // TODO 红黑树的数据结构
-    // TODO 比如十几亿个数据里找到较小的100个数。
+    // TODO 比如十几亿个数据里找到较小的100个数
     // TODO topK 算法
     // TODO 安排会议室，有一个包含开始时间和结束时间(0~24，精确到 0.5)的二维数组，确定需要 的最少会议室，时间复杂度是多少
     // TODO 一个是 区间融合 另一个最大岛

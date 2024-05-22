@@ -6,7 +6,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class SpiralArraySolution {
+/**
+ * <a href="https://leetcode.cn/problems/shun-shi-zhen-da-yin-ju-zhen-lcof/">...</a>
+ */
+public class SpiralArrayTest {
 
     @Test
     public void testSpiralArray() {

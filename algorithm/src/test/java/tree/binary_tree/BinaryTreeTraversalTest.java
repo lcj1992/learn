@@ -86,6 +86,11 @@ public class BinaryTreeTraversalTest {
         System.out.println(sameTree);
     }
 
+
+    /**
+     * <a href="https://leetcode.cn/problems/shu-de-zi-jie-gou-lcof/">...</a>
+     * 判断一个树是否是另一棵的子树
+     */
     @Test
     public void testSubTree() {
         BiTreeNode root = initBinaryTree();
@@ -374,7 +379,7 @@ public class BinaryTreeTraversalTest {
         if (sub(tree1, tree2)) {
             return true;
         }
-        return isSubTree(tree1.getLeft(), tree2) || isSubTree(tree1.getRight(), tree2);
+        return isSubTree(tree1.left, tree2) || isSubTree(tree1.right, tree2);
     }
 
 

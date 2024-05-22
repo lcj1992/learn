@@ -7,6 +7,7 @@ import java.util.Map;
 
 /**
  * <a href="https://leetcode.cn/problems/longest-substring-with-at-most-k-distinct-characters/description/">...</a>
+ * <a href="https://leetcode.cn/problems/longest-substring-with-at-most-two-distinct-characters/description/">...</a>
  * 340. 至多包含 K 个不同字符的最长子串
  */
 public class LengthOfLongestSubstringKDistinctTest {

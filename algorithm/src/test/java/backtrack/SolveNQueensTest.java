@@ -5,7 +5,6 @@ import org.junit.Test;
 import java.util.*;
 
 /**
- *
  * <a href="https://leetcode.cn/problems/n-queens/description/">...</a>
  * n皇后问题
  *
@@ -16,7 +15,6 @@ public class SolveNQueensTest {
 
     @Test
     public void test() {
-
         List<List<String>> lists = solveNQueens(8);
         System.out.println(lists);
     }
@@ -28,11 +26,11 @@ public class SolveNQueensTest {
         Set<Integer> columns = new HashSet<>();
         Set<Integer> diagonals1 = new HashSet<>();
         Set<Integer> diagonals2 = new HashSet<>();
-        backtrack(solutions, queens, n, 0, columns, diagonals1, diagonals2);
+        backtrack(queens, n, 0, columns, diagonals1, diagonals2, solutions);
         return solutions;
     }
 
-    public void backtrack(List<List<String>> solutions, int[] queens, int n, int row, Set<Integer> columns, Set<Integer> diagonals1, Set<Integer> diagonals2) {
+    public void backtrack(int[] queens, int n, int row, Set<Integer> columns, Set<Integer> diagonals1, Set<Integer> diagonals2, List<List<String>> solutions) {
         if (row == n) {
             List<String> board = generateBoard(queens, n);
             solutions.add(board);
@@ -54,7 +52,7 @@ public class SolveNQueensTest {
                 diagonals1.add(diagonal1);
                 diagonals2.add(diagonal2);
 
-                backtrack(solutions, queens, n, row + 1, columns, diagonals1, diagonals2);
+                backtrack(queens, n, row + 1, columns, diagonals1, diagonals2, solutions);
 
                 queens[row] = -1;
                 columns.remove(i);

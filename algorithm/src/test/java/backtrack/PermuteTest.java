@@ -11,9 +11,10 @@ import java.util.List;
  * <a href="https://leetcode.cn/problems/permutations/description/">...</a>
  * 全排列
  * 思路：回溯
- * <p>
- * author: foolchild
- * date: 2019/5/18
+ * 写 backtrack 函数时，需要维护走过的「路径」和当前可以做的「选择列表」，当触发「结束条件」时，将「路径」记入结果集。
+ *
+ * @author foolchild
+ * @date 2019/5/18
  */
 public class PermuteTest {
 
@@ -26,11 +27,11 @@ public class PermuteTest {
     public List<List<Integer>> permute(int[] nums) {
         List<List<Integer>> res = new ArrayList<>();
         Deque<Integer> list = new ArrayDeque<>();
-        dfs(res, nums, list);
+        backtrack(list, nums, res);
         return res;
     }
 
-    public void dfs(List<List<Integer>> res, int[] nums, Deque<Integer> list) {
+    public void backtrack(Deque<Integer> list, int[] nums, List<List<Integer>> res) {
         if (list.size() == nums.length) {
             res.add(new ArrayList<>(list));
             return;
@@ -40,7 +41,7 @@ public class PermuteTest {
                 continue;
             }
             list.addLast(num);
-            dfs(res, nums, list);
+            backtrack(list, nums, res);
             list.removeLast();
         }
     }

@@ -16,7 +16,7 @@ public class SolveNQueensTest {
     @Test
     public void test() {
         List<List<String>> lists = solveNQueens(8);
-        System.out.println(lists);
+        System.out.println(lists.size());
     }
 
     public List<List<String>> solveNQueens(int n) {

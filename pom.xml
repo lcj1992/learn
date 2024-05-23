@@ -90,7 +90,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.16.20</version>
+            <version>1.18.24</version>
         </dependency>
         <!--web工程需要包含log4j-web，非web工程不需要-->
     </dependencies>

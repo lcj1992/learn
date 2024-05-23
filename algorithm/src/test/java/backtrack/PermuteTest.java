@@ -2,8 +2,10 @@ package backtrack;
 
 import org.junit.Test;
 
-import java.util.*;
-import java.util.stream.Collectors;
+import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.Deque;
+import java.util.List;
 
 /**
  * <a href="https://leetcode.cn/problems/permutations/description/">...</a>

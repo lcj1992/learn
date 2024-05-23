@@ -12,11 +12,11 @@ public class InterviewAlgo {
     // 线性表
     // RemoveZeroSumSublistsTest，移除链表中连续和为0的元素
     // ReverseListTest，反转链表
-    // ReverseKGroupSolutionTest，间隔k位反转链表，间隔2位反转链表
+    // ReverseKGroupTest，间隔k位反转链表，间隔2位反转链表
     // ReverseBetweenTest， 反转链表，left到right之间的
     // TODO 两个链表相乘，1->9->null,3->2->null 返回 6->0->8 不能遍历后变成整数直接计算
-    // kthToLastSolution，链表中倒数第k个元素，双指针
-    // TODO RemoveNthFromEndTest，删除链表倒数第k个元素
+    // kthToLastTest，链表中倒数第k个元素，双指针
+    // RemoveNthFromEndTest，删除链表倒数第k个元素
     // TODO 奇数位升序偶数位降序链表排序
     // TODO LRU缓存机制
     // TODO 找两个队列里的相同元素
@@ -43,7 +43,7 @@ public class InterviewAlgo {
 
     // 排序
     // TODO 12. 在有序数组里查询一个数，数组里数相等的情况取最小 idx
-    // LargestNumberSolutionTest，最大数
+    // LargestNumberTest，最大数
 
 
     // 查找
@@ -56,8 +56,8 @@ public class InterviewAlgo {
     // LengthOfLongestSubstringKDistinctTest，至多包含 K 个不同字符的最长子串
     // LengthOfLongestSubStringTest，最长无重复子串
     // ContainCharArrayTest，tibcacbdata，问能否在这个字符串中找到一个长度为m的连续子串，使得这个子串刚好由上面m个字符组成，顺序无所谓，返回任意满足条件的一个子串的起始位置，未找到返回-1，时间复杂度On，比如上面这个例子，acbd，3。https://cloud.tencent.com/developer/article/2285729
-    // kthToLastSolution，链表中倒数第k个元素
-    // RemoveNthFromEndTest
+    // kthToLastTest，链表中倒数第k个元素
+    // RemoveNthFromEndTest，移除倒数第n个元素
     // MaxSlidingWindowTest，滑动窗口最大值
 
 
@@ -69,9 +69,9 @@ public class InterviewAlgo {
     // FindNumberOfLISTest
 
 
-    // TODO 回溯
-    // TODO 全排列
-    // TODO N皇后
+    // 回溯
+    // PermuteTest，全排列
+    // SolveNQueensTest，N皇后问题
 
 
     // 设计模式
@@ -79,7 +79,7 @@ public class InterviewAlgo {
 
 
     // 其他
-    // Three6AddSolution，36进制加法
+    // Three6AddTest，36进制加法
     // TODO YSFCircleTest 约瑟夫问题
     // TODO 手写一致性 hash 算法的应用场景，请求进来怎么通过一致性哈希算法 找到实际的机器 IP 的代码实现 过程
     // TODO 进制转换

@@ -12,7 +12,7 @@ import java.util.Map;
  * 描述：返回倒数第 k 个节点
  * 思路：双指针
  */
-public class kthToLastSolution {
+public class kthToLastTest {
 
     @Test
     public void testKthToLast() {

@@ -2,7 +2,7 @@ package leetcode;
 
 import org.junit.Test;
 
-public class Three6AddSolution {
+public class Three6AddTest {
 
     @Test
     public void test36Add() {

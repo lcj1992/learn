@@ -12,7 +12,7 @@ import java.util.List;
  * 思路：
  * 1. 本质上还是排序，无非是排序的逻辑变了
  */
-public class LargestNumberSolutionTest {
+public class LargestNumberTest {
 
     @Test
     public void testLargestNumber() {

@@ -10,7 +10,7 @@ import org.junit.Test;
  * 1. 每k个节点一组，逐组进行反转
  * 2. 将多组拼接起来
  */
-public class ReverseKGroupSolutionTest {
+public class ReverseKGroupTest {
 
     @Test
     public void testReverseKGroup() {

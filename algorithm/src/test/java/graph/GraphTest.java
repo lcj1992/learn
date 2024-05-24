@@ -4,9 +4,7 @@ import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
 import org.junit.Test;
 
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class GraphTest {
 
@@ -26,16 +24,18 @@ public class GraphTest {
     public boolean checkCircleDependency(Map<String, Set<String>> dependencies) {
         Set<String> visited = new HashSet<>();
         Set<String> recStack = new HashSet<>();
+        List<String> results = new ArrayList<>();
 
         for (String node : dependencies.keySet()) {
-            if (isCyclicUtil(node, visited, recStack, dependencies)) {
+            if (isCyclicUtil(node, visited, recStack, dependencies, results)) {
                 return true;
             }
         }
+        System.out.println(results);
         return false;
     }
 
-    private boolean isCyclicUtil(String node, Set<String> visited, Set<String> recStack, Map<String, Set<String>> dependencies) {
+    private boolean isCyclicUtil(String node, Set<String> visited, Set<String> recStack, Map<String, Set<String>> dependencies, List<String> results) {
         if (recStack.contains(node)) {
             return true; // 检测到循环依赖
         }
@@ -48,12 +48,13 @@ public class GraphTest {
         Set<String> children = dependencies.get(node);
         if (children != null) {
             for (String adjNode : children) {
-                if (isCyclicUtil(adjNode, visited, recStack, dependencies)) {
+                if (isCyclicUtil(adjNode, visited, recStack, dependencies, results)) {
                     return true;
                 }
             }
         }
         recStack.remove(node);
+        results.add(node);
         return false;
     }
 }

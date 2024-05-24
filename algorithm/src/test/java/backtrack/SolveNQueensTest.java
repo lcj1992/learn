@@ -16,6 +16,7 @@ public class SolveNQueensTest {
     @Test
     public void test() {
         List<List<String>> lists = solveNQueens(8);
+        lists.forEach(System.out::println);
         System.out.println(lists.size());
     }
 
@@ -34,31 +35,31 @@ public class SolveNQueensTest {
         if (row == n) {
             List<String> board = generateBoard(queens, n);
             solutions.add(board);
-        } else {
-            for (int i = 0; i < n; i++) {
-                if (columns.contains(i)) {
-                    continue;
-                }
-                int diagonal1 = row - i;
-                if (diagonals1.contains(diagonal1)) {
-                    continue;
-                }
-                int diagonal2 = row + i;
-                if (diagonals2.contains(diagonal2)) {
-                    continue;
-                }
-                queens[row] = i;
-                columns.add(i);
-                diagonals1.add(diagonal1);
-                diagonals2.add(diagonal2);
-
-                backtrack(queens, n, row + 1, columns, diagonals1, diagonals2, solutions);
-
-                queens[row] = -1;
-                columns.remove(i);
-                diagonals1.remove(diagonal1);
-                diagonals2.remove(diagonal2);
+            return;
+        }
+        for (int i = 0; i < n; i++) {
+            if (columns.contains(i)) {
+                continue;
             }
+            int diagonal1 = row - i;
+            if (diagonals1.contains(diagonal1)) {
+                continue;
+            }
+            int diagonal2 = row + i;
+            if (diagonals2.contains(diagonal2)) {
+                continue;
+            }
+            queens[row] = i;
+            columns.add(i);
+            diagonals1.add(diagonal1);
+            diagonals2.add(diagonal2);
+
+            backtrack(queens, n, row + 1, columns, diagonals1, diagonals2, solutions);
+
+            queens[row] = -1;
+            columns.remove(i);
+            diagonals1.remove(diagonal1);
+            diagonals2.remove(diagonal2);
         }
     }
 

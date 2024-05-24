@@ -1,4 +1,9 @@
 public class InterviewAlgo {
+    // TODO 需明确各算法的复杂度以及使用场景，
+    // 滑动窗口是TCP的拥塞控制上
+    // 图，循环依赖问题：pipeline应用框架，启动顺序问题：压测稳定性基于调用链路输出依赖关系图
+    // cache，LRU，FIFO
+
     // 数组
     // SpiralArrayTest，螺旋遍历二维数组
     // SearchMatrixTest，搜索二维矩阵
@@ -8,6 +13,9 @@ public class InterviewAlgo {
     // 4  9  12 14
     // 10 11 15 16
     // TODO 数组中元素与下一个比它大的元素之间的距离
+    // 区间融合，MergeIntervalsTest
+    // 会议室，CanAttendMeetingsTest
+    // 安排会议室，有一个包含开始时间和结束时间(0~24，精确到 0.5)的二维数组，确定需要的最少会议室。会议室问题变种
 
     // 线性表
     // RemoveZeroSumSublistsTest，移除链表中连续和为0的元素
@@ -17,10 +25,10 @@ public class InterviewAlgo {
     // TODO 两个链表相乘，1->9->null,3->2->null 返回 6->0->8 不能遍历后变成整数直接计算
     // kthToLastTest，链表中倒数第k个元素，双指针
     // RemoveNthFromEndTest，删除链表倒数第k个元素
-    // TODO 奇数位升序偶数位降序链表排序
+    // TODO 奇数位升序偶数位降序链表排序，https://blog.csdn.net/xun_zhao_t521/article/details/119683806
     // TODO LRU缓存机制
     // TODO 找两个队列里的相同元素
-    // MergeKListsTest，合并多个有序链表，merge k sorted list
+    // TODO MergeKListsTest，合并多个有序链表，merge k sorted list
 
 
     // 图
@@ -74,6 +82,8 @@ public class InterviewAlgo {
     // SolveNQueensTest，N皇后问题
 
 
+    // 贪心
+    // 分发糖果
     // 设计模式
     // DoubleCheckVersion，单例模式
 
@@ -87,8 +97,7 @@ public class InterviewAlgo {
     // TODO 红黑树的数据结构
     // TODO 比如十几亿个数据里找到较小的100个数
     // TODO topK 算法
-    // TODO 安排会议室，有一个包含开始时间和结束时间(0~24，精确到 0.5)的二维数组，确定需要 的最少会议室，时间复杂度是多少
-    // TODO 一个是 区间融合 另一个最大岛
+    //  另一个最大岛
     // TODO 有一个数字矩阵，包含0和1，相邻的数字1代表“陆地”;给出某个坐标，求该坐标对应的陆地面积 (即有多少个相邻的 1)?在矩阵很大的情况下，有没有更快的办法?
     // TODO 再加一个堆插入结点的步骤
     // TODO 最后一题常规股票买卖

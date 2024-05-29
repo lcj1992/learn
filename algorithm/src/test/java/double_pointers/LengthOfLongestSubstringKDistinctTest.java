@@ -1,4 +1,4 @@
-package sliding_window;
+package double_pointers;
 
 import org.junit.Test;
 
@@ -8,7 +8,7 @@ import java.util.Map;
 /**
  * <a href="https://leetcode.cn/problems/longest-substring-with-at-most-k-distinct-characters/description/">...</a>
  * <a href="https://leetcode.cn/problems/longest-substring-with-at-most-two-distinct-characters/description/">...</a>
- * 340. 至多包含 K 个不同字符的最长子串
+ * 至多包含 K 个不同字符的最长子串
  * 解题思路：
  * 1. map记录字符和字符坐标
  * 2. 和最长无重复子串不同的是，调整left指针的判定条件

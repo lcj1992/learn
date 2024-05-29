@@ -1,5 +1,7 @@
 package common;
 
+import java.util.Objects;
+
 /**
  * @author foolchid
  * @date 2024/5/22
@@ -13,5 +15,15 @@ public class Utils {
             System.out.print(anInt + " ");
         }
         System.out.println();
+    }
+
+    public static void printListNode(ListNode node) {
+        if (Objects.isNull(node)) {
+            return;
+        }
+        while (node != null) {
+            System.out.print(node.val + (node.val > 10 ? " " : "  "));
+            node = node.next;
+        }
     }
 }

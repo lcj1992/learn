@@ -1,15 +1,17 @@
-package leetcode;
+package hash;
 
 import java.util.*;
 
 /**
+ * <a href="https://leetcode.cn/problems/isomorphic-strings/?envType=study-plan-v2&envId=selected-coding-interview">...</a>
+ *
  * @author lichuangjian
  * @date 2023/8/25
  */
-public class IsIsomorphicSolution {
+public class IsIsomorphicTest {
 
     public static void main(String[] args) {
-        IsIsomorphicSolution solution = new IsIsomorphicSolution();
+        IsIsomorphicTest solution = new IsIsomorphicTest();
         boolean isomorphic = solution.isIsomorphic("badc", "baba");
         System.out.println(isomorphic);
     }

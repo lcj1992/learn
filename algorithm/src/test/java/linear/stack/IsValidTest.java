@@ -1,17 +1,18 @@
-package leetcode;
+package linear.stack;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Stack;
 
 /**
+ * <a href="https://leetcode.cn/problems/valid-parentheses/?envType=study-plan-v2&envId=selected-coding-interview">...</a>
  * @author lichuangjian
  * @date 2023/7/8
  */
-public class IsValidSolution {
+public class IsValidTest {
 
     public static void main(String[] args) {
-        IsValidSolution solution = new IsValidSolution();
+        IsValidTest solution = new IsValidTest();
         String s = "()[]{}";
         boolean valid = solution.isValid(s);
         System.out.println(valid);

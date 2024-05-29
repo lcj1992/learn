@@ -5,13 +5,14 @@ import common.ListNode;
 import java.util.Objects;
 
 /**
+ * <a href="https://leetcode.cn/problems/merge-two-sorted-lists/description/">...</a>
  * @author lichuangjian
  * @date 2023/6/17
  */
-public class MergeTwoListsSolution {
+public class MergeTwoListsTest {
 
     public static void main(String[] args) {
-        MergeTwoListsSolution solution = new MergeTwoListsSolution();
+        MergeTwoListsTest solution = new MergeTwoListsTest();
         ListNode l13 = new ListNode(4);
         ListNode l12 = new ListNode(2, l13);
         ListNode l1 = new ListNode(1, l12);

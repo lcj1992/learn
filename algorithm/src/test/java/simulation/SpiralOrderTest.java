@@ -1,4 +1,4 @@
-package leetcode;
+package simulation;
 
 import org.junit.Test;
 
@@ -12,18 +12,17 @@ import java.util.Objects;
  * 思路：
  * 1. 向右、向下、向左、向上，分别调整top、left、bottom、right坐标
  */
-public class SpiralArrayTest {
+public class SpiralOrderTest {
 
     @Test
-    public void testSpiralArray() {
+    public void test() {
 
         int[][] matrix = new int[][]{{1, 2, 3, 4}, {10, 11, 12, 5}, {9, 8, 7, 6}};
-
-        List<Integer> integers = spiralArray(matrix);
+        List<Integer> integers = spiralOrder(matrix);
         System.out.println(integers);
     }
 
-    public List<Integer> spiralArray(int[][] matrix) {
+    public List<Integer> spiralOrder(int[][] matrix) {
         if (Objects.isNull(matrix) || Objects.isNull(matrix[0])) {
             return new ArrayList<>();
         }

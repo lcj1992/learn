@@ -4,7 +4,7 @@ import org.junit.Test;
 
 /**
  * 完全平方数
- * <a href="https://leetcode.cn/problems/perfect-squares/description/"/>
+ * <a href="https://leetcode.cn/problems/perfect-squares/"/>
  *
  * @author foolchild
  * @date 2024-05-20

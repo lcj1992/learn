@@ -6,7 +6,7 @@ import java.util.ArrayDeque;
 import java.util.Deque;
 
 /**
- * <a href="https://leetcode.cn/problems/implement-queue-using-stacks/?envType=study-plan-v2&envId=selected-coding-interview">...</a>
+ * <a href="https://leetcode.cn/problems/implement-queue-using-stacks/">...</a>
  * Desc: 基于链表实现的先进先出的线性表
  *
  * @author: foolchild

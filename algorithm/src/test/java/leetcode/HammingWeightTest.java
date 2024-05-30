@@ -4,11 +4,11 @@ import org.junit.Assert;
 import org.junit.Test;
 
 /**
- * Desc:
- * ------------------------------------
- * Author:lichuangjian@meituan.com
- * Date: 2019/5/19
- * Time: 上午8:43
+ * <a href="https://leetcode.cn/problems/number-of-1-bits/">...</a>
+ *
+ * @author foolchild
+ * @date 2024/05/30
+ *
  */
 public class HammingWeightTest {
 

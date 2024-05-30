@@ -1,6 +1,7 @@
 package leetcode;
 
 /**
+ * https://leetcode.cn/problems/powx-n/
  * @author lichuangjian
  * @date 2023/6/12
  */

@@ -6,8 +6,8 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
- * <a href="https://leetcode.cn/problems/longest-substring-with-at-most-k-distinct-characters/description/">...</a>
- * <a href="https://leetcode.cn/problems/longest-substring-with-at-most-two-distinct-characters/description/">...</a>
+ * <a href="https://leetcode.cn/problems/longest-substring-with-at-most-k-distinct-characters/">...</a>
+ * <a href="https://leetcode.cn/problems/longest-substring-with-at-most-two-distinct-characters/">...</a>
  * 至多包含 K 个不同字符的最长子串
  * 解题思路：
  * 1. map记录字符和字符坐标

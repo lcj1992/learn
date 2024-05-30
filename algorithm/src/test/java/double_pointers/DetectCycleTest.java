@@ -3,7 +3,7 @@ package double_pointers;
 import common.ListNode;
 
 /**
- * <a href="https://leetcode.cn/problems/linked-list-cycle-ii/?envType=study-plan-v2&envId=selected-coding-interview">...</a>
+ * <a href="https://leetcode.cn/problems/linked-list-cycle-ii/">...</a>
  *
  * @author foolchid
  * @date 2024/5/28

@@ -3,7 +3,7 @@ package simulation;
 import java.util.Stack;
 
 /**
- * <a href="https://leetcode.cn/problems/validate-stack-sequences/description/?envType=study-plan-v2&envId=selected-coding-interview">...</a>
+ * <a href="https://leetcode.cn/problems/validate-stack-sequences/">...</a>
  *
  * @author foolchid
  * @date 2024/5/28

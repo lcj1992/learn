@@ -1,4 +1,6 @@
-package leetcode;
+package bit;
+
+import org.junit.Test;
 
 /**
  * https://leetcode.cn/problems/single-number/solutions/242211/zhi-chu-xian-yi-ci-de-shu-zi-by-leetcode-solution/
@@ -7,12 +9,12 @@ package leetcode;
  * @author lichuangjian
  * @date 2023/8/17
  */
-public class SingleNumberSolution {
+public class SingleNumberTest {
 
-    public static void main(String[] args) {
-        SingleNumberSolution solution = new SingleNumberSolution();
+    @Test
+    public void test() {
         int[] input = {2, 2, 1};
-        int res = solution.singleNumber(input);
+        int res = singleNumber(input);
         System.out.println(res);
     }
 

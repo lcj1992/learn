@@ -3,7 +3,7 @@ package hash;
 import java.util.*;
 
 /**
- * <a href="https://leetcode.cn/problems/isomorphic-strings/?envType=study-plan-v2&envId=selected-coding-interview">...</a>
+ * <a href="https://leetcode.cn/problems/isomorphic-strings/">...</a>
  *
  * @author lichuangjian
  * @date 2023/8/25

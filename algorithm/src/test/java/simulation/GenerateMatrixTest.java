@@ -1,7 +1,7 @@
 package simulation;
 
 /**
- * <a href="https://leetcode.cn/problems/spiral-matrix-ii/?envType=study-plan-v2&envId=selected-coding-interview">...</a>
+ * <a href="https://leetcode.cn/problems/spiral-matrix-ii/">...</a>
  *
  * @author foolchid
  * @date 2024/5/28

@@ -3,7 +3,7 @@ package hash;
 import org.junit.Test;
 
 /**
- * https://leetcode.cn/problems/longest-palindrome/?envType=study-plan-v2&envId=selected-coding-interview
+ * https://leetcode.cn/problems/longest-palindrome/
  * @author foolchid
  * @date 2024/5/28
  **/

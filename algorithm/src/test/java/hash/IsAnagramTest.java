@@ -5,7 +5,7 @@ import org.junit.Test;
 import java.util.HashMap;
 
 /**
- * <a href="https://leetcode.cn/problems/valid-anagram/description/">...</a>
+ * <a href="https://leetcode.cn/problems/valid-anagram/">...</a>
  *
  * @author foolchid
  * @date 2024/5/28

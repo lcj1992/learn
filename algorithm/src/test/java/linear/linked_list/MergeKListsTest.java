@@ -6,7 +6,7 @@ import common.ListNode;
 import java.util.*;
 
 /**
- * <a href="https://leetcode.cn/problems/merge-k-sorted-lists/description/">...</a>
+ * <a href="https://leetcode.cn/problems/merge-k-sorted-lists/">...</a>
  * 描述：合并k个有序链表
  * 思路：
  *

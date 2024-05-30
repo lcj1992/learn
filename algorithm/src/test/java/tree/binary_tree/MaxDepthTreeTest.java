@@ -7,8 +7,8 @@ import org.junit.Test;
 import java.util.Objects;
 
 /**
- * Desc:
- * ------------------------------------
+ * https://leetcode.cn/problems/maximum-depth-of-binary-tree/
+ *
  * Author:lichuangjian@meituan.com
  * Date: 2019/5/15
  * Time: 上午10:24

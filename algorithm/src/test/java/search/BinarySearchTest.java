@@ -3,6 +3,13 @@ package search;
 import org.junit.Assert;
 import org.junit.Test;
 
+/**
+ * <a href="https://leetcode.cn/problems/binary-search/">...</a>
+ * 二分查找
+ * 1. 随机，[0, length-1], right = mid -1, left = mid + 1
+ * 2. 下界，[0, length), right = mid, left = mid + 1
+ * 3. 上界, [0, length], right = mid - 1, left = mid + 1
+ */
 public class BinarySearchTest {
     @Test
     public void testBinarySearch() {
@@ -12,10 +19,13 @@ public class BinarySearchTest {
     }
 
     public int search(int[] nums, int target) {
+        if (nums == null || nums.length == 0) {
+            return -1;
+        }
         int left = 0;
         int right = nums.length - 1;
         while (left <= right) {
-            int mid = (left + right) / 2;
+            int mid = left + (right - left) / 2;
             int midVal = nums[mid];
             if (midVal == target) {
                 return mid;

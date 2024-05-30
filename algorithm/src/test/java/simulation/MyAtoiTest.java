@@ -1,7 +1,7 @@
 package simulation;
 
 /**
- * <a href="https://leetcode.cn/problems/add-strings/description/?envType=study-plan-v2&envId=selected-coding-interview">...</a>
+ * <a href="https://leetcode.cn/problems/add-strings/">...</a>
  *
  * @author foolchid
  * @date 2024/5/28

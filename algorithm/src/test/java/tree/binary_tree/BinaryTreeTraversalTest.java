@@ -1,9 +1,9 @@
 package tree.binary_tree;
 
 import com.google.common.collect.Lists;
+import common.TreeNode;
 import org.junit.Test;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.Stack;
@@ -26,7 +26,7 @@ public class BinaryTreeTraversalTest {
      */
     @Test
     public void testTraversal() {
-        BiTreeNode root = initBinaryTree();
+        TreeNode root = initBinaryTree();
         List<Integer> results;
         // 前序遍历，根左右
         results = preOrder(root);
@@ -45,27 +45,22 @@ public class BinaryTreeTraversalTest {
         assertEquals(toString(results), "89410526731");
         results = postOrderStack(root);
         assertEquals(toString(results), "89410526731");
-
-        // 层序遍历
-        results = levelOrder(root);
-        assertEquals(toString(results), "12345678910");
-        results = levelOrderStack(root);
-        assertEquals(toString(results), "12345678910");
+        
     }
 
     @Test
     public void testIsValidBST() {
-        BiTreeNode treeNode = new BiTreeNode(5);
-        treeNode.setLeft(new BiTreeNode(1));
-        treeNode.setRight(new BiTreeNode(4));
-        treeNode.getRight().setLeft(new BiTreeNode(3));
-        treeNode.getRight().setRight(new BiTreeNode(6));
+        TreeNode treeNode = new TreeNode(5);
+        treeNode.left = new TreeNode(1);
+        treeNode.right = new TreeNode(4);
+        treeNode.right.left = new TreeNode(3);
+        treeNode.right.right = new TreeNode(6);
         assertFalse(isValidBST(treeNode));
     }
 
     @Test
     public void testMidNodeSum() {
-        BiTreeNode root = initBinaryTree();
+        TreeNode root = initBinaryTree();
         Integer result = sumMidNode(root);
         System.out.println(result);
         result = sumMidNodeStack(root);
@@ -74,8 +69,8 @@ public class BinaryTreeTraversalTest {
 
     @Test
     public void testSameTree() {
-        BiTreeNode root = initBinaryTree();
-        BiTreeNode subTree = initSubTree();
+        TreeNode root = initBinaryTree();
+        TreeNode subTree = initSubTree();
         boolean sameTree = isSameTree(root, subTree);
         System.out.println(sameTree);
         sameTree = isSameTree(root, root);
@@ -93,219 +88,164 @@ public class BinaryTreeTraversalTest {
      */
     @Test
     public void testSubTree() {
-        BiTreeNode root = initBinaryTree();
-        BiTreeNode subTree = initSubTree();
+        TreeNode root = initBinaryTree();
+        TreeNode subTree = initSubTree();
         boolean result = isSubTree(root, subTree);
         System.out.println(result);
 
     }
 
 
-    private List<Integer> preOrder(BiTreeNode root) {
+    private List<Integer> preOrder(TreeNode root) {
         List<Integer> result = Lists.newArrayList();
         if (Objects.isNull(root)) {
             return result;
         }
-        result.add(root.getVal());
-        result.addAll(preOrder(root.getLeft()));
-        result.addAll(preOrder(root.getRight()));
+        result.add(root.val);
+        result.addAll(preOrder(root.left));
+        result.addAll(preOrder(root.right));
         return result;
     }
 
-    private List<Integer> preOrderStack(BiTreeNode root) {
+    private List<Integer> preOrderStack(TreeNode root) {
         List<Integer> result = Lists.newArrayList();
         if (Objects.isNull(root)) {
             return result;
         }
-        Stack<BiTreeNode> stack = new Stack<>();
+        Stack<TreeNode> stack = new Stack<>();
         stack.push(root);
         while (!stack.isEmpty()) {
-            BiTreeNode pop = stack.pop();
-            result.add(pop.getVal());
-            if (Objects.nonNull(pop.getRight())) {
-                stack.push(pop.getRight());
+            TreeNode pop = stack.pop();
+            result.add(pop.val);
+            if (Objects.nonNull(pop.right)) {
+                stack.push(pop.right);
             }
-            if (Objects.nonNull(pop.getLeft())) {
-                stack.push(pop.getLeft());
+            if (Objects.nonNull(pop.left)) {
+                stack.push(pop.left);
             }
         }
         return result;
     }
 
-    private List<Integer> inOrder(BiTreeNode root) {
+    private List<Integer> inOrder(TreeNode root) {
         List<Integer> result = Lists.newArrayList();
         if (Objects.isNull(root)) {
             return result;
         }
-        result.addAll(inOrder(root.getLeft()));
-        result.add(root.getVal());
-        result.addAll(inOrder(root.getRight()));
+        result.addAll(inOrder(root.left));
+        result.add(root.val);
+        result.addAll(inOrder(root.right));
         return result;
     }
 
-    private List<Integer> inOrderStack(BiTreeNode root) {
+    private List<Integer> inOrderStack(TreeNode root) {
         List<Integer> result = Lists.newArrayList();
         if (Objects.isNull(root)) {
             return result;
         }
-        Stack<BiTreeNode> stack = new Stack<>();
-        BiTreeNode current = root;
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode current = root;
         while (current != null || !stack.isEmpty()) {
             while (current != null) {
                 stack.push(current);
-                current = current.getLeft();
+                current = current.left;
             }
             current = stack.pop();
-            result.add(current.getVal());
-            current = current.getRight();
+            result.add(current.val);
+            current = current.right;
         }
         return result;
     }
 
 
-    private List<Integer> postOrder(BiTreeNode root) {
+    private List<Integer> postOrder(TreeNode root) {
         List<Integer> result = Lists.newArrayList();
         if (Objects.isNull(root)) {
             return result;
         }
-        result.addAll(postOrder(root.getLeft()));
-        result.addAll(postOrder(root.getRight()));
-        result.add(root.getVal());
+        result.addAll(postOrder(root.left));
+        result.addAll(postOrder(root.right));
+        result.add(root.val);
         return result;
     }
 
-    private List<Integer> postOrderStack(BiTreeNode root) {
+    private List<Integer> postOrderStack(TreeNode root) {
         List<Integer> result = Lists.newArrayList();
         if (Objects.isNull(root)) {
             return result;
         }
-        Stack<BiTreeNode> stack = new Stack<>();
-        BiTreeNode current = root;
-        BiTreeNode lastVisited = null;
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode current = root;
+        TreeNode lastVisited = null;
         while (current != null || !stack.isEmpty()) {
             while (current != null) {
                 stack.push(current);
-                current = current.getLeft();
+                current = current.left;
             }
             current = stack.peek();
-            if (current.getRight() == null || current.getRight() == lastVisited) {
+            if (current.right == null || current.right == lastVisited) {
                 stack.pop();
-                result.add(current.getVal());
+                result.add(current.val);
                 lastVisited = current;
                 current = null;
             } else {
-                current = current.getRight();
+                current = current.right;
             }
         }
         return result;
     }
 
-    private List<Integer> levelOrder(BiTreeNode root) {
-        if (Objects.isNull(root)) {
-            return new ArrayList<>();
-        }
-        List<BiTreeNode> nodeList = new ArrayList<>();
-        nodeList.add(root);
-        return levelOrder(nodeList);
-    }
 
-    private List<Integer> levelOrder(List<BiTreeNode> nodeList) {
-        if (nodeList == null || nodeList.isEmpty()) {
-            return new ArrayList<>();
-        }
-        List<Integer> results = new ArrayList<>();
-        List<BiTreeNode> newList = new ArrayList<>();
-        for (BiTreeNode binaryTreeNode : nodeList) {
-            results.add(binaryTreeNode.getVal());
-            if (binaryTreeNode.getLeft() != null) {
-                newList.add(binaryTreeNode.getLeft());
-            }
-            if (binaryTreeNode.getRight() != null) {
-                newList.add(binaryTreeNode.getRight());
-            }
-        }
-        results.addAll(levelOrder(newList));
-        return results;
-    }
-
-    private List<Integer> levelOrderStack(BiTreeNode root) {
-        List<Integer> result = Lists.newArrayList();
-        if (Objects.isNull(root)) {
-            return result;
-        }
-        Stack<List<BiTreeNode>> stack = new Stack<>();
-        List<BiTreeNode> list = new ArrayList<>();
-        list.add(root);
-        stack.push(list);
-        while (!stack.isEmpty()) {
-            List<BiTreeNode> pops = stack.pop();
-            List<BiTreeNode> newList = new ArrayList<>();
-            if (pops != null && !pops.isEmpty()) {
-                for (BiTreeNode pop : pops) {
-                    result.add(pop.getVal());
-                    if (Objects.nonNull(pop.getLeft())) {
-                        newList.add(pop.getLeft());
-                    }
-                    if (Objects.nonNull(pop.getRight())) {
-                        newList.add(pop.getRight());
-                    }
-                }
-                stack.push(newList);
-            }
-        }
-        return result;
-    }
-
-    private boolean isValidBST(BiTreeNode root) {
+    private boolean isValidBST(TreeNode root) {
         return isValidBST(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
     }
 
-    private boolean isValidBST(BiTreeNode root, long min, long max) {
+    private boolean isValidBST(TreeNode root, long min, long max) {
         if (Objects.isNull(root)) {
             return true;
         }
-        int val = root.getVal();
+        int val = root.val;
         if (val >= max || val <= min) {
             return false;
         }
-        return isValidBST(root.getLeft(), min, val) && isValidBST(root.getRight(), val, max);
+        return isValidBST(root.left, min, val) && isValidBST(root.right, val, max);
     }
 
-    private Integer sumMidNode(BiTreeNode node) {
+    private Integer sumMidNode(TreeNode node) {
         if (node == null) {
             return 0;
         }
-        if (node.getLeft() == null && node.getRight() == null) {
+        if (node.left == null && node.right == null) {
             return 0;
         }
-        return sumMidNode(node.getLeft()) + sumMidNode(node.getRight()) + node.getVal();
+        return sumMidNode(node.left) + sumMidNode(node.right) + node.val;
     }
 
-    private Integer sumMidNodeStack(BiTreeNode node) {
+    private Integer sumMidNodeStack(TreeNode node) {
         if (node == null) {
             return 0;
         }
         int sum = 0;
-        Stack<BiTreeNode> stack = new Stack<>();
+        Stack<TreeNode> stack = new Stack<>();
         stack.push(node);
         while (!stack.isEmpty()) {
-            BiTreeNode pop = stack.pop();
-            if (pop.getLeft() == null && pop.getRight() == null) {
+            TreeNode pop = stack.pop();
+            if (pop.left == null && pop.right == null) {
                 sum += 0;
             } else {
-                sum += pop.getVal();
-                if (pop.getRight() != null) {
-                    stack.push(pop.getRight());
+                sum += pop.val;
+                if (pop.right != null) {
+                    stack.push(pop.right);
                 }
-                if (pop.getLeft() != null) {
-                    stack.push(pop.getLeft());
+                if (pop.left != null) {
+                    stack.push(pop.left);
                 }
             }
         }
         return sum;
     }
 
-    private boolean sub(BiTreeNode tree1, BiTreeNode tree2) {
+    private boolean sub(TreeNode tree1, TreeNode tree2) {
         if (tree2 == null) {
             return true;
         }
@@ -315,7 +255,7 @@ public class BinaryTreeTraversalTest {
         return sub(tree1.left, tree2.left) && sub(tree1.right, tree2.right);
     }
 
-    private boolean isSameTree(BiTreeNode tree1, BiTreeNode tree2) {
+    private boolean isSameTree(TreeNode tree1, TreeNode tree2) {
         if (tree1 == null && tree2 == null) {
             return true;
         }
@@ -328,7 +268,7 @@ public class BinaryTreeTraversalTest {
         return Objects.equals(tree1.val, tree2.val) && isSameTree(tree1.left, tree2.left) && isSameTree(tree1.right, tree2.right);
     }
 
-    public boolean isSameTreeStack(BiTreeNode tree1, BiTreeNode tree2) {
+    public boolean isSameTreeStack(TreeNode tree1, TreeNode tree2) {
         if (tree1 == null && tree2 == null) {
             return true;
         }
@@ -338,13 +278,13 @@ public class BinaryTreeTraversalTest {
         if (tree2 == null) {
             return false;
         }
-        Stack<BiTreeNode> stack1 = new Stack<>();
-        Stack<BiTreeNode> stack2 = new Stack<>();
+        Stack<TreeNode> stack1 = new Stack<>();
+        Stack<TreeNode> stack2 = new Stack<>();
         stack1.push(tree1);
         stack2.push(tree2);
         while (!stack1.isEmpty() && !stack2.isEmpty()) {
-            BiTreeNode pop1 = stack1.pop();
-            BiTreeNode pop2 = stack2.pop();
+            TreeNode pop1 = stack1.pop();
+            TreeNode pop2 = stack2.pop();
             if (!Objects.equals(pop1.val, pop2.val)) {
                 return false;
             }
@@ -372,7 +312,7 @@ public class BinaryTreeTraversalTest {
         return stack1.isEmpty() && stack2.isEmpty();
     }
 
-    private boolean isSubTree(BiTreeNode tree1, BiTreeNode tree2) {
+    private boolean isSubTree(TreeNode tree1, TreeNode tree2) {
         if (tree1 == null || tree2 == null) {
             return true;
         }
@@ -383,28 +323,28 @@ public class BinaryTreeTraversalTest {
     }
 
 
-    private BiTreeNode initBinaryTree() {
-        BiTreeNode node10 = new BiTreeNode(10);
-        BiTreeNode node9 = new BiTreeNode(9);
-        BiTreeNode node8 = new BiTreeNode(8);
-        BiTreeNode node7 = new BiTreeNode(7);
-        BiTreeNode node6 = new BiTreeNode(6);
-        BiTreeNode node5 = new BiTreeNode(5, node10, null);
-        BiTreeNode node4 = new BiTreeNode(4, node8, node9);
-        BiTreeNode node3 = new BiTreeNode(3, node6, node7);
-        BiTreeNode node2 = new BiTreeNode(2, node4, node5);
-        return new BiTreeNode(1, node2, node3);
+    private TreeNode initBinaryTree() {
+        TreeNode node10 = new TreeNode(10);
+        TreeNode node9 = new TreeNode(9);
+        TreeNode node8 = new TreeNode(8);
+        TreeNode node7 = new TreeNode(7);
+        TreeNode node6 = new TreeNode(6);
+        TreeNode node5 = new TreeNode(5, node10, null);
+        TreeNode node4 = new TreeNode(4, node8, node9);
+        TreeNode node3 = new TreeNode(3, node6, node7);
+        TreeNode node2 = new TreeNode(2, node4, node5);
+        return new TreeNode(1, node2, node3);
     }
 
-    private BiTreeNode initSubTree() {
-        BiTreeNode node9 = new BiTreeNode(9);
-        BiTreeNode node8 = new BiTreeNode(8);
-        BiTreeNode node7 = new BiTreeNode(7);
-        BiTreeNode node6 = new BiTreeNode(6);
-        BiTreeNode node4 = new BiTreeNode(4, node8, node9);
-        BiTreeNode node3 = new BiTreeNode(3, node6, node7);
-        BiTreeNode node2 = new BiTreeNode(2, node4, null);
-        return new BiTreeNode(1, node2, node3);
+    private TreeNode initSubTree() {
+        TreeNode node9 = new TreeNode(9);
+        TreeNode node8 = new TreeNode(8);
+        TreeNode node7 = new TreeNode(7);
+        TreeNode node6 = new TreeNode(6);
+        TreeNode node4 = new TreeNode(4, node8, node9);
+        TreeNode node3 = new TreeNode(3, node6, node7);
+        TreeNode node2 = new TreeNode(2, node4, null);
+        return new TreeNode(1, node2, node3);
     }
 
     private String toString(List<Integer> preOrderResults) {

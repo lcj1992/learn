@@ -3,7 +3,7 @@ package dp;
 import org.junit.Test;
 
 /**
- * <a href="https://leetcode.cn/problems/minimum-path-sum/description/">...</a>
+ * <a href="https://leetcode.cn/problems/minimum-path-sum/">...</a>
  *
  * @author foolchid
  * @date 2024/5/28

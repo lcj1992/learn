@@ -8,7 +8,7 @@ import java.util.PriorityQueue;
 import java.util.TreeMap;
 
 /**
- * <a href="https://leetcode.cn/problems/sliding-window-maximum/description/">...</a>
+ * <a href="https://leetcode.cn/problems/sliding-window-maximum/">...</a>
  * 滑动窗口最大值
  *
  * @author lichuangjian

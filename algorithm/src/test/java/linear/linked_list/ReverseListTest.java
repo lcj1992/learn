@@ -4,7 +4,7 @@ import common.ListNode;
 import org.junit.Test;
 
 /**
- * <a href="https://leetcode.cn/problems/UHnkqh/description/">...</a>
+ * <a href="https://leetcode.cn/problems/UHnkqh/">...</a>
  * 描述：反转链表
  * 解题思路：反转过程中注意赋值的顺序
  *

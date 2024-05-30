@@ -1,7 +1,7 @@
 package double_pointers;
 
 /**
- * https://leetcode.cn/problems/two-sum-ii-input-array-is-sorted/description/?envType=study-plan-v2&envId=selected-coding-interview
+ * https://leetcode.cn/problems/two-sum-ii-input-array-is-sorted/
  *
  * @author foolchid
  * @date 2024/5/28

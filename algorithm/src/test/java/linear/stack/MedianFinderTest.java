@@ -5,7 +5,7 @@ import org.junit.Test;
 import java.util.PriorityQueue;
 
 /**
- * <a href="https://leetcode.cn/problems/find-median-from-data-stream/description/?envType=study-plan-v2&envId=selected-coding-interview">...</a>
+ * <a href="https://leetcode.cn/problems/find-median-from-data-stream/">...</a>
  *
  * @author foolchid
  * @date 2024/5/28

@@ -1,14 +1,17 @@
 package leetcode;
 
+import org.junit.Test;
+
 /**
+ * <a href="https://leetcode.cn/problems/climbing-stairs/">...</a>
  * @author lichuangjian
  * @date 2023/8/9
  */
-public class ClimbStairsSolution {
+public class ClimbStairsTest {
 
-    public static void main(String[] args) {
-        ClimbStairsSolution solution = new ClimbStairsSolution();
-        int i = solution.climbStairs(5);
+    @Test
+    public void test() {
+        int i = climbStairs(5);
         System.out.println(i);
     }
 

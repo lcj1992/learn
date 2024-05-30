@@ -1,7 +1,7 @@
 package double_pointers;
 
 /**
- * https://leetcode.cn/problems/reverse-words-in-a-string/description/?envType=study-plan-v2&envId=selected-coding-interview
+ * https://leetcode.cn/problems/reverse-words-in-a-string/
  *
  * @author foolchid
  * @date 2024/5/28

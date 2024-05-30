@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * https://leetcode.cn/problems/3sum/?envType=study-plan-v2&envId=selected-coding-interview
+ * https://leetcode.cn/problems/3sum/
  *
  * @author foolchid
  * @date 2024/5/28

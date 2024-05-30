@@ -5,7 +5,7 @@ import common.Utils;
 import org.junit.Test;
 
 /**
- * <a href="https://leetcode.cn/problems/partition-list/description/">...</a>
+ * <a href="https://leetcode.cn/problems/partition-list/">...</a>
  *
  * @author foolchid
  * @date 2024/5/28

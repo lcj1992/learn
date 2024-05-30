@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * <a href="https://leetcode.cn/problems/zigzag-conversion/description/?envType=study-plan-v2&envId=selected-coding-interview">...</a>
+ * <a href="https://leetcode.cn/problems/zigzag-conversion/">...</a>
  *
  * @author foolchid
  * @date 2024/5/28

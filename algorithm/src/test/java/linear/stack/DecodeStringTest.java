@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.LinkedList;
 
 /**
- * <a href="https://leetcode.cn/problems/decode-string/?envType=study-plan-v2&envId=selected-coding-interview">...</a>
+ * <a href="https://leetcode.cn/problems/decode-string/">...</a>
  * 字符串解码
  *
  * @author foolchid

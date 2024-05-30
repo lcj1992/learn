@@ -1,18 +1,21 @@
-package leetcode;
+package math;
+
+import org.junit.Test;
 
 import java.util.HashMap;
 import java.util.Map;
 
 /**
+ * https://leetcode.cn/problems/majority-element/
  * @author lichuangjian
  * @date 2023/8/24
  */
-public class MajorityElementSolution {
+public class MajorityElementTest {
 
-    public static void main(String[] args) {
-        MajorityElementSolution solution = new MajorityElementSolution();
+    @Test
+    public void test() {
         int[] nums = {2, 2, 1, 1, 1, 2, 2};
-        int res = solution.majorityElement(nums);
+        int res = majorityElement(nums);
         System.out.println(res);
     }
 
@@ -30,5 +33,17 @@ public class MajorityElementSolution {
             }
         }
         return -1;
+    }
+
+    public int majorityElement2(int[] nums) {
+        int x = 0, votes = 0, count = 0;
+        for (int num : nums){
+            if (votes == 0) x = num;
+            votes += num == x ? 1 : -1;
+        }
+        // 验证 x 是否为众数
+        for (int num : nums)
+            if (num == x) count++;
+        return count > nums.length / 2 ? x : 0; // 当无众数时返回 0
     }
 }

@@ -5,7 +5,7 @@ import org.junit.Test;
 import java.util.*;
 
 /**
- * <a href="https://leetcode.cn/problems/n-queens/description/">...</a>
+ * <a href="https://leetcode.cn/problems/n-queens/">...</a>
  * n皇后问题
  *
  * @author foolchid

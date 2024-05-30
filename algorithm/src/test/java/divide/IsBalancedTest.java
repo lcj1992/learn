@@ -1,19 +1,21 @@
-package tree.binary_tree;
+package divide;
 
 import common.TreeNode;
+import org.junit.Test;
 
 import java.util.Objects;
 
 /**
+ * https://leetcode.cn/problems/balanced-binary-tree/
  * @author lichuangjian
  * @date 2023/8/9
  */
-public class IsBalancedSolution {
+public class IsBalancedTest {
 
-    public static void main(String[] args) {
-        IsBalancedSolution solution = new IsBalancedSolution();
+    @Test
+    public void test() {
         TreeNode root = new TreeNode(3, new TreeNode(9), new TreeNode(20, new TreeNode(15), new TreeNode(7)));
-        boolean balanced = solution.isBalanced(root);
+        boolean balanced = isBalanced(root);
         System.out.println(balanced);
     }
 

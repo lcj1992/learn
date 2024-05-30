@@ -3,7 +3,7 @@ package double_pointers;
 import org.junit.Test;
 
 /**
- * <a href="https://leetcode.cn/problems/is-subsequence/description/">...</a>
+ * <a href="https://leetcode.cn/problems/is-subsequence/">...</a>
  *
  * @author foolchid
  * @date 2024/5/28

@@ -5,7 +5,7 @@ import common.ListNode;
 import java.util.Objects;
 
 /**
- * <a href="https://leetcode.cn/problems/merge-two-sorted-lists/description/">...</a>
+ * <a href="https://leetcode.cn/problems/merge-two-sorted-lists/">...</a>
  * @author lichuangjian
  * @date 2023/6/17
  */

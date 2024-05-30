@@ -4,7 +4,7 @@ import common.ListNode;
 import org.junit.Test;
 
 /**
- * <a href="https://leetcode.cn/problems/reverse-linked-list-ii/description/">...</a>
+ * <a href="https://leetcode.cn/problems/reverse-linked-list-ii/">...</a>
  * 描述：反转left和right之间的链表
  * 解题思路：
  * 1. 找到left的前缀位置

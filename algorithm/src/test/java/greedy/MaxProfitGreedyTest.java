@@ -3,7 +3,7 @@ package greedy;
 import org.junit.Test;
 
 /**
- * <a href="https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-ii/description/">...</a>
+ * <a href="https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-ii/">...</a>
  * 买卖股票的最佳时机 II
  * 思路：
  *

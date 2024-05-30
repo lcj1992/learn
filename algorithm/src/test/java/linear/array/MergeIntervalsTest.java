@@ -9,7 +9,7 @@ import java.util.Comparator;
 import java.util.List;
 
 /**
- * <a href="https://leetcode.cn/problems/SsGoHC/description/">...</a>
+ * <a href="https://leetcode.cn/problems/SsGoHC/">...</a>
  * 合并区间
  * 思路：数组排序
  *

@@ -1,4 +1,4 @@
-package leetcode;
+package bit;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -21,5 +21,9 @@ public class IsPowerOfTwoTest {
 
     private boolean isPowerOfTwo(int n) {
         return n == 2 || n == 1 || n % 2 == 0 && n != 0 && isPowerOfTwo(n / 2);
+    }
+
+    public boolean isPowerOfTwo2(int n) {
+        return n > 0 && (n & (n - 1)) == 0;
     }
 }

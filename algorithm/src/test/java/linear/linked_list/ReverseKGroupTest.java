@@ -4,7 +4,7 @@ import common.ListNode;
 import org.junit.Test;
 
 /**
- * <a href="https://leetcode.cn/problems/reverse-nodes-in-k-group/description/">...</a>
+ * <a href="https://leetcode.cn/problems/reverse-nodes-in-k-group/">...</a>
  * 描述：间隔k位反转链表，包含间隔2位反转链表
  * 解题思路：
  * 1. 每k个节点一组，逐组进行反转

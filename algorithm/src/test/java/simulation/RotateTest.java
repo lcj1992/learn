@@ -1,7 +1,7 @@
 package simulation;
 
 /**
- * <a href="https://leetcode.cn/problems/rotate-image/description/?envType=study-plan-v2&envId=selected-coding-interview">...</a>
+ * <a href="https://leetcode.cn/problems/rotate-image/">...</a>
  * 旋转图像
  *
  * @author foolchid

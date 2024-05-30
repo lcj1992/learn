@@ -3,7 +3,7 @@ package bit;
 import org.junit.Test;
 
 /**
- * <a href="https://leetcode.cn/problems/sum-of-two-integers/description/">...</a>
+ * <a href="https://leetcode.cn/problems/sum-of-two-integers/">...</a>
  *
  * @author foolchid
  * @date 2024/5/28

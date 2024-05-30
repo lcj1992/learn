@@ -3,7 +3,7 @@ package greedy;
 import org.junit.Test;
 
 /**
- * <a href="https://leetcode.cn/problems/candy/description/">...</a>
+ * <a href="https://leetcode.cn/problems/candy/">...</a>
  * 分发糖果
  *
  * @author foolchid

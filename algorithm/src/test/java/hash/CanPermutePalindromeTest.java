@@ -5,7 +5,7 @@ import org.junit.Test;
 import java.util.HashMap;
 
 /**
- * <a href="https://leetcode.cn/problems/palindrome-permutation/description/?envType=study-plan-v2&envId=selected-coding-interview">...</a>
+ * <a href="https://leetcode.cn/problems/palindrome-permutation/">...</a>
  *
  * @author foolchid
  * @date 2024/5/28

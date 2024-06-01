@@ -24,6 +24,13 @@ public class LengthOfLongestSubStringTest {
         System.out.println(i);
     }
 
+    /**
+     * 思路
+     * 双指针关键在于何时调整指针
+     * 1. 本题调整left指针的时机是出现了重复字符
+     * 2. 用哈希表记录字符出现的最新index
+     * 3. 出现重复字符时，其index可能在left指针之前也可能在left指针之后
+     */
     public int lengthOfLongestSubstring(String s) {
         if (s == null || s.isEmpty()) {
             return 0;
@@ -37,6 +44,7 @@ public class LengthOfLongestSubStringTest {
         for (int current = 0; current < length; current++) {
             char character = chars[current];
             if (exists.containsKey(character)) {
+                // 当前字符的最新坐标可能在left之前，也可能在left之后
                 left = Math.max(left, exists.get(character) + 1);
             }
             exists.put(character, current);

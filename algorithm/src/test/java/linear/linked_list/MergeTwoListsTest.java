@@ -1,68 +1,70 @@
 package linear.linked_list;
 
 import common.ListNode;
+import common.Utils;
+import org.junit.Test;
 
 import java.util.Objects;
 
 /**
  * <a href="https://leetcode.cn/problems/merge-two-sorted-lists/">...</a>
+ * 合并两个有序链表
+ *
  * @author lichuangjian
  * @date 2023/6/17
  */
 public class MergeTwoListsTest {
 
-    public static void main(String[] args) {
-        MergeTwoListsTest solution = new MergeTwoListsTest();
-        ListNode l13 = new ListNode(4);
-        ListNode l12 = new ListNode(2, l13);
-        ListNode l1 = new ListNode(1, l12);
-
-        ListNode l23 = new ListNode(4);
-        ListNode l22 = new ListNode(3, l23);
-        ListNode l2 = new ListNode(1, l22);
-        ListNode listNode = solution.mergeTwoLists(l1, l2);
-        while (Objects.nonNull(listNode)) {
-            System.out.println(listNode.val);
-            listNode = listNode.next;
-        }
+    @Test
+    public void test() {
+        ListNode l1 = ListNode.createFromArray(1, 2, 4);
+        ListNode l2 = ListNode.createFromArray(1, 3, 4);
+        ListNode listNode = mergeTwoLists(l1, l2);
+        Utils.printListNode(listNode);
     }
 
-    public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
-        if (Objects.isNull(list1)) {
-            return list2;
+    /**
+     * 思路一：递归
+     * 1. l1为空直接返回l2，l2为空同理
+     * 2. 如果l1的头节点小于l2头节点，以l1作为首节点作为结果的头节点，递归l1.next，l2
+     * 3. 如果l2的头节点小于l1头节点，同理
+     */
+    public ListNode mergeTwoLists1(ListNode l1, ListNode l2) {
+        if (Objects.isNull(l1)) {
+            return l2;
         }
-        if (Objects.isNull(list2)) {
-            return list1;
+        if (Objects.isNull(l2)) {
+            return l1;
         }
-        // 初始化第一个节点
-        ListNode head;
+        if (l1.val < l2.val) {
+            l1.next = mergeTwoLists(l1.next, l2);
+            return l1;
+        }
+        l2.next = mergeTwoLists(l1, l2.next);
+        return l2;
+    }
 
-        if (list1.val < list2.val) {
-            head = new ListNode(list1.val);
-            list1 = list1.next;
-        } else {
-            head = new ListNode(list2.val);
-            list2 = list2.next;
-        }
-        ListNode temp = head;
-        while (Objects.nonNull(list1) && Objects.nonNull(list2)) {
-            int l1Val = list1.val;
-            int l2Val = list2.val;
-            if (l1Val < l2Val) {
-                temp.next = new ListNode(list1.val);
-                list1 = list1.next;
+    /**
+     * 思路二：迭代
+     * 1. 引入伪头节点：建立一个伪头节点 dummy，并建立遍历节点cur
+     * 2. l1的值小于l2的值，将temp的next指向l1，移动l1
+     * 3. l2的值小于l1的值，同理
+     * 4. 追加最终的没进行比较的链表
+     */
+    public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+        ListNode dummy = new ListNode();
+        ListNode cur = dummy;
+        while (Objects.nonNull(l1) && Objects.nonNull(l2)) {
+            if (l1.val < l2.val) {
+                cur.next = l1;
+                l1 = l1.next;
             } else {
-                temp.next = new ListNode(list2.val);
-                list2 = list2.next;
+                cur.next = l2;
+                l2 = l2.next;
             }
-            temp = temp.next;
+            cur = cur.next;
         }
-        if (Objects.isNull(list1)) {
-            temp.next = list2;
-        }
-        if (Objects.isNull(list2)) {
-            temp.next = list1;
-        }
-        return head;
+        cur.next = (l1 == null ? l2 : l1);
+        return dummy.next;
     }
 }

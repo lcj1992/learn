@@ -33,6 +33,9 @@ public class CopyRandomListTest {
 
     Map<Node, Node> cachedNode = new HashMap<>();
 
+    /**
+     * 回溯 + 哈希表
+     */
     public Node copyRandomList(Node head) {
         if (head == null) {
             return null;

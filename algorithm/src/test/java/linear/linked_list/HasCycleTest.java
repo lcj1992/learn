@@ -1,21 +1,22 @@
 package linear.linked_list;
 
 import common.ListNode;
+import org.junit.Test;
 
 import java.util.HashSet;
 import java.util.Set;
 
 /**
- * https://leetcode.cn/problems/linked-list-cycle/
+ * <a href="https://leetcode.cn/problems/linked-list-cycle/">...</a>
  * 环形链表
  *
  * @author lichuangjian
  * @date 2023/8/17
  */
-public class HasCycleSolution {
+public class HasCycleTest {
 
-    public static void main(String[] args) {
-        HasCycleSolution solution = new HasCycleSolution();
+    @Test
+    public void test() {
         ListNode oneNode = new ListNode(3);
         ListNode twoNode = new ListNode(2);
         ListNode threeNode = new ListNode(0);
@@ -25,7 +26,7 @@ public class HasCycleSolution {
         threeNode.next = fourNode;
         fourNode.next = twoNode;
 
-        boolean res = solution.hasCycle(oneNode);
+        boolean res = hasCycle(oneNode);
         System.out.println(res);
     }
 
@@ -41,4 +42,5 @@ public class HasCycleSolution {
         }
         return false;
     }
+
 }

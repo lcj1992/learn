@@ -20,6 +20,12 @@ public class DeleteNodeTest {
     }
 
 
+    /**
+     * 思路
+     * 删除这个节点，意味着
+     * 1. 这个节点的值等于next节点的值，
+     * 2. 这个节点的next指针等于next节点的next指针
+     */
     public void deleteNode(ListNode node) {
         node.val = node.next.val;
         node.next = node.next.next;

@@ -18,6 +18,12 @@ public class PartitionListTest {
         Utils.printListNode(res);
     }
 
+    /**
+     * 思路：
+     * 1. 整两个链表，一个记录大于等于x的large，一个记录小于x的small
+     * 2. 遍历链表，分别调整large和small的指针
+     * 3. 拼接两个链表
+     */
     public ListNode partition(ListNode head, int x) {
         ListNode small = new ListNode(0);
         ListNode smallHead = small;

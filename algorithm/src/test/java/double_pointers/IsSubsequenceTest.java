@@ -16,14 +16,24 @@ public class IsSubsequenceTest {
         System.out.println(subsequence);
     }
 
-
+    /**
+     * 1. 以s逐个遍历，匹配t中的字符
+     * 2. 如果全部能匹配上，则是子串
+     */
     public boolean isSubsequence(String s, String t) {
-        int n = s.length(), m = t.length();
-        int i = 0, j = 0;
+        // source 坐标
+        int i = 0;
+        int n = s.length();
+        // target 坐标
+        int j = 0;
+        int m = t.length();
+
         while (i < n && j < m) {
+            // 逐个比对s的字符
             if (s.charAt(i) == t.charAt(j)) {
                 i++;
             }
+            // 遍历t的字符
             j++;
         }
         return i == n;

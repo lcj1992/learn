@@ -37,6 +37,12 @@ public class GetIntersectionNodeTest {
         System.out.println(intersectionNode.val);
     }
 
+    /**
+     * 双指针
+     * 1. 先遍历A后遍历B
+     * 2. 先遍历B后遍历A
+     * 3. 最终它们会在相交点汇聚
+     */
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         Map<ListNode, Integer> headAIndexMap = new HashMap<>();
         int i = 0;

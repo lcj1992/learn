@@ -24,16 +24,16 @@ public class GetIntersectionNodeTest {
     }
 
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
-        Map<ListNode, Integer> headAIndexMap = new HashMap<>();
+        Map<ListNode, Integer> nodeIndexMap = new HashMap<>();
         int i = 0;
         ListNode temp = headA;
         while (temp != null) {
-            headAIndexMap.put(temp, i++);
+            nodeIndexMap.put(temp, i++);
             temp = temp.next;
         }
         ListNode temp2 = headB;
         while (temp2 != null) {
-            if (headAIndexMap.containsKey(temp2)) {
+            if (nodeIndexMap.containsKey(temp2)) {
                 return temp2;
             }
             temp2 = temp2.next;

@@ -22,6 +22,12 @@ public class SpiralOrderTest {
         System.out.println(integers);
     }
 
+    /**
+     * 思路：
+     * 1. 记录上、下、左、右的边界，并调整
+     * 2. 依次向右、向下、向左、向上
+     * 3. 迭代的终止条件，top>bottom || left > right
+     */
     public List<Integer> spiralOrder(int[][] matrix) {
         if (Objects.isNull(matrix) || Objects.isNull(matrix[0])) {
             return new ArrayList<>();

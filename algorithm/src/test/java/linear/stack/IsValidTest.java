@@ -1,5 +1,7 @@
 package linear.stack;
 
+import org.junit.Test;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Stack;
@@ -11,38 +13,34 @@ import java.util.Stack;
  */
 public class IsValidTest {
 
-    public static void main(String[] args) {
-        IsValidTest solution = new IsValidTest();
-        String s = "()[]{}";
-        boolean valid = solution.isValid(s);
+    @Test
+    public void test() {
+        String s = "([)]";
+        boolean valid = isValid(s);
         System.out.println(valid);
     }
 
     public boolean isValid(String s) {
-        char[] chars = s.toCharArray();
-        if (chars.length == 0) {
+        if (s.isEmpty()) {
             return true;
         }
-        if (chars.length % 2 == 1) {
-            return false;
-        }
-        Stack<Character> stack = new Stack<>();
-        stack.push(chars[0]);
         Map<Character, Character> pairs = new HashMap<>();
         pairs.put('(', ')');
         pairs.put('[', ']');
         pairs.put('{', '}');
-        for (int i = 1; i < chars.length; i++) {
+        Stack<Character> stack = new Stack<>();
+        for (int i = 0; i < s.length(); i++) {
+            Character c = s.charAt(i);
             if (stack.isEmpty()) {
-                stack.push(chars[i]);
+                stack.push(c);
                 continue;
             }
             Character peek = stack.peek();
-            if (pairs.get(peek) == chars[i]) {
+            if (c.equals(pairs.get(peek))) {
                 stack.pop();
                 continue;
             }
-            stack.push(chars[i]);
+            stack.push(c);
         }
         return stack.isEmpty();
     }

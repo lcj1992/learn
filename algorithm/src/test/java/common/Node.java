@@ -1,8 +1,5 @@
 package common;
 
-import lombok.Data;
-
-@Data
 public class Node {
     public int val;
     public Node next;

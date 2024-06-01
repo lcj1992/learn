@@ -28,14 +28,17 @@ public class MyQueueTest {
         System.out.println(param_4);
     }
 
-    class MyQueue {
-
+    /**
+     * 栈：先进后出
+     * 队列：先进先出
+     */
+    public static class MyQueue {
         Deque<Integer> inStack;
         Deque<Integer> outStack;
 
         public MyQueue() {
-            inStack = new ArrayDeque<Integer>();
-            outStack = new ArrayDeque<Integer>();
+            inStack = new ArrayDeque<>();
+            outStack = new ArrayDeque<>();
         }
 
         public void push(int x) {

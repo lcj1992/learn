@@ -39,6 +39,7 @@ public class PartitionListTest {
             }
             head = head.next;
         }
+        // 注意这里要赋值large.next，否则可能出现循环链表
         large.next = null;
         small.next = largeHead.next;
         return smallHead.next;

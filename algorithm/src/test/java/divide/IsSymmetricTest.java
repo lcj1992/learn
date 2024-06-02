@@ -3,10 +3,9 @@ package divide;
 import common.TreeNode;
 import org.junit.Test;
 
-import java.util.Objects;
-
 /**
- * https://leetcode.cn/problems/symmetric-tree/
+ * <a href="https://leetcode.cn/problems/symmetric-tree/">...</a>
+ * 对称二叉树
  *
  * @author lichuangjian
  * @date 2023/8/2
@@ -31,22 +30,10 @@ public class IsSymmetricTest {
         if (left == null && right == null) {
             return true;
         }
-        if (left == null || right == null) {
+        if (left == null || right == null || left.val != right.val) {
             return false;
         }
-        if (left.val != right.val) {
-            return false;
-        }
-        if (Objects.nonNull(left.right) && Objects.nonNull(right.left) && left.right.val != right.left.val) {
-            return false;
-        }
-        if (Objects.nonNull(left.left) && Objects.nonNull(right.right) && left.left.val != right.right.val) {
-            return false;
-        }
-        if (!isSymmetric(left.left, right.right)) {
-            return false;
-        }
-        return isSymmetric(left.right, right.left);
+        return isSymmetric(left.left, right.right) && isSymmetric(left.right, right.left);
     }
 
 }

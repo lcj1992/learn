@@ -14,20 +14,6 @@ public class MyPowSolution {
         System.out.println(v);
     }
 
-
-    public double myPow1(double x, int n) {
-        boolean flag = n < 0;
-        double result = 1;
-        long absN = Math.abs((long) n);
-        for (int i = 0; i < absN; i++) {
-            result = result * x;
-        }
-        if (flag) {
-            return 1 / result;
-        }
-        return result;
-    }
-
     public double myPow(double x, int n) {
         boolean flag = n < 0;
         long absN = Math.abs((long) n);

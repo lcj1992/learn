@@ -1,6 +1,7 @@
 package hash;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * <a href="https://leetcode.cn/problems/isomorphic-strings/">...</a>
@@ -17,24 +18,21 @@ public class IsIsomorphicTest {
     }
 
     public boolean isIsomorphic(String s, String t) {
-        char[] sChars = s.toCharArray();
-        char[] tChars = t.toCharArray();
-        if (sChars.length != tChars.length) {
+        if (s.length() != t.length()) {
             return false;
         }
-        int length = sChars.length;
-        Map<Character, Character> map = new HashMap<>();
-        Set<Character> targetSet = new HashSet<>();
-        for (int i = 0; i < length; i++) {
-            if (!map.containsKey(sChars[i])) {
-                map.put(sChars[i], tChars[i]);
-                if (targetSet.contains(tChars[i])) {
-                    return false;
-                }
-                targetSet.add(tChars[i]);
-                continue;
+        Map<Character, Character> s2tMap = new HashMap<>();
+        Map<Character, Character> t2sMap = new HashMap<>();
+        for (int i = 0; i < s.length(); i++) {
+            char sc = s.charAt(i);
+            char tc = t.charAt(i);
+            if (!s2tMap.containsKey(sc)) {
+                s2tMap.put(sc, tc);
             }
-            if (!Objects.equals(map.get(sChars[i]), tChars[i])) {
+            if (!t2sMap.containsKey(tc)) {
+                t2sMap.put(tc, sc);
+            }
+            if (!s2tMap.get(sc).equals(tc) || !t2sMap.get(tc).equals(sc)) {
                 return false;
             }
         }

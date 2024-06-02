@@ -18,6 +18,11 @@ public class IsAnagramTest {
         System.out.println(res);
     }
 
+    /**
+     * 使用一个map记录各个字符出现的频次
+     * 一个字符串逐次+1，一个字符串逐次-1
+     * 如果是有效的字母异位词，则map中各个字符的频次应该等于0
+     */
     public boolean isAnagram(String s, String t) {
         int len1 = s.length(), len2 = t.length();
         if (len1 != len2) return false;
@@ -29,7 +34,9 @@ public class IsAnagramTest {
             dic.put(t.charAt(i), dic.getOrDefault(t.charAt(i), 0) - 1);
         }
         for (int val : dic.values()) {
-            if (val != 0) return false;
+            if (val != 0) {
+                return false;
+            }
         }
         return true;
     }

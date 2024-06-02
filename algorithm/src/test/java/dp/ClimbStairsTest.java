@@ -15,20 +15,31 @@ public class ClimbStairsTest {
         System.out.println(i);
     }
 
-    public int climbStairs(int n) {
+    public int climbStairs2(int n) {
         if (n == 1) {
             return 1;
         }
         if (n == 2) {
             return 2;
         }
-        int[] result = new int[n];
-        result[0] = 1;
-        result[1] = 2;
+        int[] dp = new int[n];
+        dp[0] = 1;
+        dp[1] = 2;
         int i;
         for (i = 2; i < n; i++) {
-            result[i] = result[i - 1] + result[i - 2];
+            dp[i] = dp[i - 1] + dp[i - 2];
         }
-        return result[i - 1];
+        return dp[i - 1];
     }
+
+    public int climbStairs(int n) {
+        int a = 1, b = 1, sum;
+        for (int i = 0; i < n - 1; i++) {
+            sum = a + b;
+            a = b;
+            b = sum;
+        }
+        return b;
+    }
+
 }

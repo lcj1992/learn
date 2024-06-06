@@ -16,11 +16,7 @@ public class LevelOrderTest {
 
     @Test
     public void test() {
-        TreeNode treeNode = new TreeNode(1);
-        treeNode.left = new TreeNode(2);
-        treeNode.right = new TreeNode(3);
-        treeNode.left.left = new TreeNode(4);
-        treeNode.right.right = new TreeNode(5);
+        TreeNode treeNode = TreeNode.buildTree(1, 2, 3, 4, null, null, 5);
         List<List<Integer>> lists = levelOrder(treeNode);
         System.out.println(lists);
     }

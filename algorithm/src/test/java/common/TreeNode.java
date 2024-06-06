@@ -22,7 +22,7 @@ public class TreeNode {
     }
 
 
-    public static TreeNode buildTree(Integer[] levelOrder) {
+    public static TreeNode buildTree(Integer... levelOrder) {
         if (levelOrder == null || levelOrder.length == 0) {
             return null;
         }

@@ -1,62 +1,16 @@
 package tree.binary_tree;
 
-import com.google.common.collect.Lists;
 import common.TreeNode;
 import org.junit.Test;
 
-import java.util.List;
 import java.util.Objects;
 import java.util.Stack;
-import java.util.stream.Collectors;
-
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
 
 /**
- * 1. 二叉树的遍历（前序、中序、后序、层序）
+ *
  * 2. 统计所有非叶子节点的和
  */
 public class BinaryTreeTraversalTest {
-
-    /**
-     * 树的遍历
-     * 前序遍历：根左右
-     * 中序遍历：左根右
-     * 后序遍历：左右根
-     */
-    @Test
-    public void testTraversal() {
-        TreeNode root = initBinaryTree();
-        List<Integer> results;
-        // 前序遍历，根左右
-        results = preOrder(root);
-        assertEquals(toString(results), "12489510367");
-        results = preOrderStack(root);
-        assertEquals(toString(results), "12489510367");
-
-        // 中序遍历，左根右
-        results = inOrder(root);
-        assertEquals(toString(results), "84921051637");
-        results = inOrderStack(root);
-        assertEquals(toString(results), "84921051637");
-
-        // 后序遍历，左右根
-        results = postOrder(root);
-        assertEquals(toString(results), "89410526731");
-        results = postOrderStack(root);
-        assertEquals(toString(results), "89410526731");
-        
-    }
-
-    @Test
-    public void testIsValidBST() {
-        TreeNode treeNode = new TreeNode(5);
-        treeNode.left = new TreeNode(1);
-        treeNode.right = new TreeNode(4);
-        treeNode.right.left = new TreeNode(3);
-        treeNode.right.right = new TreeNode(6);
-        assertFalse(isValidBST(treeNode));
-    }
 
     @Test
     public void testMidNodeSum() {
@@ -81,135 +35,6 @@ public class BinaryTreeTraversalTest {
         System.out.println(sameTree);
     }
 
-
-    /**
-     * <a href="https://leetcode.cn/problems/shu-de-zi-jie-gou-lcof/">...</a>
-     * 判断一个树是否是另一棵的子树
-     */
-    @Test
-    public void testSubTree() {
-        TreeNode root = initBinaryTree();
-        TreeNode subTree = initSubTree();
-        boolean result = isSubTree(root, subTree);
-        System.out.println(result);
-
-    }
-
-
-    private List<Integer> preOrder(TreeNode root) {
-        List<Integer> result = Lists.newArrayList();
-        if (Objects.isNull(root)) {
-            return result;
-        }
-        result.add(root.val);
-        result.addAll(preOrder(root.left));
-        result.addAll(preOrder(root.right));
-        return result;
-    }
-
-    private List<Integer> preOrderStack(TreeNode root) {
-        List<Integer> result = Lists.newArrayList();
-        if (Objects.isNull(root)) {
-            return result;
-        }
-        Stack<TreeNode> stack = new Stack<>();
-        stack.push(root);
-        while (!stack.isEmpty()) {
-            TreeNode pop = stack.pop();
-            result.add(pop.val);
-            if (Objects.nonNull(pop.right)) {
-                stack.push(pop.right);
-            }
-            if (Objects.nonNull(pop.left)) {
-                stack.push(pop.left);
-            }
-        }
-        return result;
-    }
-
-    private List<Integer> inOrder(TreeNode root) {
-        List<Integer> result = Lists.newArrayList();
-        if (Objects.isNull(root)) {
-            return result;
-        }
-        result.addAll(inOrder(root.left));
-        result.add(root.val);
-        result.addAll(inOrder(root.right));
-        return result;
-    }
-
-    private List<Integer> inOrderStack(TreeNode root) {
-        List<Integer> result = Lists.newArrayList();
-        if (Objects.isNull(root)) {
-            return result;
-        }
-        Stack<TreeNode> stack = new Stack<>();
-        TreeNode current = root;
-        while (current != null || !stack.isEmpty()) {
-            while (current != null) {
-                stack.push(current);
-                current = current.left;
-            }
-            current = stack.pop();
-            result.add(current.val);
-            current = current.right;
-        }
-        return result;
-    }
-
-
-    private List<Integer> postOrder(TreeNode root) {
-        List<Integer> result = Lists.newArrayList();
-        if (Objects.isNull(root)) {
-            return result;
-        }
-        result.addAll(postOrder(root.left));
-        result.addAll(postOrder(root.right));
-        result.add(root.val);
-        return result;
-    }
-
-    private List<Integer> postOrderStack(TreeNode root) {
-        List<Integer> result = Lists.newArrayList();
-        if (Objects.isNull(root)) {
-            return result;
-        }
-        Stack<TreeNode> stack = new Stack<>();
-        TreeNode current = root;
-        TreeNode lastVisited = null;
-        while (current != null || !stack.isEmpty()) {
-            while (current != null) {
-                stack.push(current);
-                current = current.left;
-            }
-            current = stack.peek();
-            if (current.right == null || current.right == lastVisited) {
-                stack.pop();
-                result.add(current.val);
-                lastVisited = current;
-                current = null;
-            } else {
-                current = current.right;
-            }
-        }
-        return result;
-    }
-
-
-    private boolean isValidBST(TreeNode root) {
-        return isValidBST(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
-    }
-
-    private boolean isValidBST(TreeNode root, long min, long max) {
-        if (Objects.isNull(root)) {
-            return true;
-        }
-        int val = root.val;
-        if (val >= max || val <= min) {
-            return false;
-        }
-        return isValidBST(root.left, min, val) && isValidBST(root.right, val, max);
-    }
 
     private Integer sumMidNode(TreeNode node) {
         if (node == null) {
@@ -243,16 +68,6 @@ public class BinaryTreeTraversalTest {
             }
         }
         return sum;
-    }
-
-    private boolean sub(TreeNode tree1, TreeNode tree2) {
-        if (tree2 == null) {
-            return true;
-        }
-        if (tree1 == null || !Objects.equals(tree1.val, tree2.val)) {
-            return false;
-        }
-        return sub(tree1.left, tree2.left) && sub(tree1.right, tree2.right);
     }
 
     private boolean isSameTree(TreeNode tree1, TreeNode tree2) {
@@ -312,16 +127,6 @@ public class BinaryTreeTraversalTest {
         return stack1.isEmpty() && stack2.isEmpty();
     }
 
-    private boolean isSubTree(TreeNode tree1, TreeNode tree2) {
-        if (tree1 == null || tree2 == null) {
-            return true;
-        }
-        if (sub(tree1, tree2)) {
-            return true;
-        }
-        return isSubTree(tree1.left, tree2) || isSubTree(tree1.right, tree2);
-    }
-
 
     private TreeNode initBinaryTree() {
         TreeNode node10 = new TreeNode(10);
@@ -347,7 +152,4 @@ public class BinaryTreeTraversalTest {
         return new TreeNode(1, node2, node3);
     }
 
-    private String toString(List<Integer> preOrderResults) {
-        return preOrderResults.stream().map(Object::toString).collect(Collectors.joining());
-    }
 }

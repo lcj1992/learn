@@ -7,7 +7,7 @@ import java.util.ArrayDeque;
 import java.util.Deque;
 
 /**
- * https://leetcode.cn/problems/kth-smallest-element-in-a-bst/
+ * <a href="https://leetcode.cn/problems/kth-smallest-element-in-a-bst/">...</a>
  *
  * @author foolchid
  * @date 2024/5/29

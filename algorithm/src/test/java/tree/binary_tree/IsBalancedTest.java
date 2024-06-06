@@ -6,7 +6,7 @@ import org.junit.Test;
 import java.util.Objects;
 
 /**
- * https://leetcode.cn/problems/balanced-binary-tree/
+ * <a href="https://leetcode.cn/problems/balanced-binary-tree/">...</a>
  *
  * @author lichuangjian
  * @date 2023/8/9

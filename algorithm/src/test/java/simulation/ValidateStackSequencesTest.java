@@ -1,6 +1,9 @@
 package simulation;
 
-import java.util.Stack;
+import org.junit.Test;
+
+import java.util.ArrayDeque;
+import java.util.Deque;
 
 /**
  * <a href="https://leetcode.cn/problems/validate-stack-sequences/">...</a>
@@ -10,16 +13,23 @@ import java.util.Stack;
  **/
 public class ValidateStackSequencesTest {
 
+    @Test
+    public void test() {
+        boolean res = validateStackSequences(new int[]{1, 2, 3, 4, 5}, new int[]{4, 5, 3, 2, 1});
+        System.out.println(res);
+    }
+
     public boolean validateStackSequences(int[] pushed, int[] popped) {
-        Stack<Integer> stack = new Stack<>();
-        int i = 0;
-        for (int num : pushed) {
-            stack.push(num); // num 入栈
-            while (!stack.isEmpty() && stack.peek() == popped[i]) { // 循环判断与出栈
-                stack.pop();
-                i++;
+        Deque<Integer> deque = new ArrayDeque<>();
+        int j = 0;
+        for (int k : pushed) {
+            deque.addFirst(k);
+            while (!deque.isEmpty() && deque.getFirst() == popped[j]) {
+                deque.removeFirst();
+                j++;
             }
         }
-        return stack.isEmpty();
+        return deque.isEmpty();
     }
+
 }

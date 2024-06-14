@@ -6,7 +6,7 @@ import org.junit.Test;
 import java.util.*;
 
 /**
- * https://leetcode.cn/problems/binary-tree-zigzag-level-order-traversal/
+ * <a href="https://leetcode.cn/problems/binary-tree-zigzag-level-order-traversal/">...</a>
  * 二叉树的锯齿形层序遍历
  *
  * @author foolchid
@@ -16,47 +16,39 @@ public class ZigzagLevelOrderTest {
 
     @Test
     public void test() {
-        TreeNode treeNode = new TreeNode(1);
-        treeNode.left = new TreeNode(2);
-        treeNode.right = new TreeNode(3);
-        treeNode.left.left = new TreeNode(4);
-        treeNode.right.right = new TreeNode(5);
-        List<List<Integer>> lists = zigzagLevelOrder(treeNode);
+        List<List<Integer>> lists = zigzagLevelOrder2(TreeNode.buildTree(3, 9, 20, null, null, 15, 7));
         System.out.println(lists);
     }
 
-    public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
-        List<List<Integer>> ans = new LinkedList<List<Integer>>();
+    public List<List<Integer>> zigzagLevelOrder2(TreeNode root) {
         if (root == null) {
-            return ans;
+            return new ArrayList<>();
         }
-
-        Queue<TreeNode> nodeQueue = new ArrayDeque<>();
-        nodeQueue.offer(root);
-        boolean isOrderLeft = true;
-
-        while (!nodeQueue.isEmpty()) {
+        Deque<TreeNode> deque = new ArrayDeque<>();
+        deque.addFirst(root);
+        List<List<Integer>> results = new ArrayList<>();
+        boolean fromLeft = false;
+        while (!deque.isEmpty()) {
             Deque<Integer> levelList = new LinkedList<>();
-            int size = nodeQueue.size();
-            for (int i = 0; i < size; ++i) {
-                TreeNode curNode = nodeQueue.poll();
-                if (isOrderLeft) {
-                    levelList.offerLast(curNode.val);
+            int size = deque.size();
+            for (int i = 0; i < size; i++) {
+                TreeNode node = deque.removeFirst();
+                if (fromLeft) {
+                    levelList.addFirst(node.val);
                 } else {
-                    levelList.offerFirst(curNode.val);
+                    levelList.addLast(node.val);
                 }
-                if (curNode.left != null) {
-                    nodeQueue.offer(curNode.left);
+                if (node.left != null) {
+                    deque.addLast(node.left);
                 }
-                if (curNode.right != null) {
-                    nodeQueue.offer(curNode.right);
+                if (node.right != null) {
+                    deque.addLast(node.right);
                 }
             }
-            ans.add(new LinkedList<Integer>(levelList));
-            isOrderLeft = !isOrderLeft;
+            results.add(new ArrayList<>(levelList));
+            fromLeft = !fromLeft;
         }
-
-        return ans;
+        return results;
     }
 
 }

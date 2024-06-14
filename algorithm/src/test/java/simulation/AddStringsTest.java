@@ -1,5 +1,7 @@
 package simulation;
 
+import org.junit.Test;
+
 /**
  * <a href="https://leetcode.cn/problems/add-strings/">...</a>
  *
@@ -7,6 +9,12 @@ package simulation;
  * @date 2024/5/28
  **/
 public class AddStringsTest {
+
+    @Test
+    public void test() {
+        String res = addStrings("456", "77");
+        System.out.println(res);
+    }
 
     public String addStrings(String num1, String num2) {
         StringBuilder res = new StringBuilder();
@@ -20,7 +28,9 @@ public class AddStringsTest {
             i--;
             j--;
         }
-        if (carry == 1) res.append(1);
+        if (carry == 1) {
+            res.append(1);
+        }
         return res.reverse().toString();
     }
 

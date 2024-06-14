@@ -1,12 +1,16 @@
-package linear.array;
+package simulation;
 
 import org.junit.Test;
 
-public class ArrayTest {
+/**
+ * @author foolchid
+ * @date 2024/5/28
+ **/
+public class GenerateMatrix2Test {
 
     @Test
     public void testGenerateMatrix() {
-        int[][] matrix = generateMatrix(5);
+        int[][] matrix = generateMatrix(6);
         for (int[] array : matrix) {
             for (int item : array) {
                 System.out.print(item + (item >= 10 ? " " : "  "));
@@ -18,7 +22,6 @@ public class ArrayTest {
     public int[][] generateMatrix(int n) {
         int[][] results = new int[n][n];
         int num = 1; // 从1开始的连续整数，游标
-
         int step = 0; // 一次打印几个数，每次循环结束+1
         int sum = 0; // 坐标和，每次循环结束+1
         for (; step < n; step++, sum++) {
@@ -30,19 +33,16 @@ public class ArrayTest {
                 }
             }
         }
-        step = n - 2;
-        int startIndex = 1;
         for (; step >= 0; step--, sum++) {
-            for (int i = 0; i <= step; i++) {
+            for (int i = 1; i < step; i++) {
                 if (step % 2 == 0) {
-                    results[sum - i - startIndex][startIndex + i] = num++;
+                    results[n - i][sum - n + i] = num++;
                 } else {
-                    results[startIndex + i][sum - i - startIndex] = num++;
+                    results[sum - n + i][n - i] = num++;
                 }
             }
-            startIndex++;
         }
         return results;
     }
-}
 
+}

@@ -1,5 +1,7 @@
 package simulation;
 
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,6 +12,12 @@ import java.util.List;
  * @date 2024/5/28
  **/
 public class ZConvertTest {
+
+    @Test
+    public void test() {
+        String res = convert("PAYPALISHIRING", 3);
+        System.out.println(res);
+    }
 
     public String convert(String s, int numRows) {
         if (numRows < 2) {

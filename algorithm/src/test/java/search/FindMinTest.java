@@ -13,19 +13,40 @@ public class FindMinTest {
 
     @Test
     public void test() {
-        int res = findMin(new int[]{2, 2, 2, 0, 1});
+        int res = findMin2(new int[]{4, 5, 6, 7, 0, 1, 4});
         System.out.println(res);
+    }
+
+    public int findMin2(int[] nums) {
+        int l = 0;
+        int r = nums.length - 1;
+        int res = -1;
+        while (l <= r) {
+            int mid = l + (r - l) / 2;
+            if (nums[mid] > nums[r]) {
+                l = mid + 1;
+                continue;
+            }
+            if (nums[mid] < nums[r]) {
+                r = mid - 1;
+            }
+            if (nums[mid] == nums[r]) {
+                r = mid - 1;
+                res = mid;
+            }
+        }
+        return nums[res];
     }
 
     public int findMin(int[] nums) {
         int low = 0;
         int high = nums.length - 1;
         while (low < high) {
-            int pivot = low + (high - low) / 2;
-            if (nums[pivot] < nums[high]) {
-                high = pivot;
-            } else if (nums[pivot] > nums[high]) {
-                low = pivot + 1;
+            int mid = low + (high - low) / 2;
+            if (nums[mid] < nums[high]) {
+                high = mid;
+            } else if (nums[mid] > nums[high]) {
+                low = mid + 1;
             } else {
                 high -= 1;
             }

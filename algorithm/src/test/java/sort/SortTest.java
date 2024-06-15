@@ -19,18 +19,11 @@ public class SortTest {
 
     private static final String RESULT = "44581012133489";
 
-    @Test
-    public void testBubbleSort() throws Exception {
-        int[] items = new int[]{10, 8, 5, 12, 13, 4, 34, 4, 89};
-        BubbleSort sort = new BubbleSort();
-        sort.bubbleSort(items);
-        Assert.assertEquals(print(items), RESULT);
-    }
 
     @Test
     public void testSelectionSort() throws Exception {
         int[] items = new int[]{10, 8, 5, 12, 13, 4, 34, 4, 89};
-        SelectionSort sort = new SelectionSort();
+        SelectionSortTest sort = new SelectionSortTest();
         sort.selectionSort(items);
         Assert.assertEquals(print(items), RESULT);
     }
@@ -43,13 +36,6 @@ public class SortTest {
         Assert.assertEquals(print(items), RESULT);
     }
 
-    @Test
-    public void testQuickSort() throws Exception {
-        int[] items = new int[]{10, 8, 5, 12, 13, 4, 34, 4, 89};
-        QuickSort sort = new QuickSort();
-        sort.quickSort(items);
-        Assert.assertEquals(print(items), RESULT);
-    }
 
     @Test
     public void testShellSort() throws Exception {

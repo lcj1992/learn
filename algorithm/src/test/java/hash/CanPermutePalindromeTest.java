@@ -27,7 +27,9 @@ public class CanPermutePalindromeTest {
         int odd = 0;
         for (int val : dic.values()) {
             if (val % 2 == 1) {
-                if (++odd > 1) return false;
+                if (++odd > 1) {
+                    return false;
+                }
             }
         }
         return true;

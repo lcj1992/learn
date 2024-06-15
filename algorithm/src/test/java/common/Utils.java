@@ -26,4 +26,13 @@ public class Utils {
             node = node.next;
         }
     }
+
+    public static void swap(int[] items, int i, int j) {
+        if (i == j) {
+            return;
+        }
+        int tmp = items[i];
+        items[i] = items[j];
+        items[j] = tmp;
+    }
 }

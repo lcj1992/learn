@@ -16,7 +16,7 @@ public class ZigzagLevelOrderTest {
 
     @Test
     public void test() {
-        List<List<Integer>> lists = zigzagLevelOrder2(TreeNode.buildTree(3, 9, 20, null, null, 15, 7));
+        List<List<Integer>> lists = zigzagLevelOrder2(TreeNode.create(3, 9, 20, null, null, 15, 7));
         System.out.println(lists);
     }
 

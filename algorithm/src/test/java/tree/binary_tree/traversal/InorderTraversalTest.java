@@ -17,7 +17,7 @@ public class InorderTraversalTest {
 
     @Test
     public void test() {
-        TreeNode root = TreeNode.buildTree(1, null, 2, 3);
+        TreeNode root = TreeNode.create(1, null, 2, 3);
         List<Integer> integers = inorderTraversal(root);
         System.out.println(integers);
         integers = inorderTraversalStack(root);

@@ -16,7 +16,7 @@ public class KthSmallestTest {
 
     @Test
     public void test() {
-        TreeNode treeNode = TreeNode.buildTree(new Integer[]{5, 3, 6, 2, 4, null, null, 1});
+        TreeNode treeNode = TreeNode.create(new Integer[]{5, 3, 6, 2, 4, null, null, 1});
         int res = kthSmallest(treeNode, 3);
         System.out.println(res);
     }

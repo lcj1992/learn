@@ -13,25 +13,35 @@ public class LowestCommonAncestorTest {
 
     @Test
     public void test() {
-        TreeNode treeNode = TreeNode.buildTree(new Integer[]{3, 5, 1, 6, 2, 0, 8, null, null, 7, 4});
-
-        System.out.println(treeNode);
+        TreeNode treeNode = TreeNode.create(6, 2, 8, 0, 4, 7, 9, null, null, 3, 5);
+        TreeNode node1 = treeNode.left;
+        TreeNode node2 = treeNode.right;
+        TreeNode result = lowestCommonAncestor(treeNode, node1, node2);
+        System.out.println(result.val);
 
     }
 
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+        return search(root, p, q);
+    }
+
+    public TreeNode search(TreeNode root, TreeNode p, TreeNode q) {
         if (root == null || root == p || root == q) {
             return root;
         }
-        TreeNode left = lowestCommonAncestor(root.left, p, q);
-        TreeNode right = lowestCommonAncestor(root.right, p, q);
+        // 左子树是否包含p或者q
+        TreeNode left = search(root.left, p, q);
+        // 右子树是否包含p或者q
+        TreeNode right = search(root.right, p, q);
+        // 左子树不包含q且不包含q且题目中说了一定存在，所以可以直接返回right
         if (left == null) {
             return right;
         }
+        // 同理，右子树不包含q且不包含q且题目中说了一定存在，所以可以直接返回left
         if (right == null) {
             return left;
         }
+        // 左右子树均包含p或者q，说明一个在左子树，一个在右子树，最近的公共祖先就是当前root
         return root;
     }
-
 }

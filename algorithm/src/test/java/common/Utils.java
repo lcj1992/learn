@@ -1,5 +1,7 @@
 package common;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -21,11 +23,29 @@ public class Utils {
         if (Objects.isNull(node)) {
             return;
         }
-        while (node != null) {
-            System.out.print(node.val + (node.val > 10 ? " " : "  "));
-            node = node.next;
+        ListNode tmp = node;
+        while (tmp != null) {
+            System.out.print(tmp.val + (tmp.val > 10 ? " " : "  "));
+            tmp = tmp.next;
         }
     }
+
+    public static void printTree(TreeNode treeNode) {
+        List<Integer> res = traversal(treeNode);
+        System.out.println(res);
+    }
+
+    private static List<Integer> traversal(TreeNode root) {
+        if (root == null) {
+            return new ArrayList<>();
+        }
+        List<Integer> res = new ArrayList<>();
+        res.add(root.val);
+        res.addAll(traversal(root.left));
+        res.addAll(traversal(root.right));
+        return res;
+    }
+
 
     public static void swap(int[] items, int i, int j) {
         if (i == j) {

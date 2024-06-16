@@ -14,8 +14,8 @@ public class IsSubStructureTest {
 
     @Test
     public void test() {
-        TreeNode tree1 = TreeNode.buildTree(3, 6, 7, 1, 8);
-        TreeNode tree2 = TreeNode.buildTree(6, 1);
+        TreeNode tree1 = TreeNode.create(3, 6, 7, 1, 8);
+        TreeNode tree2 = TreeNode.create(6, 1);
         boolean res = isSubStructure(tree1, tree2);
         System.out.println(res);
     }

@@ -1,12 +1,20 @@
 package bit;
 
+import org.junit.Test;
+
 /**
- * https://leetcode.cn/problems/single-number-ii/
+ * <a href="https://leetcode.cn/problems/single-number-ii/">...</a>
  *
  * @author foolchid
  * @date 2024/5/30
  **/
 public class singleNumber2Test {
+
+    @Test
+    public void test() {
+        int res = singleNumber(new int[]{2, 2, 3, 2});
+        System.out.println(res);
+    }
 
     public int singleNumber(int[] nums) {
         int ans = 0;

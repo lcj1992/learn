@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * https://leetcode.cn/problems/valid-number/
+ * <a href="https://leetcode.cn/problems/valid-number/">...</a>
  * 有效数字
  *
  * @author foolchid
@@ -21,12 +21,13 @@ public class IsNumberTest {
     }
 
     public boolean isNumber(String s) {
-        Map[] states = new Map[]{new HashMap<Character, Integer>() {{
-            put(' ', 0);
-            put('s', 1);
-            put('d', 2);
-            put('.', 4);
-        }}, // 0.
+        Map[] states = new Map[]{
+                new HashMap<Character, Integer>() {{
+                    put(' ', 0);
+                    put('s', 1);
+                    put('d', 2);
+                    put('.', 4);
+                }}, // 0.
                 new HashMap<Character, Integer>() {{
                     put('d', 2);
                     put('.', 4);
@@ -63,12 +64,20 @@ public class IsNumberTest {
         int p = 0;
         char t;
         for (char c : s.toCharArray()) {
-            if (c >= '0' && c <= '9') t = 'd';
-            else if (c == '+' || c == '-') t = 's';
-            else if (c == 'e' || c == 'E') t = 'e';
-            else if (c == '.' || c == ' ') t = c;
-            else t = '?';
-            if (!states[p].containsKey(t)) return false;
+            if (c >= '0' && c <= '9') {
+                t = 'd';
+            } else if (c == '+' || c == '-') {
+                t = 's';
+            } else if (c == 'e' || c == 'E') {
+                t = 'e';
+            } else if (c == '.' || c == ' ') {
+                t = c;
+            } else {
+                t = '?';
+            }
+            if (!states[p].containsKey(t)) {
+                return false;
+            }
             p = (int) states[p].get(t);
         }
         return p == 2 || p == 3 || p == 7 || p == 8;

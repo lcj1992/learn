@@ -17,7 +17,7 @@ public class PathSumTest {
 
     @Test
     public void test() {
-        List<List<Integer>> res = pathSum(TreeNode.buildTree(5, 4, 8, 11, null, 13, 4, 7, 2, null, null, 5, 1), 22);
+        List<List<Integer>> res = pathSum(TreeNode.create(5, 4, 8, 11, null, 13, 4, 7, 2, null, null, 5, 1), 22);
         res.forEach(System.out::println);
     }
 

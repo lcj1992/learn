@@ -1,5 +1,7 @@
 package dp;
 
+import org.junit.Test;
+
 /**
  * https://leetcode.cn/problems/house-robber-ii/
  *
@@ -8,6 +10,11 @@ package dp;
  **/
 public class Rob2Test {
 
+    @Test
+    public void test() {
+        int res = rob(new int[]{2, 3, 2});
+        System.out.println(res);
+    }
 
     public int rob(int[] nums) {
         int length = nums.length;
@@ -20,7 +27,8 @@ public class Rob2Test {
     }
 
     public int robRange(int[] nums, int start, int end) {
-        int first = nums[start], second = Math.max(nums[start], nums[start + 1]);
+        int first = nums[start];
+        int second = Math.max(nums[start], nums[start + 1]);
         for (int i = start + 2; i <= end; i++) {
             int temp = second;
             second = Math.max(first + nums[i], second);

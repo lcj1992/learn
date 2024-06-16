@@ -53,7 +53,6 @@ public class InterviewAlgo {
 
 
     // 排序
-    // TODO 12. 在有序数组里查询一个数，数组里数相等的情况取最小 idx
     // LargestNumberTest，最大数
 
 
@@ -61,6 +60,7 @@ public class InterviewAlgo {
     // SearchTest，搜索旋转排序数组
     // SearchMatrixTest，搜索二维矩阵
     // SearchRangeTest，在排序数组中查找元素的第一个和最后一个位置
+    // BinarySearchTest，上下界二分查找，在有序数组里查询一个数，数组里数相等的情况取最小 idx
 
 
     // 双指针，滑动窗口
@@ -70,6 +70,7 @@ public class InterviewAlgo {
     // kthToLastTest，链表中倒数第k个元素
     // RemoveNthFromEndTest，移除倒数第n个元素
     // MaxSlidingWindowTest，滑动窗口最大值
+    // ThreeSumTest 三数之和
 
 
     // 动态规划
@@ -94,17 +95,18 @@ public class InterviewAlgo {
 
     // 其他
     // Three6AddTest，36进制加法
-    // TODO YSFCircleTest 约瑟夫问题
+    // FindTheWinnerTest 约瑟夫问题
     // TODO 手写一致性 hash 算法的应用场景，请求进来怎么通过一致性哈希算法 找到实际的机器 IP 的代码实现 过程
     // TODO 进制转换
     // TODO 在2.5亿个整数中找出不重复的整数，内存不足以容纳这2.5亿个整数
     // TODO 红黑树的数据结构
     // TODO 比如十几亿个数据里找到较小的100个数
-    // TODO topK 算法
+    // FindKthLargestTest topK 算法
     //  另一个最大岛
     // TODO 有一个数字矩阵，包含0和1，相邻的数字1代表“陆地”;给出某个坐标，求该坐标对应的陆地面积 (即有多少个相邻的 1)?在矩阵很大的情况下，有没有更快的办法?
     // TODO 再加一个堆插入结点的步骤
-    // TODO 最后一题常规股票买卖
-    // TODO 牛客的跳石板、合并区间、找出出现超过一半的数
-    // TODO 三数之和
+    // MaxProfitTest 股票买卖、股票买卖2
+    // TODO 牛客的跳石板、合并区间
+    // majorityElementTest 找出出现超过一半的数
+
 }

@@ -2,6 +2,8 @@ package linear.stack;
 
 import org.junit.Test;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
 import java.util.LinkedList;
 
 /**
@@ -15,8 +17,41 @@ public class DecodeStringTest {
 
     @Test
     public void test() {
-        String res = decodeString("3[a]2[bc]");
+        String res = decodeString2("3[a]2[bc]");
         System.out.println(res);
+    }
+
+    public String decodeString2(String s) {
+        char[] carr = s.toCharArray();
+        // 两个栈，一个记录数字[]前的数字，一个记录[]中的字符
+        Deque<Integer> multiDeque = new ArrayDeque<>();
+        Deque<String> strDeque = new ArrayDeque<>();
+        int multi = 0;
+        StringBuilder res = new StringBuilder();
+        for (char c : carr) {
+            if (c >= '0' && c <= '9') {
+                multi = multi * 10 + c - '0';
+                continue;
+            }
+            if (c == '[') {
+                multiDeque.addFirst(multi);
+                strDeque.addFirst(res.toString());
+                multi = 0;
+                res = new StringBuilder();
+                continue;
+            }
+            if (c == ']') {
+                StringBuilder tmp = new StringBuilder();
+                int curMulti = multiDeque.removeFirst();
+                for (int i = 0; i < curMulti; i++) {
+                    tmp.append(res);
+                }
+                res = new StringBuilder(strDeque.removeFirst() + tmp);
+                continue;
+            }
+            res.append(c);
+        }
+        return res.toString();
     }
 
     /**
@@ -36,8 +71,8 @@ public class DecodeStringTest {
                 res = new StringBuilder();
             } else if (c == ']') {
                 StringBuilder tmp = new StringBuilder();
-                int cur_multi = multiStack.removeLast();
-                for (int i = 0; i < cur_multi; i++) {
+                int curMulti = multiStack.removeLast();
+                for (int i = 0; i < curMulti; i++) {
                     tmp.append(res);
                 }
                 res = new StringBuilder(resStack.removeLast() + tmp);

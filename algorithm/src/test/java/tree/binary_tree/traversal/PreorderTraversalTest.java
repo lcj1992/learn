@@ -19,7 +19,7 @@ public class PreorderTraversalTest {
 
     @Test
     public void test() {
-        TreeNode root = TreeNode.buildTree(1, null, 2, 3);
+        TreeNode root = TreeNode.create(1, null, 2, 3);
         System.out.println(preorderTraversal(root));
         System.out.println(preorderTraversalStack(root));
     }

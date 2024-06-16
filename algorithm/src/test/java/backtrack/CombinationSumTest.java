@@ -1,16 +1,38 @@
 package backtrack;
 
+import common.Utils;
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 /**
- * https://leetcode.cn/problems/combination-sum/
+ * <a href="https://leetcode.cn/problems/combination-sum/">...</a>
  *
  * @author foolchid
  * @date 2024/5/29
  **/
 public class CombinationSumTest {
+
+    @Test
+    public void test() {
+        List<List<Integer>> res = combinationSum(new int[]{2, 3, 6, 7}, 7);
+        Utils.printList(res);
+    }
+
+    public List<List<Integer>> combinationSum(int[] candidates, int target) {
+        // 状态（子集）
+        List<Integer> state = new ArrayList<>();
+        // 对 candidates 进行排序
+        Arrays.sort(candidates);
+        // 遍历起始点
+        int start = 0;
+        // 结果列表（子集列表）
+        List<List<Integer>> res = new ArrayList<>();
+        backtrack(state, target, candidates, start, res);
+        return res;
+    }
 
     void backtrack(List<Integer> state, int target, int[] choices, int start, List<List<Integer>> res) {
         // 子集和等于 target 时，记录解
@@ -33,15 +55,6 @@ public class CombinationSumTest {
             // 回退：撤销选择，恢复到之前的状态
             state.remove(state.size() - 1);
         }
-    }
-
-    public List<List<Integer>> combinationSum(int[] candidates, int target) {
-        List<Integer> state = new ArrayList<>(); // 状态（子集）
-        Arrays.sort(candidates); // 对 candidates 进行排序
-        int start = 0; // 遍历起始点
-        List<List<Integer>> res = new ArrayList<>(); // 结果列表（子集列表）
-        backtrack(state, target, candidates, start, res);
-        return res;
     }
 
 

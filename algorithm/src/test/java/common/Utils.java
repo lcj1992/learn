@@ -35,6 +35,10 @@ public class Utils {
         System.out.println(res);
     }
 
+    public static void printList(List<List<Integer>> list) {
+        list.forEach(System.out::println);
+    }
+
     private static List<Integer> traversal(TreeNode root) {
         if (root == null) {
             return new ArrayList<>();

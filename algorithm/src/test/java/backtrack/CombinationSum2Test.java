@@ -1,5 +1,8 @@
 package backtrack;
 
+import common.Utils;
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -11,6 +14,26 @@ import java.util.List;
  * @date 2024/5/29
  **/
 public class CombinationSum2Test {
+
+    @Test
+    public void test() {
+        List<List<Integer>> res = combinationSum2(new int[]{10, 1, 2, 7, 6, 1, 5}, 8);
+        Utils.printList(res);
+    }
+
+    public List<List<Integer>> combinationSum2(int[] candidates, int target) {
+        // 状态（子集）
+        List<Integer> state = new ArrayList<>();
+        // 对 candidates 进行排序
+        Arrays.sort(candidates);
+        // 遍历起始点
+        int start = 0;
+        // 结果列表（子集列表）
+        List<List<Integer>> res = new ArrayList<>();
+        backtrack(state, target, candidates, start, res);
+        return res;
+    }
+
     void backtrack(List<Integer> state, int target, int[] choices, int start, List<List<Integer>> res) {
         // 子集和等于 target 时，记录解
         if (target == 0) {
@@ -37,15 +60,6 @@ public class CombinationSum2Test {
             // 回退：撤销选择，恢复到之前的状态
             state.remove(state.size() - 1);
         }
-    }
-
-    public List<List<Integer>> combinationSum2(int[] candidates, int target) {
-        List<Integer> state = new ArrayList<>(); // 状态（子集）
-        Arrays.sort(candidates); // 对 candidates 进行排序
-        int start = 0; // 遍历起始点
-        List<List<Integer>> res = new ArrayList<>(); // 结果列表（子集列表）
-        backtrack(state, target, candidates, start, res);
-        return res;
     }
 
 

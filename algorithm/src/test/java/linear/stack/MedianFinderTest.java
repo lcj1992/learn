@@ -20,26 +20,25 @@ public class MedianFinderTest {
         System.out.println(param_2);
     }
 
-    class MedianFinder {
+    /**
+     * <a href="https://leetcode.cn/problems/find-median-from-data-stream/solutions/2361972/295-shu-ju-liu-de-zhong-wei-shu-dui-qing-gmdo/?envType=study-plan-v2&envId=selected-coding-interview">...</a>
+     */
+    static class MedianFinder {
         PriorityQueue<Integer> queMin;
         PriorityQueue<Integer> queMax;
 
         public MedianFinder() {
             queMin = new PriorityQueue<>((a, b) -> (b - a));
-            queMax = new PriorityQueue<>((a, b) -> (a - b));
+            queMax = new PriorityQueue<>();
         }
 
         public void addNum(int num) {
-            if (queMin.isEmpty() || num <= queMin.peek()) {
-                queMin.offer(num);
-                if (queMax.size() + 1 < queMin.size()) {
-                    queMax.offer(queMin.poll());
-                }
+            if (queMin.size() != queMax.size()) {
+                queMin.add(num);
+                queMax.add(queMin.poll());
             } else {
-                queMax.offer(num);
-                if (queMax.size() > queMin.size()) {
-                    queMin.offer(queMax.poll());
-                }
+                queMax.add(num);
+                queMin.add(queMax.poll());
             }
         }
 

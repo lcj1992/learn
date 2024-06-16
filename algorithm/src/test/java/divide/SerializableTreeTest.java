@@ -1,6 +1,8 @@
 package divide;
 
 import common.TreeNode;
+import common.Utils;
+import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.LinkedList;
@@ -15,38 +17,49 @@ import java.util.List;
  **/
 public class SerializableTreeTest {
 
-    public class Codec {
+
+    @Test
+    public void test() {
+        TreeNode treeNode = TreeNode.create(1, 2, 3, null, null, 4, 5);
+        Codec codec = new Codec();
+        String serialize = codec.serialize(treeNode);
+        System.out.println(serialize);
+        treeNode = codec.deserialize(serialize);
+        Utils.printTree(treeNode);
+    }
+
+    public static class Codec {
         public String serialize(TreeNode root) {
-            return rserialize(root, "");
+            return serialize(root, "");
         }
 
         public TreeNode deserialize(String data) {
             String[] dataArray = data.split(",");
-            List<String> dataList = new LinkedList<String>(Arrays.asList(dataArray));
-            return rdeserialize(dataList);
+            List<String> dataList = new LinkedList<>(Arrays.asList(dataArray));
+            return deserialize(dataList);
         }
 
-        public String rserialize(TreeNode root, String str) {
+        public String serialize(TreeNode root, String str) {
             if (root == null) {
                 str += "None,";
             } else {
                 str += root.val + ",";
-                str = rserialize(root.left, str);
-                str = rserialize(root.right, str);
+                str = serialize(root.left, str);
+                str = serialize(root.right, str);
             }
             return str;
         }
 
-        public TreeNode rdeserialize(List<String> dataList) {
+        public TreeNode deserialize(List<String> dataList) {
             if (dataList.get(0).equals("None")) {
                 dataList.remove(0);
                 return null;
             }
 
-            TreeNode root = new TreeNode(Integer.valueOf(dataList.get(0)));
+            TreeNode root = new TreeNode(Integer.parseInt(dataList.get(0)));
             dataList.remove(0);
-            root.left = rdeserialize(dataList);
-            root.right = rdeserialize(dataList);
+            root.left = deserialize(dataList);
+            root.right = deserialize(dataList);
 
             return root;
         }

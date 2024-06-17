@@ -16,37 +16,6 @@ import java.util.concurrent.locks.LockSupport;
  */
 public class LockSupportTest {
 
-    static class FIFOMutex {
-        private final AtomicBoolean locked = new AtomicBoolean(false);
-        private final Queue<Thread> waiters = new ConcurrentLinkedQueue<>();
-
-        private void lock() {
-            boolean wasInterrupted = false;
-            Thread current = Thread.currentThread();
-            waiters.add(current);
-
-            // Block while not first in queue or cannot acquire lock
-            while (waiters.peek() != current || !locked.compareAndSet(false, true)) {
-                long start = System.currentTimeMillis();
-                LockSupport.park(this);
-                System.out.println(Thread.currentThread().getName() + " LockSupport#park cost time : " + (System.currentTimeMillis() - start));
-                if (Thread.interrupted()) { // ignore interrupts while waiting
-                    System.out.println(Thread.currentThread().getName() + " LockSupport#park cost time : " + (System.currentTimeMillis() - start));
-                    wasInterrupted = true;
-                }
-            }
-
-            waiters.remove();
-            if (wasInterrupted)          // reassert interrupt status on exit
-                current.interrupt();
-        }
-
-        private void unlock() {
-            locked.set(false);
-            LockSupport.unpark(waiters.peek());
-        }
-    }
-
     @Test
     public void test() throws InterruptedException {
         FIFOMutex lock = new FIFOMutex();
@@ -81,6 +50,40 @@ public class LockSupportTest {
         thread2.start();
         Thread.sleep(100000);
     }
+
+    private static class FIFOMutex {
+        private final AtomicBoolean locked = new AtomicBoolean(false);
+        private final Queue<Thread> waiters = new ConcurrentLinkedQueue<>();
+
+        private void lock() {
+            boolean wasInterrupted = false;
+            Thread current = Thread.currentThread();
+            waiters.add(current);
+
+            // Block while not first in queue or cannot acquire lock
+            while (waiters.peek() != current || !locked.compareAndSet(false, true)) {
+                long start = System.currentTimeMillis();
+                LockSupport.park(this);
+                System.out.println(Thread.currentThread().getName() + " LockSupport#park cost time : " + (System.currentTimeMillis() - start));
+                if (Thread.interrupted()) { // ignore interrupts while waiting
+                    System.out.println(Thread.currentThread().getName() + " LockSupport#park cost time : " + (System.currentTimeMillis() - start));
+                    wasInterrupted = true;
+                }
+            }
+
+            waiters.remove();
+            if (wasInterrupted) {         // reassert interrupt status on exit
+                current.interrupt();
+            }
+        }
+
+        private void unlock() {
+            locked.set(false);
+            LockSupport.unpark(waiters.peek());
+        }
+    }
+
+
 }
 
 

@@ -29,8 +29,8 @@ public class PhaserTest {
         System.out.println("All done!");
     }
 
-    private class Worker extends Thread {
-        private Phaser phaser;
+    private static class Worker extends Thread {
+        private final Phaser phaser;
 
         Worker(String name, Phaser phaser) {
             super(name);

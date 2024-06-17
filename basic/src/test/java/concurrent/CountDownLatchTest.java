@@ -81,7 +81,7 @@ public class CountDownLatchTest {
     }
 
     private static class MyRunnable implements Runnable {
-        private CountDownLatch countDownLatch;
+        private final CountDownLatch countDownLatch;
 
         MyRunnable(CountDownLatch countDownLatch) {
             this.countDownLatch = countDownLatch;

@@ -1,4 +1,4 @@
-package concurrent.threadMessage.produer_consumer_model.definition;
+package concurrent.comm.produer_consumer_model;
 
 /**
  * Desc:
@@ -8,7 +8,7 @@ package concurrent.threadMessage.produer_consumer_model.definition;
  * Time: 下午11:16
  */
 public interface Model {
-    Runnable newProducer();
+    void produce() throws InterruptedException;
 
-    Runnable newConsumer();
+    void consume() throws InterruptedException;
 }

@@ -70,7 +70,7 @@ public class ThreadTest {
     }
 
 
-    private class MyRunnable implements Runnable {
+    private static class MyRunnable implements Runnable {
         @Override
         public void run() {
             System.out.println("Thread started: " + Thread.currentThread().getName());

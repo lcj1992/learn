@@ -1,6 +1,6 @@
 package concurrent;
 
-import concurrent.threadMessage.produer_consumer_model.utils.TimeConsumeSimulator;
+import utils.TimeConsumeSimulator;
 import org.junit.Test;
 
 import java.util.concurrent.Semaphore;

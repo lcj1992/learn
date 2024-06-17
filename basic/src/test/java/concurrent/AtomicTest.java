@@ -26,7 +26,7 @@ public class AtomicTest {
     public void atomicReferenceTest() {
         AtomicReference<Integer> atomicReference = new AtomicReference<>();
         atomicReference.set(10);
-        Assert.assertEquals(atomicReference.compareAndSet(10, 11), true);
+        Assert.assertTrue(atomicReference.compareAndSet(10, 11));
     }
 
     @Test
@@ -52,6 +52,6 @@ public class AtomicTest {
             callableList.add(() -> atomicInteger++);
         }
         executorService.invokeAll(callableList);
-        Assert.assertEquals(atomicInteger < FINAL_VALUE, true);
+        Assert.assertTrue(atomicInteger < FINAL_VALUE);
     }
 }

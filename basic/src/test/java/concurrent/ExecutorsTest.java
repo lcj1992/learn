@@ -40,6 +40,7 @@ public class ExecutorsTest {
 
         Callable<String> callable = new NormalCallable();
         Callable<String> exceptionCallable = new ExceptionCallable();
+        @SuppressWarnings("unchecked")
         List<Callable<String>> tasks = Lists.newArrayList(callable, exceptionCallable);
         ExecutorService executorService = Executors.newSingleThreadExecutor();
         long start = System.currentTimeMillis();
@@ -78,7 +79,7 @@ public class ExecutorsTest {
     }
 
     @Test
-    public void multiThreadTest() throws ExecutionException, InterruptedException {
+    public void multiThreadTest() throws InterruptedException {
         Callable<String> callable = new NormalCallable();
         Callable<String> callable1 = new NormalCallable();
         Callable<String> callable2 = new NormalCallable();
@@ -100,7 +101,7 @@ public class ExecutorsTest {
 
     }
 
-    private class NormalCallable implements Callable<String> {
+    private static class NormalCallable implements Callable<String> {
 
         @Override
         public String call() throws Exception {
@@ -109,7 +110,7 @@ public class ExecutorsTest {
         }
     }
 
-    private class ExceptionCallable implements Callable<String> {
+    private static class ExceptionCallable implements Callable<String> {
 
         @Override
         public String call() throws Exception {

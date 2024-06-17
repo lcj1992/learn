@@ -1,4 +1,4 @@
-package concurrent.threadMessage;
+package concurrent.comm;
 
 public class OddEvenTest {
 

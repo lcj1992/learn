@@ -27,7 +27,7 @@ public class UnSafeTest {
         System.out.println(p.getAge());
     }
 
-    private class Player {
+    private static class Player {
         private int age = 12;
 
         private Player() {

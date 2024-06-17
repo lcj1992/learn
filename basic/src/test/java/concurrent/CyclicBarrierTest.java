@@ -43,8 +43,8 @@ public class CyclicBarrierTest {
     }
 
 
-    private class CountDownLatchPlayer extends Thread {
-        private CountDownLatch countDownLatch;
+    private static class CountDownLatchPlayer extends Thread {
+        private final CountDownLatch countDownLatch;
 
         CountDownLatchPlayer(String name, CountDownLatch countDownLatch) {
             super(name);
@@ -62,8 +62,8 @@ public class CyclicBarrierTest {
         }
     }
 
-    private class Player extends Thread {
-        private CyclicBarrier cyclicBarrier;
+    private static class Player extends Thread {
+        private final CyclicBarrier cyclicBarrier;
 
         Player(String name, CyclicBarrier cyclicBarrier) {
             super(name);

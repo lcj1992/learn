@@ -50,7 +50,7 @@ public class LockTest {
             System.out.println(Thread.currentThread().getName() + " enter");
             // lock,如果拿不到锁,则阻塞当前线程
             lock.lock();
-            System.out.println(String.format("%s get lock,cost: %s", Thread.currentThread().getName(), (System.currentTimeMillis() - start)));
+            System.out.printf("%s get lock,cost: %s%n", Thread.currentThread().getName(), (System.currentTimeMillis() - start));
             try {
                 Thread.sleep(5000);
             } catch (InterruptedException e) {
@@ -78,7 +78,7 @@ public class LockTest {
                 long start = System.currentTimeMillis();
                 // 尝试拿锁,如果拿到,则返回true,如果拿不到返回false
                 if (lock.tryLock()) {
-                    System.out.println(String.format("%s get lock,cost: %s", Thread.currentThread().getName(), (System.currentTimeMillis() - start)));
+                    System.out.printf("%s get lock,cost: %s%n", Thread.currentThread().getName(), (System.currentTimeMillis() - start));
                     Thread.sleep(2000);
                     lock.unlock();
                 }
@@ -107,7 +107,7 @@ public class LockTest {
                 System.out.println(Thread.currentThread().getName() + " enter");
                 long start = System.currentTimeMillis();
                 if (lock.tryLock(2, TimeUnit.SECONDS)) {
-                    System.out.println(String.format("%s get lock,cost: %s", Thread.currentThread().getName(), (System.currentTimeMillis() - start)));
+                    System.out.printf("%s get lock,cost: %s%n", Thread.currentThread().getName(), (System.currentTimeMillis() - start));
                     Thread.sleep(1500);
                     lock.unlock();
                 }
@@ -136,11 +136,11 @@ public class LockTest {
             try {
                 System.out.println(Thread.currentThread().getName() + " enter");
                 lock.lockInterruptibly();
-                System.out.println(String.format("%s get lock,cost: %s", Thread.currentThread().getName(), (System.currentTimeMillis() - start)));
+                System.out.printf("%s get lock,cost: %s%n", Thread.currentThread().getName(), (System.currentTimeMillis() - start));
                 Thread.sleep(1100);
                 lock.unlock();
             } catch (InterruptedException e) {
-                System.out.println(String.format("%s is interrupted,cost: %s", Thread.currentThread().getName(), (System.currentTimeMillis() - start)));
+                System.out.printf("%s is interrupted,cost: %s%n", Thread.currentThread().getName(), (System.currentTimeMillis() - start));
 
             }
         };

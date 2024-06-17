@@ -1,4 +1,4 @@
-package concurrent.threadMessage.produer_consumer_model.utils;
+package utils;
 
 /**
  * Desc:

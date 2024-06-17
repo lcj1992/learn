@@ -1,4 +1,4 @@
-package concurrent.threadMessage;
+package concurrent.comm;
 
 import org.junit.Test;
 
@@ -40,9 +40,9 @@ public class ThreadStateTest {
             while (true) {
                 System.out.println(threadName + "I am wake up!");
                 try {
+                    //noinspection BusyWait
                     Thread.sleep(10);
-                } catch (Exception e) {
-
+                } catch (Exception ignored) {
                 }
                 synchronized (lock) {
                     try {
@@ -50,6 +50,7 @@ public class ThreadStateTest {
                             System.out.println(threadName + "enter lock block!");
                             System.out.println(threadName + "print counter: " + counter);
                             counter++;
+                            //noinspection BusyWait
                             Thread.sleep(100);
                             lock.notifyAll();
                             lock.wait();

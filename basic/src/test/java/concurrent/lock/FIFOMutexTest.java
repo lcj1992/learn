@@ -1,4 +1,4 @@
-package concurrent.threadMessage;
+package concurrent.lock;
 
 import org.junit.Test;
 
@@ -14,41 +14,30 @@ import java.util.concurrent.locks.LockSupport;
  * Date: 16/8/24
  * Time: 下午6:10
  */
-public class LockSupportTest {
+public class FIFOMutexTest {
 
     @Test
     public void test() throws InterruptedException {
         FIFOMutex lock = new FIFOMutex();
-        Thread thread1 = new Thread(() -> {
-            lock.lock();
-            String current = Thread.currentThread().getName();
-            try {
-                long start = System.currentTimeMillis();
-                Thread.sleep(5000);
-                System.out.println(current + " finished ,cost time: " + (System.currentTimeMillis() - start));
-            } catch (InterruptedException e) {
-                System.out.println(current + "interrupted");
-            } finally {
-                lock.unlock();
-            }
-        });
-
-        Thread thread2 = new Thread(() -> {
-            lock.lock();
-            String current = Thread.currentThread().getName();
-            try {
-                long start = System.currentTimeMillis();
-                Thread.sleep(2000);
-                System.out.println(current + " finished ,cost time: " + (System.currentTimeMillis() - start));
-            } catch (InterruptedException e) {
-                System.out.println(Thread.currentThread().getName() + "interrupted");
-            } finally {
-                lock.unlock();
-            }
-        });
-        thread1.start();
-        thread2.start();
+        Thread t1 = new Thread(() -> run(lock));
+        Thread t2 = new Thread(() -> run(lock));
+        t1.start();
+        t2.start();
         Thread.sleep(100000);
+    }
+
+    private void run(FIFOMutex lock) {
+        lock.lock();
+        String current = Thread.currentThread().getName();
+        try {
+            long start = System.currentTimeMillis();
+            Thread.sleep(5000);
+            System.out.println(current + " finished ,cost time: " + (System.currentTimeMillis() - start));
+        } catch (InterruptedException e) {
+            System.out.println(Thread.currentThread().getName() + "interrupted");
+        } finally {
+            lock.unlock();
+        }
     }
 
     private static class FIFOMutex {

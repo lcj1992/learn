@@ -26,7 +26,6 @@ public class WaitNotifyModel implements Model {
     @Override
     public void produce() throws InterruptedException {
         synchronized (obj) {
-            //
             while (queue.size() >= capacity) {
                 obj.wait();
             }
@@ -43,7 +42,7 @@ public class WaitNotifyModel implements Model {
                 obj.wait();
             }
             queue.remove(0);
-            System.out.println("produce task, current size: " + queue.size());
+            System.out.println("consume task, current size: " + queue.size());
             obj.notifyAll();
         }
     }

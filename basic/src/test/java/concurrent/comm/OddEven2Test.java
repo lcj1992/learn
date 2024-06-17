@@ -33,22 +33,21 @@ public class OddEven2Test {
 
     public static void main(String[] args) {
         OddEven2Test printer = new OddEven2Test();
-        Thread oddThread = new Thread(() -> {
+        Thread t1 = new Thread(() -> {
             try {
                 printer.printOdd();
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
         });
-        Thread evenThread = new Thread(() -> {
+        Thread t2 = new Thread(() -> {
             try {
                 printer.printEven();
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
         });
-
-        oddThread.start();
-        evenThread.start();
+        t1.start();
+        t2.start();
     }
 }

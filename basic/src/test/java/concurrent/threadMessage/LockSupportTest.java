@@ -16,7 +16,7 @@ import java.util.concurrent.locks.LockSupport;
  */
 public class LockSupportTest {
 
-    class FIFOMutex {
+    static class FIFOMutex {
         private final AtomicBoolean locked = new AtomicBoolean(false);
         private final Queue<Thread> waiters = new ConcurrentLinkedQueue<>();
 
@@ -26,8 +26,7 @@ public class LockSupportTest {
             waiters.add(current);
 
             // Block while not first in queue or cannot acquire lock
-            while (waiters.peek() != current ||
-                    !locked.compareAndSet(false, true)) {
+            while (waiters.peek() != current || !locked.compareAndSet(false, true)) {
                 long start = System.currentTimeMillis();
                 LockSupport.park(this);
                 System.out.println(Thread.currentThread().getName() + " LockSupport#park cost time : " + (System.currentTimeMillis() - start));

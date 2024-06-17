@@ -5,7 +5,6 @@ import concurrent.threadMessage.produer_consumer_model.definition.AbstractProduc
 import concurrent.threadMessage.produer_consumer_model.definition.Model;
 import concurrent.threadMessage.produer_consumer_model.definition.Task;
 import concurrent.threadMessage.produer_consumer_model.utils.IDGenerator;
-import concurrent.threadMessage.produer_consumer_model.utils.TimeConsumeSimulator;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -25,7 +24,7 @@ public class LockConditionModel implements Model {
     private final Condition notFull = lock.newCondition();
     private final Condition notEmpty = lock.newCondition();
     private final List<Task> queue = new LinkedList<>();
-    private int capacity;
+    private final int capacity;
 
     LockConditionModel(int capacity) {
         this.capacity = capacity;

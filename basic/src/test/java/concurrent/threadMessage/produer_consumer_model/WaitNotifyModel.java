@@ -20,7 +20,7 @@ public class WaitNotifyModel implements Model {
 
     private final Object obj = new Object();
     private final List<Task> queue = Lists.newLinkedList();
-    private int capacity;
+    private final int capacity;
 
     WaitNotifyModel(int capacity) {
         this.capacity = capacity;

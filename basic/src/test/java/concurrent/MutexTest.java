@@ -11,9 +11,9 @@ import java.util.concurrent.locks.AbstractQueuedSynchronizer;
  * Date: 16/8/25
  * Time: 上午11:27
  */
-public class Mutex {
+public class MutexTest {
 
-    private class Sync extends AbstractQueuedSynchronizer {
+    private static class Sync extends AbstractQueuedSynchronizer {
         private static final long serialVersionUID = 7133560559976795777L;
 
         @Override
@@ -41,7 +41,7 @@ public class Mutex {
 
     @Test
     public void test(){
-        Mutex mutex = new Mutex();
+        MutexTest mutex = new MutexTest();
         mutex.lock();
         mutex.unlock();
     }

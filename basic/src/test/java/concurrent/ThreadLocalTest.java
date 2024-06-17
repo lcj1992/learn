@@ -14,13 +14,13 @@ import java.util.concurrent.Executors;
  */
 public class ThreadLocalTest {
 
-    private static ThreadLocal<Long> tradeNo = new InheritableThreadLocal<>();
-    private static ExecutorService executorService = Executors.newSingleThreadExecutor();
+    private static final ThreadLocal<Long> TRADE_NO = new InheritableThreadLocal<>();
+    private static final ExecutorService EXECUTOR_SERVICE = Executors.newSingleThreadExecutor();
 
     @Test
     public void test() throws InterruptedException {
-        Long x = tradeNo.get();
-        executorService.submit(() -> System.out.println(x));
+        Long x = TRADE_NO.get();
+        EXECUTOR_SERVICE.submit(() -> System.out.println(x));
         Thread.sleep(1000);
     }
 }

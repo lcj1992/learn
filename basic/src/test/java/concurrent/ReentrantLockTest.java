@@ -28,8 +28,8 @@ public class ReentrantLockTest {
         Thread.sleep(10000);
     }
 
-    private class MyRunnable implements Runnable {
-        private ReentrantLock lock;
+    private static class MyRunnable implements Runnable {
+        private final ReentrantLock lock;
 
         MyRunnable(ReentrantLock lock) {
             this.lock = lock;

@@ -3,7 +3,7 @@ package concurrent;
 
 import org.junit.Test;
 
-import java.util.concurrent.*;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**

@@ -31,8 +31,8 @@ public class SemaphoreTest {
         Thread.sleep(20000);
     }
 
-    private class Person extends Thread {
-        private Semaphore semaphore;
+    private static class Person extends Thread {
+        private final Semaphore semaphore;
 
         Person(String name, Semaphore semaphore) {
             super(name);

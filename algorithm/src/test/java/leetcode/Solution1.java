@@ -1,9 +1,9 @@
-package concurrent.alibaba;
+package leetcode;
 
-import org.eclipse.jetty.util.ArrayQueue;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.LinkedList;
 import java.util.Queue;
 
 /**
@@ -23,7 +23,7 @@ public class Solution1 {
     }
 
     private int maxN(int[] array, int n) {
-        Queue<Integer> queue = new ArrayQueue<>(n);
+        Queue<Integer> queue = new LinkedList<>();
         int result = 0;
         int currentResult = 0;
         boolean initCurrentResult = false;
@@ -41,7 +41,7 @@ public class Solution1 {
             int headVal = queue.poll();
             queue.add(each);
             currentResult = (currentResult - headVal + each);
-            result = currentResult > result ? currentResult : result;
+            result = Math.max(currentResult, result);
         }
         return result;
     }

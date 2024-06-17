@@ -33,7 +33,7 @@ public class WaitNotifyTest {
         Thread.sleep(100000);
     }
 
-    private class Producer implements Runnable {
+    private static class Producer implements Runnable {
         private final List<Integer> taskQueue;
         private final int MAX_CAPACITY;
 
@@ -71,7 +71,7 @@ public class WaitNotifyTest {
         }
     }
 
-    private class Consumer implements Runnable {
+    private static class Consumer implements Runnable {
         private final List<Integer> taskQueue;
 
         Consumer(List<Integer> sharedQueue) {
@@ -85,6 +85,7 @@ public class WaitNotifyTest {
                     consume();
                 } catch (InterruptedException ex) {
                     ex.printStackTrace();
+                    return;
                 }
             }
         }

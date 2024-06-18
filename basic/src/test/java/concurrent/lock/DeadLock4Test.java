@@ -20,7 +20,7 @@ public class DeadLock4Test {
         t1.start();
         Thread t2 = new Thread(new AddRunnable(res2, res1));
         t2.start();
-        Thread.sleep(100);
+        Thread.sleep(1000);
         t1.interrupt();
         Thread.sleep(5000);
     }
@@ -36,12 +36,12 @@ public class DeadLock4Test {
 
         @SneakyThrows
         public void run() {
-            boolean lock1 = res1.lock.tryLock(1000, TimeUnit.MICROSECONDS);
+            boolean lock1 = res1.lock.tryLock(100, TimeUnit.MICROSECONDS);
             if (lock1) {
                 try {
                     //noinspection BusyWait
                     Thread.sleep(100);
-                    boolean lock2 = res2.lock.tryLock(1000, TimeUnit.MICROSECONDS);
+                    boolean lock2 = res2.lock.tryLock(100, TimeUnit.MICROSECONDS);
                     if (lock2) {
                         try {
                             System.out.println(res1.val + res2.val);

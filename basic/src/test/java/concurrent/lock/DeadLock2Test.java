@@ -37,9 +37,8 @@ public class DeadLock2Test {
                 if (lock1) {
                     try {
                         //noinspection BusyWait
-                        Thread.sleep(100);
+                        Thread.sleep(20);
                         boolean lock2 = res2.lock.tryLock();
-
                         if (lock2) {
                             try {
                                 System.out.println(res1.val + res2.val);
@@ -54,7 +53,7 @@ public class DeadLock2Test {
                 }
                 // 避免活锁，先不用管
                 //noinspection BusyWait
-                Thread.sleep(new Random().nextInt(10));
+                Thread.sleep(new Random().nextInt(100));
             }
         }
     }

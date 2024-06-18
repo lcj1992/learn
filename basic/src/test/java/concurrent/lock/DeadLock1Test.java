@@ -13,9 +13,16 @@ public class DeadLock1Test {
     public void test() throws InterruptedException {
         Resource res1 = new Resource(1);
         Resource res2 = new Resource(2);
-        new Thread(new AddRunnable(res1, res2)).start();
-        new Thread(new AddRunnable(res2, res1)).start();
+        // 线程1首先拿到res1的锁，然后sleep 100ms，再去拿res2的锁
+        Thread t1 = new Thread(new AddRunnable(res1, res2));
+        t1.start();
+        // 线程2首先拿到res2的锁，然后sleep 100ms，再去拿res1的锁
+        Thread t2 = new Thread(new AddRunnable(res2, res1));
+        t2.start();
         Thread.sleep(1000);
+        // synchronized不能响应中断,所以这一行实际上是没有效果的
+        t1.interrupt();
+        Thread.sleep(2000);
     }
 
     public static class AddRunnable implements Runnable {

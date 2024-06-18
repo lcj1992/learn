@@ -3,21 +3,25 @@ package concurrent.lock;
 import lombok.SneakyThrows;
 import org.junit.Test;
 
-import java.util.Random;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * Created by lcj on 15-6-8.
  */
-public class DeadLock2Test {
+public class DeadLock4Test {
 
     @Test
     public void test() throws InterruptedException {
         Resource res1 = new Resource(1);
         Resource res2 = new Resource(2);
-        new Thread(new AddRunnable(res1, res2)).start();
-        new Thread(new AddRunnable(res2, res1)).start();
+        Thread t1 = new Thread(new AddRunnable(res1, res2));
+        t1.start();
+        Thread t2 = new Thread(new AddRunnable(res2, res1));
+        t2.start();
+        Thread.sleep(100);
+        t1.interrupt();
         Thread.sleep(5000);
     }
 
@@ -32,29 +36,22 @@ public class DeadLock2Test {
 
         @SneakyThrows
         public void run() {
-            while (true) {
-                boolean lock1 = res1.lock.tryLock();
-                if (lock1) {
-                    try {
-                        //noinspection BusyWait
-                        Thread.sleep(100);
-                        boolean lock2 = res2.lock.tryLock();
-
-                        if (lock2) {
-                            try {
-                                System.out.println(res1.val + res2.val);
-                                break;
-                            } finally {
-                                res2.lock.unlock();
-                            }
+            boolean lock1 = res1.lock.tryLock(1000, TimeUnit.MICROSECONDS);
+            if (lock1) {
+                try {
+                    //noinspection BusyWait
+                    Thread.sleep(100);
+                    boolean lock2 = res2.lock.tryLock(1000, TimeUnit.MICROSECONDS);
+                    if (lock2) {
+                        try {
+                            System.out.println(res1.val + res2.val);
+                        } finally {
+                            res2.lock.unlock();
                         }
-                    } finally {
-                        res1.lock.unlock();
                     }
+                } finally {
+                    res1.lock.unlock();
                 }
-                // 避免活锁，先不用管
-                //noinspection BusyWait
-                Thread.sleep(new Random().nextInt(10));
             }
         }
     }

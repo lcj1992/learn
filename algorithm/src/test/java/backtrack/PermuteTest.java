@@ -2,9 +2,7 @@ package backtrack;
 
 import org.junit.Test;
 
-import java.util.ArrayDeque;
 import java.util.ArrayList;
-import java.util.Deque;
 import java.util.List;
 
 /**
@@ -26,12 +24,12 @@ public class PermuteTest {
 
     public List<List<Integer>> permute(int[] nums) {
         List<List<Integer>> res = new ArrayList<>();
-        Deque<Integer> list = new ArrayDeque<>();
+        List<Integer> list = new ArrayList<>();
         backtrack(list, nums, res);
         return res;
     }
 
-    public void backtrack(Deque<Integer> list, int[] nums, List<List<Integer>> res) {
+    public void backtrack(List<Integer> list, int[] nums, List<List<Integer>> res) {
         if (list.size() == nums.length) {
             res.add(new ArrayList<>(list));
             return;
@@ -40,9 +38,9 @@ public class PermuteTest {
             if (list.contains(num)) {
                 continue;
             }
-            list.addLast(num);
+            list.add(num);
             backtrack(list, nums, res);
-            list.removeLast();
+            list.remove(list.size() - 1);
         }
     }
 

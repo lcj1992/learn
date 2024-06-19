@@ -4,7 +4,7 @@ import common.Utils;
 import org.junit.Test;
 
 import java.util.ArrayList;
-import java.util.HashSet;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -21,41 +21,33 @@ public class PermuteUniqueTest {
         Utils.printList(res);
     }
 
+    /**
+     * <a href="https://www.bilibili.com/video/BV1R84y1i7Tm/">...</a>
+     *
+     */
     public List<List<Integer>> permuteUnique(int[] nums) {
-        List<List<Integer>> res = new ArrayList<>();
-        List<Integer> numList = new ArrayList<>();
-        for (int num : nums) {
-            numList.add(num);
-        }
-        backtrack(0, numList, res);
-        return res;
+        List<List<Integer>> ans = new ArrayList<>();
+        List<Integer> state = new ArrayList<>();
+        boolean[] visited = new boolean[nums.length];
+        Arrays.sort(nums);
+        backtrack(state, nums, 0, visited, ans);
+        return ans;
     }
 
-    void swap(List<Integer> nums, int a, int b) {
-        int tmp = nums.get(a);
-        nums.set(a, nums.get(b));
-        nums.set(b, tmp);
-    }
-
-    void backtrack(int x, List<Integer> nums, List<List<Integer>> res) {
-        if (x == nums.size() - 1) {
-            // 添加排列方案
-            res.add(new ArrayList<>(nums));
+    public void backtrack(List<Integer> state, int[] nums, int idx, boolean[] visited, List<List<Integer>> res) {
+        if (idx == nums.length) {
+            res.add(new ArrayList<>(state));
             return;
         }
-        HashSet<Integer> set = new HashSet<>();
-        for (int i = x; i < nums.size(); i++) {
-            // 重复，因此剪枝
-            if (set.contains(nums.get(i))) {
+        for (int i = 0; i < nums.length; ++i) {
+            if (visited[i] || (i > 0 && nums[i] == nums[i - 1] && !visited[i - 1])) {
                 continue;
             }
-            set.add(nums.get(i));
-            // 交换，将 nums[i] 固定在第 x 位
-            swap(nums, i, x);
-            // 开启固定第 x + 1 位元素
-            backtrack(x + 1, nums, res);
-            // 恢复交换
-            swap(nums, i, x);
+            state.add(nums[i]);
+            visited[i] = true;
+            backtrack(state, nums, idx + 1, visited, res);
+            visited[i] = false;
+            state.remove(idx);
         }
     }
 

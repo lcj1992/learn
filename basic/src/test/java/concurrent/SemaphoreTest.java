@@ -1,7 +1,7 @@
 package concurrent;
 
-import utils.TimeConsumeSimulator;
 import org.junit.Test;
+import utils.TimeConsumeSimulator;
 
 import java.util.concurrent.Semaphore;
 
@@ -22,26 +22,28 @@ public class SemaphoreTest {
     public void test() throws InterruptedException {
         Semaphore semaphore = new Semaphore(2);
         // 三个线程争两个信号量,必然有一个得等待
-        Person p1 = new Person("A", semaphore);
-        p1.start();
-        Person p2 = new Person("B", semaphore);
-        p2.start();
-        Person p3 = new Person("C", semaphore);
-        p3.start();
-        Thread.sleep(20000);
+        Worker w1 = new Worker("A", semaphore);
+        w1.start();
+        Worker w2 = new Worker("B", semaphore);
+        w2.start();
+        Worker w3 = new Worker("C", semaphore);
+        w3.start();
+
+        w1.join();
+        w2.join();
+        w3.join();
     }
 
-    private static class Person extends Thread {
+    private static class Worker extends Thread {
         private final Semaphore semaphore;
 
-        Person(String name, Semaphore semaphore) {
+        Worker(String name, Semaphore semaphore) {
             super(name);
             this.semaphore = semaphore;
         }
 
         @Override
         public void run() {
-
             try {
                 long start = System.currentTimeMillis();
                 semaphore.acquire();

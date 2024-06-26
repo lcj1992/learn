@@ -5,22 +5,22 @@ import java.util.Objects;
 /**
  * Created by lcj on 15-10-31.
  */
-public class DoubleCheckVersion {
+public class DoubleCheckSingleton {
 
-    private static volatile DoubleCheckVersion instance;
+    private static volatile DoubleCheckSingleton instance;
 
-    private DoubleCheckVersion() {
+    private DoubleCheckSingleton() {
     }
 
-    public static DoubleCheckVersion getInstance() {
+    public static DoubleCheckSingleton getInstance() {
         if (Objects.nonNull(instance)) {
             return instance;
         }
-        synchronized (DoubleCheckVersion.class) {
+        synchronized (DoubleCheckSingleton.class) {
             if (Objects.nonNull(instance)) {
                 return instance;
             }
-            instance = new DoubleCheckVersion();
+            instance = new DoubleCheckSingleton();
             return instance;
         }
     }

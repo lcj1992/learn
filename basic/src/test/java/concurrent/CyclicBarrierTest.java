@@ -19,14 +19,13 @@ public class CyclicBarrierTest {
     //  CyclicBarrier(int num,Runnable action):等待线程的数量以及所有 线程到达后的操作
     //  await()：到达临界点后暂停线程
     @Test
-    public void test() throws InterruptedException {
+    public void testCyclicBarrier() throws InterruptedException {
         CyclicBarrier cyclicBarrier = new CyclicBarrier(5, () -> System.out.println("KPL Game start"));
-        new Player("A", cyclicBarrier).start();
-        new Player("B", cyclicBarrier).start();
-        new Player("C", cyclicBarrier).start();
-        new Player("D", cyclicBarrier).start();
-        new Player("E", cyclicBarrier).start();
-        Thread.sleep(1000000);
+        new CyclicBarrierPlayer("A", cyclicBarrier).start();
+        new CyclicBarrierPlayer("B", cyclicBarrier).start();
+        new CyclicBarrierPlayer("C", cyclicBarrier).start();
+        new CyclicBarrierPlayer("D", cyclicBarrier).start();
+        new CyclicBarrierPlayer("E", cyclicBarrier).start();
     }
 
     @Test
@@ -39,7 +38,6 @@ public class CyclicBarrierTest {
         new CountDownLatchPlayer("E", countDownLatch).start();
         countDownLatch.await();
         System.out.println("KPL Game start");
-        Thread.sleep(1000000);
     }
 
 
@@ -62,10 +60,10 @@ public class CyclicBarrierTest {
         }
     }
 
-    private static class Player extends Thread {
+    private static class CyclicBarrierPlayer extends Thread {
         private final CyclicBarrier cyclicBarrier;
 
-        Player(String name, CyclicBarrier cyclicBarrier) {
+        CyclicBarrierPlayer(String name, CyclicBarrier cyclicBarrier) {
             super(name);
             this.cyclicBarrier = cyclicBarrier;
         }
@@ -75,7 +73,6 @@ public class CyclicBarrierTest {
             System.out.println(getName() + " is waiting other players...");
             try {
                 cyclicBarrier.await();
-                System.out.println(getName() + "start playing");
             } catch (InterruptedException | BrokenBarrierException e) {
                 e.printStackTrace();
             }

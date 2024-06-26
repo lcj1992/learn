@@ -47,7 +47,7 @@ public class CountDownLatchTest {
         runnableList.forEach(executorService::execute);
         // await()
         // 线程会被挂起，它会等待直到count值为0才继续执行,无返回值
-        // countDownLatch.await();
+
         // await(x,TimeUnits.xx):
         // 1.跟await()类似,不过是带超时时间的和返回值
         // 2.boolean返回值, 如果超时时间之内,countDownLatch将为0,返回true,否则返回false;
@@ -58,27 +58,6 @@ public class CountDownLatchTest {
         service.shutdown();
     }
 
-
-    @Test
-    public void test1() throws InterruptedException {
-        CountDownLatch countDownLatch = new CountDownLatch(1);
-        countDownLatch.countDown();
-        countDownLatch.countDown();
-        countDownLatch.countDown();
-        countDownLatch.await();
-        System.out.println(countDownLatch.getCount());
-        Thread.sleep(100);
-    }
-
-    @Test
-    public void test2() throws InterruptedException {
-        CountDownLatch countDownLatch = new CountDownLatch(1);
-        Runnable runnable1 = new MyRunnable(countDownLatch);
-        ExecutorService executorService = Executors.newFixedThreadPool(3);
-        executorService.submit(runnable1);
-        countDownLatch.await(100L, TimeUnit.MILLISECONDS);
-        System.out.println(countDownLatch.getCount());
-    }
 
     private static class MyRunnable implements Runnable {
         private final CountDownLatch countDownLatch;

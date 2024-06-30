@@ -26,6 +26,7 @@ public class BIOTest {
         // Socket 服务器端（简单的发送信息）
         startServer();
         readFromServer();
+        Thread.sleep(10000);
     }
 
     @SuppressWarnings("InfiniteLoopStatement")

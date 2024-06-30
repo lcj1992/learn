@@ -25,6 +25,7 @@ public class NIOServer {
         serverSocketChannel.register(selector, SelectionKey.OP_ACCEPT);
     }
 
+    @SuppressWarnings("InfiniteLoopStatement")
     void listen() throws IOException {
         while (true) {
             selector.select();

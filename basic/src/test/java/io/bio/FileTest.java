@@ -3,6 +3,8 @@ package io.bio;
 import org.junit.Test;
 
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 /**
  * Desc:
@@ -18,7 +20,7 @@ public class FileTest {
         InputStream in;
         try {
             System.out.println("以字节为单位读取文件内容，一次读一个字节：");
-            in = new FileInputStream(file);
+            in = Files.newInputStream(file.toPath());
             int tempByte;
             while ((tempByte = in.read()) != -1) {
                 System.out.write(tempByte);
@@ -32,7 +34,7 @@ public class FileTest {
             System.out.println("以字节为单位读取文件内容，一次读多个字节：");
             byte[] tempBytes = new byte[100];
             int byteRead;
-            in = new FileInputStream(filePath);
+            in = Files.newInputStream(Paths.get(filePath));
             showAvailableBytes(in);
             while ((byteRead = in.read(tempBytes)) != -1) {
                 System.out.write(tempBytes, 0, byteRead);
@@ -40,11 +42,9 @@ public class FileTest {
         } catch (Exception e1) {
             e1.printStackTrace();
         } finally {
-            if (in != null) {
-                try {
-                    in.close();
-                } catch (IOException e1) {
-                }
+            try {
+                in.close();
+            } catch (IOException ignored) {
             }
         }
     }
@@ -58,7 +58,7 @@ public class FileTest {
         try {
             System.out.println("以字符为单位读取文件内容，一次读一个字节：");
             // 一次读一个字符
-            reader = new InputStreamReader(new FileInputStream(file));
+            reader = new InputStreamReader(Files.newInputStream(file.toPath()));
             int tempChar;
             while ((tempChar = reader.read()) != -1) {
                 // 对于windows下，\r\n这两个字符在一起时，表示一个换行。
@@ -77,7 +77,7 @@ public class FileTest {
             // 一次读多个字符
             char[] tempChars = new char[30];
             int charRead = 0;
-            reader = new InputStreamReader(new FileInputStream(fileName));
+            reader = new InputStreamReader(Files.newInputStream(Paths.get(fileName)));
             // 读入多个字符到字符数组中，charRead为一次读取字符数
             while ((charRead = reader.read(tempChars)) != -1) {
                 // 同样屏蔽掉\r不显示
@@ -101,7 +101,7 @@ public class FileTest {
             if (reader != null) {
                 try {
                     reader.close();
-                } catch (IOException e1) {
+                } catch (IOException ignored) {
                 }
             }
         }
@@ -162,7 +162,7 @@ public class FileTest {
             if (randomFile != null) {
                 try {
                     randomFile.close();
-                } catch (IOException e1) {
+                } catch (IOException ignored) {
                 }
             }
         }

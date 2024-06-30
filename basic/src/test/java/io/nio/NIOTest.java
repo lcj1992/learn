@@ -17,11 +17,11 @@ public class NIOTest {
 
     private static final int SERVER_PORT = 7788;
 
-    private static final ExecutorService excutor = Executors.newSingleThreadExecutor();
+    private static final ExecutorService EXECUTOR = Executors.newSingleThreadExecutor();
 
     @Test
     public void testNIO() throws Exception {
-        excutor.submit(() -> {
+        EXECUTOR.submit(() -> {
             try {
                 startServer();
             } catch (IOException e) {

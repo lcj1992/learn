@@ -28,10 +28,10 @@ public class BIOTest {
         readFromServer();
     }
 
+    @SuppressWarnings("InfiniteLoopStatement")
     private void startServer() {
         Runnable runnable = () -> {
-            try {
-                ServerSocket serverSocket = new ServerSocket(PORT);
+            try (ServerSocket serverSocket = new ServerSocket(PORT)) {
                 while (true) {
                     Socket socket = serverSocket.accept();
                     try (PrintWriter printWriter = new PrintWriter(socket.getOutputStream())) {

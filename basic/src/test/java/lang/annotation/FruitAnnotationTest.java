@@ -1,4 +1,4 @@
-package annotation;
+package lang.annotation;
 
 import org.junit.Test;
 

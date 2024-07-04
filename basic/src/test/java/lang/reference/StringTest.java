@@ -1,4 +1,6 @@
-package reference;
+package lang.reference;
+
+import lombok.Data;
 
 /**
  * Desc:
@@ -7,6 +9,7 @@ package reference;
  * Date: 2017/5/12
  * Time: 下午7:38
  */
+@Data
 public class StringTest {
 
     private static void m1() {
@@ -38,14 +41,6 @@ public class StringTest {
     }
 
     private String name;
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 
     private static StringTest m5() {
         try {

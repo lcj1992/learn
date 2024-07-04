@@ -114,7 +114,7 @@ public class ExecutorsTest {
 
         @Override
         public String call() throws Exception {
-            throw new Exception("exception");
+            throw new Exception("lang/exception");
         }
     }
 }

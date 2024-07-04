@@ -58,7 +58,7 @@ public class ThreadStateTest {
                             break;
                         }
                     } catch (Exception e) {
-                        System.out.println("exception");
+                        System.out.println("lang/exception");
                         Thread.currentThread().interrupt();
                         return;
                     }

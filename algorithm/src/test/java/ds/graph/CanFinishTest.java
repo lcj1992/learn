@@ -1,4 +1,4 @@
-package leetcode;
+package ds.graph;
 
 import org.junit.Test;
 

@@ -2,6 +2,8 @@ package ds.list;
 
 
 import common.ListNode;
+import common.Utils;
+import org.junit.Test;
 
 import java.util.Objects;
 
@@ -9,9 +11,10 @@ import java.util.Objects;
  * @author lichuangjian
  * @date 2023/6/4
  */
-public class AddTwoNumbersSolution {
+public class AddTwoNumbersTest {
 
-    public static void main(String[] args) {
+    @Test
+    public void test() {
         ListNode l1OneNode = new ListNode(2);
         ListNode L1TwoNode = new ListNode(4);
         ListNode L1ThreeNode = new ListNode(3);
@@ -24,12 +27,8 @@ public class AddTwoNumbersSolution {
         l2OneNode.next = l2TwoNode;
         l2TwoNode.next = l2ThreeNode;
 
-        AddTwoNumbersSolution solution = new AddTwoNumbersSolution();
-        ListNode listNode = solution.addTwoNumbers(l1OneNode, l2OneNode);
-        while (Objects.nonNull(listNode)) {
-            System.out.println(listNode.val);
-            listNode = listNode.next;
-        }
+        ListNode listNode = addTwoNumbers(l1OneNode, l2OneNode);
+        Utils.printListNode(listNode);
     }
 
 

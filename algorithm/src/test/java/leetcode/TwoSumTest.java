@@ -1,5 +1,6 @@
 package leetcode;
 
+import common.Utils;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -18,19 +19,19 @@ public class TwoSumTest {
         int[] nums = new int[]{2, 7, 11, 15};
         int target = 9;
         TwoSumTest twoSum = new TwoSumTest();
-        int[] ints = twoSum.twoSum(nums, target);
-        Arrays.stream(ints).forEach(System.out::print);
+        int[] res = twoSum.twoSum(nums, target);
+        Utils.printArray(res);
     }
 
     public int[] twoSum(int[] nums, int target) {
-
-        int[] results = new int[2];
-        for (int i = 0; i < nums.length - 1; i++) {
-            for (int j = i + 1; j < nums.length; j++) {
+        int[] result = new int[2];
+        int length = nums.length;
+        for (int i = 0; i < length - 1; i++) {
+            for (int j = i + 1; j < length; j++) {
                 if (nums[i] + nums[j] == target) {
-                    results[0] = i;
-                    results[1] = j;
-                    return results;
+                    result[0] = i;
+                    result[1] = j;
+                    return result;
                 }
             }
         }

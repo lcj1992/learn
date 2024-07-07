@@ -17,10 +17,10 @@ public class GetIntersectionNodeTest {
 
     @Test
     public void test() {
-        ListNode oneNode = ListNode.createFromArray(4, 1, 8, 4, 5);
-        ListNode one2Node = ListNode.createFromArray(5, 6, 1);
-        ListNode intersectionNode = getIntersectionNode(oneNode, one2Node);
-        System.out.println(intersectionNode.val);
+        ListNode res = getIntersectionNode(ListNode.createFromArray(4, 1, 8, 4, 5), ListNode.createFromArray(5, 6, 1));
+        System.out.println(res.val);
+        res = getIntersectionNode2(ListNode.createFromArray(4, 1, 8, 4, 5), ListNode.createFromArray(5, 6, 1));
+        System.out.println(res.val)
     }
 
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {

@@ -2,10 +2,7 @@ package io.bio;
 
 import org.junit.Test;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
+import java.io.*;
 import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -26,36 +23,58 @@ public class BIOTest {
         // Socket 服务器端（简单的发送信息）
         startServer();
         readFromServer();
-        Thread.sleep(10000);
+        Thread.sleep(5000000);
     }
 
-    @SuppressWarnings("InfiniteLoopStatement")
+    @SuppressWarnings({"InfiniteLoopStatement"})
     private void startServer() {
         Runnable runnable = () -> {
+            // 指定了端口的构造函数，相当于执行了bind和listen
             try (ServerSocket serverSocket = new ServerSocket(PORT)) {
+                System.out.println("Server is listening on port " + PORT + "...");
                 while (true) {
                     Socket socket = serverSocket.accept();
-                    try (PrintWriter printWriter = new PrintWriter(socket.getOutputStream())) {
-                        printWriter.println("hello world, 呵呵");
-                        printWriter.flush();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
+                    System.out.println("New client connected: " + socket.getInetAddress());
+                    Thread t = new Thread(() -> {
+                        try {
+                            InputStream in = socket.getInputStream();
+                            OutputStream out = socket.getOutputStream();
+                            BufferedReader reader = new BufferedReader(new InputStreamReader(in));
+                            PrintWriter writer = new PrintWriter(out, true);
+                            String request;
+                            while ((request = reader.readLine()) != null) {
+                                System.out.println("Received from client: " + request);
+                                // Process the request here
+                                String response = request.toUpperCase();
+                                // Send the response back to the client
+                                writer.println(response);
+                            }
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    });
+                    t.start();
                 }
             } catch (IOException e) {
                 e.printStackTrace();
             }
         };
-        Thread sThread = new Thread(runnable);
-        sThread.start();
+        new Thread(runnable).start();
+
     }
 
     private void readFromServer() {
-        try (Socket cSocket = new Socket(InetAddress.getLocalHost(), PORT)) {
-            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(cSocket.getInputStream()));
-            bufferedReader.lines().forEach(s -> System.out.println("客户端接收到：" + s));
+        try (Socket socket = new Socket(InetAddress.getLocalHost(), PORT)) {
+            OutputStream out = socket.getOutputStream();
+            InputStream in = socket.getInputStream();
+            PrintWriter writer = new PrintWriter(out, true);
+            BufferedReader reader = new BufferedReader(new InputStreamReader(in));
+            String message = "Hello, Server!";
+            writer.println(message);
+            reader.lines().forEach(s -> System.out.println("客户端接收到：" + s));
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
 }

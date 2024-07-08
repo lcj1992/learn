@@ -1,4 +1,4 @@
-package util.concurrent;
+package util.concurrent.atomic;
 
 import com.google.common.collect.Lists;
 import org.junit.Assert;

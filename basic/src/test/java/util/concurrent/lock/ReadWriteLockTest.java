@@ -16,7 +16,6 @@ public class ReadWriteLockTest {
 
     @Test
     public void test() throws InterruptedException {
-
         ReadWriteLock rwl = new ReentrantReadWriteLock();
         Lock rl = rwl.readLock();
         Lock wl = rwl.writeLock();

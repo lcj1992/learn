@@ -1,4 +1,4 @@
-package util.concurrent;
+package util.concurrent.comm;
 
 import com.google.common.collect.Lists;
 import org.junit.Test;

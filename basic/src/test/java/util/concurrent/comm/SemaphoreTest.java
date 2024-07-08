@@ -1,7 +1,7 @@
-package util.concurrent;
+package util.concurrent.comm;
 
 import org.junit.Test;
-import utils.TimeConsumeSimulator;
+import utils.ProcessSimulator;
 
 import java.util.concurrent.Semaphore;
 
@@ -47,7 +47,7 @@ public class SemaphoreTest {
             try {
                 long start = System.currentTimeMillis();
                 semaphore.acquire();
-                TimeConsumeSimulator.simulateFixedTimeConsume(500);
+                ProcessSimulator.simulateFixedTimeConsume(500);
                 System.out.println(getName() + " is done! cost time: " + (System.currentTimeMillis() - start));
             } catch (InterruptedException e) {
                 e.printStackTrace();

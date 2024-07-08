@@ -1,4 +1,4 @@
-package util.concurrent;
+package util.concurrent.comm;
 
 import org.junit.Test;
 

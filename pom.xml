@@ -10,6 +10,7 @@
         <module>design_pattern</module>
         <module>algorithm</module>
         <module>spring</module>
+        <module>distribution</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -163,7 +164,7 @@
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>1.4.0</version>
                 <configuration>
-                    <mainClass>lcj.MainApp</mainClass>
+                    <mainClass>algo.MainApp</mainClass>
                     <includePluginDependencies>false</includePluginDependencies>
                 </configuration>
             </plugin>

@@ -32,25 +32,20 @@ public class LengthOfLongestSubStringTest {
      * 3. 出现重复字符时，其index可能在left指针之前也可能在left指针之后
      */
     public int lengthOfLongestSubstring(String s) {
-        if (s == null || s.isEmpty()) {
-            return 0;
-        }
-        int length = s.length();
-        int max = 0;
-        char[] chars = s.toCharArray();
+        int res = 0;
         // 记录最新字符的坐标
         Map<Character, Integer> exists = new HashMap<>();
         int left = 0;
-        for (int current = 0; current < length; current++) {
-            char character = chars[current];
-            if (exists.containsKey(character)) {
-                // 当前字符的最新坐标可能在left之前，也可能在left之后
-                left = Math.max(left, exists.get(character) + 1);
+        for (int right = 0; right < s.length(); right++) {
+            char c = s.charAt(right);
+            if (exists.containsKey(c)) {
+                // 当前字符的最新坐标可能在left之前，也可能在left之后，也可能相同
+                left = Math.max(left, exists.get(c) + 1);
             }
-            exists.put(character, current);
-            max = Math.max(max, current - left + 1);
+            exists.put(c, right);
+            res = Math.max(res, right - left + 1);
         }
-        return max;
+        return res;
     }
 
 }

@@ -32,7 +32,7 @@ public class PathSumTest {
         if (root == null) {
             return;
         }
-        path.add(root.val);
+        path.addLast(root.val);
         tar -= root.val;
         if (tar == 0 && root.left == null && root.right == null) {
             res.add(new LinkedList<>(path));

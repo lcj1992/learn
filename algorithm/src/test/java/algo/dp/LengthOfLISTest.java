@@ -12,7 +12,7 @@ public class LengthOfLISTest {
 
     public static void main(String[] args) {
         LengthOfLISTest solution = new LengthOfLISTest();
-        int[] nums = new int[]{5, 7, -24, 12, 13, 2, 3, 12, 5, 6, 35};
+        int[] nums = new int[]{1, 7, 10, 5, 7};
         int i = solution.lengthOfLIS(nums);
         System.out.println(i);
     }
@@ -26,7 +26,7 @@ public class LengthOfLISTest {
         }
         int[] dp = new int[nums.length];
         dp[0] = 1;
-        int result = 1;
+        int res = 1;
         for (int i = 1; i < nums.length; i++) {
             dp[i] = 1;
             for (int j = 0; j < i; j++) {
@@ -34,8 +34,8 @@ public class LengthOfLISTest {
                     dp[i] = Math.max(dp[i], dp[j] + 1);
                 }
             }
-            result = Math.max(result, dp[i]);
+            res = Math.max(res, dp[i]);
         }
-        return result;
+        return res;
     }
 }

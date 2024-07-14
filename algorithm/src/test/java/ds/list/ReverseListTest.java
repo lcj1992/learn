@@ -16,8 +16,9 @@ public class ReverseListTest {
     public void test() {
         ListNode listNode = reverseList(ListNode.createFromArray(1, 2, 3, 4, 5));
         ListNode.print(listNode);
-        System.out.println();
         listNode = reverseList2(ListNode.createFromArray(1, 2, 3, 4, 5));
+        ListNode.print(listNode);
+        listNode = reverseList3(ListNode.createFromArray(1, 2, 3, 4, 5));
         ListNode.print(listNode);
     }
 

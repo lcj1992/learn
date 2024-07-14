@@ -32,32 +32,35 @@ public class MinStackTest {
      */
     public static class MinStack {
 
-        Deque<Integer> xStack;
+        Deque<Integer> stack;
         Deque<Integer> minStack;
 
         public MinStack() {
-            xStack = new LinkedList<>();
+            stack = new LinkedList<>();
             minStack = new LinkedList<>();
-            minStack.push(Integer.MAX_VALUE);
         }
 
         public void push(int x) {
-            xStack.push(x);
-            Integer peek = minStack.peek();
-            minStack.push(Math.min(peek, x));
+            stack.push(x);
+            if (minStack.isEmpty()) {
+                minStack.addFirst(x);
+            } else {
+                Integer peek = minStack.getFirst();
+                minStack.push(Math.min(peek, x));
+            }
         }
 
         public void pop() {
-            xStack.pop();
+            stack.pop();
             minStack.pop();
         }
 
         public int top() {
-            return xStack.peek();
+            return stack.getFirst();
         }
 
         public int getMin() {
-            return minStack.peek();
+            return minStack.getFirst();
         }
     }
 }

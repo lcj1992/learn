@@ -20,12 +20,12 @@ public class CanPermutePalindromeTest {
     }
 
     public boolean canPermutePalindrome(String s) {
-        HashMap<Character, Integer> dic = new HashMap<>();
+        HashMap<Character, Integer> freqMap = new HashMap<>();
         for (int i = 0; i < s.length(); i++) {
-            dic.put(s.charAt(i), dic.getOrDefault(s.charAt(i), 0) + 1);
+            freqMap.put(s.charAt(i), freqMap.getOrDefault(s.charAt(i), 0) + 1);
         }
         int odd = 0;
-        for (int val : dic.values()) {
+        for (int val : freqMap.values()) {
             if (val % 2 == 1) {
                 if (++odd > 1) {
                     return false;

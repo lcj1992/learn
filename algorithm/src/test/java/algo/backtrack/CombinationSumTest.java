@@ -30,11 +30,11 @@ public class CombinationSumTest {
         int start = 0;
         // 结果列表（子集列表）
         List<List<Integer>> res = new ArrayList<>();
-        backtrack(state, target, candidates, start, res);
+        backtrack(state, candidates, start, target, res);
         return res;
     }
 
-    void backtrack(List<Integer> state, int target, int[] choices, int start, List<List<Integer>> res) {
+    void backtrack(List<Integer> state, int[] choices, int start, int target, List<List<Integer>> res) {
         // 子集和等于 target 时，记录解
         if (target == 0) {
             res.add(new ArrayList<>(state));
@@ -51,7 +51,7 @@ public class CombinationSumTest {
             // 尝试：做出选择，更新 target, start
             state.add(choices[i]);
             // 进行下一轮选择
-            backtrack(state, target - choices[i], choices, i, res);
+            backtrack(state, choices, i, target - choices[i], res);
             // 回退：撤销选择，恢复到之前的状态
             state.remove(state.size() - 1);
         }

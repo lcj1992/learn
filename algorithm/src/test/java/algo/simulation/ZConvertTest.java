@@ -27,13 +27,16 @@ public class ZConvertTest {
         for (int i = 0; i < numRows; i++) {
             rows.add(new StringBuilder());
         }
-        int i = 0, flag = -1;
+        // 行的坐标
+        int rowId = 0;
+        // 调整行的坐标遍历
+        int flag = -1;
         for (char c : s.toCharArray()) {
-            rows.get(i).append(c);
-            if (i == 0 || i == numRows - 1) {
+            rows.get(rowId).append(c);
+            if (rowId == 0 || rowId == numRows - 1) {
                 flag = -flag;
             }
-            i += flag;
+            rowId += flag;
         }
         StringBuilder res = new StringBuilder();
         for (StringBuilder row : rows) {

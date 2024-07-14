@@ -21,62 +21,26 @@ public class LevelOrderTest {
         System.out.println(lists);
     }
 
-    private List<List<Integer>> levelOrder(TreeNode root) {
-        if (Objects.isNull(root)) {
+    public List<List<Integer>> levelOrder(TreeNode root) {
+        if (root == null) {
             return new ArrayList<>();
         }
+        Deque<TreeNode> deque = new ArrayDeque<>();
+        deque.addFirst(root);
         List<List<Integer>> results = new ArrayList<>();
-        List<TreeNode> nodeList = new ArrayList<>();
-        nodeList.add(root);
-        levelOrder(nodeList, results);
-        return results;
-    }
-
-    private void levelOrder(List<TreeNode> nodeList, List<List<Integer>> results) {
-        if (nodeList == null || nodeList.isEmpty()) {
-            return;
-        }
-        List<Integer> result = new ArrayList<>();
-        List<TreeNode> newList = new ArrayList<>();
-        for (TreeNode binaryTreeNode : nodeList) {
-            result.add(binaryTreeNode.val);
-            if (binaryTreeNode.left != null) {
-                newList.add(binaryTreeNode.left);
-            }
-            if (binaryTreeNode.right != null) {
-                newList.add(binaryTreeNode.right);
-            }
-        }
-        results.add(result);
-        levelOrder(newList, results);
-    }
-
-    private List<List<Integer>> levelOrderStack(TreeNode root) {
-        List<List<Integer>> results = new ArrayList<>();
-        if (Objects.isNull(root)) {
-            return results;
-        }
-        Queue<List<TreeNode>> queue = new LinkedList<>();
-        List<TreeNode> list = new ArrayList<>();
-        list.add(root);
-        queue.add(list);
-        while (!queue.isEmpty()) {
-            List<TreeNode> pops = queue.poll();
-            List<TreeNode> newList = new ArrayList<>();
-            if (pops != null && !pops.isEmpty()) {
-                List<Integer> result = new ArrayList<>();
-                for (TreeNode pop : pops) {
-                    result.add(pop.val);
-                    if (Objects.nonNull(pop.left)) {
-                        newList.add(pop.left);
-                    }
-                    if (Objects.nonNull(pop.right)) {
-                        newList.add(pop.right);
-                    }
+        while (!deque.isEmpty()) {
+            List<Integer> res = new ArrayList<>();
+            for (int i = deque.size(); i > 0; i--) {
+                TreeNode node = deque.removeFirst();
+                res.add(node.val);
+                if (node.left != null) {
+                    deque.addLast(node.left);
                 }
-                results.add(result);
-                queue.add(newList);
+                if (node.right != null) {
+                    deque.addLast(node.right);
+                }
             }
+            results.add(res);
         }
         return results;
     }

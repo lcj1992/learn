@@ -3,6 +3,8 @@ package ds.tree.binary_tree;
 import common.TreeNode;
 import org.junit.Test;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
 import java.util.Objects;
 import java.util.Stack;
 
@@ -47,22 +49,22 @@ public class InvertTreeTest {
     }
 
     public TreeNode invertTreeStack(TreeNode root) {
-        if (Objects.isNull(root)) {
+        if(root == null){
             return null;
         }
-        Stack<TreeNode> stack = new Stack<>();
-        stack.push(root);
-        while (!stack.isEmpty()) {
-            TreeNode pop = stack.pop();
-            TreeNode left = pop.left;
-            TreeNode right = pop.right;
-            pop.left = right;
-            pop.right = left;
-            if (Objects.nonNull(left)) {
-                stack.push(left);
+        Deque<TreeNode> deque = new ArrayDeque<>();
+        deque.addFirst(root);
+        while(!deque.isEmpty()){
+            TreeNode node = deque.removeFirst();
+            TreeNode left= node.left;
+            TreeNode right = node.right;
+            node.left = right;
+            node.right = left;
+            if(right !=null){
+                deque.addFirst(right);
             }
-            if (Objects.nonNull(right)) {
-                stack.push(right);
+            if(left !=null){
+                deque.addFirst(left);
             }
         }
         return root;

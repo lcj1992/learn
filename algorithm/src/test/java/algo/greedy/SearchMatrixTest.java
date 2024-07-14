@@ -3,7 +3,7 @@ package algo.greedy;
 import org.junit.Test;
 
 /**
- * https://leetcode.cn/problems/search-a-2d-matrix-ii/
+ * <a href="https://leetcode.cn/problems/search-a-2d-matrix-ii/">...</a>
  * 搜索二维矩阵
  *
  * @author foolchid
@@ -18,13 +18,14 @@ public class SearchMatrixTest {
     }
 
     public boolean searchMatrix(int[][] matrix, int target) {
-        int i = matrix.length - 1;
-        int j = 0;
-        while (i >= 0 && j < matrix[0].length) {
-            if (matrix[i][j] > target) {
-                i--;
-            } else if (matrix[i][j] < target) {
-                j++;
+        int rowId = matrix.length - 1;
+        int colId = 0;
+        int col = matrix[0].length;
+        while (rowId >= 0 && colId < col) {
+            if (matrix[rowId][colId] > target) {
+                rowId--;
+            } else if (matrix[rowId][colId] < target) {
+                colId++;
             } else {
                 return true;
             }

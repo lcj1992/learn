@@ -13,45 +13,25 @@ public class FindMinTest {
 
     @Test
     public void test() {
-        int res = findMin2(new int[]{4, 5, 6, 7, 0, 1, 4});
-        System.out.println(res);
-    }
-
-    public int findMin2(int[] nums) {
-        int l = 0;
-        int r = nums.length - 1;
-        int res = -1;
-        while (l <= r) {
-            int mid = l + (r - l) / 2;
-            if (nums[mid] > nums[r]) {
-                l = mid + 1;
-                continue;
-            }
-            if (nums[mid] < nums[r]) {
-                r = mid - 1;
-            }
-            if (nums[mid] == nums[r]) {
-                r = mid - 1;
-                res = mid;
-            }
-        }
-        return nums[res];
+        int res = findMin(new int[]{4, 4, 4, 4, 4, 4, 5, 6, 7, 0, 1, 4});
     }
 
     public int findMin(int[] nums) {
-        int low = 0;
-        int high = nums.length - 1;
-        while (low < high) {
-            int mid = low + (high - low) / 2;
-            if (nums[mid] < nums[high]) {
-                high = mid;
-            } else if (nums[mid] > nums[high]) {
-                low = mid + 1;
+        int l = 0;
+        int r = nums.length - 1;
+        while (l <= r) {
+            int mid = l + (r - l) / 2;
+            if (nums[mid] < nums[r]) {
+                r = mid;
+                System.out.println("hehe");
+            } else if (nums[mid] > nums[r]) {
+                l = mid + 1;
+                System.out.println("haha");
             } else {
-                high -= 1;
+                r -= 1;
+                System.out.println("heihei");
             }
         }
-        return nums[low];
-
+        return nums[l];
     }
 }

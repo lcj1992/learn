@@ -21,7 +21,7 @@ public class LowestCommonAncestor2Test {
     }
 
     /**
-     * 这个是二叉搜索树，左子树都比节点值小，右子树逗比节点值大
+     * 这个是二叉搜索树，左子树都比节点值小，右子树都比节点值大
      */
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         TreeNode tmp = root;
@@ -39,6 +39,5 @@ public class LowestCommonAncestor2Test {
             // 大的在左子树，小的在右子树，则当前节点就是最近公共祖先
             return tmp;
         }
-
     }
 }

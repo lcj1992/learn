@@ -29,6 +29,8 @@ public class CopyRandomListTest {
         node5.random = node1;
         Node node = copyRandomList(node1);
         System.out.println(node.val);
+        node = copyRandomList2(node1);
+        System.out.println(node.val);
     }
 
     /**
@@ -36,7 +38,6 @@ public class CopyRandomListTest {
      * 1. 通过cachedNode建立原节点与新节点的映射关系
      * 2. 然后设置next和random，此时next和random可能还没建立
      * 3. 递归建立next和random的链表，直至cachedNode包含，则开始回溯
-     *
      */
     public Node copyRandomList(Node head) {
         Map<Node, Node> cachedNode = new HashMap<>();

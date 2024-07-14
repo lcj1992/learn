@@ -2,12 +2,12 @@ package ds.stack;
 
 import org.junit.Test;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 import java.util.Stack;
 
 /**
  * <a href="https://leetcode.cn/problems/valid-parentheses/">...</a>
+ *
  * @author lichuangjian
  * @date 2023/7/8
  */
@@ -28,20 +28,20 @@ public class IsValidTest {
         pairs.put('(', ')');
         pairs.put('[', ']');
         pairs.put('{', '}');
-        Stack<Character> stack = new Stack<>();
+        Deque<Character> deque = new ArrayDeque<>();
         for (int i = 0; i < s.length(); i++) {
             Character c = s.charAt(i);
-            if (stack.isEmpty()) {
-                stack.push(c);
+            if (deque.isEmpty()) {
+                deque.addFirst(c);
                 continue;
             }
-            Character peek = stack.peek();
+            Character peek = deque.getFirst();
             if (c.equals(pairs.get(peek))) {
-                stack.pop();
-                continue;
+                deque.removeFirst();
+            } else {
+                deque.addFirst(c);
             }
-            stack.push(c);
         }
-        return stack.isEmpty();
+        return deque.isEmpty();
     }
 }

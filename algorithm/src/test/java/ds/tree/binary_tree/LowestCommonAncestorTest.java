@@ -6,6 +6,7 @@ import org.junit.Test;
 /**
  * <a href="https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-tree/">...</a>
  * 二叉树的最近公共祖先
+ *
  * @author foolchid
  * @date 2024/5/29
  **/
@@ -25,6 +26,11 @@ public class LowestCommonAncestorTest {
         return search(root, p, q);
     }
 
+    /**
+     * 仅含p，返回p节点
+     * 仅含q，返回q节点
+     * 既含p，又含q，返回p、q的最近公共祖先
+     */
     public TreeNode search(TreeNode root, TreeNode p, TreeNode q) {
         if (root == null || root == p || root == q) {
             return root;
@@ -33,11 +39,11 @@ public class LowestCommonAncestorTest {
         TreeNode left = search(root.left, p, q);
         // 右子树是否包含p或者q
         TreeNode right = search(root.right, p, q);
-        // 左子树不包含q且不包含q且题目中说了一定存在，所以可以直接返回right
+        // 左子树不包含p且不包含q且题目中说了一定存在，所以可以直接返回right
         if (left == null) {
             return right;
         }
-        // 同理，右子树不包含q且不包含q且题目中说了一定存在，所以可以直接返回left
+        // 同理，右子树不包含p且不包含q且题目中说了一定存在，所以可以直接返回left
         if (right == null) {
             return left;
         }

@@ -31,6 +31,7 @@ public class ListNode {
             System.out.print(node.val + (node.val > 10 ? " " : "  "));
             node = node.next;
         }
+        System.out.println();
     }
 
     public static ListNode createFromArray(int... nums) {

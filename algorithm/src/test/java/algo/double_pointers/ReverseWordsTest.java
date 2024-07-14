@@ -14,6 +14,10 @@ public class ReverseWordsTest {
     public void test() {
         String res = reverseWords("the sky is blue");
         System.out.println(res);
+
+        StringBuilder sb = new StringBuilder();
+        StringBuilder hello = sb.append("hello", 0, 5);
+        System.out.println(hello);
     }
 
     /**
@@ -22,22 +26,22 @@ public class ReverseWordsTest {
     public String reverseWords(String s) {
         // 删除首尾空格
         s = s.trim();
-        int j = s.length() - 1;
-        int i = j;
+        int right = s.length() - 1;
+        int left = right;
         StringBuilder res = new StringBuilder();
-        while (i >= 0) {
-            // 搜索首个空格
-            while (i >= 0 && s.charAt(i) != ' ') {
-                i--;
+        while (left >= 0) {
+            // 找到首个空格, 即为单词的起始坐标-1
+            while (left >= 0 && s.charAt(left) != ' ') {
+                left--;
             }
             // 添加单词
-            res.append(s, i + 1, j + 1).append(" ");
-            // 跳过单词间空格
-            while (i >= 0 && s.charAt(i) == ' ') {
-                i--;
+            res.append(s, left + 1, right + 1).append(" ");
+            // 跳过单词间空格,找到首个非空格，即为下个单词的末尾坐标
+            while (left >= 0 && s.charAt(left) == ' ') {
+                left--;
             }
-            // j 指向下个单词的尾字符
-            j = i;
+            // right 指向下个单词的尾字符
+            right = left;
         }
         // 转化为字符串并返回
         return res.toString().trim();

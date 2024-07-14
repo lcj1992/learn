@@ -1,5 +1,6 @@
 package algo.double_pointers;
 
+import common.Utils;
 import org.junit.Test;
 
 import java.util.Deque;
@@ -20,9 +21,9 @@ public class MaxSlidingWindowTest {
     public void test() {
         int[] nums = new int[]{1, 3, -1, -3, 5, 3, 6, 7};
         int[] results = maxSlidingWindow(nums, 3);
-        for (int result : results) {
-            System.out.println(result);
-        }
+        Utils.printArray(results);
+        results = maxSlidingWindow2(nums, 3);
+        Utils.printArray(results);
     }
 
 
@@ -72,28 +73,35 @@ public class MaxSlidingWindowTest {
     }
 
     // 单调队列
-    public int[] maxSlidingWindow2(int[] nums, int k) {
-        int n = nums.length;
-        Deque<Integer> deque = new LinkedList<>();
-        for (int i = 0; i < k; ++i) {
-            while (!deque.isEmpty() && nums[i] >= nums[deque.peekLast()]) {
-                deque.pollLast();
-            }
-            deque.offerLast(i);
-        }
 
-        int[] ans = new int[n - k + 1];
-        ans[0] = nums[deque.peekFirst()];
-        for (int i = k; i < n; ++i) {
-            while (!deque.isEmpty() && nums[i] >= nums[deque.peekLast()]) {
-                deque.pollLast();
+    /**
+     * <a href="https://leetcode.cn/problems/sliding-window-maximum/solutions/2361228/239-hua-dong-chuang-kou-zui-da-zhi-dan-d-u6h0/?envType=study-plan-v2&envId=selected-coding-interview">...</a>
+     */
+    public int[] maxSlidingWindow2(int[] nums, int k) {
+        Deque<Integer> deque = new LinkedList<>();
+        int[] res = new int[nums.length - k + 1];
+        // 未形成窗口
+        for (int i = 0; i < k; i++) {
+            // 保证deque非递减
+            while (!deque.isEmpty() && deque.getLast() < nums[i]) {
+                deque.removeLast();
             }
-            deque.offerLast(i);
-            while (deque.peekFirst() <= i - k) {
-                deque.pollFirst();
-            }
-            ans[i - k + 1] = nums[deque.peekFirst()];
+            deque.addLast(nums[i]);
         }
-        return ans;
+        res[0] = deque.getFirst();
+        // 形成窗口后
+        for (int i = k; i < nums.length; i++) {
+            // 如果窗口最大值等于窗口第一个元素，则要在deque中移除，保证窗口大小
+            if (deque.getFirst() == nums[i - k]) {
+                deque.removeFirst();
+            }
+            // 保证deque非递减
+            while (!deque.isEmpty() && deque.getLast() < nums[i]) {
+                deque.removeLast();
+            }
+            deque.addLast(nums[i]);
+            res[i - k + 1] = deque.getFirst();
+        }
+        return res;
     }
 }

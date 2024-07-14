@@ -33,9 +33,22 @@ public class GetIntersectionNodeTest {
         node7.next = node8;
         node8.next = node3;
 
-        ListNode intersectionNode = getIntersectionNode2(node1, node6);
+        ListNode intersectionNode = getIntersectionNode(node1, node6);
         System.out.println(intersectionNode.val);
     }
+
+
+
+    public ListNode getIntersectionNodex(ListNode headA, ListNode headB) {
+        ListNode curA = headA;
+        ListNode curB = headB;
+        while(curA != curB){
+            curA = (curA.next!=null? curA.next: headB);
+            curB = (curB.next!=null? curB.next: headA);
+        }
+        return curA;
+    }
+
 
     /**
      * 双指针

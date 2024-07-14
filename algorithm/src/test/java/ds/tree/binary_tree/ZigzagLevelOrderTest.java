@@ -16,11 +16,11 @@ public class ZigzagLevelOrderTest {
 
     @Test
     public void test() {
-        List<List<Integer>> lists = zigzagLevelOrder2(TreeNode.create(3, 9, 20, null, null, 15, 7));
+        List<List<Integer>> lists = zigzagLevelOrder(TreeNode.create(3, 9, 20, null, null, 15, 7));
         System.out.println(lists);
     }
 
-    public List<List<Integer>> zigzagLevelOrder2(TreeNode root) {
+    public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
         if (root == null) {
             return new ArrayList<>();
         }

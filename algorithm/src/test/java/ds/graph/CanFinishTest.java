@@ -15,7 +15,6 @@ import java.util.Set;
  * @date 2024/5/29
  **/
 public class CanFinishTest {
-    Boolean valid = true;
 
     @Test
     public void test() {

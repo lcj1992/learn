@@ -26,7 +26,7 @@ public class DecodeStringTest {
      */
     public String decodeString(String s) {
         char[] carr = s.toCharArray();
-        // 两个栈，一个记录数字[]前的数字，一个记录[]中的字符
+        // 两个栈，一个记录数字[]前的数字，一个记录之前计算好的字符
         Deque<Integer> multiDeque = new ArrayDeque<>();
         Deque<String> strDeque = new ArrayDeque<>();
         int multi = 0;

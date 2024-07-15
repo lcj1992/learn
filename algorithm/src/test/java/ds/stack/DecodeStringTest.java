@@ -4,7 +4,6 @@ import org.junit.Test;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
-import java.util.LinkedList;
 
 /**
  * <a href="https://leetcode.cn/problems/decode-string/">...</a>
@@ -17,7 +16,7 @@ public class DecodeStringTest {
 
     @Test
     public void test() {
-        String res = decodeString2("a3[a2[c]]");
+        String res = decodeString("a3[3[a]]2[bc]");
         System.out.println(res);
     }
 
@@ -25,7 +24,7 @@ public class DecodeStringTest {
      * <a href="https://leetcode.cn/problems/decode-string/solutions/19447/decode-string-fu-zhu-zhan-fa-di-gui-fa-by-jyd/">...</a>
      * 思路：本题难点在于括号内嵌套括号，需要从内向外生成与拼接字符串
      */
-    public String decodeString2(String s) {
+    public String decodeString(String s) {
         char[] carr = s.toCharArray();
         // 两个栈，一个记录数字[]前的数字，一个记录[]中的字符
         Deque<Integer> multiDeque = new ArrayDeque<>();

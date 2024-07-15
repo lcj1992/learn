@@ -16,28 +16,30 @@ public class TreeToDoublyListTest {
     TreeNode last = null;
 
     public void helper(TreeNode node) {
-        if (node != null) {
-            // 左子树
-            helper(node.left);
-            if (last != null) {
-                // 链接前一个节点(最后一个)
-                // 使用当前节点
-                last.right = node;
-                node.left = last;
-            } else {
-                // 保留最小的节点
-                // 稍后关闭 DLL
-                first = node;
-            }
-            last = node;
-            // 右子树
-            helper(node.right);
+        if (node == null) {
+            return;
         }
+        // 左子树
+        helper(node.left);
+        if (last != null) {
+            // 链接前一个节点(最后一个)
+            // 使用当前节点
+            last.right = node;
+            node.left = last;
+        } else {
+            // 保留最小的节点
+            // 稍后关闭 DLL
+            first = node;
+        }
+        last = node;
+        // 右子树
+        helper(node.right);
     }
 
     public TreeNode treeToDoublyList(TreeNode root) {
-        if (root == null) return null;
-
+        if (root == null) {
+            return null;
+        }
         helper(root);
         // 关闭 DLL
         last.right = first;

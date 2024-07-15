@@ -1,15 +1,18 @@
 package algo.divide;
 
+import org.junit.Test;
+
 /**
  * https://leetcode.cn/problems/powx-n/
  *
  * @author lichuangjian
  * @date 2023/6/12
  */
-public class MyPowSolution {
+public class MyPowTest {
 
-    public static void main(String[] args) {
-        MyPowSolution solution = new MyPowSolution();
+    @Test
+    public void test() {
+        MyPowTest solution = new MyPowTest();
         double v = solution.myPow(2.00000, 11);
         System.out.println(v);
     }

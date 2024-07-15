@@ -24,26 +24,22 @@ public class LengthOfLongestSubstringKDistinctTest {
     }
 
     public int lengthOfLongestSubstringKDistinct(String s, int k) {
-        if (s == null || s.isEmpty()) {
-            return 0;
-        }
-        char[] arr = s.toCharArray();
         int left = 0;
         LinkedHashMap<Character, Integer> exists = new LinkedHashMap<>();
-        int max = 0;
-        for (int current = 0; current < arr.length; current++) {
-            Character c = arr[current];
+        int res = 0;
+        for (int right = 0; right < s.length(); right++) {
+            char c = s.charAt(right);
             exists.remove(c);
-            exists.put(c, current);
+            exists.put(c, right);
             if (exists.size() > k) {
                 // 调整left指针位置
                 Map.Entry<Character, Integer> leftmost = exists.entrySet().iterator().next();
-                exists.remove(leftmost.getKey());
                 left = leftmost.getValue() + 1;
+                exists.remove(leftmost.getKey());
             }
-            max = Math.max(max, current - left + 1);
+            res = Math.max(res, right - left + 1);
         }
-        return max;
+        return res;
     }
 
 }

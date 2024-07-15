@@ -1,4 +1,4 @@
-package leetcode;
+package algo.prefix;
 
 import common.ListNode;
 import org.junit.Test;

@@ -1,9 +1,8 @@
 package ds.list;
 
-import com.google.common.collect.Lists;
 import common.ListNode;
-
-import java.util.*;
+import common.Utils;
+import org.junit.Test;
 
 /**
  * <a href="https://leetcode.cn/problems/merge-k-sorted-lists/">...</a>
@@ -14,62 +13,48 @@ import java.util.*;
  * @date 2023/7/1
  */
 public class MergeKListsTest {
-    public static void main(String[] args) {
-        MergeKListsTest solution = new MergeKListsTest();
-        ListNode list1 = new ListNode(1, new ListNode(4, new ListNode(5)));
-        ListNode list2 = new ListNode(1, new ListNode(3, new ListNode(4)));
-        ListNode list3 = new ListNode(2, new ListNode(6));
-        ListNode[] listNodes1 = new ListNode[]{list1, list2, list3};
-        ListNode listNode = solution.mergeKLists(listNodes1);
-        List<Integer> results = Lists.newArrayList();
-        while (Objects.nonNull(listNode)) {
-            results.add(listNode.val);
-            listNode = listNode.next;
-        }
-        System.out.println(results);
+
+    @Test
+    public void test() {
+        ListNode list1 = ListNode.createFromArray(1, 4, 5);
+        ListNode list2 = ListNode.createFromArray(1, 3, 4);
+        ListNode list3 = ListNode.createFromArray(2, 6);
+        ListNode[] param = new ListNode[]{list1, list2, list3};
+        ListNode listNode = mergeKLists(param);
+        Utils.printListNode(listNode);
     }
 
     public ListNode mergeKLists(ListNode[] lists) {
-        if (Objects.isNull(lists) || lists.length == 0) {
+        if (lists == null || lists.length == 0) {
             return null;
         }
-        ListNode head = null;
-        ListNode temp = null;
-        Map<Integer, ListNode> cursorMap = new HashMap<>();
-        for (int i = 0; i < lists.length; i++) {
-            if (Objects.nonNull(lists[i])) {
-                cursorMap.put(i, lists[i]);
-            }
+        if (lists.length == 1) {
+            return lists[0];
         }
-        while (!cursorMap.isEmpty()) {
-            ListNode minNode = null;
-            int minKey = 0;
-            Iterator<Map.Entry<Integer, ListNode>> iterator = cursorMap.entrySet().iterator();
-            while (iterator.hasNext()) {
-                Map.Entry<Integer, ListNode> next = iterator.next();
-                ListNode listNode = next.getValue();
-                if (Objects.isNull(listNode)) {
-                    iterator.remove();
-                    continue;
-                }
-                if (Objects.isNull(minNode) || minNode.val > listNode.val) {
-                    minNode = listNode;
-                    minKey = next.getKey();
-                }
-            }
-            if (Objects.nonNull(minNode)) {
-                cursorMap.put(minKey, minNode.next);
-            }
-            if (Objects.isNull(head) && Objects.nonNull(minNode)) {
-                temp = head = new ListNode(minNode.val);
+        ListNode res = mergeTwoLists(lists[0], lists[1]);
+        for (int i = 2; i < lists.length; i++) {
+            res = mergeTwoLists(res, lists[i]);
+        }
+        return res;
+    }
+
+    public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+        ListNode dummy = new ListNode(0);
+        ListNode cur = dummy;
+        while (l1 != null && l2 != null) {
+            int lv1 = l1.val;
+            int lv2 = l2.val;
+            if (lv1 < lv2) {
+                cur.next = l1;
+                l1 = l1.next;
             } else {
-                if (Objects.nonNull(temp)) {
-                    temp.next = minNode;
-                    temp = temp.next;
-                }
+                cur.next = l2;
+                l2 = l2.next;
             }
+            cur = cur.next;
         }
-        return head;
+        cur.next = l1 == null ? l2 : l1;
+        return dummy.next;
     }
 
 }

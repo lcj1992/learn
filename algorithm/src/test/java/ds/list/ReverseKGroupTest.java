@@ -1,6 +1,7 @@
 package ds.list;
 
 import common.ListNode;
+import common.Utils;
 import org.junit.Test;
 
 /**
@@ -14,12 +15,43 @@ public class ReverseKGroupTest {
 
     @Test
     public void testReverseKGroup() {
-        ListNode listNode = ListNode.createFromArray(new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10});
+        ListNode listNode = ListNode.createFromArray(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
         ListNode listNode1 = reverseKGroup(listNode, 3);
         ListNode.print(listNode1);
+        listNode = ListNode.createFromArray(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+        listNode1 = reverseKGroup2(listNode, 3);
+        Utils.printListNode(listNode1);
     }
 
     public ListNode reverseKGroup(ListNode head, int k) {
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+        ListNode pre = dummy;
+        ListNode cur = pre.next;
+        while (cur != null) {
+            // 最后一组处理如果剩余节点不足k个
+            int tmpK = k;
+            ListNode kGroup = cur;
+            while (kGroup != null) {
+                kGroup = kGroup.next;
+                tmpK--;
+            }
+            if (tmpK > 0) {
+                break;
+            }
+            for (int i = 0; i < k - 1 && cur.next != null; i++) {
+                ListNode next = cur.next;
+                cur.next = next.next;
+                next.next = pre.next;
+                pre.next = next;
+            }
+            pre = cur;
+            cur = cur.next;
+        }
+        return dummy.next;
+    }
+
+    public ListNode reverseKGroup2(ListNode head, int k) {
         if (head == null || k == 1) {
             return head;
         }

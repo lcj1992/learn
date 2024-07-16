@@ -4,9 +4,8 @@ import common.TreeNode;
 import common.Utils;
 import org.junit.Test;
 
-import java.util.Arrays;
+import java.util.Deque;
 import java.util.LinkedList;
-import java.util.List;
 
 /**
  * <a href="https://leetcode.cn/problems/serialize-and-deserialize-binary-tree/">...</a>
@@ -29,38 +28,54 @@ public class SerializableTreeTest {
     }
 
     public static class Codec {
+
+        // Encodes a tree to a single string.
         public String serialize(TreeNode root) {
-            return serialize(root, "");
-        }
-
-        public TreeNode deserialize(String data) {
-            String[] dataArray = data.split(",");
-            List<String> dataList = new LinkedList<>(Arrays.asList(dataArray));
-            return deserialize(dataList);
-        }
-
-        public String serialize(TreeNode root, String str) {
             if (root == null) {
-                str += "None,";
-            } else {
-                str += root.val + ",";
-                str = serialize(root.left, str);
-                str = serialize(root.right, str);
+                return "[]";
             }
-            return str;
+            Deque<TreeNode> deque = new LinkedList<>();
+            deque.add(root);
+            StringBuilder res = new StringBuilder("[");
+            while (!deque.isEmpty()) {
+                TreeNode node = deque.removeFirst();
+                if (node != null) {
+                    res.append(node.val).append(",");
+                    deque.addLast(node.left);
+                    deque.addLast(node.right);
+                } else {
+                    res.append("null,");
+                }
+            }
+            res.deleteCharAt(res.length() - 1);
+            res.append("]");
+            return res.toString();
+
         }
 
-        public TreeNode deserialize(List<String> dataList) {
-            if (dataList.get(0).equals("None")) {
-                dataList.remove(0);
+        // Decodes your encoded data to tree.
+        public TreeNode deserialize(String data) {
+            if ("[]".equals(data)) {
                 return null;
             }
-
-            TreeNode root = new TreeNode(Integer.parseInt(dataList.get(0)));
-            dataList.remove(0);
-            root.left = deserialize(dataList);
-            root.right = deserialize(dataList);
-
+            String[] valArr = data.substring(1, data.length() - 1).split(",");
+            Deque<TreeNode> deque = new LinkedList<>();
+            TreeNode root = new TreeNode(Integer.parseInt(valArr[0]));
+            deque.add(root);
+            int i = 1;
+            while (!deque.isEmpty()) {
+                TreeNode node = deque.removeFirst();
+                if (!valArr[i].equals("null")) {
+                    node.left = new TreeNode(Integer.parseInt(valArr[i]));
+                    deque.addLast(node.left);
+                }
+                i++;
+                if (!valArr[i].equals("null")) {
+                    node.right = new TreeNode(Integer.parseInt(valArr[i]));
+                    deque.addLast(node.right);
+                }
+                i++;
+            }
             return root;
         }
     }

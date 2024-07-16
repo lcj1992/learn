@@ -1,6 +1,5 @@
 package algo.dp;
 
-import org.junit.Assert;
 import org.junit.Test;
 
 /**
@@ -17,40 +16,39 @@ public class IsMatchTest {
         System.out.println(res);
     }
 
-
     public boolean isMatch(String s, String p) {
-        int m = s.length();
-        int n = p.length();
-        boolean[][] dp = new boolean[m + 1][n + 1];
+        int sl = s.length();
+        int pl = p.length();
+        boolean[][] dp = new boolean[sl + 1][pl + 1];
         dp[0][0] = true;
-        for (int i = 0; i <= m; i++) {
-            for (int j = 1; j <= n; j++) {
-                char c = p.charAt(j - 1);
-                if (c == '*') {
-                    // p[j-1]字符匹配0次，注意这里的*和grep的*不一样
+        for (int j = 1; j <= pl; j++) {
+            if (p.charAt(j - 1) == '*') {
+                dp[0][j] = dp[0][j - 2];
+            }
+        }
+        for (int i = 1; i <= s.length(); i++) {
+            for (int j = 1; j <= p.length(); j++) {
+                char sc = s.charAt(i - 1);
+                char pc = p.charAt(j - 1);
+                if (pc == '*') {
+                    // 这里的*和grep的*不同
+                    char prePc = p.charAt(j - 2);
                     dp[i][j] = dp[i][j - 2];
-                    // p[j-1]字符匹配一次或多次
-                    if (match(s, p, i, j - 1)) {
+                    if (match(sc, prePc)) {
                         dp[i][j] = dp[i][j] || dp[i - 1][j];
                     }
                 } else {
-                    // 当前字符匹配上
-                    if (match(s, p, i, j)) {
+                    if (match(sc, pc)) {
                         dp[i][j] = dp[i - 1][j - 1];
                     }
                 }
             }
         }
-        return dp[m][n];
+        return dp[sl][pl];
     }
 
-    public boolean match(String s, String p, int i, int j) {
-        if (i == 0) {
-            return false;
-        }
-        if (p.charAt(j - 1) == '.') {
-            return true;
-        }
-        return s.charAt(i - 1) == p.charAt(j - 1);
+    private boolean match(char sc, char pc) {
+        return pc == '.' || sc == pc;
     }
+
 }

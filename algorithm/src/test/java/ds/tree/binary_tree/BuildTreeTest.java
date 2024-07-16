@@ -38,28 +38,28 @@ public class BuildTreeTest {
     /**
      * @param preorder   前序遍历数组
      * @param inorderMap 中序遍历数组map，key为节点，value为节点在中序遍历数组的下标
-     * @param root       根节点在前序遍历的数组下标
-     * @param left       中序遍历数组的起始下标索引
-     * @param right      中序遍历数组的截止下标索引
+     * @param preRootId  根节点在前序遍历的数组下标
+     * @param inLeftId   中序遍历数组的起始下标索引
+     * @param inRightId  中序遍历数组的截止下标索引
      */
-    private TreeNode buildTree(int[] preorder, Map<Integer, Integer> inorderMap, int root, int left, int right) {
-        if (left > right) {
+    private TreeNode buildTree(int[] preorder, Map<Integer, Integer> inorderMap, int preRootId, int inLeftId, int inRightId) {
+        if (inLeftId > inRightId) {
             return null;
         }
         // 前序遍历的顺序：根左右
-        TreeNode tree = new TreeNode(preorder[root]);
+        TreeNode tree = new TreeNode(preorder[preRootId]);
         // 找到根节点在中序遍历数组的下标
         // 划分根节点、左子树、右子树，该下标左侧即为左子树，右侧即为右子树
-        int i = inorderMap.get(preorder[root]);
+        int inRootId = inorderMap.get(preorder[preRootId]);
         // 递归构建左子树
         // 左子树的根节点在前序遍历
         // 左子树根节点在前序遍历数组中的下标=根节点的下标+1
         // 左子树的对应中序遍历数组的最右侧下标为根节点在中序遍历数组的下标-1
-        tree.left = buildTree(preorder, inorderMap, root + 1, left, i - 1);
+        tree.left = buildTree(preorder, inorderMap, preRootId + 1, inLeftId, inRootId - 1);
         // 递归构建右子树
         // 右子树根节点在前序遍历数组中的下标=根节点数组下标+左子树长度+1，左子树长度=i - left
         // 右子树的对应中序遍历数组的最左侧下标为根节点在中序遍历数组的下标+1
-        tree.right = buildTree(preorder, inorderMap, root + i - left + 1, i + 1, right);
+        tree.right = buildTree(preorder, inorderMap, preRootId + (inRootId - inLeftId) + 1, inRootId + 1, inRightId);
         return tree;
     }
 

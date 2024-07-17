@@ -15,8 +15,11 @@ public class IsPowerOfTwoTest {
     @Test
     public void test() {
         Assert.assertTrue(isPowerOfTwo(64));
+        Assert.assertTrue(isPowerOfTwo2(64));
         Assert.assertTrue(isPowerOfTwo(128));
+        Assert.assertTrue(isPowerOfTwo2(128));
         Assert.assertFalse(isPowerOfTwo(127));
+        Assert.assertFalse(isPowerOfTwo2(127));
     }
 
     private boolean isPowerOfTwo(int n) {

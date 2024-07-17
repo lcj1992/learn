@@ -28,12 +28,9 @@ public class MergeKListsTest {
         if (lists == null || lists.length == 0) {
             return null;
         }
-        if (lists.length == 1) {
-            return lists[0];
-        }
-        ListNode res = mergeTwoLists(lists[0], lists[1]);
-        for (int i = 2; i < lists.length; i++) {
-            res = mergeTwoLists(res, lists[i]);
+        ListNode res = null;
+        for (ListNode list : lists) {
+            res = mergeTwoLists(res, list);
         }
         return res;
     }

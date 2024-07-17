@@ -14,8 +14,6 @@ public class RotateTest {
 
     @Test
     public void test() {
-        String test = "   11   ";
-        System.out.println(test.trim());
         int[][] mat = new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
         rotate(mat);
         for (int[] ints : mat) {

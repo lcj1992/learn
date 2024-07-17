@@ -16,7 +16,7 @@ public class KthSmallestTest {
 
     @Test
     public void test() {
-        TreeNode treeNode = TreeNode.create(new Integer[]{5, 3, 6, 2, 4, null, null, 1});
+        TreeNode treeNode = TreeNode.create(5, 3, 6, 2, 4, null, null, 1);
         int res = kthSmallest(treeNode, 3);
         System.out.println(res);
     }
@@ -26,13 +26,13 @@ public class KthSmallestTest {
      * 每pop一个节点，k-1，当k==0时，即为第k小的节点
      */
     public int kthSmallest(TreeNode root, int k) {
-        Deque<TreeNode> stack = new ArrayDeque<TreeNode>();
+        Deque<TreeNode> stack = new ArrayDeque<>();
         while (root != null || !stack.isEmpty()) {
             while (root != null) {
-                stack.push(root);
+                stack.addFirst(root);
                 root = root.left;
             }
-            root = stack.pop();
+            root = stack.getFirst();
             --k;
             if (k == 0) {
                 break;

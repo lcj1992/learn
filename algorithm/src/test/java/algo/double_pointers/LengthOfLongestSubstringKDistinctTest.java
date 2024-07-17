@@ -24,6 +24,11 @@ public class LengthOfLongestSubstringKDistinctTest {
     }
 
     public int lengthOfLongestSubstringKDistinct(String s, int k) {
+        // left 记录最左侧指针
+        // right 记录最右侧指针
+        // linked map记录字符和最新的坐标
+        // 当map的size超过k时，删除第一个key的坐标，并更新left指针
+        // 每次都更新res
         int left = 0;
         LinkedHashMap<Character, Integer> exists = new LinkedHashMap<>();
         int res = 0;

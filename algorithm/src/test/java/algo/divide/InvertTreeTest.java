@@ -1,35 +1,18 @@
 package algo.divide;
 
+import common.TreeNode;
 import org.junit.Test;
 
 import java.util.Objects;
 
 /**
- * https://leetcode.cn/problems/invert-binary-tree/
+ * <a href="https://leetcode.cn/problems/invert-binary-tree/">...</a>
  * ------------------------------------
  * Author:lichuangjian@meituan.com
  * Date: 2019/5/11
  * Time: 下午2:04
  */
 public class InvertTreeTest {
-
-    private TreeNode invertTree(TreeNode root) {
-        if (Objects.isNull(root)) {
-            return null;
-        }
-        if (Objects.isNull(root.left) && Objects.isNull(root.right)) {
-            return root;
-        }
-        TreeNode left = root.left;
-        TreeNode right = root.right;
-        root.left = right;
-        invertTree(left);
-
-        root.right = left;
-        invertTree(right);
-        return root;
-    }
-
     @Test
     public void test() {
         TreeNode root = new TreeNode(4);
@@ -50,14 +33,22 @@ public class InvertTreeTest {
         System.out.println(treeNode);
     }
 
-    public static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
+    private TreeNode invertTree(TreeNode root) {
+        if (Objects.isNull(root)) {
+            return null;
         }
+        if (Objects.isNull(root.left) && Objects.isNull(root.right)) {
+            return root;
+        }
+        TreeNode left = root.left;
+        TreeNode right = root.right;
+        root.left = right;
+        invertTree(left);
+
+        root.right = left;
+        invertTree(right);
+        return root;
     }
+
 
 }

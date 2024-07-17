@@ -14,7 +14,7 @@ import java.util.Map;
 public class RemoveZeroSumSublistsTest {
     @Test
     public void testRemoveZeroSumSublits() {
-        ListNode listNode = ListNode.createFromArray(new int[]{1, 2, -3, 3, 1});
+        ListNode listNode = ListNode.createFromArray(1, 2, -3, 3, 1);
         ListNode newListNode = removeZeroSumSublists(listNode);
         ListNode.print(newListNode);
     }

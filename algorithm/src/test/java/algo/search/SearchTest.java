@@ -19,28 +19,28 @@ public class SearchTest {
 
     // 二分搜索变种
     public int search(int[] nums, int target) {
-        int start = 0;
-        int end = nums.length - 1;
+        int left = 0;
+        int right = nums.length - 1;
         int mid;
-        while (start <= end) {
-            mid = (end + start) / 2;
+        while (left <= right) {
+            mid = (right + left) / 2;
             // 中间值
             int midNum = nums[mid];
             if (midNum == target) {
                 return mid;
             }
-            //
+            // 调整left和right指针的逻辑有差异
             if (nums[0] <= midNum) {
                 if (nums[0] <= target && target < nums[mid]) {
-                    end = mid - 1;
+                    right = mid - 1;
                 } else {
-                    start = mid + 1;
+                    left = mid + 1;
                 }
             } else {
                 if (nums[mid] < target && target <= nums[nums.length - 1]) {
-                    start = mid + 1;
+                    left = mid + 1;
                 } else {
-                    end = mid - 1;
+                    right = mid - 1;
                 }
             }
         }

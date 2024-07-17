@@ -3,7 +3,7 @@ package algo.divide;
 import org.junit.Test;
 
 /**
- * https://leetcode.cn/problems/powx-n/
+ * <a href="https://leetcode.cn/problems/powx-n/">...</a>
  *
  * @author lichuangjian
  * @date 2023/6/12

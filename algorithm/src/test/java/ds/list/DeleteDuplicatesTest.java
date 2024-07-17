@@ -1,6 +1,7 @@
-package ds.tree.binary_tree;
+package ds.list;
 
 import common.ListNode;
+import org.junit.Test;
 
 import java.util.Objects;
 
@@ -8,10 +9,11 @@ import java.util.Objects;
  * @author lichuangjian
  * @date 2023/8/9
  */
-public class DeleteDuplicatesSolution {
+public class DeleteDuplicatesTest {
 
-    public static void main(String[] args) {
-        DeleteDuplicatesSolution solution = new DeleteDuplicatesSolution();
+    @Test
+    public void test() {
+        DeleteDuplicatesTest solution = new DeleteDuplicatesTest();
         ListNode listNode = new ListNode(1, new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(3)))));
         ListNode listNode1 = solution.deleteDuplicates(listNode);
         while (Objects.nonNull(listNode1)) {

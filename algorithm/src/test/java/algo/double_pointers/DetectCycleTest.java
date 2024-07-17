@@ -9,6 +9,7 @@ import java.util.Set;
 /**
  * <a href="https://leetcode.cn/problems/linked-list-cycle-ii/">...</a>
  * 环形链表 II
+ *
  * @author foolchid
  * @date 2024/5/28
  **/
@@ -54,10 +55,7 @@ public class DetectCycleTest {
      */
     public ListNode detectCycle(ListNode head) {
         ListNode fast = head, slow = head;
-        while (true) {
-            if (fast == null || fast.next == null) {
-                return null;
-            }
+        while (fast != null && fast.next != null) {
             fast = fast.next.next;
             slow = slow.next;
             if (fast == slow) {

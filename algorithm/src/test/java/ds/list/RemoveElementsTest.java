@@ -1,6 +1,7 @@
 package ds.list;
 
 import common.ListNode;
+import org.junit.Test;
 
 import java.util.Objects;
 
@@ -8,12 +9,12 @@ import java.util.Objects;
  * @author lichuangjian
  * @date 2023/8/24
  */
-public class RemoveElementsSolution {
+public class RemoveElementsTest {
 
-    public static void main(String[] args) {
-        RemoveElementsSolution solution = new RemoveElementsSolution();
-        ListNode input = ListNode.createFromArray(new int[]{1, 2, 2, 1});
-        ListNode listNode = solution.removeElements(input, 2);
+    @Test
+    public void test() {
+        ListNode input = ListNode.createFromArray(1, 2, 2, 1);
+        ListNode listNode = removeElements(input, 2);
         ListNode.print(listNode);
     }
 

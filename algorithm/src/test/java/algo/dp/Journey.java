@@ -2,9 +2,7 @@ package algo.dp;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
+import lombok.*;
 
 import java.util.List;
 import java.util.Map;
@@ -32,7 +30,6 @@ public class Journey {
         poiList.add(new PointOfInterest(1, 8, "圣保罗大教堂"));
         int totalCost = 4;
 
-
         List<PointOfInterest> result = journey(poiList, totalCost);
         System.out.println(result.stream().mapToInt(PointOfInterest::getScore).sum());
         System.out.println(result.stream().map(PointOfInterest::getName).collect(Collectors.toList()));
@@ -50,27 +47,14 @@ public class Journey {
 
     private static List<PointOfInterest> journey(List<PointOfInterest> poiList, int totalCost) {
 
+
+        @Data
         @AllArgsConstructor
         @EqualsAndHashCode
         class TableIndex {
             private int x;
             private int y;
 
-            public int getX() {
-                return x;
-            }
-
-            public void setX(int x) {
-                this.x = x;
-            }
-
-            public int getY() {
-                return y;
-            }
-
-            public void setY(int y) {
-                this.y = y;
-            }
         }
 
         Map<TableIndex, List<PointOfInterest>> memo = Maps.newHashMap();

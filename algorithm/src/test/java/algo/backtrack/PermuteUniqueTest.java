@@ -37,6 +37,7 @@ public class PermuteUniqueTest {
             return;
         }
         for (int i = 0; i < nums.length; ++i) {
+            // 因为有序，[1a,1b]选过之后，[1b,1a]可以直接跳过
             if (visited[i] || (i > 0 && nums[i] == nums[i - 1] && !visited[i - 1])) {
                 continue;
             }

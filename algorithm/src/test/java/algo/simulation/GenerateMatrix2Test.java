@@ -19,6 +19,13 @@ public class GenerateMatrix2Test {
         }
     }
 
+    /**
+     * 引入step步长，步长从0到n，每次生成step个
+     * 引入num，自增
+     * 引入sum总和，记录矩阵坐标i+j的总和，sum = i + j
+     * 对于上斜半部分，i、j分别为sum-i，i
+     * 对于下斜半部分，i、j分别为sum-n+i，n-i
+     */
     public int[][] generateMatrix(int n) {
         int[][] results = new int[n][n];
         int num = 1; // 从1开始的连续整数，游标

@@ -65,17 +65,24 @@ public class FindKthLargestTest {
         int pivot = nums.get(rand.nextInt(nums.size()));
         // 将大于、小于、等于 pivot 的元素划分至 big, small, equal 中
         List<Integer> big = new ArrayList<>();
-        List<Integer> equal = new ArrayList<>();
         List<Integer> small = new ArrayList<>();
         for (int num : nums) {
-            if (num > pivot) big.add(num);
-            else if (num < pivot) small.add(num);
-            else equal.add(num);
+            if (num > pivot) {
+                big.add(num);
+                continue;
+            }
+            if (num < pivot) {
+                small.add(num);
+            }
         }
         // 第 k 大元素在 big 中，递归划分
-        if (k <= big.size()) return quickSelect(big, k);
+        if (k <= big.size()) {
+            return quickSelect(big, k);
+        }
         // 第 k 大元素在 small 中，递归划分
-        if (nums.size() - small.size() < k) return quickSelect(small, k - nums.size() + small.size());
+        if (nums.size() - small.size() < k) {
+            return quickSelect(small, k - nums.size() + small.size());
+        }
         // 第 k 大元素在 equal 中，直接返回 pivot
         return pivot;
     }

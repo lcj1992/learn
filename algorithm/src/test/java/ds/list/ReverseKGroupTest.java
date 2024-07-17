@@ -39,7 +39,7 @@ public class ReverseKGroupTest {
             if (tmpK > 0) {
                 break;
             }
-            for (int i = 0; i < k - 1 && cur.next != null; i++) {
+            for (int i = 0; i < k - 1; i++) {
                 ListNode next = cur.next;
                 cur.next = next.next;
                 next.next = pre.next;

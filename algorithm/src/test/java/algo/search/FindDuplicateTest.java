@@ -44,7 +44,7 @@ public class FindDuplicateTest {
 
 
     /**
-     *
+     * 快慢指针
      */
     public int findDuplicate2(int[] nums) {
         int slow = 0;
@@ -53,7 +53,7 @@ public class FindDuplicateTest {
             slow = nums[slow];
             fast = nums[nums[fast]];
         } while (slow != fast);
-        slow = 0;
+        fast = 0;
         while (slow != fast) {
             slow = nums[slow];
             fast = nums[fast];

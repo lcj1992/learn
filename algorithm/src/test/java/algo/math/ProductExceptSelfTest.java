@@ -4,7 +4,7 @@ import common.Utils;
 import org.junit.Test;
 
 /**
- * https://leetcode.cn/problems/product-of-array-except-self/
+ * <a href="https://leetcode.cn/problems/product-of-array-except-self/">...</a>
  *
  * @author foolchid
  * @date 2024/5/30

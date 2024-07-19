@@ -1,4 +1,4 @@
-package ds.list;
+package algo.simulation;
 
 
 import common.ListNode;
@@ -8,6 +8,8 @@ import org.junit.Test;
 import java.util.Objects;
 
 /**
+ * <a href="https://leetcode.cn/problems/add-two-numbers/">...</a>
+ *
  * @author lichuangjian
  * @date 2023/6/4
  */
@@ -15,19 +17,7 @@ public class AddTwoNumbersTest {
 
     @Test
     public void test() {
-        ListNode l1OneNode = new ListNode(2);
-        ListNode L1TwoNode = new ListNode(4);
-        ListNode L1ThreeNode = new ListNode(3);
-        l1OneNode.next = L1TwoNode;
-        L1TwoNode.next = L1ThreeNode;
-
-        ListNode l2OneNode = new ListNode(5);
-        ListNode l2TwoNode = new ListNode(6);
-        ListNode l2ThreeNode = new ListNode(4);
-        l2OneNode.next = l2TwoNode;
-        l2TwoNode.next = l2ThreeNode;
-
-        ListNode listNode = addTwoNumbers(l1OneNode, l2OneNode);
+        ListNode listNode = addTwoNumbers(ListNode.createFromArray(2, 4, 3), ListNode.createFromArray(5, 6, 4));
         Utils.printListNode(listNode);
     }
 
@@ -47,15 +37,11 @@ public class AddTwoNumbersTest {
                 tail = tail.next;
             }
             carry = sum / 10;
-            if (l1 != null) {
-                l1 = l1.next;
-            }
-            if (l2 != null) {
-                l2 = l2.next;
-            }
-            if (carry > 0) {
-                tail.next = new ListNode(carry);
-            }
+            l1 = (l1 != null ? l1.next : null);
+            l2 = (l2 != null ? l2.next : null);
+        }
+        if (carry > 0) {
+            tail.next = new ListNode(carry);
         }
         return head;
     }

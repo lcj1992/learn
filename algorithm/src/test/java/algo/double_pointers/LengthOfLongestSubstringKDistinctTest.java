@@ -29,20 +29,20 @@ public class LengthOfLongestSubstringKDistinctTest {
         // linked map记录字符和最新的坐标
         // 当map的size超过k时，删除第一个key的坐标，并更新left指针
         // 每次都更新res
-        int left = 0;
-        LinkedHashMap<Character, Integer> exists = new LinkedHashMap<>();
+        int l = 0;
+        LinkedHashMap<Character, Integer> map = new LinkedHashMap<>();
         int res = 0;
-        for (int right = 0; right < s.length(); right++) {
-            char c = s.charAt(right);
-            exists.remove(c);
-            exists.put(c, right);
-            if (exists.size() > k) {
+        for (int r = 0; r < s.length(); r++) {
+            char c = s.charAt(r);
+            map.remove(c);
+            map.put(c, r);
+            if (map.size() > k) {
                 // 调整left指针位置
-                Map.Entry<Character, Integer> leftmost = exists.entrySet().iterator().next();
-                left = leftmost.getValue() + 1;
-                exists.remove(leftmost.getKey());
+                Map.Entry<Character, Integer> leftmost = map.entrySet().iterator().next();
+                l = leftmost.getValue() + 1;
+                map.remove(leftmost.getKey());
             }
-            res = Math.max(res, right - left + 1);
+            res = Math.max(res, r - l + 1);
         }
         return res;
     }

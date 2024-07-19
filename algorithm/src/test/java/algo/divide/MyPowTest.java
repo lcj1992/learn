@@ -12,8 +12,9 @@ public class MyPowTest {
 
     @Test
     public void test() {
-        MyPowTest solution = new MyPowTest();
-        double v = solution.myPow(2.00000, 11);
+        double v = myPow(2.00000, 11);
+        System.out.println(v);
+        v = myPow2(2.00000, 11);
         System.out.println(v);
     }
 

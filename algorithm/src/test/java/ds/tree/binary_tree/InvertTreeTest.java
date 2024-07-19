@@ -1,6 +1,7 @@
 package ds.tree.binary_tree;
 
 import common.TreeNode;
+import common.Utils;
 import org.junit.Test;
 
 import java.util.ArrayDeque;
@@ -19,22 +20,10 @@ public class InvertTreeTest {
 
     @Test
     public void test() {
-        TreeNode root = new TreeNode(4);
-        TreeNode node2 = new TreeNode(2);
-        TreeNode node7 = new TreeNode(7);
-        TreeNode node1 = new TreeNode(1);
-        TreeNode node3 = new TreeNode(3);
-        TreeNode node6 = new TreeNode(6);
-        TreeNode node9 = new TreeNode(9);
-
-        root.left = node2;
-        root.right = node7;
-        node2.left = node1;
-        node2.right = node3;
-        node7.left = node6;
-        node7.right = node9;
-        TreeNode treeNode = invertTreeStack(root);
-        System.out.println(treeNode);
+        TreeNode treeNode = invertTree(TreeNode.create(4, 2, 7, 1, 3, 6, 9));
+        Utils.printTree(treeNode);
+        treeNode = invertTreeStack(TreeNode.create(4, 2, 7, 1, 3, 6, 9));
+        Utils.printTree(treeNode);
     }
 
     public TreeNode invertTree(TreeNode root) {
@@ -49,21 +38,21 @@ public class InvertTreeTest {
     }
 
     public TreeNode invertTreeStack(TreeNode root) {
-        if(root == null){
+        if (root == null) {
             return null;
         }
         Deque<TreeNode> deque = new ArrayDeque<>();
         deque.addFirst(root);
-        while(!deque.isEmpty()){
+        while (!deque.isEmpty()) {
             TreeNode node = deque.removeFirst();
-            TreeNode left= node.left;
+            TreeNode left = node.left;
             TreeNode right = node.right;
             node.left = right;
             node.right = left;
-            if(right !=null){
+            if (right != null) {
                 deque.addFirst(right);
             }
-            if(left !=null){
+            if (left != null) {
                 deque.addFirst(left);
             }
         }

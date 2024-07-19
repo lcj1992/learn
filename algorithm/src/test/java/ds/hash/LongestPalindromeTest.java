@@ -27,8 +27,8 @@ public class LongestPalindromeTest {
             freqMap.put(c, freqMap.getOrDefault(c, 0) + 1);
         }
         int res = 0;
-        for (Character character : freqMap.keySet()) {
-            Integer num = freqMap.get(character);
+        for (Character c : freqMap.keySet()) {
+            Integer num = freqMap.get(c);
             res += num / 2 * 2;
             if (num % 2 == 1 && res % 2 == 0) {
                 res++;

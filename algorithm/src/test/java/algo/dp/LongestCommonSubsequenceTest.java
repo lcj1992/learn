@@ -18,6 +18,14 @@ public class LongestCommonSubsequenceTest {
         System.out.println(result);
     }
 
+    //      a   b   c   d   e
+    //  a   1   1   1   1   1
+    //  c   1   1   2   2   2
+    //  e   1   1   2   2   3
+    // 状态：截至text1第i个字符和text2第j个字符的最长公共子序列
+    // 转移方程：
+    // 1. t1[i] == t2[j], dp[i][j] = dp[i - 1][j - 1] + 1;
+    // 2. t1[i] != t2[j], dp[i][j] = max(dp[i-1][j], dp[i][j-1])
     public int longestCommonSubsequence(String text1, String text2) {
         int l1 = text1.length();
         int l2 = text2.length();

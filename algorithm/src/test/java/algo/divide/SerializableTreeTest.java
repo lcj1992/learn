@@ -16,7 +16,6 @@ import java.util.LinkedList;
  **/
 public class SerializableTreeTest {
 
-
     @Test
     public void test() {
         TreeNode treeNode = TreeNode.create(1, 2, 3, null, null, 4, 5);
@@ -28,7 +27,6 @@ public class SerializableTreeTest {
     }
 
     public static class Codec {
-
         // Encodes a tree to a single string.
         public String serialize(TreeNode root) {
             if (root == null) {

@@ -14,39 +14,42 @@ public class LongestPalindromeTest {
         System.out.println(babad);
     }
 
+    /**
+     * 状态：dp[i][j]第i个字符到第j个字符之间是否存在回文子串
+     * 转移方程：
+     * 1. 长度为1: dp[i][i] = true
+     * 2. 长度为2: dp[i][i+1] = (s.charAt(i) == s.charAr(i+1))
+     * 3. 长度为n(n>=2): dp[i][j] = dp[i+1][j-1] && s.charAt(j-len+1) == s.charAt(j)
+     */
     public String longestPalindrome(String s) {
-        char[] chars = s.toCharArray();
-        int length = chars.length;
-        if (length < 2) {
-            return s;
+        if (s == null || s.isEmpty()) {
+            return "";
         }
-        boolean[][] dp = new boolean[length][length];
-        // 初始化状态
-        int maxLen = 1;
+        int maxLen = 0;
         int begin = 0;
+        int length = s.length();
+        boolean[][] dp = new boolean[length][length];
+        // 单个字符肯定是回文串
         for (int i = 0; i < length; i++) {
             dp[i][i] = true;
+            maxLen = 1;
+            begin = i;
         }
-
-        // 状态转移方程
-        // dp[i][j]  = dp[i + 1][j -1] && chars[i] == chars[j]
-        for (int L = 2; L <= length; L++) {
-            for (int i = 0; i < length; i++) {
-                int j = L + i - 1;
-                if (j >= length) {
-                    break;
-                }
-                if (chars[i] != chars[j]) {
-                    dp[i][j] = false;
-                } else {
-                    if (j - i < 3) {
-                        dp[i][j] = true;
-                    } else {
-                        dp[i][j] = dp[i + 1][j - 1];
-                    }
-                }
-                if (dp[i][j] && j - i + 1 > maxLen) {
-                    maxLen = j - i + 1;
+        // 检查两个字符
+        for (int i = 0; i < length - 1; i++) {
+            if (s.charAt(i) == s.charAt(i + 1)) {
+                dp[i][i + 1] = true;
+                maxLen = 2;
+                begin = i;
+            }
+        }
+        // 检查多个字符
+        for (int len = 3; len <= length; len++) {
+            for (int i = 0; i < length - len + 1; i++) {
+                int j = i + len - 1;
+                if (dp[i + 1][j - 1] && s.charAt(i) == s.charAt(j)) {
+                    dp[i][j] = true;
+                    maxLen = len;
                     begin = i;
                 }
             }

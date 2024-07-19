@@ -1,15 +1,23 @@
 package algo.math;
 
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * https://leetcode.cn/problems/gray-code/
+ * <a href="https://leetcode.cn/problems/gray-code/">...</a>
  *
  * @author foolchid
  * @date 2024/5/30
  **/
 public class GrayCodeTest {
+
+    @Test
+    public void test() {
+        List<Integer> res = grayCode(3);
+        System.out.println(res);
+    }
 
     public List<Integer> grayCode(int n) {
         List<Integer> res = new ArrayList<Integer>() {{

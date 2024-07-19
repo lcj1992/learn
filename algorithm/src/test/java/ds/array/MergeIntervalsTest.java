@@ -34,6 +34,10 @@ public class MergeIntervalsTest {
         Deque<int[]> res = new LinkedList<>();
         res.addLast(intervals[0]);
         for (int i = 1; i < intervals.length; i++) {
+            // 细分为三种情况
+            // [1,2][2,3] -> [1,3]
+            // [1,3][2,4] -> [1,4]
+            // [1,4][2,3] -> [1,4]
             if (res.getLast()[1] >= intervals[i][0]) {
                 res.getLast()[1] = Math.max(res.getLast()[1], intervals[i][1]);
             } else {

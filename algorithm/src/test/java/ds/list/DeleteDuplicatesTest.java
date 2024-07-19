@@ -1,11 +1,14 @@
 package ds.list;
 
 import common.ListNode;
+import common.Utils;
 import org.junit.Test;
 
 import java.util.Objects;
 
 /**
+ * <a href="https://leetcode.cn/problems/remove-duplicates-from-sorted-list/description/">...</a>
+ *
  * @author lichuangjian
  * @date 2023/8/9
  */
@@ -13,13 +16,8 @@ public class DeleteDuplicatesTest {
 
     @Test
     public void test() {
-        DeleteDuplicatesTest solution = new DeleteDuplicatesTest();
-        ListNode listNode = new ListNode(1, new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(3)))));
-        ListNode listNode1 = solution.deleteDuplicates(listNode);
-        while (Objects.nonNull(listNode1)) {
-            System.out.println(listNode1.val);
-            listNode1 = listNode1.next;
-        }
+        ListNode res = deleteDuplicates(ListNode.createFromArray(1, 1, 2, 3, 3));
+        Utils.printListNode(res);
     }
 
     public ListNode deleteDuplicates(ListNode head) {

@@ -11,6 +11,13 @@ import org.junit.Test;
  **/
 public class FindMinTest {
 
+    // 二分搜索变种
+    //          /
+    //         /
+    //        /
+    //              /
+    //             /
+    //            /
     @Test
     public void test() {
         int res = findMin(new int[]{4, 4, 4, 4, 4, 4, 5, 6, 7, 0, 1, 4});

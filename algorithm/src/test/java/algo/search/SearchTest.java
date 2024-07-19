@@ -1,5 +1,7 @@
 package algo.search;
 
+import org.junit.Test;
+
 /**
  * <a href="https://leetcode.cn/problems/search-in-rotated-sorted-array">...</a>
  * 搜索旋转数组
@@ -11,19 +13,26 @@ package algo.search;
  */
 public class SearchTest {
 
-    public static void main(String[] args) {
+    @Test
+    public void test() {
         int[] nums = new int[]{4, 5, 6, 7, 0, 1, 2};
         SearchTest solution = new SearchTest();
         System.out.println(solution.search(nums, 0));
     }
 
     // 二分搜索变种
+    //          /
+    //         /
+    //        /
+    //              /
+    //             /
+    //            /
     public int search(int[] nums, int target) {
-        int left = 0;
-        int right = nums.length - 1;
+        int l = 0;
+        int r = nums.length - 1;
         int mid;
-        while (left <= right) {
-            mid = (right + left) / 2;
+        while (l <= r) {
+            mid = (r + l) / 2;
             // 中间值
             int midNum = nums[mid];
             if (midNum == target) {
@@ -32,15 +41,15 @@ public class SearchTest {
             // 调整left和right指针的逻辑有差异
             if (nums[0] <= midNum) {
                 if (nums[0] <= target && target < nums[mid]) {
-                    right = mid - 1;
+                    r = mid - 1;
                 } else {
-                    left = mid + 1;
+                    l = mid + 1;
                 }
             } else {
                 if (nums[mid] < target && target <= nums[nums.length - 1]) {
-                    left = mid + 1;
+                    l = mid + 1;
                 } else {
-                    right = mid - 1;
+                    r = mid - 1;
                 }
             }
         }

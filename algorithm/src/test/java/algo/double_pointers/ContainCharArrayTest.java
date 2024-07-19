@@ -2,41 +2,47 @@ package algo.double_pointers;
 
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+/**
+ * <a href="https://leetcode.cn/problems/find-all-anagrams-in-a-string">...</a>
+ * 找到字符串中所有字母异位词
+ */
 public class ContainCharArrayTest {
 
     @Test
     public void test() {
         String s = "tibcacbdata";
-        char[] array = new char[]{'a', 'b', 'c', 'd'};
-        int index = findIndex(s, array);
-        System.out.println(index);
+        List<Integer> indexes = findAnagrams(s, "abcd");
+        System.out.println(indexes);
     }
 
-    private int findIndex(String s, char[] ch) {
-
-        int targetCharSize = ch.length;
-        int totalCharSize = s.length();
-
-        if (targetCharSize > totalCharSize) {
-            return -1;
+    public List<Integer> findAnagrams(String s, String p) {
+        int sLen = s.length();
+        int pLen = p.length();
+        if (sLen < pLen) {
+            return new ArrayList<>();
         }
-
-        for (int i = 0; i < totalCharSize - targetCharSize; i++) {
-            // 滑动窗口的思想，每次取目标数组大小进行比较，不符后再向后移动
-            if (checkSubStr(ch, s.substring(i, i + targetCharSize))) {
-                return i;
+        List<Integer> ans = new ArrayList<>();
+        int[] sCount = new int[26];
+        int[] pCount = new int[26];
+        for (int i = 0; i < pLen; i++) {
+            sCount[s.charAt(i) - 'a']++;
+            pCount[p.charAt(i) - 'a']++;
+        }
+        if (Arrays.equals(sCount, pCount)) {
+            ans.add(0);
+        }
+        for (int i = 0; i < sLen - pLen; i++) {
+            sCount[s.charAt(i) - 'a']--;
+            sCount[s.charAt(i + pLen) - 'a']++;
+            if (Arrays.equals(sCount, pCount)) {
+                ans.add(i + 1);
             }
         }
-        return -1;
-
+        return ans;
     }
 
-    private boolean checkSubStr(char[] ch, String s) {
-        for (char c : ch) {
-            if (s.indexOf(c) == -1) {
-                return false;
-            }
-        }
-        return true;
-    }
 }

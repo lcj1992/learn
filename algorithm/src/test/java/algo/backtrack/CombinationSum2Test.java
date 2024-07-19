@@ -41,18 +41,18 @@ public class CombinationSum2Test {
             return;
         }
         // 遍历所有选择
-        // 剪枝二：从 start 开始遍历，避免生成重复子集
-        // 剪枝三：从 start 开始遍历，避免重复选择同一元素
+        // 剪枝一：从 start 开始遍历，避免生成重复子集
+        // 剪枝二：从 start 开始遍历，避免重复选择同一元素
         // 因为排过序了，所以可以从start开始，比如[1,2]已经选择过了，就没有必要在选[2,1]了
         for (int i = start; i < choices.length; i++) {
-            // 剪枝一：若子集和超过 target ，则直接结束循环
+            // 剪枝三：若子集和超过 target ，则直接结束循环
             // 这是因为数组已排序，后边元素更大，子集和一定超过 target
             // 因为排过序了，选择i时结果已经不满足了，比nums[i]大的肯定也不满足了，直接break而不是continue
             if (target - choices[i] < 0) {
                 break;
             }
             // 剪枝四：如果该元素与左边元素相等，说明该搜索分支重复，直接跳过
-            // 比如[1a,1b,2]，需要[1a,1b]，但不需要[1b,1a]了
+            // 比如[1,2a,2b]，需要[1,2a, 2b]，但不需要[1,2b,2a]了
             if (i > start && choices[i] == choices[i - 1]) {
                 continue;
             }

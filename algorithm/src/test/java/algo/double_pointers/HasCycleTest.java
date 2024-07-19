@@ -3,6 +3,9 @@ package algo.double_pointers;
 import common.ListNode;
 import org.junit.Test;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * <a href="https://leetcode.cn/problems/linked-list-cycle/">...</a>
  * 环形链表
@@ -39,6 +42,19 @@ public class HasCycleTest {
             if (slow.equals(fast)) {
                 return true;
             }
+        }
+        return false;
+    }
+
+    public boolean hasCycle2(ListNode head) {
+        Set<ListNode> existNodes = new HashSet<>();
+        ListNode temp = head;
+        while (temp != null) {
+            boolean add = existNodes.add(temp);
+            if (!add) {
+                return true;
+            }
+            temp = temp.next;
         }
         return false;
     }

@@ -15,35 +15,27 @@ public class LongestCommonSubString {
         System.out.println(longestCommonSubString(str1, str2));
     }
 
-    private static long longestCommonSubString(String str1, String str2) {
-        long longestLength = 0;
-        int[][] table = new int[str1.length()][str2.length()];
-        for (int i = 0; i < str1.length(); i++) {
-            for (int j = 0; j < str2.length(); j++) {
-                boolean equal = str1.charAt(i) == str2.charAt(j);
-                if (i == 0) {
-                    if (equal) {
-                        longestLength = 1;
-                        table[0][j] = 1;
-                    }
-                    continue;
-                }
-
-                if (equal) {
-                    if (j == 0) {
-                        table[i][j] = 1;
-                    } else {
-                        table[i][j] = table[i - 1][j - 1] + 1;
+    private static String longestCommonSubString(String str1, String str2) {
+        int maxLen = 0;
+        int l1 = str1.length();
+        int l2 = str2.length();
+        int[][] dp = new int[l1 + 1][l2 + 1];
+        int end = 0;
+        for (int i = 1; i <= l1; i++) {
+            for (int j = 1; j <= l2; j++) {
+                char c1 = str1.charAt(i - 1);
+                char c2 = str2.charAt(j - 1);
+                if (c1 == c2) {
+                    dp[i][j] = dp[i - 1][j - 1] + 1;
+                    if (dp[i][j] > maxLen) {
+                        maxLen = dp[i][j];
+                        end = i;
                     }
                 } else {
-                    table[i][j] = 0;
-                }
-
-                if (table[i][j] > longestLength) {
-                    longestLength = table[i][j];
+                    dp[i][j] = 0;
                 }
             }
         }
-        return longestLength;
+        return str1.substring(end - maxLen, end);
     }
 }

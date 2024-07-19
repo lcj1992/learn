@@ -32,11 +32,6 @@ public class AddTwoNumbersTest {
     }
 
 
-    /**
-     * 反转入参的两个链表
-     * 然后逐节点相加
-     * 最后再反转链表
-     */
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode tail = null;
         ListNode head = null;

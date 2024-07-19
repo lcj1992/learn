@@ -29,13 +29,10 @@ public class CanAttendMeetingsTest {
             return true;
         }
         Arrays.sort(intervals, Comparator.comparingInt(o -> o[0]));
-        int right = intervals[0][1];
         for (int i = 1; i < intervals.length; i++) {
-            int nextLeft = intervals[i][0];
-            if (nextLeft < right) {
+            if (intervals[i][0] < intervals[i - 1][1]) {
                 return false;
             }
-            right = intervals[i][1];
         }
         return true;
     }

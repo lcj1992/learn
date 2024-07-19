@@ -30,17 +30,37 @@ public class SearchMatrixTest {
     }
 
     public boolean searchMatrix(int[][] matrix, int target) {
-        int width = matrix[0].length;
-        int length = matrix.length;
-        int i = 0;
-        for (; i < length - 1; i++) {
-            if (matrix[i][0] <= target && matrix[i + 1][0] > target) {
-                break;
+        int rowId = searchRow(matrix, target);
+        if (rowId < 0) {
+            return false;
+        }
+        return searchColumn(matrix[rowId], target);
+    }
+
+    private int searchRow(int[][] matrix, int target) {
+        int low = -1;
+        int high = matrix.length - 1;
+        while (low < high) {
+            int mid = low + (high - low + 1) / 2;
+            if (matrix[mid][0] <= target) {
+                low = mid;
+            } else {
+                high = mid - 1;
             }
         }
-        for (int j = 0; j < width; j++) {
-            if (matrix[i][j] == target) {
+        return low;
+    }
+
+    public boolean searchColumn(int[] row, int target) {
+        int low = 0, high = row.length - 1;
+        while (low <= high) {
+            int mid = (high - low) / 2 + low;
+            if (row[mid] == target) {
                 return true;
+            } else if (row[mid] > target) {
+                high = mid - 1;
+            } else {
+                low = mid + 1;
             }
         }
         return false;

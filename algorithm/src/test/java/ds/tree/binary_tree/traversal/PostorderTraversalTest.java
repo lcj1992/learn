@@ -43,22 +43,21 @@ public class PostorderTraversalTest {
         }
         List<Integer> results = new ArrayList<>();
         Deque<TreeNode> deque = new ArrayDeque<>();
-        TreeNode current = root;
-        TreeNode lastVisited = null;
-
-        while (current != null || !deque.isEmpty()) {
-            while (current != null) {
-                deque.addFirst(current);
-                current = current.left;
+        TreeNode cur = root;
+        TreeNode pre = null;
+        while (cur != null || !deque.isEmpty()) {
+            while (cur != null) {
+                deque.addFirst(cur);
+                cur = cur.left;
             }
-            current = deque.getFirst();
-            if (current.right == null || current.right == lastVisited) {
+            cur = deque.getFirst();
+            if (cur.right == null || cur.right == pre) {
                 deque.removeFirst();
-                results.add(current.val);
-                lastVisited = current;
-                current = null;
+                results.add(cur.val);
+                pre = cur;
+                cur = null;
             } else {
-                current = current.right;
+                cur = cur.right;
             }
         }
         return results;

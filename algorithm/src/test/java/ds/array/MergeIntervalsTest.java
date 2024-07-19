@@ -3,10 +3,7 @@ package ds.array;
 import common.Utils;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 /**
  * <a href="https://leetcode.cn/problems/SsGoHC/">...</a>
@@ -34,16 +31,15 @@ public class MergeIntervalsTest {
             return new int[0][2];
         }
         Arrays.sort(intervals, Comparator.comparingInt(o -> o[0]));
-        List<int[]> merge = new ArrayList<>();
-        for (int i = 0; i < intervals.length; i++) {
-            int left = intervals[i][0];
-            int right = intervals[i][1];
-            if (merge.isEmpty() || merge.get(merge.size() - 1)[1] < left) {
-                merge.add(new int[]{left, right});
+        Deque<int[]> res = new LinkedList<>();
+        res.addLast(intervals[0]);
+        for (int i = 1; i < intervals.length; i++) {
+            if (res.getLast()[1] >= intervals[i][0]) {
+                res.getLast()[1] = Math.max(res.getLast()[1], intervals[i][1]);
             } else {
-                merge.get(merge.size() - 1)[i] = Math.max(merge.get(merge.size() - 1)[1], right);
+                res.addLast(intervals[i]);
             }
         }
-        return merge.toArray(new int[merge.size()][]);
+        return res.toArray(new int[res.size()][]);
     }
 }

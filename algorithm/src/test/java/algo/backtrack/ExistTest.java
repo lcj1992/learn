@@ -28,16 +28,23 @@ public class ExistTest {
         return false;
     }
 
-    boolean backtrack(char[][] board, char[] word, int i, int j, int k) {
-        if (i >= board.length || i < 0 || j >= board[0].length || j < 0 || board[i][j] != word[k]) {
+    boolean backtrack(char[][] board, char[] word, int rowId, int colId, int k) {
+        if (rowId >= board.length || rowId < 0 || colId >= board[0].length || colId < 0 || board[rowId][colId] != word[k]) {
             return false;
         }
         if (k == word.length - 1) {
             return true;
         }
-        board[i][j] = '\0';
-        boolean res = backtrack(board, word, i + 1, j, k + 1) || backtrack(board, word, i - 1, j, k + 1) || backtrack(board, word, i, j + 1, k + 1) || backtrack(board, word, i, j - 1, k + 1);
-        board[i][j] = word[k];
+        board[rowId][colId] = '\0';
+        // 向下
+        boolean res = backtrack(board, word, rowId + 1, colId, k + 1)
+                // 向上
+                || backtrack(board, word, rowId - 1, colId, k + 1)
+                // 向左
+                || backtrack(board, word, rowId, colId + 1, k + 1)
+                // 向右
+                || backtrack(board, word, rowId, colId - 1, k + 1);
+        board[rowId][colId] = word[k];
         return res;
     }
 }

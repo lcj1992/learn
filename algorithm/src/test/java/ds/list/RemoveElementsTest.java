@@ -19,24 +19,16 @@ public class RemoveElementsTest {
     }
 
     public ListNode removeElements(ListNode head, int val) {
-        // 处理第一个节点
-        while (head != null) {
-            if (head.val != val) {
-                break;
-            }
-            head = head.next;
-        }
-        ListNode temp = head;
-        while (temp != null) {
-            if (Objects.isNull(temp.next)) {
-                break;
-            }
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+        ListNode temp = dummy;
+        while (temp.next != null) {
             if (temp.next.val == val) {
                 temp.next = temp.next.next;
             } else {
                 temp = temp.next;
             }
         }
-        return head;
+        return dummy.next;
     }
 }

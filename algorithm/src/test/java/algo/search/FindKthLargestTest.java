@@ -1,4 +1,4 @@
-package ds.array;
+package algo.search;
 
 import org.junit.Test;
 

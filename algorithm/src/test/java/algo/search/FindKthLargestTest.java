@@ -1,5 +1,6 @@
 package algo.search;
 
+import common.Utils;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -16,9 +17,11 @@ public class FindKthLargestTest {
 
     @Test
     public void test() {
-        int res = findKthLargest(new int[]{3, 2, 4, 1, 5, 6, 4}, 2);
+        int res = findKthLargest(new int[]{3, 2, 4, 1, 5, 6, 4, 7}, 2);
         System.out.println(res);
-        res = findKthLargest2(new int[]{3, 2, 4, 1, 5, 6, 4}, 2);
+        res = findKthLargest2(new int[]{3, 2, 4, 1, 5, 6, 4, 7}, 2);
+        System.out.println(res);
+        res = findKthLargest3(new int[]{3, 2, 4, 1, 5, 6, 4, 7}, 2);
         System.out.println(res);
     }
 
@@ -58,6 +61,13 @@ public class FindKthLargestTest {
         nums[j] = temp;
     }
 
+    public int findKthLargest2(int[] nums, int k) {
+        List<Integer> numList = new ArrayList<>();
+        for (int num : nums) {
+            numList.add(num);
+        }
+        return quickSelect(numList, k);
+    }
 
     private int quickSelect(List<Integer> nums, int k) {
         // 随机选择基准数
@@ -87,12 +97,42 @@ public class FindKthLargestTest {
         return pivot;
     }
 
-    public int findKthLargest2(int[] nums, int k) {
-        List<Integer> numList = new ArrayList<>();
-        for (int num : nums) {
-            numList.add(num);
+    /**
+     * 是一种方法，但是会超时
+     */
+    public int findKthLargest3(int[] nums, int k) {
+        int n = nums.length;
+        return quickSelect3(nums, 0, n - 1, n - k);
+    }
+
+    private int quickSelect3(int[] nums, int low, int high, int k) {
+        int pi = partition(nums, low, high);
+        if (pi == k) {
+            return nums[pi];
         }
-        return quickSelect(numList, k);
+        if (pi < k) {
+            return quickSelect3(nums, pi + 1, high, k);
+        }
+        return quickSelect3(nums, low, pi - 1, k);
+
+    }
+
+    private int partition(int[] nums, int low, int high) {
+        int random = new Random().nextInt(high - low + 1) + low;
+        Utils.swap(nums, random, high);
+        int pivot = nums[high];  // 基准值
+        int i = (low - 1);  // 索引i，指向比基准小的区域的最后一个元素
+        for (int j = low; j < high; j++) {
+            // 如果当前元素小于或等于基准
+            if (nums[j] <= pivot) {
+                i++;
+                // 交换 arr[i] 和 arr[j]
+                Utils.swap(nums, i, j);
+            }
+        }
+        // 交换 arr[i+1] 和 arr[high]（或基准值）
+        Utils.swap(nums, i + 1, high);
+        return i + 1;
     }
 
 }

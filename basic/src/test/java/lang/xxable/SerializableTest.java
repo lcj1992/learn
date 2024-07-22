@@ -6,6 +6,7 @@ import org.junit.Test;
 
 import java.io.*;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class SerializableTest {
@@ -15,14 +16,15 @@ public class SerializableTest {
         Student student = new Student("John Doe", 20);
 
         // 序列化Student对象
-        try (ObjectOutputStream oos = new ObjectOutputStream(Files.newOutputStream(Paths.get("student.ser")))) {
+        Path path = Paths.get("student.ser");
+        try (ObjectOutputStream oos = new ObjectOutputStream(Files.newOutputStream(path))) {
             oos.writeObject(student);
             System.out.println("Serialization complete.");
         } catch (IOException e) {
             e.printStackTrace();
         }
         // 反序列化Student对象
-        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("student.ser"))) {
+        try (ObjectInputStream ois = new ObjectInputStream(Files.newInputStream(path))) {
             Student deserializedStudent = (Student) ois.readObject();
             System.out.println("Deserialized Student: " + deserializedStudent);
         } catch (IOException | ClassNotFoundException e) {

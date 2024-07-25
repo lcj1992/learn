@@ -5,8 +5,6 @@ import common.ListNode;
 import common.Utils;
 import org.junit.Test;
 
-import java.util.Objects;
-
 /**
  * <a href="https://leetcode.cn/problems/add-two-numbers/">...</a>
  *
@@ -18,7 +16,7 @@ public class AddTwoNumbersTest {
     @Test
     public void test() {
         ListNode listNode = addTwoNumbers(ListNode.createFromArray(2, 4, 3), ListNode.createFromArray(5, 6, 4));
-        Utils.printListNode(listNode);
+        Utils.print(listNode);
     }
 
 

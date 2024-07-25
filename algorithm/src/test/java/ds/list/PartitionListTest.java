@@ -15,7 +15,7 @@ public class PartitionListTest {
     @Test
     public void test() {
         ListNode res = partition(ListNode.createFromArray(1, 4, 3, 2, 5, 2), 3);
-        Utils.printListNode(res);
+        Utils.print(res);
     }
 
     /**

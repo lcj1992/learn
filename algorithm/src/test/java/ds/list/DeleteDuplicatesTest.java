@@ -17,7 +17,7 @@ public class DeleteDuplicatesTest {
     @Test
     public void test() {
         ListNode res = deleteDuplicates(ListNode.createFromArray(1, 1, 2, 3, 3));
-        Utils.printListNode(res);
+        Utils.print(res);
     }
 
     public ListNode deleteDuplicates(ListNode head) {

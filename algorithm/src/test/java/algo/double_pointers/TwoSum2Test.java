@@ -14,9 +14,9 @@ public class TwoSum2Test {
     @Test
     public void test() {
         int[] ints = twoSum(new int[]{2, 7, 11, 15}, 9);
-        Utils.printArray(ints);
+        Utils.print(ints);
         ints = twoSum2(new int[]{2, 7, 11, 15}, 9);
-        Utils.printArray(ints);
+        Utils.print(ints);
     }
 
     /**

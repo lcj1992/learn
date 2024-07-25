@@ -9,7 +9,7 @@ import java.util.Objects;
  * @date 2024/5/22
  **/
 public class Utils {
-    public static void printArray(int[] arrays) {
+    public static void print(int[] arrays) {
         if (arrays == null || arrays.length == 0) {
             return;
         }
@@ -19,7 +19,7 @@ public class Utils {
         System.out.println();
     }
 
-    public static void printListNode(ListNode node) {
+    public static void print(ListNode node) {
         if (Objects.isNull(node)) {
             return;
         }
@@ -35,7 +35,7 @@ public class Utils {
         System.out.println(res);
     }
 
-    public static void printList(List<List<Integer>> list) {
+    public static void print(List<List<Integer>> list) {
         list.forEach(System.out::println);
     }
 

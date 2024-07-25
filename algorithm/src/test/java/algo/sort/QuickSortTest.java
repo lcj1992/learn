@@ -17,7 +17,7 @@ public class QuickSortTest {
     public void test() {
         int[] nums = {4, 5, 2, 3, 8, 20, 10, 12};
         quickSort(nums, 0, nums.length - 1);
-        Utils.printArray(nums);
+        Utils.print(nums);
     }
 
     private void quickSort(int[] nums, int low, int high) {

@@ -16,7 +16,7 @@ public class DeleteNodeTest {
     public void test() {
         ListNode listNode = ListNode.createFromArray(4, 5, 1, 9);
         deleteNode(listNode);
-        Utils.printListNode(listNode);
+        Utils.print(listNode);
     }
 
 

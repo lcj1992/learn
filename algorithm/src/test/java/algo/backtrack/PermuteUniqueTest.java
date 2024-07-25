@@ -16,7 +16,7 @@ public class PermuteUniqueTest {
     @Test
     public void test() {
         List<List<Integer>> res = permuteUnique(new int[]{1, 2, 2});
-        Utils.printList(res);
+        Utils.print(res);
     }
 
     /**

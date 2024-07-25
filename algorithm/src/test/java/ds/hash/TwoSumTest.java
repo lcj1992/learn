@@ -21,7 +21,7 @@ public class TwoSumTest {
         int target = 9;
         TwoSumTest twoSum = new TwoSumTest();
         int[] res = twoSum.twoSum(nums, target);
-        Utils.printArray(res);
+        Utils.print(res);
     }
 
     public int[] twoSum(int[] nums, int target) {

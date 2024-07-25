@@ -5,7 +5,6 @@ import org.junit.Test;
 
 import java.util.Deque;
 import java.util.LinkedList;
-import java.util.PriorityQueue;
 import java.util.TreeMap;
 
 /**
@@ -21,9 +20,9 @@ public class MaxSlidingWindowTest {
     public void test() {
         int[] nums = new int[]{1, 3, -1, -3, 5, 3, 6, 7};
         int[] results = maxSlidingWindow(nums, 3);
-        Utils.printArray(results);
+        Utils.print(results);
         results = maxSlidingWindow2(nums, 3);
-        Utils.printArray(results);
+        Utils.print(results);
     }
 
 

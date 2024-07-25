@@ -16,7 +16,7 @@ public class SelectionSortTest {
     public void testSelectionSort() {
         int[] items = new int[]{10, 8, 5, 12, 13, 4, 34, 4, 89};
         selectionSort(items);
-        Utils.printArray(items);
+        Utils.print(items);
     }
 
     // 每一趟从待排序的数据元素中选择最小（或最大）的一个元素作为首元素，

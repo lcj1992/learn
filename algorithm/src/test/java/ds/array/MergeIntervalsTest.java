@@ -23,7 +23,7 @@ public class MergeIntervalsTest {
         int[] arr4 = new int[]{15, 18};
         int[][] intervals = new int[][]{arr1, arr2, arr3, arr4};
         int[][] merge = merge(intervals);
-        Arrays.stream(merge).forEach(Utils::printArray);
+        Arrays.stream(merge).forEach(Utils::print);
     }
 
     public int[][] merge(int[][] intervals) {

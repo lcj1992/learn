@@ -15,7 +15,7 @@ public class SearchRangeTest {
     public void testSearchRange() {
         int[] nums = new int[]{5, 7, 7, 8, 8, 8, 8, 8, 10};
         int[] res = searchRange(nums, 8);
-        Utils.printArray(res);
+        Utils.print(res);
     }
 
     public int[] searchRange(int[] nums, int target) {

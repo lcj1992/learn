@@ -18,7 +18,7 @@ public class CombinationSum2Test {
     @Test
     public void test() {
         List<List<Integer>> res = combinationSum2(new int[]{10, 1, 2, 7, 6, 1, 5}, 8);
-        Utils.printList(res);
+        Utils.print(res);
     }
 
     public List<List<Integer>> combinationSum2(int[] candidates, int target) {

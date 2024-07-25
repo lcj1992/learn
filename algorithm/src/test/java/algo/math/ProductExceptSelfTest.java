@@ -14,7 +14,7 @@ public class ProductExceptSelfTest {
     @Test
     public void test() {
         int[] res = productExceptSelf(new int[]{1, 2, 3, 4});
-        Utils.printArray(res);
+        Utils.print(res);
     }
 
     public int[] productExceptSelf(int[] nums) {

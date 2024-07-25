@@ -21,7 +21,7 @@ public class MergeKListsTest {
         ListNode list3 = ListNode.createFromArray(2, 6);
         ListNode[] param = new ListNode[]{list1, list2, list3};
         ListNode listNode = mergeKLists(param);
-        Utils.printListNode(listNode);
+        Utils.print(listNode);
     }
 
     public ListNode mergeKLists(ListNode[] lists) {

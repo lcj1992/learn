@@ -15,7 +15,7 @@ public class DailyTemperaturesTest {
     @Test
     public void test() {
         int[] res = dailyTemperatures(new int[]{73, 74, 75, 71, 69, 72, 76, 73});
-        Utils.printArray(res);
+        Utils.print(res);
     }
 
     public int[] dailyTemperatures(int[] temperatures) {

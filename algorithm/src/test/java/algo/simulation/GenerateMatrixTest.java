@@ -17,7 +17,7 @@ public class GenerateMatrixTest {
     @Test
     public void test() {
         int[][] ints = generateMatrix(5);
-        Arrays.stream(ints).forEach(Utils::printArray);
+        Arrays.stream(ints).forEach(Utils::print);
     }
 
 

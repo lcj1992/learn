@@ -16,7 +16,7 @@ public class BubbleSortTest {
     public void testBubbleSort() {
         int[] nums = new int[]{10, 8, 5, 12, 13, 4, 34, 4, 89};
         bubbleSort(nums);
-        Utils.printArray(nums);
+        Utils.print(nums);
     }
 
     // 对相邻的元素进行两两比较，顺序相反则进行交换，

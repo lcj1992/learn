@@ -20,7 +20,7 @@ public class ReverseKGroupTest {
         ListNode.print(listNode1);
         listNode = ListNode.createFromArray(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
         listNode1 = reverseKGroup2(listNode, 3);
-        Utils.printListNode(listNode1);
+        Utils.print(listNode1);
     }
 
     public ListNode reverseKGroup(ListNode head, int k) {

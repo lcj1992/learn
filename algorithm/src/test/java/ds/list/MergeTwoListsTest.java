@@ -20,7 +20,7 @@ public class MergeTwoListsTest {
         ListNode l1 = ListNode.createFromArray(1, 2, 4);
         ListNode l2 = ListNode.createFromArray(1, 3, 4);
         ListNode listNode = mergeTwoLists(l1, l2);
-        Utils.printListNode(listNode);
+        Utils.print(listNode);
     }
 
     /**

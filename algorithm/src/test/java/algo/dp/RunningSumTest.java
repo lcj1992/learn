@@ -15,7 +15,7 @@ public class RunningSumTest {
     @Test
     public void test() {
         int[] res = runningSum(new int[]{1, 2, 3, 4, 5});
-        Utils.printArray(res);
+        Utils.print(res);
     }
 
     public int[] runningSum(int[] nums) {

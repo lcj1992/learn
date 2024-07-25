@@ -17,7 +17,7 @@ public class RotateTest {
         int[][] mat = new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
         rotate(mat);
         for (int[] ints : mat) {
-            Utils.printArray(ints);
+            Utils.print(ints);
         }
     }
 

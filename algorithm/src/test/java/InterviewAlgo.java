@@ -30,23 +30,22 @@ public class InterviewAlgo {
     // TODO 奇数位升序偶数位降序链表排序，https://blog.csdn.net/xun_zhao_t521/article/details/119683806
     // TODO LRU缓存机制
     // TODO 找两个队列里的相同元素
-    // TODO MergeKListsTest，合并多个有序链表，merge k sorted list
+    // MergeKListsTest，合并多个有序链表，merge k sorted list
     // MergeTwoListsTest，合并两个有序链表
 
 
     // 图
     // GraphTest，给定微服务集群中的调用关系，例如：[('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'A')]，看是否存在循环调用
-    // TODO 输入一个 List<List<Integer>>，每个 List 的前一个元素依赖后一个元素(想象成一个分布式系统，必须我所依赖的项目都启动了，我才能启动)，如何确定最优的启动顺序
+    // 输入一个 List<List<Integer>>，每个 List 的前一个元素依赖后一个元素(想象成一个分布式系统，必须我所依赖的项目都启动了，我才能启动)，如何确定最优的启动顺序
 
 
     // 二叉树
     // BinaryTreeTraversalTest，二叉树的前中后序遍历、层序遍历、是否子树、是否完全相同、共同子结构
     // testSubTree， 判断一个二叉树是否是另一个二叉树的子树
     // BinaryTreeTraversalTest#testMidNodeSum，树的非叶子节点求和
-    // TODO 镜像二叉树
-    // TODO 从右边看二叉树输出；平衡二叉树，优化
-    // TODO 找出二叉树中所有路径节点值相加为指定值的路径
-    // TODO 二叉树中，查找所有根到叶子节点的和为 target 的路径
+    // InvertTreeTest 镜像二叉树
+    // RightSideViewTest 从右边看二叉树输出；
+
     // TODO 二叉搜索树的第k大节点
     // TODO 两棵二叉树，寻找他们共同子结构，给出相同子结构的节点数量
     // TODO 二叉树其他题目，https://blog.csdn.net/LaoJiu_/article/details/66974736
@@ -85,6 +84,8 @@ public class InterviewAlgo {
     // 回溯
     // PermuteTest，全排列
     // SolveNQueensTest，N皇后问题
+    // PathSumTest 二叉树中，查找所有根到叶子节点的和为 target 的路
+    // TODO 找出二叉树中所有路径节点值相加为指定值的路径
 
 
     // 贪心

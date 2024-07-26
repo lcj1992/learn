@@ -30,7 +30,7 @@ public class Utils {
         }
     }
 
-    public static void printTree(TreeNode treeNode) {
+    public static void print(TreeNode treeNode) {
         List<Integer> res = traversal(treeNode);
         System.out.println(res);
     }

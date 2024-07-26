@@ -7,7 +7,6 @@ import org.junit.Test;
 import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.Objects;
-import java.util.Stack;
 
 /**
  * <a href="https://leetcode.cn/problems/invert-binary-tree/">...</a>
@@ -21,9 +20,9 @@ public class InvertTreeTest {
     @Test
     public void test() {
         TreeNode treeNode = invertTree(TreeNode.create(4, 2, 7, 1, 3, 6, 9));
-        Utils.printTree(treeNode);
+        Utils.print(treeNode);
         treeNode = invertTreeStack(TreeNode.create(4, 2, 7, 1, 3, 6, 9));
-        Utils.printTree(treeNode);
+        Utils.print(treeNode);
     }
 
     public TreeNode invertTree(TreeNode root) {

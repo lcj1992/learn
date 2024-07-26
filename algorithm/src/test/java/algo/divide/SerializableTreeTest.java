@@ -23,7 +23,7 @@ public class SerializableTreeTest {
         String serialize = codec.serialize(treeNode);
         System.out.println(serialize);
         treeNode = codec.deserialize(serialize);
-        Utils.printTree(treeNode);
+        Utils.print(treeNode);
     }
 
     public static class Codec {

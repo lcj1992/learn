@@ -19,7 +19,7 @@ public class BuildTreeTest {
     @Test
     public void test() {
         TreeNode result = buildTree(new int[]{3, 9, 20, 15, 7}, new int[]{9, 3, 15, 20, 7});
-        Utils.printTree(result);
+        Utils.print(result);
     }
 
 

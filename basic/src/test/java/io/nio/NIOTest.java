@@ -78,7 +78,7 @@ public class NIOTest {
 
     public void startClient() throws IOException, InterruptedException {
         SocketChannel sc = SocketChannel.open();
-        sc.configureBlocking(false);
+        sc.configureBlocking(true);
         sc.connect(new InetSocketAddress(SERVER_PORT));
         while (!sc.finishConnect()) {
             System.out.println("waiting for the connection to be established");

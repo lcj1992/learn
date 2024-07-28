@@ -35,14 +35,13 @@ public class IncrWRRLoadBalancer implements LoadBalancer {
     public Node next() {
         // [0, totalWeight-1]
         int hit = count.getAndIncrement() % totalWeight;
-        int nodeId = nodes.size() - 1;
-        for (int i = 0; i < nodes.size(); i++) {
-            if (hit < 0) {
-                nodeId = i - 1;
-                break;
+        int sumWeight = 0;
+        for (Node node : nodes) {
+            sumWeight += node.getWeight();
+            if (sumWeight > hit) {
+                return node;
             }
-            hit -= nodes.get(i).getWeight();
         }
-        return nodes.get(nodeId);
+        throw new IllegalStateException();
     }
 }

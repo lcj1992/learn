@@ -11,7 +11,7 @@ import java.util.Random;
 /**
  * 随机算法
  */
-public class RandomRobinLoadBalancer implements LoadBalancer {
+public class RandomLoadBalancer implements LoadBalancer {
     /**
      * 节点
      */
@@ -21,7 +21,7 @@ public class RandomRobinLoadBalancer implements LoadBalancer {
      */
     private final Random random;
 
-    public RandomRobinLoadBalancer(List<Node> nodes) {
+    public RandomLoadBalancer(List<Node> nodes) {
         this.nodes = new ArrayList<>(nodes);
         this.random = new SecureRandom();
     }

@@ -15,12 +15,9 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 public class TreeMapWRRLoadBalancer implements LoadBalancer {
     /**
-     * 节点
-     */
-    private final List<Node> nodes;
-    /**
      * 权重与节点关系
-     * key:
+     * key: 一轮中该节点能处理的最大下标值
+     * value: 节点
      */
     private final TreeMap<Integer, Node> pool = new TreeMap<>();
     /**
@@ -33,7 +30,6 @@ public class TreeMapWRRLoadBalancer implements LoadBalancer {
     private final AtomicInteger count;
 
     public TreeMapWRRLoadBalancer(List<Node> nodes) {
-        this.nodes = nodes;
         this.count = new AtomicInteger(0);
         int total = 0;
         for (Node node : nodes) {
@@ -46,7 +42,7 @@ public class TreeMapWRRLoadBalancer implements LoadBalancer {
     public Node next() {
         // [0, totalWeight-1]
         int hit = count.getAndIncrement() % totalWeight;
-        //
+        // key 大于等于hit的最小的entry
         return pool.ceilingEntry(hit).getValue();
     }
 }

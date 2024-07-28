@@ -4,7 +4,6 @@ import com.google.common.collect.Lists;
 import load_balance.base.LoadBalancer;
 import load_balance.base.Node;
 import load_balance.weight_round_robin.IncrWRRLoadBalancer;
-import load_balance.weight_round_robin.RandomWRRLoadBalancer;
 import load_balance.weight_round_robin.TreeMapWRRLoadBalancer;
 import org.junit.Test;
 
@@ -33,8 +32,8 @@ public class LoadBalancerTest {
     }
 
     @Test
-    public void testRandomWRR() {
-        testWeightLoadBalance(Type.RANDOM_WRR);
+    public void testWeightRandom() {
+        testWeightLoadBalance(Type.WEIGHT_RANDOM);
     }
 
     @Test
@@ -44,7 +43,7 @@ public class LoadBalancerTest {
 
     @Test
     public void testTreeMapWRR() {
-        testWeightLoadBalance(Type.INCR_WRR);
+        testWeightLoadBalance(Type.TREEMAP_WRR);
     }
 
     private void testLoadBalance(Type type) {
@@ -60,7 +59,7 @@ public class LoadBalancerTest {
             loadBalancer = new RoundRobinLoadBalancer(nodes);
         }
         if (type == Type.RANDOM) {
-            loadBalancer = new RandomRobinLoadBalancer(nodes);
+            loadBalancer = new RandomLoadBalancer(nodes);
         }
         // 发送请求
         for (int i = 0; i < 100; i++) {
@@ -77,9 +76,9 @@ public class LoadBalancerTest {
         // 创建轮询调度器
         List<Node> nodes = Lists.newArrayList(node1, node2, node3);
         // 设个默认值
-        LoadBalancer loadBalancer = new RandomWRRLoadBalancer(nodes);
-        if (type == Type.RANDOM_WRR) {
-            loadBalancer = new RandomWRRLoadBalancer(nodes);
+        LoadBalancer loadBalancer = new WeightRandomLoadBalancer(nodes);
+        if (type == Type.WEIGHT_RANDOM) {
+            loadBalancer = new WeightRandomLoadBalancer(nodes);
         }
         if (type == Type.INCR_WRR) {
             loadBalancer = new IncrWRRLoadBalancer(nodes);
@@ -88,7 +87,7 @@ public class LoadBalancerTest {
             loadBalancer = new TreeMapWRRLoadBalancer(nodes);
         }
         // 发送请求
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 1000; i++) {
             Node next = loadBalancer.next();
             next.process("Request " + i);
         }
@@ -96,7 +95,8 @@ public class LoadBalancerTest {
 
 
     private enum Type {
-        ROUND_ROBIN, RANDOM, RANDOM_WRR, INCR_WRR, TREEMAP_WRR
+        ROUND_ROBIN, RANDOM, WEIGHT_RANDOM, INCR_WRR, TREEMAP_WRR
 
     }
+
 }

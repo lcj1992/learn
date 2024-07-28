@@ -1,18 +1,16 @@
-package load_balance.weight_round_robin;
+package load_balance;
 
 import load_balance.base.LoadBalancer;
 import load_balance.base.Node;
 
 import java.security.SecureRandom;
-import java.util.*;
-
+import java.util.List;
+import java.util.Random;
 
 /**
- * 加权轮询算法，轮询指的是对节点的轮询，节点1-节点2-节点3
- * 随机数版本
- * weighted round-robin
+ * 加权随机算法
  */
-public class RandomWRRLoadBalancer implements LoadBalancer {
+public class WeightRandomLoadBalancer implements LoadBalancer {
     /**
      * 节点
      */
@@ -26,7 +24,7 @@ public class RandomWRRLoadBalancer implements LoadBalancer {
      */
     private final Random random;
 
-    public RandomWRRLoadBalancer(List<Node> nodes) {
+    public WeightRandomLoadBalancer(List<Node> nodes) {
         this.nodes = nodes;
         this.totalWeight = nodes.stream().mapToInt(Node::getWeight).sum();
         this.random = new SecureRandom();
@@ -35,14 +33,13 @@ public class RandomWRRLoadBalancer implements LoadBalancer {
     public Node next() {
         // [0, totalWeight-1]
         int hit = random.nextInt(totalWeight);
-        int nodeId = nodes.size() - 1;
-        for (int i = 0; i < nodes.size(); i++) {
-            if (hit < 0) {
-                nodeId = i - 1;
-                break;
+        int sumWeight = 0;
+        for (Node node : nodes) {
+            sumWeight += node.getWeight();
+            if (sumWeight > hit) {
+                return node;
             }
-            hit -= nodes.get(i).getWeight();
         }
-        return nodes.get(nodeId);
+        throw new IllegalStateException();
     }
 }

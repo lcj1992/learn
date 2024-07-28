@@ -1,4 +1,4 @@
-package load_balance;
+package load_balance.weight_round_robin;
 
 import load_balance.base.LoadBalancer;
 import load_balance.base.Node;
@@ -9,9 +9,10 @@ import java.util.*;
 
 /**
  * 加权轮询算法，轮询指的是对节点的轮询，节点1-节点2-节点3
+ * 随机数版本
  * weighted round-robin
  */
-public class WeightedRoundRobinLoadBalancer implements LoadBalancer {
+public class RandomWRRLoadBalancer implements LoadBalancer {
     /**
      * 节点
      */
@@ -25,22 +26,23 @@ public class WeightedRoundRobinLoadBalancer implements LoadBalancer {
      */
     private final Random random;
 
-    public WeightedRoundRobinLoadBalancer(List<Node> nodes) {
+    public RandomWRRLoadBalancer(List<Node> nodes) {
         this.nodes = nodes;
         this.totalWeight = nodes.stream().mapToInt(Node::getWeight).sum();
         this.random = new SecureRandom();
     }
 
     public Node next() {
+        // [0, totalWeight-1]
         int hit = random.nextInt(totalWeight);
         int nodeId = nodes.size() - 1;
-        for (Node node : nodes) {
+        for (int i = 0; i < nodes.size(); i++) {
             if (hit < 0) {
+                nodeId = i - 1;
                 break;
             }
-            hit -= node.getWeight();
-            nodeId++;
+            hit -= nodes.get(i).getWeight();
         }
-        return nodes.get(nodeId - 1);
+        return nodes.get(nodeId);
     }
 }

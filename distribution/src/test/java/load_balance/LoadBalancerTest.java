@@ -3,11 +3,24 @@ package load_balance;
 import com.google.common.collect.Lists;
 import load_balance.base.LoadBalancer;
 import load_balance.base.Node;
+import load_balance.weight_round_robin.IncrWRRLoadBalancer;
+import load_balance.weight_round_robin.RandomWRRLoadBalancer;
+import load_balance.weight_round_robin.TreeMapWRRLoadBalancer;
 import org.junit.Test;
 
 import java.util.List;
+import java.util.Random;
 
 public class LoadBalancerTest {
+
+    @Test
+    public void test() {
+        Random random = new Random();
+        for (int i = 0; i < 100; i++) {
+            int res = random.nextInt(3);
+            System.out.println("random" + res);
+        }
+    }
 
     @Test
     public void testRoundRobin() {
@@ -20,8 +33,18 @@ public class LoadBalancerTest {
     }
 
     @Test
-    public void testWeightRoundRobin() {
-        testWeightLoadBalance(Type.WEIGHT_ROUND_ROBIN);
+    public void testRandomWRR() {
+        testWeightLoadBalance(Type.RANDOM_WRR);
+    }
+
+    @Test
+    public void testIncrWRR() {
+        testWeightLoadBalance(Type.INCR_WRR);
+    }
+
+    @Test
+    public void testTreeMapWRR() {
+        testWeightLoadBalance(Type.INCR_WRR);
     }
 
     private void testLoadBalance(Type type) {
@@ -54,9 +77,15 @@ public class LoadBalancerTest {
         // 创建轮询调度器
         List<Node> nodes = Lists.newArrayList(node1, node2, node3);
         // 设个默认值
-        LoadBalancer loadBalancer = new WeightedRoundRobinLoadBalancer(nodes);
-        if (type == Type.WEIGHT_ROUND_ROBIN) {
-            loadBalancer = new WeightedRoundRobinLoadBalancer(nodes);
+        LoadBalancer loadBalancer = new RandomWRRLoadBalancer(nodes);
+        if (type == Type.RANDOM_WRR) {
+            loadBalancer = new RandomWRRLoadBalancer(nodes);
+        }
+        if (type == Type.INCR_WRR) {
+            loadBalancer = new IncrWRRLoadBalancer(nodes);
+        }
+        if (type == Type.TREEMAP_WRR) {
+            loadBalancer = new TreeMapWRRLoadBalancer(nodes);
         }
         // 发送请求
         for (int i = 0; i < 100; i++) {
@@ -67,7 +96,7 @@ public class LoadBalancerTest {
 
 
     private enum Type {
-        ROUND_ROBIN, RANDOM, WEIGHT_ROUND_ROBIN,
+        ROUND_ROBIN, RANDOM, RANDOM_WRR, INCR_WRR, TREEMAP_WRR
 
     }
 }

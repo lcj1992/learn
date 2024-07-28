@@ -3,6 +3,7 @@ package load_balance.round_robin;
 import load_balance.base.LoadBalancer;
 import load_balance.base.Node;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.TreeMap;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -32,6 +33,7 @@ public class TreeMapWrrLoadBalancer implements LoadBalancer {
     public TreeMapWrrLoadBalancer(List<Node> nodes) {
         this.count = new AtomicInteger(0);
         int total = 0;
+
         for (Node node : nodes) {
             total += node.getWeight();
             pool.put(total - 1, node);

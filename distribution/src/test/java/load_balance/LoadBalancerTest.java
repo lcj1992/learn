@@ -9,8 +9,11 @@ import load_balance.round_robin.*;
 import org.junit.Test;
 
 import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class LoadBalancerTest {
+    static ExecutorService executor = Executors.newFixedThreadPool(10);
 
     @Test
     public void testRoundRobin() {
@@ -48,6 +51,12 @@ public class LoadBalancerTest {
     }
 
     @Test
+    public void testLeastActive() {
+        testLoadBalance(Type.LEAST_ACTIVE);
+    }
+
+
+    @Test
     public void testConsistentHash() {
         testWeightLoadBalance(Type.CONSISTENT_HASH);
     }
@@ -67,10 +76,18 @@ public class LoadBalancerTest {
         if (type == Type.RANDOM) {
             loadBalancer = new RandomLoadBalancer(nodes);
         }
+        if (type == Type.RANDOM) {
+            loadBalancer = new LeastActiveLoadBalancer(nodes);
+        }
         // 发送请求
+
         for (int i = 0; i < 100; i++) {
-            Node next = loadBalancer.next();
-            next.process("Request " + i);
+            LoadBalancer finalLoadBalancer = loadBalancer;
+            int finalI = i;
+            executor.submit(() -> {
+                Node next = finalLoadBalancer.next();
+                next.process("Request " + finalI);
+            });
         }
     }
 
@@ -102,14 +119,19 @@ public class LoadBalancerTest {
         }
         // 发送请求
         for (int i = 0; i < 1000; i++) {
-            Node next = loadBalancer.next();
-            next.process("Request " + i);
+
+            LoadBalancer finalLoadBalancer = loadBalancer;
+            int finalI = i;
+            executor.submit(() -> {
+                Node next = finalLoadBalancer.next();
+                next.process("Request " + finalI);
+            });
         }
     }
 
 
     private enum Type {
-        ROUND_ROBIN, RANDOM, WEIGHT_RANDOM, INCR_WRR, TREEMAP_WRR, LVS_WRR, SMOOTH_MRR, CONSISTENT_HASH
+        ROUND_ROBIN, RANDOM, WEIGHT_RANDOM, INCR_WRR, TREEMAP_WRR, LVS_WRR, SMOOTH_MRR, LEAST_ACTIVE, CONSISTENT_HASH
 
     }
 

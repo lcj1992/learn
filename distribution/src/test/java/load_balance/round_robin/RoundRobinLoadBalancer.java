@@ -22,7 +22,7 @@ public class RoundRobinLoadBalancer implements LoadBalancer {
     private final AtomicInteger count;
 
     public RoundRobinLoadBalancer(List<Node> nodes) {
-        this.nodes = new ArrayList<>(nodes);
+        this.nodes = nodes;
         this.count = new AtomicInteger(0);
     }
 

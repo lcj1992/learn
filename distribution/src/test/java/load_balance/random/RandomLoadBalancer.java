@@ -22,7 +22,7 @@ public class RandomLoadBalancer implements LoadBalancer {
     private final Random random;
 
     public RandomLoadBalancer(List<Node> nodes) {
-        this.nodes = new ArrayList<>(nodes);
+        this.nodes = nodes;
         this.random = new SecureRandom();
     }
 

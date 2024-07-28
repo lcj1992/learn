@@ -4,6 +4,7 @@ import load_balance.base.LoadBalancer;
 import load_balance.base.Node;
 
 import java.security.SecureRandom;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -25,7 +26,7 @@ public class WeightRandomLoadBalancer implements LoadBalancer {
     private final Random random;
 
     public WeightRandomLoadBalancer(List<Node> nodes) {
-        this.nodes = nodes;
+        this.nodes =nodes;
         this.totalWeight = nodes.stream().mapToInt(Node::getWeight).sum();
         this.random = new SecureRandom();
     }

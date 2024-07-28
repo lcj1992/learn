@@ -25,7 +25,6 @@ public class LockConditionModel implements Model {
         this.capacity = capacity;
     }
 
-
     @Override
     public void produce() throws InterruptedException {
         lock.lock();

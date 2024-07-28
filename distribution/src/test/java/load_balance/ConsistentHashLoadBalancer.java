@@ -8,9 +8,17 @@ import java.util.concurrent.ConcurrentSkipListMap;
 
 public class ConsistentHashLoadBalancer implements LoadBalancer {
 
+    /**
+     * 一致性hash环
+     */
     private final SortedMap<Long, Node> circle;
+    /**
+     * 随机数
+     */
     private final Random random = new Random();
-    // 虚拟节点的数量
+    /**
+     * 虚拟节点的数量
+     */
     private static final int VIRTUAL_NODES = 100;
 
     public ConsistentHashLoadBalancer(List<Node> nodes) {

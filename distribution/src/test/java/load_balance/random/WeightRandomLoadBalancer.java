@@ -1,4 +1,4 @@
-package load_balance;
+package load_balance.random;
 
 import load_balance.base.LoadBalancer;
 import load_balance.base.Node;

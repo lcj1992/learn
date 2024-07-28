@@ -1,4 +1,4 @@
-package load_balance.weight_round_robin;
+package load_balance.round_robin;
 
 import load_balance.base.LoadBalancer;
 import load_balance.base.Node;

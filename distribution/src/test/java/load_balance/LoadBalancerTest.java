@@ -3,10 +3,9 @@ package load_balance;
 import com.google.common.collect.Lists;
 import load_balance.base.LoadBalancer;
 import load_balance.base.Node;
-import load_balance.weight_round_robin.IncrWrrLoadBalancer;
-import load_balance.weight_round_robin.LVSWrrLoadBalancer;
-import load_balance.weight_round_robin.SmoothWrrLoadBalancer;
-import load_balance.weight_round_robin.TreeMapWrrLoadBalancer;
+import load_balance.random.RandomLoadBalancer;
+import load_balance.random.WeightRandomLoadBalancer;
+import load_balance.round_robin.*;
 import org.junit.Test;
 
 import java.util.List;
@@ -46,6 +45,11 @@ public class LoadBalancerTest {
     @Test
     public void testWeightRandom() {
         testWeightLoadBalance(Type.WEIGHT_RANDOM);
+    }
+
+    @Test
+    public void testConsistentHash() {
+        testWeightLoadBalance(Type.CONSISTENT_HASH);
     }
 
     private void testLoadBalance(Type type) {
@@ -93,6 +97,9 @@ public class LoadBalancerTest {
         if (type == Type.SMOOTH_MRR) {
             loadBalancer = new SmoothWrrLoadBalancer(nodes);
         }
+        if (type == Type.CONSISTENT_HASH) {
+            loadBalancer = new ConsistentHashLoadBalancer(nodes);
+        }
         // 发送请求
         for (int i = 0; i < 1000; i++) {
             Node next = loadBalancer.next();
@@ -102,7 +109,7 @@ public class LoadBalancerTest {
 
 
     private enum Type {
-        ROUND_ROBIN, RANDOM, WEIGHT_RANDOM, INCR_WRR, TREEMAP_WRR, LVS_WRR, SMOOTH_MRR
+        ROUND_ROBIN, RANDOM, WEIGHT_RANDOM, INCR_WRR, TREEMAP_WRR, LVS_WRR, SMOOTH_MRR, CONSISTENT_HASH
 
     }
 

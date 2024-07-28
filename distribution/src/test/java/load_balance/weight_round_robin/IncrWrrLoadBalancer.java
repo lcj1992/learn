@@ -12,7 +12,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * 递增版本
  * weighted round-robin
  */
-public class IncrWRRLoadBalancer implements LoadBalancer {
+public class IncrWrrLoadBalancer implements LoadBalancer {
     /**
      * 节点
      */
@@ -26,7 +26,7 @@ public class IncrWRRLoadBalancer implements LoadBalancer {
      */
     private final AtomicInteger count;
 
-    public IncrWRRLoadBalancer(List<Node> nodes) {
+    public IncrWrrLoadBalancer(List<Node> nodes) {
         this.nodes = nodes;
         this.totalWeight = nodes.stream().mapToInt(Node::getWeight).sum();
         this.count = new AtomicInteger(0);

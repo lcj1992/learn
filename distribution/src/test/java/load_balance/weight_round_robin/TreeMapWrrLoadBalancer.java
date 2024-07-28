@@ -13,7 +13,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * 红黑树版本
  * weighted round-robin
  */
-public class TreeMapWRRLoadBalancer implements LoadBalancer {
+public class TreeMapWrrLoadBalancer implements LoadBalancer {
     /**
      * 权重与节点关系
      * key: 一轮中该节点能处理的最大下标值
@@ -29,7 +29,7 @@ public class TreeMapWRRLoadBalancer implements LoadBalancer {
      */
     private final AtomicInteger count;
 
-    public TreeMapWRRLoadBalancer(List<Node> nodes) {
+    public TreeMapWrrLoadBalancer(List<Node> nodes) {
         this.count = new AtomicInteger(0);
         int total = 0;
         for (Node node : nodes) {

@@ -29,7 +29,7 @@ public class RoundRobinLoadBalancer implements LoadBalancer {
     @Override
     public Node next() {
         // 获取当前索引，并更新当前索引，以便下一次请求调度到下一个服务节点
-        int nodeId = this.count.getAndIncrement() % nodes.size();
+        int nodeId = count.getAndIncrement() % nodes.size();
         return nodes.get(nodeId);
     }
 }

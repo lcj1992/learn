@@ -59,15 +59,4 @@ public class ConsistentHashLoadBalancer implements LoadBalancer {
         hash += hash << 5;
         return (hash & 0x7FFFFFFF) + 0x80000000;
     }
-
-    public static void main(String[] args) {
-        List<Node> nodes = Arrays.asList(new Node("Node1"), new Node("Node2", 2), new Node("Node3"));
-
-        ConsistentHashLoadBalancer loadBalancer = new ConsistentHashLoadBalancer(nodes);
-
-        for (int i = 0; i < 10; i++) {
-            Node node = loadBalancer.next();
-            node.process("Request-" + i);
-        }
-    }
 }

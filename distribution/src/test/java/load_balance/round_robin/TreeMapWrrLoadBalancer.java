@@ -33,7 +33,6 @@ public class TreeMapWrrLoadBalancer implements LoadBalancer {
     public TreeMapWrrLoadBalancer(List<Node> nodes) {
         this.count = new AtomicInteger(0);
         int total = 0;
-
         for (Node node : nodes) {
             total += node.getWeight();
             pool.put(total - 1, node);

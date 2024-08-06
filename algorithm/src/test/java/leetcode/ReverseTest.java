@@ -12,9 +12,8 @@ import java.util.List;
 public class ReverseTest {
 
     @Test
-    public void test(){
-        ReverseTest solution = new ReverseTest();
-        int reverse = solution.reverse(-1);
+    public void test() {
+        int reverse = reverse(-1);
         System.out.println(reverse);
     }
 

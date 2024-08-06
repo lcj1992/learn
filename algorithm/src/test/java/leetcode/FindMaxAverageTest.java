@@ -9,10 +9,9 @@ import org.junit.Test;
 public class FindMaxAverageTest {
 
     @Test
-    public void test(){
-        FindMaxAverageTest solution = new FindMaxAverageTest();
+    public void test() {
         int[] nums = new int[]{0, 4, 0, 3, 2};
-        double maxAverage = solution.findMaxAverage(nums, 1);
+        double maxAverage = findMaxAverage(nums, 1);
         System.out.println(maxAverage);
     }
 

@@ -10,10 +10,9 @@ import org.junit.Test;
 public class SortedArrayToBSTTest {
 
     @Test
-    public void test(){
-        SortedArrayToBSTTest solution = new SortedArrayToBSTTest();
+    public void test() {
         int[] nums = new int[]{-10, -3, 0, 5, 9};
-        TreeNode treeNode = solution.sortedArrayToBST(nums);
+        TreeNode treeNode = sortedArrayToBST(nums);
         System.out.println(treeNode);
     }
 

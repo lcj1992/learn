@@ -9,9 +9,8 @@ import org.junit.Test;
 public class RemoveDuplicatesTest {
 
     @Test
-    public void test(){
-        RemoveDuplicatesTest solution = new RemoveDuplicatesTest();
-        int result = solution.removeDuplicates(new int[]{0, 0, 1, 1, 1, 2, 2, 3, 3, 4});
+    public void test() {
+        int result = removeDuplicates(new int[]{0, 0, 1, 1, 1, 2, 2, 3, 3, 4});
         System.out.println(result);
     }
 

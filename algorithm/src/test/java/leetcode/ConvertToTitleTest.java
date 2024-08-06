@@ -14,9 +14,8 @@ import java.util.Map;
 public class ConvertToTitleTest {
 
     @Test
-    public void test(){
-        ConvertToTitleTest solution = new ConvertToTitleTest();
-        String res = solution.convertToTitle(701);
+    public void test() {
+        String res = convertToTitle(701);
         System.out.println(res);
     }
 

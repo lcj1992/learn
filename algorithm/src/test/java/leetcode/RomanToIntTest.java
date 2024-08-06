@@ -9,9 +9,8 @@ import org.junit.Test;
 public class RomanToIntTest {
 
     @Test
-    public void test(){
-        RomanToIntTest solution = new RomanToIntTest();
-        int mcmxciv = solution.romanToInt("MCMXCIV");
+    public void test() {
+        int mcmxciv = romanToInt("MCMXCIV");
         System.out.println(mcmxciv);
     }
 

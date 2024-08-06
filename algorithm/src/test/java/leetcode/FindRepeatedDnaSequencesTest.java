@@ -13,8 +13,7 @@ public class FindRepeatedDnaSequencesTest {
     @Test
     public void test() {
         String s = "AAAAAAAAAAA";
-        FindRepeatedDnaSequencesTest solution = new FindRepeatedDnaSequencesTest();
-        List<String> repeatedDnaSequences = solution.findRepeatedDnaSequences(s);
+        List<String> repeatedDnaSequences = findRepeatedDnaSequences(s);
         System.out.println(repeatedDnaSequences);
     }
 

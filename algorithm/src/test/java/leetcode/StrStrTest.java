@@ -9,9 +9,8 @@ import org.junit.Test;
 public class StrStrTest {
 
     @Test
-    public void test(){
-        StrStrTest solution = new StrStrTest();
-        int i = solution.strStr("sadbutsad", "sad");
+    public void test() {
+        int i = strStr("sadbutsad", "sad");
         System.out.println(i);
     }
 

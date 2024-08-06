@@ -11,9 +11,8 @@ import org.junit.Test;
 public class StrIsPalindromeTest {
 
     @Test
-    public void test(){
-        StrIsPalindromeTest solution = new StrIsPalindromeTest();
-        boolean palindrome = solution.isPalindrome(".G?j!:;;:Gj?!.");
+    public void test() {
+        boolean palindrome = isPalindrome(".G?j!:;;:Gj?!.");
         System.out.println(palindrome);
     }
 

@@ -9,10 +9,9 @@ import org.junit.Test;
 public class SearchInsertTest {
 
     @Test
-    public void test(){
-        SearchInsertTest solution = new SearchInsertTest();
+    public void test() {
         int[] nums = new int[]{1, 3, 5, 6, 7, 9};
-        int index = solution.searchInsert(nums, 1);
+        int index = searchInsert(nums, 1);
         System.out.println(index);
     }
 

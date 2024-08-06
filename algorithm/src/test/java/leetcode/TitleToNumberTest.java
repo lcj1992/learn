@@ -1,14 +1,16 @@
 package leetcode;
 
+import org.junit.Test;
+
 /**
  * @author lichuangjian
  * @date 2023/8/24
  */
-public class TitleToNumberSolution {
+public class TitleToNumberTest {
 
-    public static void main(String[] args) {
-        TitleToNumberSolution solution = new TitleToNumberSolution();
-        System.out.println(solution.titleToNumber("ZY"));
+    @Test
+    public void test() {
+        System.out.println(titleToNumber("ZY"));
     }
 
     public int titleToNumber(String columnTitle) {

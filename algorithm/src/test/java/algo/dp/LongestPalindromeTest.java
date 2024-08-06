@@ -1,5 +1,7 @@
 package algo.dp;
 
+import org.junit.Test;
+
 /**
  * <a href="https://leetcode.cn/problems/longest-palindromic-substring/">...</a>
  *
@@ -8,7 +10,8 @@ package algo.dp;
  */
 public class LongestPalindromeTest {
 
-    public static void main(String[] args) {
+    @Test
+    public void test(){
         LongestPalindromeTest solution = new LongestPalindromeTest();
         String babad = solution.longestPalindrome("xaabacxcabaaxcabaax");
         System.out.println(babad);

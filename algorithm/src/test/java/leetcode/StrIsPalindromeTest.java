@@ -1,15 +1,18 @@
 package leetcode;
 
+import org.junit.Test;
+
 /**
  * <a href="https://leetcode.cn/problems/valid-palindrome/">验证回文串</a>
  *
  * @author lichuangjian
  * @date 2023/8/17
  */
-public class StrIsPalindromeSolution {
+public class StrIsPalindromeTest {
 
-    public static void main(String[] args) {
-        StrIsPalindromeSolution solution = new StrIsPalindromeSolution();
+    @Test
+    public void test(){
+        StrIsPalindromeTest solution = new StrIsPalindromeTest();
         boolean palindrome = solution.isPalindrome(".G?j!:;;:Gj?!.");
         System.out.println(palindrome);
     }

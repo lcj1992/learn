@@ -1,6 +1,7 @@
 package lang.reference;
 
 import lombok.Data;
+import org.junit.Test;
 
 /**
  * Desc:
@@ -53,7 +54,8 @@ public class StringTest {
         }
     }
 
-    public static void main(String[] args) {
+    @Test
+    public void test() {
         m1();
         m2();
         m3();

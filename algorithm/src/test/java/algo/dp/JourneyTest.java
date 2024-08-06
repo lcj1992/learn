@@ -3,6 +3,7 @@ package algo.dp;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import lombok.*;
+import org.junit.Test;
 
 import java.util.List;
 import java.util.Map;
@@ -16,10 +17,11 @@ import java.util.stream.Collectors;
  * Date: 2019/3/23
  * Time: 上午11:30
  */
-public class Journey {
+public class JourneyTest {
 
 
-    public static void main(String[] args) {
+    @Test
+    public void test(){
 
         // 两天时间，游玩一些地方，使得总评分最高，求出最高评分下的景点名称,以及最高的评分是多少？
         List<PointOfInterest> poiList = Lists.newArrayList();

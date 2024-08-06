@@ -1,5 +1,7 @@
 package leetcode;
 
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -9,10 +11,11 @@ import java.util.Map;
  * @author lichuangjian
  * @date 2023/8/17
  */
-public class ConvertToTitleSolution {
+public class ConvertToTitleTest {
 
-    public static void main(String[] args) {
-        ConvertToTitleSolution solution = new ConvertToTitleSolution();
+    @Test
+    public void test(){
+        ConvertToTitleTest solution = new ConvertToTitleTest();
         String res = solution.convertToTitle(701);
         System.out.println(res);
     }

@@ -1,5 +1,7 @@
 package algo.dp;
 
+import org.junit.Test;
+
 /**
  * 01背包问题
  * 解题思路
@@ -12,12 +14,13 @@ package algo.dp;
  */
 public class Knapsack01Test {
 
-    public static void main(String[] args) {
+    @Test
+    public void test(){
         Knapsack01Test solution = new Knapsack01Test();
         int[] w = {1, 2, 5, 6, 7}; // 商品的重量
         int[] v = {1, 6, 18, 22, 28};  //商品的价值
         int W = 12; // 背包的承重
-        int result = solution.knapsack01(w, v, W);
+        int result = knapsack01(w, v, W);
         System.out.println(result);
     }
 

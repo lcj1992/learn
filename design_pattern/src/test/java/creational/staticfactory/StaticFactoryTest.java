@@ -1,38 +1,16 @@
 package creational.staticfactory;
 
 
-import java.util.Calendar;
-
-/**
- * Created by lcj on 15-10-31.
- */
-
-interface IPeople {
-    String getName();
-}
-
-class CityPeople implements IPeople {
-    @Override
-    public String getName() {
-        return "city People";
-    }
-}
-
-class Villager implements IPeople {
-
-    @Override
-    public String getName() {
-        return "Village Person";
-    }
-}
-
-enum PeopleType {
-    RURAL,
-    URBAN;
-}
+import org.junit.Test;
 
 
 public class StaticFactoryTest {
+
+    @Test
+    public void test() {
+        StaticFactoryTest test = new StaticFactoryTest();
+        System.out.println(test.getPeople(PeopleType.URBAN).getName());
+    }
 
     public IPeople getPeople(PeopleType type) {
         IPeople people = null;
@@ -49,11 +27,27 @@ public class StaticFactoryTest {
         return people;
     }
 
-    public static void main(String[] args) {
-        StaticFactoryTest test = new StaticFactoryTest();
-        System.out.println(test.getPeople(PeopleType.URBAN).getName());
+    static class CityPeople implements IPeople {
+        @Override
+        public String getName() {
+            return "city People";
+        }
+    }
 
-        Calendar calendar = Calendar.getInstance();
+    interface IPeople {
+        String getName();
+    }
 
+    enum PeopleType {
+        RURAL,
+        URBAN;
+    }
+
+    static class Villager implements IPeople {
+
+        @Override
+        public String getName() {
+            return "Village Person";
+        }
     }
 }

@@ -1,5 +1,7 @@
 package util.concurrent.comm;
 
+import org.junit.Test;
+
 public class OddEven2Test {
 
     private int currentNumber = 1;
@@ -31,7 +33,8 @@ public class OddEven2Test {
         }
     }
 
-    public static void main(String[] args) {
+    @Test
+    public void test() {
         OddEven2Test printer = new OddEven2Test();
         Thread t1 = new Thread(() -> {
             try {

@@ -1,6 +1,7 @@
 package ds.tree.binary_tree;
 
 import common.TreeNode;
+import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,9 +12,10 @@ import java.util.stream.Collectors;
  * @author lichuangjian
  * @date 2023/8/9
  */
-public class HasPathSumSolution {
+public class HasPathSumTest {
 
-    public static void main(String[] args) {
+    @Test
+    public void test() {
         TreeNode root = new TreeNode(5);
         TreeNode node1 = new TreeNode(4);
         TreeNode node2 = new TreeNode(11);
@@ -31,10 +33,8 @@ public class HasPathSumSolution {
         node5.left = node6;
         node5.right = node7;
         node7.right = node8;
-        HasPathSumSolution solution = new HasPathSumSolution();
 
-//        boolean b = solution.hasPathSum(root, 22);
-        boolean b = solution.hasPathSum(new TreeNode(1, new TreeNode(2), null), 1);
+        boolean b = hasPathSum(new TreeNode(1, new TreeNode(2), null), 1);
         System.out.println(b);
     }
 

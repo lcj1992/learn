@@ -1,18 +1,20 @@
 package leetcode;
 
+import org.junit.Test;
+
 /**
  * @author lichuangjian
  * @date 2023/8/9
  */
-public class MergeSolution {
+public class MergeTest {
 
-    public static void main(String[] args) {
-        MergeSolution solution = new MergeSolution();
+    @Test
+    public void test() {
         int[] nums1 = {1};
         int m = 1;
         int[] nums2 = {0};
         int n = 0;
-        solution.merge(nums1, m, nums2, n);
+        merge(nums1, m, nums2, n);
         for (int i : nums1) {
             System.out.println(i);
         }

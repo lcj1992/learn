@@ -1,5 +1,7 @@
 package leetcode;
 
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,12 +9,12 @@ import java.util.List;
  * @author lichuangjian
  * @date 2023/7/18
  */
-public class LongestCommonPrefixSolution {
+public class LongestCommonPrefixTest {
 
-    public static void main(String[] args) {
-        LongestCommonPrefixSolution solution = new LongestCommonPrefixSolution();
+    @Test
+    public void test(){
         String[] strs = new String[]{"flower", "flow", "flight"};
-        String s = solution.longestCommonPrefix(strs);
+        String s = longestCommonPrefix(strs);
         System.out.println(s);
     }
 

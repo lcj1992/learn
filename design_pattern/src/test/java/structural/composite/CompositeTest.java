@@ -4,59 +4,16 @@ package structural.composite;
  * Created by lcj on 15-10-31.
  */
 
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * "Component"
- */
-interface Component {
 
-    //Prints the graphic.
-    void print();
-}
-
-/**
- * "Composite"
- */
-class CompositeComponent implements Component {
-
-    //Collection of child graphics.
-    private List<Component> childComponents = new ArrayList<>();
-
-    //Prints the graphic.
-    public void print() {
-        childComponents.forEach(Component::print);
-    }
-
-    //Adds the graphic to the composition.
-    public void add(Component component) {
-        childComponents.add(component);
-    }
-
-    //Removes the graphic from the composition.
-    public void remove(Component component) {
-        childComponents.remove(component);
-    }
-}
-
-/**
- * "Leaf"
- */
-class LeafComponent implements Component {
-
-    //Prints the graphic.
-    public void print() {
-        System.out.println("LeafComponent");
-    }
-}
-
-/**
- * Client
- */
 public class CompositeTest {
 
-    public static void main(String[] args) {
+    @Test
+    public void test() {
         //Initialize four LearComponents
         LeafComponent leafComponent1 = new LeafComponent();
         LeafComponent leafComponent2 = new LeafComponent();
@@ -80,5 +37,35 @@ public class CompositeTest {
 
         //Prints the complete graphic (four times the string "LeafComponent").
         compositeComponent.print();
+    }
+
+    interface Component {
+        void print();
+    }
+
+
+    static class CompositeComponent implements Component {
+
+        private final List<Component> childComponents = new ArrayList<>();
+
+        public void print() {
+            childComponents.forEach(Component::print);
+        }
+
+        public void add(Component component) {
+            childComponents.add(component);
+        }
+
+        public void remove(Component component) {
+            childComponents.remove(component);
+        }
+    }
+
+
+    static class LeafComponent implements Component {
+
+        public void print() {
+            System.out.println("LeafComponent");
+        }
     }
 }

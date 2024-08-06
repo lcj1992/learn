@@ -1,5 +1,7 @@
 package leetcode;
 
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,10 +9,11 @@ import java.util.List;
  * @author lichuangjian
  * @date 2023/6/11
  */
-public class ReverseSolution {
+public class ReverseTest {
 
-    public static void main(String[] args) {
-        ReverseSolution solution = new ReverseSolution();
+    @Test
+    public void test(){
+        ReverseTest solution = new ReverseTest();
         int reverse = solution.reverse(-1);
         System.out.println(reverse);
     }

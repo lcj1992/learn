@@ -1,5 +1,7 @@
 package io.zerocopy;
 
+import org.junit.Test;
+
 import java.io.RandomAccessFile;
 import java.nio.MappedByteBuffer;
 import java.nio.channels.FileChannel;
@@ -9,7 +11,8 @@ public class MMapTest {
     private static final String FILE_NAME = "send_file";
     private static final long FILE_SIZE = 1024; // 文件大小为1KB，仅为示例
 
-    public static void main(String[] args) {
+    @Test
+    public void test(){
         try (RandomAccessFile randomAccessFile = new RandomAccessFile(FILE_NAME, "rw"); FileChannel fileChannel = randomAccessFile.getChannel()) {
             // 将文件映射到内存中
             MappedByteBuffer mappedByteBuffer = fileChannel.map(FileChannel.MapMode.READ_WRITE, 0, FILE_SIZE);

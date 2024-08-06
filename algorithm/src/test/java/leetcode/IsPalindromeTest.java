@@ -1,5 +1,7 @@
 package leetcode;
 
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -8,11 +10,11 @@ import java.util.Objects;
  * @author lichuangjian
  * @date 2023/7/14
  */
-public class IsPalindromeSolution {
+public class IsPalindromeTest {
 
-    public static void main(String[] args) {
-        IsPalindromeSolution solution = new IsPalindromeSolution();
-        boolean palindrome = solution.isPalindrome(10);
+    @Test
+    public void test(){
+        boolean palindrome = isPalindrome(10);
         System.out.println(palindrome);
     }
 

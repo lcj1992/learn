@@ -1,5 +1,7 @@
 package algo.dp;
 
+import org.junit.Test;
+
 /**
  * Desc:
  * ------------------------------------
@@ -7,14 +9,14 @@ package algo.dp;
  * Date: 2019/3/22
  * Time: 下午12:55
  */
-public class Knapsack {
+public class KnapsackTest {
 
-    public static void main(String[] args) {
+    @Test
+    public void test() {
         int[] weight = {2, 4, 9, 7, 3};  // 物品重量
         int quantity = 5; // 物品个数
         int limitedWeight = 17; // 背包承受的最大重量
-        Knapsack test = new Knapsack();
-        int knapsack = test.knapsack(weight, quantity, limitedWeight);
+        int knapsack = knapsack(weight, quantity, limitedWeight);
         System.out.println(knapsack);
     }
 

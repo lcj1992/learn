@@ -1,17 +1,18 @@
 package leetcode;
 
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author lichuangjian
  * @date 2023/8/15
  */
-public class GetRowSolution {
+public class GetRowTest {
 
-    public static void main(String[] args) {
-        GetRowSolution solution = new GetRowSolution();
-        List<Integer> row = solution.getRow(3);
+    @Test
+    public void test() {
+        List<Integer> row = getRow(3);
         System.out.println(row);
     }
 

@@ -1,14 +1,16 @@
 package leetcode;
 
+import org.junit.Test;
+
 /**
  * @author lichuangjian
  * @date 2023/8/9
  */
-public class MySqrtSolution {
+public class MySqrtTest {
 
-    public static void main(String[] args) {
-        MySqrtSolution solution = new MySqrtSolution();
-        int i = solution.mySqrt2(2147483647);
+    @Test
+    public void test(){
+        int i = mySqrt2(2147483647);
         System.out.println(i);
     }
 

@@ -4,83 +4,18 @@ package structural.flyweight;
  * Created by lcj on 15-10-31.
  */
 
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-// Instances of CoffeeFlavour will be the Flyweights
-class CoffeeFlavour {
-    private final String name;
-
-    CoffeeFlavour(String newFlavor) {
-        this.name = newFlavor;
-    }
-
-    @Override
-    public String toString() {
-        return name;
-    }
-}
-
-// Menu acts as a staticfactory and cache for CoffeeFlavour flyweight objects
-class Menu {
-    private Map<String, CoffeeFlavour> flavours = new ConcurrentHashMap<>();
-
-    CoffeeFlavour lookup(String flavorName) {
-        if (!flavours.containsKey(flavorName))
-            flavours.put(flavorName, new CoffeeFlavour(flavorName));
-        return flavours.get(flavorName);
-    }
-
-    int totalCoffeeFlavoursMade() {
-        return flavours.size();
-    }
-}
-
-class Order {
-    private final int tableNumber;
-    private final CoffeeFlavour flavour;
-
-    Order(int tableNumber, CoffeeFlavour flavor) {
-        this.tableNumber = tableNumber;
-        this.flavour = flavor;
-    }
-
-    void serve() {
-        System.out.println("Serving " + flavour + " to table " + tableNumber);
-    }
-}
-
-class CoffeeShop {
-    private final List<Order> orders = new ArrayList<>();
-    private final Menu menu = new Menu();
-
-    void takeOrder(String flavourName, int table) {
-        CoffeeFlavour flavour = menu.lookup(flavourName);
-        Order order = new Order(table, flavour);
-        orders.add(order);
-    }
-
-    void service() {
-        Iterator it = orders.iterator();
-        while (it.hasNext()) {
-            Order order = (Order) it.next();
-            order.serve();
-            it.remove();
-        }
-    }
-
-    String report() {
-        return "\ntotal CoffeeFlavour objects made: "
-                + menu.totalCoffeeFlavoursMade();
-    }
-
-}
 
 public class FlyweightTest {
-    public static void main(String[] args) {
+    @Test
+    public void test() {
         CoffeeShop shop = new CoffeeShop();
 
         shop.takeOrder("Cappuccino", 2);
@@ -100,5 +35,70 @@ public class FlyweightTest {
 
         shop.service();
         System.out.println(shop.report());
+    }
+
+    static class CoffeeFlavour {
+        private final String name;
+
+        CoffeeFlavour(String newFlavor) {
+            this.name = newFlavor;
+        }
+
+        @Override
+        public String toString() {
+            return name;
+        }
+    }
+
+    static class Menu {
+        private final Map<String, CoffeeFlavour> flavours = new ConcurrentHashMap<>();
+
+        CoffeeFlavour lookup(String flavorName) {
+            if (!flavours.containsKey(flavorName)) flavours.put(flavorName, new CoffeeFlavour(flavorName));
+            return flavours.get(flavorName);
+        }
+
+        int totalCoffeeFlavoursMade() {
+            return flavours.size();
+        }
+    }
+
+    static class Order {
+        private final int tableNumber;
+        private final CoffeeFlavour flavour;
+
+        Order(int tableNumber, CoffeeFlavour flavor) {
+            this.tableNumber = tableNumber;
+            this.flavour = flavor;
+        }
+
+        void serve() {
+            System.out.println("Serving " + flavour + " to table " + tableNumber);
+        }
+    }
+
+    static class CoffeeShop {
+        private final List<Order> orders = new ArrayList<>();
+        private final Menu menu = new Menu();
+
+        void takeOrder(String flavourName, int table) {
+            CoffeeFlavour flavour = menu.lookup(flavourName);
+            Order order = new Order(table, flavour);
+            orders.add(order);
+        }
+
+        void service() {
+            Iterator<Order> it = orders.iterator();
+            while (it.hasNext()) {
+                Order order = it.next();
+                order.serve();
+                it.remove();
+            }
+        }
+
+        String report() {
+            return "\ntotal CoffeeFlavour objects made: " + menu.totalCoffeeFlavoursMade();
+        }
+
     }
 }

@@ -1,16 +1,19 @@
 package leetcode;
 
+import org.junit.Test;
+
 import java.util.*;
 
 /**
  * @author lichuangjian
  * @date 2023/7/9
  */
-public class FindRepeatedDnaSequencesSolution {
+public class FindRepeatedDnaSequencesTest {
 
-    public static void main(String[] args) {
+    @Test
+    public void test() {
         String s = "AAAAAAAAAAA";
-        FindRepeatedDnaSequencesSolution solution = new FindRepeatedDnaSequencesSolution();
+        FindRepeatedDnaSequencesTest solution = new FindRepeatedDnaSequencesTest();
         List<String> repeatedDnaSequences = solution.findRepeatedDnaSequences(s);
         System.out.println(repeatedDnaSequences);
     }

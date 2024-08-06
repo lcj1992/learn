@@ -1,5 +1,7 @@
 package ds.hash;
 
+import org.junit.Test;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -11,9 +13,9 @@ import java.util.Map;
  */
 public class IsIsomorphicTest {
 
-    public static void main(String[] args) {
-        IsIsomorphicTest solution = new IsIsomorphicTest();
-        boolean isomorphic = solution.isIsomorphic("badc", "baba");
+    @Test
+    public void test() {
+        boolean isomorphic = isIsomorphic("badc", "baba");
         System.out.println(isomorphic);
     }
 

@@ -1,6 +1,7 @@
 package ds.tree.binary_tree;
 
 import common.TreeNode;
+import org.junit.Test;
 
 import java.util.Objects;
 
@@ -8,12 +9,12 @@ import java.util.Objects;
  * @author lichuangjian
  * @date 2023/8/9
  */
-public class MinDepthSolution {
+public class MinDepthTest {
 
-    public static void main(String[] args) {
+    @Test
+    public void test(){
         TreeNode root = new TreeNode(3, new TreeNode(9), new TreeNode(20, new TreeNode(15), new TreeNode(7)));
-        MinDepthSolution solution = new MinDepthSolution();
-        System.out.println(solution.minDepth(root));
+        System.out.println(minDepth(root));
     }
 
     public int minDepth(TreeNode root) {

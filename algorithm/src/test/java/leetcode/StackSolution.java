@@ -1,5 +1,7 @@
 package leetcode;
 
+import org.junit.Test;
+
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Deque;
@@ -11,7 +13,8 @@ import java.util.List;
  */
 public class StackSolution {
 
-    public static void main(String[] args) {
+    @Test
+    public void test(){
         MyStack myStack = new MyStack();
         myStack.push(1);
         myStack.push(2);

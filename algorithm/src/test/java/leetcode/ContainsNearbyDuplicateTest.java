@@ -1,13 +1,16 @@
 package leetcode;
 
+import org.junit.Test;
+
 /**
  * @author lichuangjian
  * @date 2023/7/11
  */
-public class ContainsNearbyDuplicateSolution {
+public class ContainsNearbyDuplicateTest {
 
-    public static void main(String[] args) {
-        ContainsNearbyDuplicateSolution solution = new ContainsNearbyDuplicateSolution();
+    @Test
+    public void test(){
+        ContainsNearbyDuplicateTest solution = new ContainsNearbyDuplicateTest();
         int[] numbers = new int[]{1, 2, 3, 1};
         boolean b = solution.containsNearbyDuplicate(numbers, 3);
         System.out.println(b);

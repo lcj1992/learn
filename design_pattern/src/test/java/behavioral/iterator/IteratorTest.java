@@ -1,5 +1,7 @@
 package behavioral.iterator;
 
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,7 +9,8 @@ import java.util.List;
  * Created by lcj on 15-10-31.
  */
 public class IteratorTest {
-    public static void main(String[] args) {
+    @Test
+    public void test() {
         List<String> list = new ArrayList<String>();
         list.add("a");
         list.add("d");

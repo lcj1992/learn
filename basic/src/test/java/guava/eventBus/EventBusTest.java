@@ -2,6 +2,7 @@ package guava.eventBus;
 
 import com.google.common.eventbus.EventBus;
 import com.google.common.eventbus.Subscribe;
+import org.junit.Test;
 
 /**
  * Desc:
@@ -39,7 +40,8 @@ class EventListener {
 }
 
 public class EventBusTest {
-    public static void main(String[] args) {
+    @Test
+    public void test() {
         EventBus eventBus = new EventBus("test");
         EventListener listener = new EventListener();
 

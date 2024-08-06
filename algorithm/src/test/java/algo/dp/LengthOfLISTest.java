@@ -1,5 +1,7 @@
 package algo.dp;
 
+import org.junit.Test;
+
 /**
  * <a href="https://leetcode.cn/problems/longest-increasing-subsequence/"/>
  * 最长递增子序列
@@ -10,10 +12,10 @@ package algo.dp;
  */
 public class LengthOfLISTest {
 
-    public static void main(String[] args) {
-        LengthOfLISTest solution = new LengthOfLISTest();
+    @Test
+    public void test(){
         int[] nums = new int[]{1, 7, 10, 5, 7};
-        int i = solution.lengthOfLIS(nums);
+        int i = lengthOfLIS(nums);
         System.out.println(i);
     }
 

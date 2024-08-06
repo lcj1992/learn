@@ -1,13 +1,16 @@
 package leetcode;
 
+import org.junit.Test;
+
 /**
  * @author lichuangjian
  * @date 2023/7/18
  */
-public class RomanToIntSolution {
+public class RomanToIntTest {
 
-    public static void main(String[] args) {
-        RomanToIntSolution solution = new RomanToIntSolution();
+    @Test
+    public void test(){
+        RomanToIntTest solution = new RomanToIntTest();
         int mcmxciv = solution.romanToInt("MCMXCIV");
         System.out.println(mcmxciv);
     }

@@ -1,13 +1,16 @@
 package leetcode;
 
+import org.junit.Test;
+
 /**
  * @author lichuangjian
  * @date 2023/8/8
  */
-public class RemoveDuplicatesSolution {
+public class RemoveDuplicatesTest {
 
-    public static void main(String[] args) {
-        RemoveDuplicatesSolution solution = new RemoveDuplicatesSolution();
+    @Test
+    public void test(){
+        RemoveDuplicatesTest solution = new RemoveDuplicatesTest();
         int result = solution.removeDuplicates(new int[]{0, 0, 1, 1, 1, 2, 2, 3, 3, 4});
         System.out.println(result);
     }

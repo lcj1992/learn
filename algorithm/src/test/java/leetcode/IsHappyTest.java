@@ -1,5 +1,7 @@
 package leetcode;
 
+import org.junit.Test;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -7,11 +9,11 @@ import java.util.Set;
  * @author lichuangjian
  * @date 2023/8/25
  */
-public class IsHappySolution {
+public class IsHappyTest {
 
-    public static void main(String[] args) {
-        IsHappySolution solution = new IsHappySolution();
-        boolean happy = solution.isHappy(2);
+    @Test
+    public void test(){
+        boolean happy = isHappy(2);
         System.out.println(happy);
     }
 

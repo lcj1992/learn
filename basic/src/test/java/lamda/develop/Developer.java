@@ -1,6 +1,7 @@
 package lamda.develop;
 
 import org.junit.Assert;
+import org.junit.Test;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -31,7 +32,8 @@ public class Developer {
         return languages;
     }
 
-    public static void main(String[] args) {
+    @Test
+    public void test(){
         List<Developer> team = new ArrayList<>();
         Developer polyglot = new Developer();
         polyglot.add("clojure");

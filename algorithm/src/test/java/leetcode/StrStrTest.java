@@ -1,13 +1,16 @@
 package leetcode;
 
+import org.junit.Test;
+
 /**
  * @author lichuangjian
  * @date 2023/8/8
  */
-public class StrStrSolution {
+public class StrStrTest {
 
-    public static void main(String[] args) {
-        StrStrSolution solution = new StrStrSolution();
+    @Test
+    public void test(){
+        StrStrTest solution = new StrStrTest();
         int i = solution.strStr("sadbutsad", "sad");
         System.out.println(i);
     }

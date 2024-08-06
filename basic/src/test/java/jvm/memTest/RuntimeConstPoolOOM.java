@@ -1,5 +1,7 @@
 package jvm.memTest;
 
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,7 +11,8 @@ import java.util.List;
  */
 public class RuntimeConstPoolOOM {
 
-    public static void main(String[] args) {
+    @Test
+    public void test(){
         List<String> list = new ArrayList<String>();
         int i = 0;
 

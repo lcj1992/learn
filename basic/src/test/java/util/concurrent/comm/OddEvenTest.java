@@ -1,5 +1,7 @@
 package util.concurrent.comm;
 
+import org.junit.Test;
+
 public class OddEvenTest {
 
     private int currentNumber = 1;
@@ -19,7 +21,8 @@ public class OddEvenTest {
         }
     }
 
-    public static void main(String[] args) {
+    @Test
+    public void test() {
         OddEvenTest printer = new OddEvenTest();
         Thread oddThread = new Thread(printer::print);
         Thread evenThread = new Thread(printer::print);

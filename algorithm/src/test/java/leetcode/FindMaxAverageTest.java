@@ -1,13 +1,16 @@
 package leetcode;
 
+import org.junit.Test;
+
 /**
  * @author lichuangjian
  * @date 2023/7/8
  */
-public class FindMaxAverageSolution {
+public class FindMaxAverageTest {
 
-    public static void main(String[] args) {
-        FindMaxAverageSolution solution = new FindMaxAverageSolution();
+    @Test
+    public void test(){
+        FindMaxAverageTest solution = new FindMaxAverageTest();
         int[] nums = new int[]{0, 4, 0, 3, 2};
         double maxAverage = solution.findMaxAverage(nums, 1);
         System.out.println(maxAverage);

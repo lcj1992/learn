@@ -1,13 +1,16 @@
 package leetcode;
 
+import org.junit.Test;
+
 /**
  * @author lichuangjian
  * @date 2023/7/14
  */
-public class SearchInsertSolution {
+public class SearchInsertTest {
 
-    public static void main(String[] args) {
-        SearchInsertSolution solution = new SearchInsertSolution();
+    @Test
+    public void test(){
+        SearchInsertTest solution = new SearchInsertTest();
         int[] nums = new int[]{1, 3, 5, 6, 7, 9};
         int index = solution.searchInsert(nums, 1);
         System.out.println(index);

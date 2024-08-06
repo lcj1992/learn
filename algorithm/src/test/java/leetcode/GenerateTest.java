@@ -1,5 +1,7 @@
 package leetcode;
 
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,11 +9,11 @@ import java.util.List;
  * @author lichuangjian
  * @date 2023/8/15
  */
-public class GenerateSolution {
+public class GenerateTest {
 
-    public static void main(String[] args) {
-        GenerateSolution solution = new GenerateSolution();
-        List<List<Integer>> generate = solution.generate(5);
+    @Test
+    public void test() {
+        List<List<Integer>> generate = generate(5);
         System.out.println(generate);
     }
 

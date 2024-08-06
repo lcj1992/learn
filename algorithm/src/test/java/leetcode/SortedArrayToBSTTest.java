@@ -1,15 +1,17 @@
 package leetcode;
 
 import common.TreeNode;
+import org.junit.Test;
 
 /**
  * @author lichuangjian
  * @date 2023/8/9
  */
-public class SortedArrayToBSTSolution {
+public class SortedArrayToBSTTest {
 
-    public static void main(String[] args) {
-        SortedArrayToBSTSolution solution = new SortedArrayToBSTSolution();
+    @Test
+    public void test(){
+        SortedArrayToBSTTest solution = new SortedArrayToBSTTest();
         int[] nums = new int[]{-10, -3, 0, 5, 9};
         TreeNode treeNode = solution.sortedArrayToBST(nums);
         System.out.println(treeNode);

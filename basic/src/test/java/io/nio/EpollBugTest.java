@@ -1,5 +1,7 @@
 package io.nio;
 
+import org.junit.Test;
+
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
@@ -10,9 +12,10 @@ import java.nio.channels.SocketChannel;
 import java.util.Iterator;
 import java.util.Set;
 
-public class EpollBug {
+public class EpollBugTest {
 
-    public static void main(String[] args) throws IOException {
+    @Test
+    public void test() throws IOException {
         Selector selector = Selector.open();
         ServerSocketChannel socketChannel = ServerSocketChannel.open();
         InetSocketAddress inetSocketAddress = new InetSocketAddress("localhost", 8080);

@@ -1,5 +1,7 @@
 package jvm.toolTest;
 
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,7 +24,8 @@ public class MonitorMemoryTest {
         System.gc();
     }
 
-    public static void main(String[] args) throws Exception {
+    @Test
+    public void test() throws Exception {
         fillHeap(1000);
         Thread.sleep(10000000L);
     }

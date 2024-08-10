@@ -1,4 +1,4 @@
-package leetcode;
+package algo.simulation;
 
 import org.junit.Test;
 

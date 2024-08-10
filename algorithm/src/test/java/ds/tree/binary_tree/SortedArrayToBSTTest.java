@@ -1,4 +1,4 @@
-package leetcode;
+package ds.tree.binary_tree;
 
 import common.TreeNode;
 import org.junit.Test;

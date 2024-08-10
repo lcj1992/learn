@@ -79,7 +79,7 @@ public class GetImportanceTest {
 
     @AllArgsConstructor
     @NoArgsConstructor
-    class Employee {
+    public static class Employee {
         // It's the unique id of each node;
         // unique id of this employee
         public int id;

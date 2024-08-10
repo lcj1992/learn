@@ -28,12 +28,12 @@ public class LongestDupSubstringTest {
         char[] chars = s.toCharArray();
         String longestDubSubString = "";
         int maxLength = 0;
-        for (int i = 0; i < chars.length; i++) {
+        for (char aChar : chars) {
             // 每增加一个字符，增加newString个字符串
             Set<String> newString = new HashSet<>();
-            newString.add(chars[i] + "");
+            newString.add(aChar + "");
             for (String s1 : temp) {
-                newString.add(s1 + chars[i]);
+                newString.add(s1 + aChar);
             }
             temp = newString;
             for (String tempSubString : temp) {

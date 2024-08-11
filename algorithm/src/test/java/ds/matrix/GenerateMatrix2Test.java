@@ -1,4 +1,4 @@
-package algo.simulation;
+package ds.matrix;
 
 import org.junit.Test;
 

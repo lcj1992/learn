@@ -22,6 +22,7 @@ public class DiameterOfBinaryTreeTest {
         }
         res = 1;
         depth(root);
+        //-1是长度=节点数-1
         return res - 1;
     }
 
@@ -31,6 +32,7 @@ public class DiameterOfBinaryTreeTest {
         }
         int l = depth(root.left);
         int r = depth(root.right);
+        // +1是计算节点数（左子树的节点数+右子树的节点数+根节点本身），
         res = Math.max(res, l + r + 1);
         return Math.max(l, r) + 1;
     }

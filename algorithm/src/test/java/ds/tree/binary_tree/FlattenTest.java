@@ -29,21 +29,19 @@ public class FlattenTest {
         Deque<TreeNode> deque = new LinkedList<>();
         deque.add(root);
         TreeNode pre = null;
-        TreeNode cur;
         while (!deque.isEmpty()) {
-            cur = deque.removeFirst();
+            TreeNode cur = deque.removeFirst();
             if (pre != null) {
                 pre.right = cur;
                 pre.left = null;
             }
-            pre = cur;
             if (cur.right != null) {
                 deque.addFirst(cur.right);
             }
             if (cur.left != null) {
                 deque.addFirst(cur.left);
             }
-
+            pre = cur;
         }
     }
 }

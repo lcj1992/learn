@@ -85,13 +85,11 @@ public class LRUTest {
                 cache.put(key, newNode);
                 // 添加至双向链表的头部
                 addToHead(newNode);
-                ++size;
+                size++;
                 if (size > capacity) {
                     // 如果超出容量，删除双向链表的尾部节点
-                    DLinkedNode tail = removeTail();
-                    // 删除哈希表中对应的项
-                    cache.remove(tail.key);
-                    --size;
+                    removeTail();
+                    size--;
                 }
             } else {
                 // 如果 key 存在，先通过哈希表定位，再修改 value，并移到头部
@@ -117,10 +115,11 @@ public class LRUTest {
             head.next = node;
         }
 
-        private DLinkedNode removeTail() {
+        private void removeTail() {
             DLinkedNode res = tail.prev;
             removeNode(res);
-            return res;
+            // 删除哈希表中对应的项
+            cache.remove(res.key);
         }
     }
 }

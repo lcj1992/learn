@@ -35,6 +35,21 @@ public class MergeKListsTest {
         return res;
     }
 
+    public ListNode mergeKLists2(ListNode[] lists) {
+        return merge(lists, 0, lists.length - 1);
+    }
+
+    public ListNode merge(ListNode[] lists, int l, int r) {
+        if (l == r) {
+            return lists[l];
+        }
+        if (l > r) {
+            return null;
+        }
+        int mid = (l + r) >> 1;
+        return mergeTwoLists(merge(lists, l, mid), merge(lists, mid + 1, r));
+    }
+
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         ListNode dummy = new ListNode(0);
         ListNode cur = dummy;
@@ -53,5 +68,6 @@ public class MergeKListsTest {
         cur.next = l1 == null ? l2 : l1;
         return dummy.next;
     }
+
 
 }

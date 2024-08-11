@@ -8,6 +8,7 @@ import java.util.Objects;
 /**
  * <a href="https://leetcode.cn/problems/validate-binary-search-tree/description/">...</a>
  * 验证二叉搜索树
+ *
  * @author lichuangjian
  * @date 2023/6/12
  */
@@ -34,7 +35,7 @@ public class IsValidBSTTest {
         if (Objects.isNull(root)) {
             return true;
         }
-        if (root.val < min || root.val > max) {
+        if (root.val <= min || root.val >= max) {
             return false;
         }
         return isValidBST(root.left, min, root.val) && isValidBST(root.right, root.val, max);

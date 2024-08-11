@@ -30,6 +30,7 @@ public class TopKFrequentTest {
         }
         int[] res = new int[k];
         for (int i = 0; i < k; i++) {
+            //noinspection DataFlowIssue
             res[i] = queue.poll()[0];
         }
         return res;

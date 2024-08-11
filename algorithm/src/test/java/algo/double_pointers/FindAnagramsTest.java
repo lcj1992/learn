@@ -35,11 +35,11 @@ public class FindAnagramsTest {
         if (Arrays.equals(sCount, pCount)) {
             ans.add(0);
         }
-        for (int i = 0; i < sLen - pLen; i++) {
-            sCount[s.charAt(i) - 'a']--;
-            sCount[s.charAt(i + pLen) - 'a']++;
+        for (int i = 1; i < sLen - pLen + 1; i++) {
+            sCount[s.charAt(i - 1) - 'a']--;
+            sCount[s.charAt(i + pLen - 1) - 'a']++;
             if (Arrays.equals(sCount, pCount)) {
-                ans.add(i + 1);
+                ans.add(i);
             }
         }
         return ans;

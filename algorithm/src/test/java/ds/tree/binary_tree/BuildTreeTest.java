@@ -1,8 +1,9 @@
 package ds.tree.binary_tree;
 
 import common.TreeNode;
-import common.Utils;
 import org.junit.Test;
+
+import common.Utils;
 
 import java.util.HashMap;
 import java.util.Map;

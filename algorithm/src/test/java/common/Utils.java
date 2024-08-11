@@ -9,6 +9,13 @@ import java.util.Objects;
  * @date 2024/5/22
  **/
 public class Utils {
+
+    public static void print(int[][] matrix) {
+        for (int[] arr : matrix) {
+            print(arr);
+        }
+    }
+
     public static void print(int[] arrays) {
         if (arrays == null || arrays.length == 0) {
             return;
@@ -35,7 +42,7 @@ public class Utils {
         System.out.println(res);
     }
 
-    public static void print(List<List<Integer>> list) {
+    public static <T> void print(List<List<T>> list) {
         list.forEach(System.out::println);
     }
 

@@ -1,4 +1,4 @@
-package algo.simulation;
+package ds.stack;
 
 import org.junit.Test;
 

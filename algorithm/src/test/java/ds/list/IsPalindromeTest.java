@@ -38,48 +38,50 @@ public class IsPalindromeTest {
         return true;
     }
 
+    // dummy      1    2    3    4    5
+    // mid = 3;
+
+    // dummy      1    2    3    4
+    // mid = 3;
     public boolean isPalindrome2(ListNode head) {
-        if (head == null) {
-            return true;
-        }
-        // 找到前半部分链表的尾节点并反转后半部分链表
-        ListNode firstHalfEnd = endOfFirstHalf(head);
-        ListNode secondHalfStart = reverseList(firstHalfEnd.next);
-        // 判断是否回文
+        ListNode dummy = new ListNode(-1);
+        dummy.next = head;
+        ListNode mid = middleNode(dummy);
+        ListNode tmp = mid.next;
+        ListNode p2 = reverse(tmp);
         ListNode p1 = head;
-        ListNode p2 = secondHalfStart;
-        boolean result = true;
-        while (result && p2 != null) {
-            if (p1.val != p2.val) {
-                result = false;
+        while (p2 != null) {
+            if (p2.val != p1.val) {
+                return false;
             }
-            p1 = p1.next;
             p2 = p2.next;
+            p1 = p1.next;
         }
-        // 还原链表并返回结果
-        firstHalfEnd.next = reverseList(secondHalfStart);
-        return result;
+        return true;
     }
 
-    private ListNode reverseList(ListNode head) {
-        ListNode prev = null;
-        ListNode curr = head;
-        while (curr != null) {
-            ListNode nextTemp = curr.next;
-            curr.next = prev;
-            prev = curr;
-            curr = nextTemp;
-        }
-        return prev;
-    }
-
-    private ListNode endOfFirstHalf(ListNode head) {
-        ListNode fast = head;
-        ListNode slow = head;
-        while (fast.next != null && fast.next.next != null) {
+    private ListNode middleNode(ListNode node) {
+        ListNode fast = node;
+        ListNode slow = node;
+        while (fast != null && fast.next != null) {
             fast = fast.next.next;
             slow = slow.next;
         }
         return slow;
+    }
+
+    private ListNode reverse(ListNode head) {
+        if (head == null) {
+            return null;
+        }
+        ListNode dummy = new ListNode(-1);
+        dummy.next = head;
+        while (head.next != null) {
+            ListNode next = head.next;
+            head.next = next.next;
+            next.next = dummy.next;
+            dummy.next = next;
+        }
+        return dummy.next;
     }
 }

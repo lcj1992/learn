@@ -11,7 +11,6 @@ import java.util.List;
 /**
  * <a href="https://leetcode.cn/problems/binary-tree-right-side-view/">...</a>
  * 二叉树右视图
- * today
  */
 public class RightSideViewTest {
 

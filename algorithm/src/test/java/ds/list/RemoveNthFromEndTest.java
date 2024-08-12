@@ -10,7 +10,6 @@ import org.junit.Test;
  *
  * @author foolchid
  * @date 2024/5/22
- * today
  **/
 public class RemoveNthFromEndTest {
 

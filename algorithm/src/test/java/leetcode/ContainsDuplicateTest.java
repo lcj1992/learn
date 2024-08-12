@@ -12,9 +12,8 @@ import java.util.Set;
 public class ContainsDuplicateTest {
 
     @Test
-    public void test(){
-        ContainsDuplicateTest solution = new ContainsDuplicateTest();
-        boolean res = solution.containsDuplicate(new int[]{1, 1, 1, 3, 3, 4, 3, 2, 4, 2});
+    public void test() {
+        boolean res = containsDuplicate(new int[]{1, 1, 1, 3, 3, 4, 3, 2, 4, 2});
         System.out.println(res);
     }
 

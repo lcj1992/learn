@@ -11,7 +11,6 @@ import java.util.*;
  *
  * @author foolchid
  * @date 2024/5/29
- * today
  **/
 public class ZigzagLevelOrderTest {
 

@@ -6,7 +6,6 @@ import org.junit.Test;
 /**
  * @author lichuangjian
  * @date 2023/8/9
- * today
  */
 public class SortedArrayToBSTTest {
 

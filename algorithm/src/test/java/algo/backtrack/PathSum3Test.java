@@ -9,7 +9,6 @@ import org.junit.Test;
  *
  * @author foolchid
  * @date 2024/5/29
- * today
  **/
 public class PathSum3Test {
 

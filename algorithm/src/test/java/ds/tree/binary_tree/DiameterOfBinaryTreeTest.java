@@ -5,7 +5,6 @@ import org.junit.Test;
 
 /**
  * <a href="https://leetcode.cn/problems/diameter-of-binary-tree/">...</a>
- * today
  */
 public class DiameterOfBinaryTreeTest {
 

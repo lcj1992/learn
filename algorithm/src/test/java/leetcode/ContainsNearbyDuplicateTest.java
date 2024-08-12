@@ -9,10 +9,9 @@ import org.junit.Test;
 public class ContainsNearbyDuplicateTest {
 
     @Test
-    public void test(){
-        ContainsNearbyDuplicateTest solution = new ContainsNearbyDuplicateTest();
+    public void test() {
         int[] numbers = new int[]{1, 2, 3, 1};
-        boolean b = solution.containsNearbyDuplicate(numbers, 3);
+        boolean b = containsNearbyDuplicate(numbers, 3);
         System.out.println(b);
     }
 

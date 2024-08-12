@@ -8,7 +8,6 @@ import org.junit.Test;
  * 34. 在排序数组中查找元素的第一个和最后一个位置
  * 解题思路：
  * 1. 二分查找的变种
- * today
  */
 public class SearchRangeTest {
 
@@ -28,29 +27,15 @@ public class SearchRangeTest {
         return new int[]{lowBound, upperBound};
     }
 
-
     public int searchLowBound(int[] nums, int target) {
-        if (nums == null || nums.length == 0) {
-            return -1;
-        }
-        int left = 0;
-        int right = nums.length;
-        int res = -1;
-        while (left < right) {
-            int mid = left + (right - left) / 2;
-            if (nums[mid] == target) {
-                res = mid;
-                right = mid;
-            } else if (nums[mid] > target) {
-                right = mid;
-            } else {
-                left = mid + 1;
-            }
-        }
-        return res;
+        return search(nums, target, false);
     }
 
     public int searchUpperBound(int[] nums, int target) {
+        return search(nums, target, true);
+    }
+
+    public int search(int[] nums, int target, boolean upper) {
         if (nums == null || nums.length == 0) {
             return -1;
         }
@@ -61,7 +46,11 @@ public class SearchRangeTest {
             int mid = left + (right - left) / 2;
             if (nums[mid] == target) {
                 res = mid;
-                left = mid + 1;
+                if (upper) {
+                    left = mid + 1;
+                } else {
+                    right = mid - 1;
+                }
             } else if (nums[mid] < target) {
                 left = mid + 1;
             } else {

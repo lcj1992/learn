@@ -8,7 +8,6 @@ import org.junit.Test;
  *
  * @author foolchid
  * @date 2024/5/29
- * today
  **/
 public class PivotIndexTest {
 
@@ -26,7 +25,7 @@ public class PivotIndexTest {
         // int sumRight = Arrays.stream(nums).sum();
         int sumLeft = 0;
         for (int i = 0; i < nums.length; i++) {
-            sumRight = sumRight - nums[i];
+            sumRight -= nums[i];
             if (sumLeft == sumRight) {
                 return i;
             }

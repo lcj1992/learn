@@ -1,4 +1,4 @@
-package algo.divide;
+package ds.tree.binary_tree;
 
 import common.TreeNode;
 import common.Utils;

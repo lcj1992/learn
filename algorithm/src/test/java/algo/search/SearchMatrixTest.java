@@ -14,7 +14,6 @@ import org.junit.Test;
  */
 public class SearchMatrixTest {
 
-
     @Test
     public void test() {
         int[] a1 = new int[]{1, 3, 5, 7};

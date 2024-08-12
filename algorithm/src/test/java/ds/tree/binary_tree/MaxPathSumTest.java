@@ -5,7 +5,6 @@ import org.junit.Test;
 
 /**
  * <a href="https://leetcode.cn/problems/binary-tree-maximum-path-sum">...</a>
- * today
  */
 public class MaxPathSumTest {
 

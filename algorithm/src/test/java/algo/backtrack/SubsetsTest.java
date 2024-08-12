@@ -10,7 +10,6 @@ import java.util.List;
 /**
  * <a href="https://leetcode.cn/problems/subsets/description/">...</a>
  * 子集
- * today
  */
 public class SubsetsTest {
 
@@ -24,7 +23,6 @@ public class SubsetsTest {
         List<List<Integer>> res = new ArrayList<>();
         List<Integer> state = new ArrayList<>();
         res.add(new ArrayList<>());
-        Arrays.sort(nums);
         backtrack(state, nums, 0, res);
         return res;
     }

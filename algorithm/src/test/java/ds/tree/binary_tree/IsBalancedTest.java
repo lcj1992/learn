@@ -18,6 +18,9 @@ public class IsBalancedTest {
         TreeNode root = new TreeNode(3, new TreeNode(9), new TreeNode(20, new TreeNode(15), new TreeNode(7)));
         boolean balanced = isBalanced(root);
         System.out.println(balanced);
+
+        balanced = isBalanced2(root);
+        System.out.println(balanced);
     }
 
     public boolean isBalanced(TreeNode root) {
@@ -36,5 +39,22 @@ public class IsBalancedTest {
             return 0;
         }
         return 1 + Math.max(height(node.left), height(node.right));
+    }
+
+    public boolean isBalanced2(TreeNode root) {
+        return height2(root) >= 0;
+    }
+
+    public int height2(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+        int leftHeight = height2(root.left);
+        int rightHeight = height2(root.right);
+        if (leftHeight == -1 || rightHeight == -1 || Math.abs(leftHeight - rightHeight) > 1) {
+            return -1;
+        } else {
+            return Math.max(leftHeight, rightHeight) + 1;
+        }
     }
 }

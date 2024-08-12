@@ -7,7 +7,6 @@ import org.junit.Test;
  *
  * @author foolchid
  * @date 2024/5/30
- * today
  **/
 public class SingleNumber2Test {
 

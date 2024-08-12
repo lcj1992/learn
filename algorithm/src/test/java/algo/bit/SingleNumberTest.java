@@ -8,7 +8,6 @@ import org.junit.Test;
  *
  * @author lichuangjian
  * @date 2023/8/17
- * today
  */
 public class SingleNumberTest {
 

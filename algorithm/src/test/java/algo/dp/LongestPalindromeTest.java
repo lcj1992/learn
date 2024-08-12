@@ -7,7 +7,6 @@ import org.junit.Test;
  *
  * @author lichuangjian
  * @date 2023/8/2
- * today
  */
 public class LongestPalindromeTest {
 
@@ -29,21 +28,21 @@ public class LongestPalindromeTest {
         if (s == null || s.isEmpty()) {
             return "";
         }
-        int maxLen = 0;
+        int max = 0;
         int begin = 0;
         int length = s.length();
         boolean[][] dp = new boolean[length][length];
         // 单个字符肯定是回文串
         for (int i = 0; i < length; i++) {
             dp[i][i] = true;
-            maxLen = 1;
+            max = 1;
             begin = i;
         }
         // 检查两个字符
         for (int i = 0; i < length - 1; i++) {
             if (s.charAt(i) == s.charAt(i + 1)) {
                 dp[i][i + 1] = true;
-                maxLen = 2;
+                max = 2;
                 begin = i;
             }
         }
@@ -53,11 +52,11 @@ public class LongestPalindromeTest {
                 int j = i + len - 1;
                 if (dp[i + 1][j - 1] && s.charAt(i) == s.charAt(j)) {
                     dp[i][j] = true;
-                    maxLen = len;
+                    max = len;
                     begin = i;
                 }
             }
         }
-        return s.substring(begin, begin + maxLen);
+        return s.substring(begin, begin + max);
     }
 }

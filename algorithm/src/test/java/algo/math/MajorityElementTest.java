@@ -7,9 +7,9 @@ import java.util.Map;
 
 /**
  * <a href="https://leetcode.cn/problems/majority-element/">...</a>
+ *
  * @author lichuangjian
  * @date 2023/8/24
- * today
  */
 public class MajorityElementTest {
 
@@ -40,18 +40,18 @@ public class MajorityElementTest {
      * 比如众数如果是2，且都在数组尾部，前面其他数字内耗完了，最后使得votes大于0的只可能是2。
      */
     public int majorityElement2(int[] nums) {
-        int x = 0, votes = 0, count = 0;
-        for (int num : nums){
+        int res = 0, votes = 0, count = 0;
+        for (int num : nums) {
             if (votes == 0) {
-                x = num;
+                res = num;
             }
-            votes += num == x ? 1 : -1;
+            votes += num == res ? 1 : -1;
         }
-        // 验证 x 是否为众数
+        // 验证 res 是否为众数
         for (int num : nums)
-            if (num == x) {
+            if (num == res) {
                 count++;
             }
-        return count > nums.length / 2 ? x : 0; // 当无众数时返回 0
+        return count > nums.length / 2 ? res : 0; // 当无众数时返回 0
     }
 }

@@ -9,6 +9,7 @@ import java.util.Map;
  * <a href="https://leetcode.cn/problems/majority-element/">...</a>
  * @author lichuangjian
  * @date 2023/8/24
+ * today
  */
 public class MajorityElementTest {
 

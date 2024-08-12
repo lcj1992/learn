@@ -7,11 +7,12 @@ import org.junit.Test;
  *
  * @author lichuangjian
  * @date 2023/8/2
+ * today
  */
 public class LongestPalindromeTest {
 
     @Test
-    public void test(){
+    public void test() {
         LongestPalindromeTest solution = new LongestPalindromeTest();
         String babad = solution.longestPalindrome("xaabacxcabaaxcabaax");
         System.out.println(babad);

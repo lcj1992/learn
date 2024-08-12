@@ -3,11 +3,12 @@ package algo.bit;
 import org.junit.Test;
 
 /**
- * https://leetcode.cn/problems/single-number/solutions/242211/zhi-chu-xian-yi-ci-de-shu-zi-by-leetcode-solution/
+ * <a href="https://leetcode.cn/problems/single-number/solutions/242211/zhi-chu-xian-yi-ci-de-shu-zi-by-leetcode-solution/">...</a>
  * 只出现一次的数字
  *
  * @author lichuangjian
  * @date 2023/8/17
+ * today
  */
 public class SingleNumberTest {
 

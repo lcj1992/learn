@@ -1,4 +1,4 @@
-package algo.greedy;
+package ds.stack;
 
 import org.junit.Test;
 
@@ -10,6 +10,7 @@ import java.util.Deque;
  *
  * @author foolchid
  * @date 2024/5/30
+ * today
  **/
 public class MaxChunksToSortedTest {
 

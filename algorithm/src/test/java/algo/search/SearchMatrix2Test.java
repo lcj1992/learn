@@ -1,4 +1,4 @@
-package algo.greedy;
+package algo.search;
 
 import org.junit.Test;
 
@@ -9,7 +9,7 @@ import org.junit.Test;
  * @author foolchid
  * @date 2024/5/30
  **/
-public class SearchMatrixTest {
+public class SearchMatrix2Test {
     @Test
     public void test() {
         int[][] matrix = new int[][]{{1, 4, 7, 11, 15}, {2, 5, 8, 12, 19}, {3, 6, 9, 16, 22}, {10, 13, 14, 17, 24}, {18, 21, 23, 26, 30}};

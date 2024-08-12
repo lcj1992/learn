@@ -6,6 +6,7 @@ import org.junit.Test;
 /**
  * @author lichuangjian
  * @date 2023/8/9
+ * today
  */
 public class SortedArrayToBSTTest {
 
@@ -17,21 +18,17 @@ public class SortedArrayToBSTTest {
     }
 
     public TreeNode sortedArrayToBST(int[] nums) {
-        return sortArray(nums, 0, nums.length - 1);
+        return sortedArrayToBST(nums, 0, nums.length - 1);
     }
 
-    public TreeNode sortArray(int[] nums, int left, int right) {
-        if (right == left) {
-            return new TreeNode(nums[right]);
+    public TreeNode sortedArrayToBST(int[] nums, int left, int right) {
+        if (left > right) {
+            return null;
         }
-        if (right - left == 1) {
-            return new TreeNode(nums[left], null, new TreeNode(nums[right]));
-        }
-        TreeNode root = new TreeNode();
-        int middle = (left + right) / 2;
-        root.val = nums[middle];
-        root.left = sortArray(nums, left, middle - 1);
-        root.right = sortArray(nums, middle + 1, right);
+        int mid = left + (right - left) / 2;
+        TreeNode root = new TreeNode(nums[mid]);
+        root.left = sortedArrayToBST(nums, left, mid - 1);
+        root.right = sortedArrayToBST(nums, mid + 1, right);
         return root;
     }
 }

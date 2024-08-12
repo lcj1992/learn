@@ -7,6 +7,7 @@ import java.util.List;
 
 /**
  * <a href="https://leetcode.cn/problems/generate-parentheses/">...</a>
+ * today
  */
 public class GenerateParenthesisTest {
     @Test

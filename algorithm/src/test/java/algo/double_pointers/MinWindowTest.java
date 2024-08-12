@@ -4,8 +4,9 @@ import org.junit.Test;
 
 /**
  * <a href="https://leetcode.cn/problems/minimum-window-substring/">最小覆盖子串</a>
+ * today
  */
-public class MiniWindowTest {
+public class MinWindowTest {
 
     @Test
     public void test() {

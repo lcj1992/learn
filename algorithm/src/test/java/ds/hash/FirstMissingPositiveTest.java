@@ -6,12 +6,13 @@ import org.junit.Test;
  * <a href="https://leetcode.cn/problems/first-missing-positive/">缺失的第一个正数</a>
  * 给你一个未排序的整数数组 nums ，请你找出其中没有出现的最小的正整数。
  * 请你实现时间复杂度为 O(n) 并且只使用常数级别额外空间的解决方案。
+ * today
  */
 public class FirstMissingPositiveTest {
 
     @Test
     public void test() {
-        int res = firstMissingPositive(new int[]{3, -1, 1, 4});
+        int res = firstMissingPositive(new int[]{7, 8, 9, 11, 12});
         System.out.println(res);
     }
 
@@ -26,7 +27,7 @@ public class FirstMissingPositiveTest {
         }
         // 再次打标，处理值在[1,n]之间的元素，将元素的绝对值小于等于n的，修改其值为绝对值相反数
         for (int i = 0; i < n; i++) {
-            int num = Math.abs(nums[i]);
+            int num = nums[i];
             if (num <= n) {
                 nums[num - 1] = -Math.abs(nums[num - 1]);
             }

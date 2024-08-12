@@ -7,6 +7,7 @@ import java.util.List;
 
 /**
  * <a href="https://leetcode.cn/problems/partition-labels/">...</a>
+ * today
  */
 public class PartitionLabelsTest {
 

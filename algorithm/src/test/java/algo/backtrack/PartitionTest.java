@@ -4,13 +4,11 @@ import common.Utils;
 import org.junit.Test;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**
  * <a href="https://leetcode.cn/problems/palindrome-partitioning/">...</a>
  * 分割回文串
- * today
  */
 public class PartitionTest {
 

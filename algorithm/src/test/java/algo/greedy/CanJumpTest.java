@@ -4,7 +4,6 @@ import org.junit.Test;
 
 /**
  * <a href="https://leetcode.cn/problems/jump-game/">跳跃游戏</a>
- * today
  */
 public class CanJumpTest {
 

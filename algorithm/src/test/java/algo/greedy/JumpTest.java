@@ -16,15 +16,15 @@ public class JumpTest {
 
     public int jump(int[] nums) {
         // 跳到i时，可以再跳的最远距离
-        int rightMost = 0;
+        int rightMax = 0;
         // 跳steps步时，可以跳的最远距离
         int end = 0;
         // 跳的步数
         int steps = 0;
         for (int i = 0; i < nums.length - 1; i++) {
-            rightMost = Math.max(rightMost, i + nums[i]);
+            rightMax = Math.max(rightMax, i + nums[i]);
             if (i == end) {
-                end = rightMost;
+                end = rightMax;
                 steps++;
             }
         }

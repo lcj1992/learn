@@ -14,7 +14,7 @@ public class TokenBucketTest {
         // 模拟请求尝试消费令牌
         for (int i = 0; i < 15; i++) {
             System.out.println("Request " + i + ": " + rateLimiter.tryAcquire(1));
-            Thread.sleep(900); // 每次请求之间等待900毫秒，以观察令牌的生成和消费
+            Thread.sleep(100); // 每次请求之间等待900毫秒，以观察令牌的生成和消费
         }
         // 关闭调度器
         rateLimiter.scheduler.shutdown();
@@ -60,20 +60,12 @@ public class TokenBucketTest {
          * @return 是否成功获取令牌
          */
         public synchronized boolean tryAcquire(int tokensNeeded) {
-            while (true) {
-                int currentTokens = tokens.get();
-                if (currentTokens >= tokensNeeded) {
-                    tokens.addAndGet(-tokensNeeded);
-                    return true;
-                } else {
-                    try {
-                        wait(); // 如果令牌不足，等待直到有令牌可用
-                    } catch (InterruptedException e) {
-                        Thread.currentThread().interrupt();
-                        return false;
-                    }
-                }
+            int currentTokens = tokens.get();
+            if (currentTokens >= tokensNeeded) {
+                tokens.addAndGet(-tokensNeeded);
+                return true;
             }
+            return false;
         }
     }
 }

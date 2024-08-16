@@ -1,3 +1,5 @@
+package spring;
+
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.*;
 import org.springframework.context.ApplicationContext;
@@ -20,7 +22,7 @@ public class Person implements BeanFactoryAware, BeanNameAware, InitializingBean
     private String beanName;
 
     public Person() {
-        System.out.println("Person constructor");
+        System.out.println("spring.Person constructor");
 
     }
 
@@ -29,7 +31,7 @@ public class Person implements BeanFactoryAware, BeanNameAware, InitializingBean
     }
 
     public void setName(String name) {
-        System.out.println("Person setName");
+        System.out.println("spring.Person setName");
 
         this.name = name;
     }
@@ -39,7 +41,7 @@ public class Person implements BeanFactoryAware, BeanNameAware, InitializingBean
     }
 
     public void setAddress(String address) {
-        System.out.println("Person setAddress");
+        System.out.println("spring.Person setAddress");
 
         this.address = address;
     }
@@ -49,14 +51,14 @@ public class Person implements BeanFactoryAware, BeanNameAware, InitializingBean
     }
 
     public void setPhone(String phone) {
-        System.out.println("Person setPhone");
+        System.out.println("spring.Person setPhone");
 
         this.phone = phone;
     }
 
     @Override
     public String toString() {
-        return "Person [address=" + address + ", name=" + name + ", phone="
+        return "spring.Person [address=" + address + ", name=" + name + ", phone="
                 + phone + "]";
     }
 

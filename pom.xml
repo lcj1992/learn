@@ -9,7 +9,7 @@
         <module>basic</module>
         <module>design_pattern</module>
         <module>algorithm</module>
-        <module>spring</module>
+        <module>web</module>
         <module>distribution</module>
     </modules>
     <packaging>pom</packaging>
@@ -22,7 +22,6 @@
         <slf4j.version>1.7.21</slf4j.version>
         <log4j.version>2.6.2</log4j.version>
     </properties>
-
 
     <dependencyManagement>
         <dependencies>
@@ -92,6 +91,11 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.18.24</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>2.0.51</version>
         </dependency>
         <!--web工程需要包含log4j-web，非web工程不需要-->
     </dependencies>

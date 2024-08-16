@@ -6,18 +6,18 @@
             http://www.springframework.org/schema/beans
             http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
 
-    <bean id="beanPostProcessor" class="MyBeanPostProcessor">
+    <bean id="beanPostProcessor" class="spring.MyBeanPostProcessor">
     </bean>
 
-    <bean id="instantiationAwareBeanPostProcessor"
-          class="MyInstantiationAwareBeanPostProcessor">
+    <bean id="instantiationAwareBeanPostProcessor" class="spring.MyInstantiationAwareBeanPostProcessor">
     </bean>
 
-    <bean id="beanFactoryPostProcessor" class="MyBeanFactoryPostProcessor">
+    <bean id="beanFactoryPostProcessor" class="spring.MyBeanFactoryPostProcessor">
     </bean>
 
-    <bean id="person" class="Person" init-method="myInit"
-          destroy-method="myDestroy" p:name="张三" p:address="广州"
+    <bean id="person" class="spring.Person" init-method="myInit" destroy-method="myDestroy"
+          p:name="张三"
+          p:address="广州"
           p:phone="15900000000"/>
 
 </beans>

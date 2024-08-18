@@ -1,5 +1,6 @@
 package ds.hash;
 
+import common.Utils;
 import org.junit.Test;
 
 /**
@@ -12,7 +13,7 @@ public class FirstMissingPositiveTest {
 
     @Test
     public void test() {
-        int res = firstMissingPositive(new int[]{7, 8, 9, 11, 12});
+        int res = firstMissingPositive(new int[]{3, 4, -1, 1});
         System.out.println(res);
     }
 
@@ -27,7 +28,7 @@ public class FirstMissingPositiveTest {
         }
         // 再次打标，处理值在[1,n]之间的元素，将元素的绝对值小于等于n的，修改其值为绝对值相反数
         for (int i = 0; i < n; i++) {
-            int num = nums[i];
+            int num = Math.abs(nums[i]);
             if (num <= n) {
                 nums[num - 1] = -Math.abs(nums[num - 1]);
             }

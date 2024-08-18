@@ -4,13 +4,12 @@ import org.junit.Test;
 
 /**
  * <a href="https://leetcode.cn/problems/partition-equal-subset-sum/">...</a>
- * today1
  */
 public class CanPartitionTest {
 
     @Test
     public void test() {
-        boolean res = canPartition(new int[]{1, 5, 11, 5});
+        boolean res = canPartition(new int[]{1, 2, 3, 6});
         System.out.println(res);
     }
 

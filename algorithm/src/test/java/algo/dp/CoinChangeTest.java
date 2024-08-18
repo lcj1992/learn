@@ -2,9 +2,10 @@ package algo.dp;
 
 import org.junit.Test;
 
+import java.util.Arrays;
+
 /**
  * <a href="https://leetcode.cn/problems/coin-change/">...</a>
- * today1
  */
 public class CoinChangeTest {
 
@@ -15,29 +16,17 @@ public class CoinChangeTest {
     }
 
     public int coinChange(int[] coins, int amount) {
-        // 状态：dp[i] 表示金额为i时所需的最少硬币
-        // 转移方程：dp[i] = min(dp[i - coin[x]] + 1);
+        int max = amount + 1;
         int[] dp = new int[amount + 1];
-        for (int i = 1; i <= amount; i++) {
-            dp[i] = -1;
-        }
-        for (int coin : coins) {
-            dp[coin] = 1;
-        }
+        Arrays.fill(dp, max);
+        dp[0] = 0;
         for (int i = 1; i <= amount; i++) {
             for (int coin : coins) {
-                if (i >= coin) {
-                    if (dp[i - coin] == -1) {
-                        continue;
-                    }
-                    if (dp[i] == -1) {
-                        dp[i] = dp[i - coin] + 1;
-                        continue;
-                    }
+                if (coin <= i) {
                     dp[i] = Math.min(dp[i], dp[i - coin] + 1);
                 }
             }
         }
-        return dp[amount];
+        return dp[amount] > amount ? -1 : dp[amount];
     }
 }

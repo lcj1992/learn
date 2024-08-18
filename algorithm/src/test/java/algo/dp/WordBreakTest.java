@@ -10,7 +10,6 @@ import java.util.Set;
 
 /**
  * <a href="https://leetcode.cn/problems/word-break/">...</a>
- * today1
  */
 public class WordBreakTest {
 
@@ -33,6 +32,5 @@ public class WordBreakTest {
             }
         }
         return dp[s.length()];
-
     }
 }

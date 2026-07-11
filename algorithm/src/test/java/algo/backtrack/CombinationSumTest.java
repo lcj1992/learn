@@ -56,7 +56,7 @@ public class CombinationSumTest {
             // 因为可以重复选，所以这里下次选择的坐标仍为i
             backtrack(state, choices, i, target - choices[i], res);
             // 回退：撤销选择，恢复到之前的状态
-            state.remove(state.size() - 1);
+            state.removeLast();
         }
     }
 

@@ -62,7 +62,7 @@ public class CombinationSum2Test {
             // 每个字符只能使用一次，所以下次选择，要从i+1开始
             backtrack(state, target - choices[i], choices, i + 1, res);
             // 回退：撤销选择，恢复到之前的状态
-            state.remove(state.size() - 1);
+            state.removeLast();
         }
     }
 

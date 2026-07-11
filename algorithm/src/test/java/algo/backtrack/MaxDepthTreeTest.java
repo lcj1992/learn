@@ -20,9 +20,9 @@ public class MaxDepthTreeTest {
     @Test
     public void test() throws Exception {
         int i = maxDepth(TreeNode.create(3, 9, 20, null, null, 15, 7));
-        Assert.assertEquals(i, 3);
+        Assert.assertEquals(3, i);
         i = maxDepth2(TreeNode.create(3, 9, 20, null, null, 15, 7));
-        Assert.assertEquals(i, 3);
+        Assert.assertEquals(3, i);
     }
 
     public int maxDepth(TreeNode root) {

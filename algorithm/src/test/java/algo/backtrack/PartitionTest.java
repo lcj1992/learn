@@ -61,7 +61,7 @@ public class PartitionTest {
             if (dp[i][j]) {
                 ans.add(s.substring(i, j + 1));
                 backtrack(ans, s, j + 1, dp, ret);
-                ans.remove(ans.size() - 1);
+                ans.removeLast();
             }
         }
     }

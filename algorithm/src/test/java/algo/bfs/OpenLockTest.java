@@ -12,15 +12,12 @@ public class OpenLockTest {
         System.out.println(res);
     }
 
-    public int openLock(String[] deadends, String target) {
+    public int openLock(String[] deadEnds, String target) {
         if ("0000".equals(target)) {
             return 0;
         }
 
-        Set<String> dead = new HashSet<String>();
-        for (String deadend : deadends) {
-            dead.add(deadend);
-        }
+        Set<String> dead = new HashSet<>(Arrays.asList(deadEnds));
         if (dead.contains("0000")) {
             return -1;
         }

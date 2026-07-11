@@ -32,7 +32,7 @@ public class SubsetsTest {
             state.add(nums[i]);
             res.add(new ArrayList<>(state));
             backtrack(state, nums, i + 1, res);
-            state.remove(state.size() - 1);
+            state.removeLast();
         }
     }
 }
